@@ -1,8 +1,7 @@
-namespace src.Action
+namespace CourseControl.src.Action
 {
     public interface IActionable
     {
-        Action GetAction();
         void Do();
     }
 }

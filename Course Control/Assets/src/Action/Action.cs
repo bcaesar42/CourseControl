@@ -1,4 +1,4 @@
-﻿namespace src.Action
+﻿namespace CourseControl.src.Action
 {
     public class Action
     {

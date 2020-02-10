@@ -1,6 +1,6 @@
 using System;
 
-namespace src.Action
+namespace CourseControl.src.Action
 {
     public class ActionKind
     {
