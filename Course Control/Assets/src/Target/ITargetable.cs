@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Assets.src.Target
 {
-    interface Interface1
+    interface ITargetable
     {
+
     }
 }
