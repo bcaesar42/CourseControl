@@ -3,10 +3,7 @@
     public class Action
     {
         public readonly IActionable Actionable;
-
-        private ActionKind _actionKind;
-
-        public ActionKind ActionKind => _actionKind;
+        public readonly ActionKind ActionKind;
 
         private int _currentActivationTime;
         private int _currentCompletionTime;
@@ -18,7 +15,7 @@
         protected Action(IActionable actionable, ActionKind actionKind)
         {
             Actionable = actionable;
-            _actionKind = actionKind;
+            ActionKind = actionKind;
         }
 
         private ActionState _currentState;
