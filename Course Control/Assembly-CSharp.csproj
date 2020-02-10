@@ -58,7 +58,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\TestScript.cs" />
+     <Compile Include="Assets\src\Action\Action.cs" />
+     <Compile Include="Assets\src\Action\ActionKind.cs" />
+     <Compile Include="Assets\src\Action\ActionState.cs" />
+     <Compile Include="Assets\src\Action\IActionable.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/BelfilsColton/Desktop/CourseControl/CourseControl/Course Control/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

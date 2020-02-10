@@ -1,0 +1,691 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 61
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 995438498, guid: 68c7e4565cde54155bb78d8e935f1ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cacheType: 6
+  lastUpdatedAtString: 2020-02-10T11:14:44.747-08:00
+  initializedAtString: 2020-02-09T15:44:00.878-08:00
+  entries:
+  - path: Course Control\.idea\.idea.Course Control\.idea\contentModel.xml
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\.idea\.idea.Course
+      Control\.idea\contentModel.xml
+    projectPath: .idea\.idea.Course Control\.idea\contentModel.xml
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\.idea\.idea.Course Control\.idea\indexLayout.xml
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\.idea\.idea.Course
+      Control\.idea\indexLayout.xml
+    projectPath: .idea\.idea.Course Control\.idea\indexLayout.xml
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\.idea\.idea.Course Control\.idea\modules.xml
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\.idea\.idea.Course
+      Control\.idea\modules.xml
+    projectPath: .idea\.idea.Course Control\.idea\modules.xml
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\.idea\.idea.Course Control\.idea\projectSettingsUpdater.xml
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\.idea\.idea.Course
+      Control\.idea\projectSettingsUpdater.xml
+    projectPath: .idea\.idea.Course Control\.idea\projectSettingsUpdater.xml
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\.idea\.idea.Course Control\.idea\vcs.xml
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\.idea\.idea.Course
+      Control\.idea\vcs.xml
+    projectPath: .idea\.idea.Course Control\.idea\vcs.xml
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\.idea\.idea.Course Control\.idea\workspace.xml
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\.idea\.idea.Course
+      Control\.idea\workspace.xml
+    projectPath: .idea\.idea.Course Control\.idea\workspace.xml
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\.idea\.idea.Course Control\riderModule.iml
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\.idea\.idea.Course
+      Control\riderModule.iml
+    projectPath: .idea\.idea.Course Control\riderModule.iml
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Assembly-CSharp.csproj
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Assembly-CSharp.csproj
+    projectPath: Assembly-CSharp.csproj
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Assets\src.meta
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Assets\src.meta
+    projectPath: Assets\src.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Assets\src\Action.meta
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Assets\src\Action.meta
+    projectPath: Assets\src\Action.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Assets\src\Action\Action.cs
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Assets\src\Action\Action.cs
+    projectPath: Assets\src\Action\Action.cs
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Assets\src\Action\Action.cs.meta
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Assets\src\Action\Action.cs.meta
+    projectPath: Assets\src\Action\Action.cs.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Assets\src\Action\ActionKind.cs
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Assets\src\Action\ActionKind.cs
+    projectPath: Assets\src\Action\ActionKind.cs
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Assets\src\Action\ActionKind.cs.meta
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Assets\src\Action\ActionKind.cs.meta
+    projectPath: Assets\src\Action\ActionKind.cs.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Assets\src\Action\ActionState.cs
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Assets\src\Action\ActionState.cs
+    projectPath: Assets\src\Action\ActionState.cs
+    originalPath: 
+    indexStatus: 4
+    workTreeStatus: 3
+  - path: Course Control\Assets\src\Action\ActionState.cs.meta
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Assets\src\Action\ActionState.cs.meta
+    projectPath: Assets\src\Action\ActionState.cs.meta
+    originalPath: 
+    indexStatus: 4
+    workTreeStatus: 0
+  - path: Course Control\Assets\src\Action\IActionable.cs
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Assets\src\Action\IActionable.cs
+    projectPath: Assets\src\Action\IActionable.cs
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Assets\src\Action\IActionable.cs.meta
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Assets\src\Action\IActionable.cs.meta
+    projectPath: Assets\src\Action\IActionable.cs.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\APIUpdater\project-dependencies.graph
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\APIUpdater\project-dependencies.graph
+    projectPath: Library\APIUpdater\project-dependencies.graph
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\ArtifactDB
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\ArtifactDB
+    projectPath: Library\ArtifactDB
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\Artifacts\03\03620ea0695b57418c2f7f3de5e638e7
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\03\03620ea0695b57418c2f7f3de5e638e7
+    projectPath: Library\Artifacts\03\03620ea0695b57418c2f7f3de5e638e7
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\04\0410c96d3722eced22933ab8066d3711
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\04\0410c96d3722eced22933ab8066d3711
+    projectPath: Library\Artifacts\04\0410c96d3722eced22933ab8066d3711
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\09\0923e8a25769e8a6815b139d24cd9b08
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\09\0923e8a25769e8a6815b139d24cd9b08
+    projectPath: Library\Artifacts\09\0923e8a25769e8a6815b139d24cd9b08
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Course Control\Library\Artifacts\0a\0a44f7e6a4ac58817de109b3ab52d2e1
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\0a\0a44f7e6a4ac58817de109b3ab52d2e1
+    projectPath: Library\Artifacts\0a\0a44f7e6a4ac58817de109b3ab52d2e1
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Course Control\Library\Artifacts\0e\0e88c812b8f0c343d1c12b69edb9c398
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\0e\0e88c812b8f0c343d1c12b69edb9c398
+    projectPath: Library\Artifacts\0e\0e88c812b8f0c343d1c12b69edb9c398
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\0f\0f935544bcf311d110d83185017afe34
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\0f\0f935544bcf311d110d83185017afe34
+    projectPath: Library\Artifacts\0f\0f935544bcf311d110d83185017afe34
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\14\14c6e45b5c1068f85be86bb5aac17a05
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\14\14c6e45b5c1068f85be86bb5aac17a05
+    projectPath: Library\Artifacts\14\14c6e45b5c1068f85be86bb5aac17a05
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\15\15be43d54f03031bfbf93460e739cfa6
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\15\15be43d54f03031bfbf93460e739cfa6
+    projectPath: Library\Artifacts\15\15be43d54f03031bfbf93460e739cfa6
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\26\2611b03299a53968bc65c2af672b94e6
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\26\2611b03299a53968bc65c2af672b94e6
+    projectPath: Library\Artifacts\26\2611b03299a53968bc65c2af672b94e6
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\28\2869fc5a2b7eab95f75973d65d4e12de
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\28\2869fc5a2b7eab95f75973d65d4e12de
+    projectPath: Library\Artifacts\28\2869fc5a2b7eab95f75973d65d4e12de
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\2b\2bed3b825c6c4ab972bb1b3587e58506
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\2b\2bed3b825c6c4ab972bb1b3587e58506
+    projectPath: Library\Artifacts\2b\2bed3b825c6c4ab972bb1b3587e58506
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\2c\2cb3035a4777380efbeb6ad1a380350c
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\2c\2cb3035a4777380efbeb6ad1a380350c
+    projectPath: Library\Artifacts\2c\2cb3035a4777380efbeb6ad1a380350c
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Course Control\Library\Artifacts\31\31b3569af5a21260969080c3d9f3e345
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\31\31b3569af5a21260969080c3d9f3e345
+    projectPath: Library\Artifacts\31\31b3569af5a21260969080c3d9f3e345
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\38\387d2a15d3368a272ae2c51b3763a884
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\38\387d2a15d3368a272ae2c51b3763a884
+    projectPath: Library\Artifacts\38\387d2a15d3368a272ae2c51b3763a884
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Course Control\Library\Artifacts\3b\3b86c54a513e2d9c0bd7e037d6a8a113
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\3b\3b86c54a513e2d9c0bd7e037d6a8a113
+    projectPath: Library\Artifacts\3b\3b86c54a513e2d9c0bd7e037d6a8a113
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\3b\3bac63f3873f917cac71d801d1190f81
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\3b\3bac63f3873f917cac71d801d1190f81
+    projectPath: Library\Artifacts\3b\3bac63f3873f917cac71d801d1190f81
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Course Control\Library\Artifacts\46\4663563bfa8e31102c27b9eeef6905df
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\46\4663563bfa8e31102c27b9eeef6905df
+    projectPath: Library\Artifacts\46\4663563bfa8e31102c27b9eeef6905df
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\4d\4d1e9c7779c7f776e33da21b5457c9d2
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\4d\4d1e9c7779c7f776e33da21b5457c9d2
+    projectPath: Library\Artifacts\4d\4d1e9c7779c7f776e33da21b5457c9d2
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Course Control\Library\Artifacts\55\5508fed72d3eb7426c9d8ab491d509bc
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\55\5508fed72d3eb7426c9d8ab491d509bc
+    projectPath: Library\Artifacts\55\5508fed72d3eb7426c9d8ab491d509bc
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Course Control\Library\Artifacts\56\569ed69267f22a4a7ca6e7118b004271
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\56\569ed69267f22a4a7ca6e7118b004271
+    projectPath: Library\Artifacts\56\569ed69267f22a4a7ca6e7118b004271
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\64\642406679117de6b2e12192d172edf64
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\64\642406679117de6b2e12192d172edf64
+    projectPath: Library\Artifacts\64\642406679117de6b2e12192d172edf64
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\68\6883ad40e8df3f7065e7b2389242d687
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\68\6883ad40e8df3f7065e7b2389242d687
+    projectPath: Library\Artifacts\68\6883ad40e8df3f7065e7b2389242d687
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Course Control\Library\Artifacts\7b\7b11919f80d1122163d91b8e2088d863
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\7b\7b11919f80d1122163d91b8e2088d863
+    projectPath: Library\Artifacts\7b\7b11919f80d1122163d91b8e2088d863
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\7c\7c7e51dba16da187151d441477524763
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\7c\7c7e51dba16da187151d441477524763
+    projectPath: Library\Artifacts\7c\7c7e51dba16da187151d441477524763
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Course Control\Library\Artifacts\80\800629f38cdeebbc7d350a0882e53087
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\80\800629f38cdeebbc7d350a0882e53087
+    projectPath: Library\Artifacts\80\800629f38cdeebbc7d350a0882e53087
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\86\86611825458ba2c3b1fbff964fefeb51
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\86\86611825458ba2c3b1fbff964fefeb51
+    projectPath: Library\Artifacts\86\86611825458ba2c3b1fbff964fefeb51
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\88\8840b69dc6ced3d468a8c390d804a8c7
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\88\8840b69dc6ced3d468a8c390d804a8c7
+    projectPath: Library\Artifacts\88\8840b69dc6ced3d468a8c390d804a8c7
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\89\89b49152a8e9f1f4fc67f791ee27a5c5
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\89\89b49152a8e9f1f4fc67f791ee27a5c5
+    projectPath: Library\Artifacts\89\89b49152a8e9f1f4fc67f791ee27a5c5
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\8e\8ebe532d91092e007889e0cdd15ca781
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\8e\8ebe532d91092e007889e0cdd15ca781
+    projectPath: Library\Artifacts\8e\8ebe532d91092e007889e0cdd15ca781
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\90\90f382459a34ac8612cbdefbad88a62c
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\90\90f382459a34ac8612cbdefbad88a62c
+    projectPath: Library\Artifacts\90\90f382459a34ac8612cbdefbad88a62c
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\91\9143a6c21bf0602949cac55009e9dfc8
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\91\9143a6c21bf0602949cac55009e9dfc8
+    projectPath: Library\Artifacts\91\9143a6c21bf0602949cac55009e9dfc8
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\95\95bafe71d43f9c04e69b30018843d0e0
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\95\95bafe71d43f9c04e69b30018843d0e0
+    projectPath: Library\Artifacts\95\95bafe71d43f9c04e69b30018843d0e0
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\b2\b225298d9448f1c67910a0c6bb08f155
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\b2\b225298d9448f1c67910a0c6bb08f155
+    projectPath: Library\Artifacts\b2\b225298d9448f1c67910a0c6bb08f155
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Course Control\Library\Artifacts\b5\b556ccfe802fd576236c45c832d16534
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\b5\b556ccfe802fd576236c45c832d16534
+    projectPath: Library\Artifacts\b5\b556ccfe802fd576236c45c832d16534
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Course Control\Library\Artifacts\b5\b5ff7c1901825071efa1b7da170b543f
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\b5\b5ff7c1901825071efa1b7da170b543f
+    projectPath: Library\Artifacts\b5\b5ff7c1901825071efa1b7da170b543f
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\bb\bb9c9857b74343ae27d4f08ec8ac6e54
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\bb\bb9c9857b74343ae27d4f08ec8ac6e54
+    projectPath: Library\Artifacts\bb\bb9c9857b74343ae27d4f08ec8ac6e54
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Course Control\Library\Artifacts\c0\c0034eb07ff31514d75ed62c3ca90f29
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\c0\c0034eb07ff31514d75ed62c3ca90f29
+    projectPath: Library\Artifacts\c0\c0034eb07ff31514d75ed62c3ca90f29
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\c3\c37d843eebc56d409af9439c55a96286
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\c3\c37d843eebc56d409af9439c55a96286
+    projectPath: Library\Artifacts\c3\c37d843eebc56d409af9439c55a96286
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Course Control\Library\Artifacts\cd\cd624513cd50d6ff6398fb589b52e3ab
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\cd\cd624513cd50d6ff6398fb589b52e3ab
+    projectPath: Library\Artifacts\cd\cd624513cd50d6ff6398fb589b52e3ab
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Course Control\Library\Artifacts\d2\d235e659dcaf9803b47b80d396b347b2
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\d2\d235e659dcaf9803b47b80d396b347b2
+    projectPath: Library\Artifacts\d2\d235e659dcaf9803b47b80d396b347b2
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Course Control\Library\Artifacts\d6\d6ae56518d60a57120f9ef845c6dc011
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\d6\d6ae56518d60a57120f9ef845c6dc011
+    projectPath: Library\Artifacts\d6\d6ae56518d60a57120f9ef845c6dc011
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\dd\dd99c4cb2a069bc5bdc7145e41a9c3c5
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\dd\dd99c4cb2a069bc5bdc7145e41a9c3c5
+    projectPath: Library\Artifacts\dd\dd99c4cb2a069bc5bdc7145e41a9c3c5
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\e2\e270f6ed25940f594fa3bc2666cc57a1
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\e2\e270f6ed25940f594fa3bc2666cc57a1
+    projectPath: Library\Artifacts\e2\e270f6ed25940f594fa3bc2666cc57a1
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\e2\e2b8166495af09b2f87b298d1b2da973
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\e2\e2b8166495af09b2f87b298d1b2da973
+    projectPath: Library\Artifacts\e2\e2b8166495af09b2f87b298d1b2da973
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\Artifacts\e5\e50d09888971b285a56900c604f73f6c
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\e5\e50d09888971b285a56900c604f73f6c
+    projectPath: Library\Artifacts\e5\e50d09888971b285a56900c604f73f6c
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Course Control\Library\Artifacts\f3\f30add4fc38b69c1b3eb1c91f1216a89
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\Artifacts\f3\f30add4fc38b69c1b3eb1c91f1216a89
+    projectPath: Library\Artifacts\f3\f30add4fc38b69c1b3eb1c91f1216a89
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\EditorInstance.json
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\EditorInstance.json
+    projectPath: Library\EditorInstance.json
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\gfu\cache\branches.yaml
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\gfu\cache\branches.yaml
+    projectPath: Library\gfu\cache\branches.yaml
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\gfu\cache\gitlocks.yaml
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\gfu\cache\gitlocks.yaml
+    projectPath: Library\gfu\cache\gitlocks.yaml
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\gfu\cache\gitlog.yaml
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\gfu\cache\gitlog.yaml
+    projectPath: Library\gfu\cache\gitlog.yaml
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\gfu\cache\gitstatusentries.yaml
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\gfu\cache\gitstatusentries.yaml
+    projectPath: Library\gfu\cache\gitstatusentries.yaml
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\gfu\cache\gittrackingstatus.yaml
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\gfu\cache\gittrackingstatus.yaml
+    projectPath: Library\gfu\cache\gittrackingstatus.yaml
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\gfu\cache\gituser.yaml
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\gfu\cache\gituser.yaml
+    projectPath: Library\gfu\cache\gituser.yaml
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\gfu\cache\repoinfo.yaml
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\gfu\cache\repoinfo.yaml
+    projectPath: Library\gfu\cache\repoinfo.yaml
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\ProtocolInstance.json
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\ProtocolInstance.json
+    projectPath: Library\ProtocolInstance.json
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\ScriptAssemblies\Assembly-CSharp.dll
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\ScriptAssemblies\Assembly-CSharp.dll
+    projectPath: Library\ScriptAssemblies\Assembly-CSharp.dll
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Library\ScriptAssemblies\Assembly-CSharp-Editor-firstpass.dll
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\ScriptAssemblies\Assembly-CSharp-Editor-firstpass.dll
+    projectPath: Library\ScriptAssemblies\Assembly-CSharp-Editor-firstpass.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\ScriptAssemblies\BuiltinAssemblies.stamp
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\ScriptAssemblies\BuiltinAssemblies.stamp
+    projectPath: Library\ScriptAssemblies\BuiltinAssemblies.stamp
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Course Control\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+    projectPath: Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+    projectPath: Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+    projectPath: Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+    projectPath: Library\ScriptAssemblies\Unity.Rider.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+    projectPath: Library\ScriptAssemblies\Unity.TextMeshPro.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+    projectPath: Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\ScriptAssemblies\Unity.Timeline.dll
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\ScriptAssemblies\Unity.Timeline.dll
+    projectPath: Library\ScriptAssemblies\Unity.Timeline.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+    projectPath: Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+    projectPath: Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+    projectPath: Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\ScriptAssemblies\UnityEditor.UI.dll
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\ScriptAssemblies\UnityEditor.UI.dll
+    projectPath: Library\ScriptAssemblies\UnityEditor.UI.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+    projectPath: Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\ScriptAssemblies\UnityEngine.UI.dll
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\ScriptAssemblies\UnityEngine.UI.dll
+    projectPath: Library\ScriptAssemblies\UnityEngine.UI.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\SourceAssetDB
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\SourceAssetDB
+    projectPath: Library\SourceAssetDB
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\StateCache\Hierarchy\ca5267-mainStage.json
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\StateCache\Hierarchy\ca5267-mainStage.json
+    projectPath: Library\StateCache\Hierarchy\ca5267-mainStage.json
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+    projectPath: obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\obj\Debug\Assembly-CSharp-Editor-firstpass.csprojAssemblyReference.cache
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\obj\Debug\Assembly-CSharp-Editor-firstpass.csprojAssemblyReference.cache
+    projectPath: obj\Debug\Assembly-CSharp-Editor-firstpass.csprojAssemblyReference.cache
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Temp\UnityLockfile
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Temp\UnityLockfile
+    projectPath: Temp\UnityLockfile
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Temp\UnityTempFile-1222cf4b08062ae45826846a66ac5efd
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Temp\UnityTempFile-1222cf4b08062ae45826846a66ac5efd
+    projectPath: Temp\UnityTempFile-1222cf4b08062ae45826846a66ac5efd
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Temp\UnityTempFile-18ccfb5b4c7b0ac428c844b600736db2
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Temp\UnityTempFile-18ccfb5b4c7b0ac428c844b600736db2
+    projectPath: Temp\UnityTempFile-18ccfb5b4c7b0ac428c844b600736db2
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Temp\UnityTempFile-2dd32aa8586444e4eb19b39902aca099
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Temp\UnityTempFile-2dd32aa8586444e4eb19b39902aca099
+    projectPath: Temp\UnityTempFile-2dd32aa8586444e4eb19b39902aca099
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Temp\UnityTempFile-3c7241ab9b5b73049a2e5b2acbf52212
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Temp\UnityTempFile-3c7241ab9b5b73049a2e5b2acbf52212
+    projectPath: Temp\UnityTempFile-3c7241ab9b5b73049a2e5b2acbf52212
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Temp\UnityTempFile-3ec83b9297ce16d408178bee065e5079
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Temp\UnityTempFile-3ec83b9297ce16d408178bee065e5079
+    projectPath: Temp\UnityTempFile-3ec83b9297ce16d408178bee065e5079
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Temp\UnityTempFile-41ac80d4a1fada74b87fed9851e78607
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Temp\UnityTempFile-41ac80d4a1fada74b87fed9851e78607
+    projectPath: Temp\UnityTempFile-41ac80d4a1fada74b87fed9851e78607
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Temp\UnityTempFile-4fcd281917510ee4b845b73e6375016a
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Temp\UnityTempFile-4fcd281917510ee4b845b73e6375016a
+    projectPath: Temp\UnityTempFile-4fcd281917510ee4b845b73e6375016a
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Temp\UnityTempFile-82373325a7ca30a48a78e276420bfea7
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Temp\UnityTempFile-82373325a7ca30a48a78e276420bfea7
+    projectPath: Temp\UnityTempFile-82373325a7ca30a48a78e276420bfea7
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Temp\UnityTempFile-c27b3ac205215df4c8d9ac18fb7d582d
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Temp\UnityTempFile-c27b3ac205215df4c8d9ac18fb7d582d
+    projectPath: Temp\UnityTempFile-c27b3ac205215df4c8d9ac18fb7d582d
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Temp\UnityTempFile-d3b0dc4ecae8ed144952f4a9f5f6c0a1
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Temp\UnityTempFile-d3b0dc4ecae8ed144952f4a9f5f6c0a1
+    projectPath: Temp\UnityTempFile-d3b0dc4ecae8ed144952f4a9f5f6c0a1
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Temp\UnityTempFile-d9a16fd5b6ced0747aa92afd2bcaf039
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Temp\UnityTempFile-d9a16fd5b6ced0747aa92afd2bcaf039
+    projectPath: Temp\UnityTempFile-d9a16fd5b6ced0747aa92afd2bcaf039
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Temp\UnityTempFile-dfefa7e62a756404199b412e0396fecf
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Temp\UnityTempFile-dfefa7e62a756404199b412e0396fecf
+    projectPath: Temp\UnityTempFile-dfefa7e62a756404199b412e0396fecf
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Temp\UnityTempFile-ed1b694f6d628d54e87036bb553cff29
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Temp\UnityTempFile-ed1b694f6d628d54e87036bb553cff29
+    projectPath: Temp\UnityTempFile-ed1b694f6d628d54e87036bb553cff29
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Temp\UnityTempFile-fe8a6db236ef5df48952aab151960b82
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Temp\UnityTempFile-fe8a6db236ef5df48952aab151960b82
+    projectPath: Temp\UnityTempFile-fe8a6db236ef5df48952aab151960b82
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Temp\UnityTempFile-ff5089d9fd7f3bb43b95b0f71ab6fcdc
+    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Temp\UnityTempFile-ff5089d9fd7f3bb43b95b0f71ab6fcdc
+    projectPath: Temp\UnityTempFile-ff5089d9fd7f3bb43b95b0f71ab6fcdc
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
