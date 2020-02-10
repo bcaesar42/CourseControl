@@ -44,9 +44,9 @@
                 }
                 else if (CurrentState == ActionState.Inactive)
                 {
-                    _currentActivationTime = _actionKind.ActivationTime;
-                    _currentCompletionTime = _actionKind.CompletionTime;
-                    _currentCooldownTime = _actionKind.CooldownTime;
+                    _currentActivationTime = ActionKind.ActivationTime;
+                    _currentCompletionTime = ActionKind.CompletionTime;
+                    _currentCooldownTime = ActionKind.CooldownTime;
                     _currentActivationLeft = _currentActivationTime;
                     _currentCompletionLeft = _currentCompletionTime;
                     _currentCooldownLeft = _currentCooldownTime;
@@ -74,9 +74,9 @@
                 case ActionState.Inactive:
                     return ActionState.Inactive;
                 case ActionState.Ready:
-                    _currentActivationTime = _actionKind.ActivationTime;
-                    _currentCompletionTime = _actionKind.CompletionTime;
-                    _currentCooldownTime = _actionKind.CooldownTime;
+                    _currentActivationTime = ActionKind.ActivationTime;
+                    _currentCompletionTime = ActionKind.CompletionTime;
+                    _currentCooldownTime = ActionKind.CooldownTime;
                     _currentActivationLeft = _currentActivationTime;
                     _currentCompletionLeft = _currentCompletionTime;
                     _currentCooldownLeft = _currentCooldownTime;
