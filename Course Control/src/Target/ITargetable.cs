@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assets.src.Target
+namespace CourseControl.src.Target
 {
     interface ITargetable
     {
