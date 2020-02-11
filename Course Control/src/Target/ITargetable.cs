@@ -9,6 +9,6 @@ namespace CourseControl.src.Target
 {
     interface ITargetable
     {
-        void HandleAction(Action action);
+        void HandleAction(Action.Action action);
     }
 }
