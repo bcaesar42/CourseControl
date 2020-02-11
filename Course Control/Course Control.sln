@@ -1,13 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29418.71
-MinimumVisualStudioVersion = 10.0.40219.1
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{3B0C56C0-14AA-97AB-C611-EDC01BBD4CA8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor-firstpass", "Assembly-CSharp-Editor-firstpass.csproj", "{F3BA572F-3FED-14D9-DA3D-ABE15897F626}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseControl.Tests", "..\CourseControl.Tests\CourseControl.Tests.csproj", "{8CE4A377-0F6E-4109-A2FA-E0B71D9E3325}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,15 +19,8 @@ Global
 		{F3BA572F-3FED-14D9-DA3D-ABE15897F626}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3BA572F-3FED-14D9-DA3D-ABE15897F626}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3BA572F-3FED-14D9-DA3D-ABE15897F626}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8CE4A377-0F6E-4109-A2FA-E0B71D9E3325}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8CE4A377-0F6E-4109-A2FA-E0B71D9E3325}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8CE4A377-0F6E-4109-A2FA-E0B71D9E3325}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8CE4A377-0F6E-4109-A2FA-E0B71D9E3325}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {DA861613-1E7C-49A7-B16D-2CCA63ED1B20}
 	EndGlobalSection
 EndGlobal

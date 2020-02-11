@@ -24,6 +24,12 @@
             <e p="ActionState.cs" t="Include" />
             <e p="IActionable.cs" t="Include" />
           </e>
+          <e p="Targetable" t="Include">
+            <e p="IDamageable.cs" t="Include" />
+            <e p="IGatherable.cs" t="Include" />
+            <e p="IShieldable.cs" t="Include" />
+            <e p="ITargetable.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="Course Control.sln" t="IncludeFlat" />
