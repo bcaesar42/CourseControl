@@ -60,12 +60,17 @@
   <ItemGroup>
      <Compile Include="Assets\src\Action\Action.cs" />
      <Compile Include="Assets\src\Action\ActionKind.cs" />
+     <Compile Include="Assets\src\Action\ActionPriority.cs" />
      <Compile Include="Assets\src\Action\ActionState.cs" />
+     <Compile Include="Assets\src\Action\Actionables\Shielder.cs" />
      <Compile Include="Assets\src\Action\IActionable.cs" />
-     <Compile Include="Assets\src\Targetable\IDamageable.cs" />
-     <Compile Include="Assets\src\Targetable\IGatherable.cs" />
-     <Compile Include="Assets\src\Targetable\IShieldable.cs" />
+     <Compile Include="Assets\src\Targetable\Damageable\IDamageable.cs" />
+     <Compile Include="Assets\src\Targetable\Damageable\IHealable.cs" />
+     <Compile Include="Assets\src\Targetable\Gatherable\GatherPreferences.cs" />
+     <Compile Include="Assets\src\Targetable\Gatherable\IGatherable.cs" />
      <Compile Include="Assets\src\Targetable\ITargetable.cs" />
+     <Compile Include="Assets\src\Targetable\Shieldable\IShieldDamageable.cs" />
+     <Compile Include="Assets\src\Targetable\Shieldable\IShieldHealable.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/BelfilsColton/Desktop/CourseControl/CourseControl/Course Control/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

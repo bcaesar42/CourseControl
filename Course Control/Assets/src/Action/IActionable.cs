@@ -8,6 +8,6 @@ namespace src.Action
     {
         ActionKind GetActionKind();
         IEnumerable<ITargetable> AvailableTargets();
-        void Do(int turnNumber, ITargetable self, IEnumerable<ITargetable> targets);
+        void Do(int turnNumber, IEnumerable<ITargetable> targets);
     }
 }

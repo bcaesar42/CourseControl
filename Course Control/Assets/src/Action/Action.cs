@@ -5,7 +5,7 @@ using src.Targetable;
 
 namespace src.Action
 {
-    public abstract class Action
+    public class Action
     {
         public readonly IActionable Actionable;
         private ActionKind _actionKind;
@@ -17,13 +17,11 @@ namespace src.Action
         private int _currentCompletionLeft;
         private int _currentCooldownLeft;
 
-        private ITargetable _self;
         private IEnumerable<ITargetable> _currentTargets;
 
-        protected Action(IActionable actionable, ITargetable self)
+        protected Action(IActionable actionable)
         {
             Actionable = actionable;
-            _self = self;
         }
 
         private ActionState _currentState;
@@ -126,7 +124,7 @@ namespace src.Action
 
             if (CurrentState == ActionState.Completion)
             {
-                Actionable.Do(_currentActivationLeft, _self, _currentTargets);
+                Actionable.Do(_currentActivationLeft, _currentTargets);
                 if (_currentCompletionLeft <= _currentCompletionTime)
                 {
                     CurrentState = ActionState.Cooldown;
