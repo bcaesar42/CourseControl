@@ -20,27 +20,32 @@
         <e p="src" t="Include">
           <e p="action" t="Include">
             <e p="Action.cs" t="Include" />
-            <e p="Actionables" t="Include">
-              <e p="Shielder.cs" t="Include" />
-            </e>
             <e p="ActionKind.cs" t="Include" />
             <e p="ActionPriority.cs" t="Include" />
             <e p="ActionState.cs" t="Include" />
-            <e p="IActionable.cs" t="Include" />
           </e>
-          <e p="Targetable" t="Include">
-            <e p="Damageable" t="Include">
-              <e p="IDamageable.cs" t="Include" />
-              <e p="IHealable.cs" t="Include" />
+          <e p="Model" t="Include">
+            <e p="Actionables" t="Include">
+              <e p="IActionable.cs" t="Include" />
+              <e p="Shielder.cs" t="Include" />
             </e>
-            <e p="Gatherable" t="Include">
-              <e p="GatherPreferences.cs" t="Include" />
-              <e p="IGatherable.cs" t="Include" />
+            <e p="TargetableReference" t="Include">
+              <e p="TargetableReference.cs" t="Include" />
             </e>
-            <e p="ITargetable.cs" t="Include" />
-            <e p="Shieldable" t="Include">
-              <e p="IShieldDamageable.cs" t="Include" />
-              <e p="IShieldHealable.cs" t="Include" />
+            <e p="Targetables" t="Include">
+              <e p="Damageable" t="Include">
+                <e p="IDamageable.cs" t="Include" />
+                <e p="IHealable.cs" t="Include" />
+              </e>
+              <e p="Gatherable" t="Include">
+                <e p="GatherPreferences.cs" t="Include" />
+                <e p="IGatherable.cs" t="Include" />
+              </e>
+              <e p="ITargetable.cs" t="Include" />
+              <e p="Shieldable" t="Include">
+                <e p="IShieldDamageable.cs" t="Include" />
+                <e p="IShieldHealable.cs" t="Include" />
+              </e>
             </e>
           </e>
         </e>

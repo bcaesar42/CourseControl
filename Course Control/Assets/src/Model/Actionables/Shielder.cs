@@ -1,4 +1,4 @@
-namespace DefaultNamespace
+namespace src.Model.Actionables
 {
     public class Shielder
     {

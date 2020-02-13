@@ -1,4 +1,4 @@
-namespace src.Targetable
+namespace src.Model.Targetable.Shieldable
 {
     public interface IShieldable : ITargetable
     {

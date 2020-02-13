@@ -1,4 +1,4 @@
-namespace src.Targetable.Damageable
+namespace src.Model.Targetable.Damageable
 {
     public interface IDamageable : ITargetable
     {

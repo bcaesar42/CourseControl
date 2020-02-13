@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using src.Action;
-using src.Targetable;
+using src.Model.Actionables;
+using src.Model.Targetable;
 
 namespace src.Action
 {
     public class Action
     {
         public readonly IActionable Actionable;
+        private ITargetable _self;
         private ActionKind _actionKind;
 
         private int _currentActivationTime;
@@ -19,9 +21,10 @@ namespace src.Action
 
         private IEnumerable<ITargetable> _currentTargets;
 
-        protected Action(IActionable actionable)
+        protected Action(IActionable actionable, ITargetable self)
         {
             Actionable = actionable;
+            this._self = self;
         }
 
         private ActionState _currentState;
@@ -124,7 +127,7 @@ namespace src.Action
 
             if (CurrentState == ActionState.Completion)
             {
-                Actionable.Do(_currentActivationLeft, _currentTargets);
+                Actionable.Do(_currentActivationLeft, _self, _currentTargets);
                 if (_currentCompletionLeft <= _currentCompletionTime)
                 {
                     CurrentState = ActionState.Cooldown;
