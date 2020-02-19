@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using src.Action;
-using src.Targetable;
+using src.Model.ModelFramework.Actionables;
+using src.Model.ModelFramework.Targetables;
 
 namespace src.Action
 {
     public class Action
     {
         public readonly IActionable Actionable;
-        private ActionKind _actionKind;
+        private ITargetable _self;
+        private ActionTime _actionTime;
 
         private int _currentActivationTime;
         private int _currentCompletionTime;
@@ -19,9 +21,10 @@ namespace src.Action
 
         private IEnumerable<ITargetable> _currentTargets;
 
-        protected Action(IActionable actionable)
+        protected Action(IActionable actionable, ITargetable self)
         {
             Actionable = actionable;
+            this._self = self;
         }
 
         private ActionState _currentState;
@@ -44,16 +47,16 @@ namespace src.Action
             get => CurrentState == ActionState.Ready;
             set
             {
-                _actionKind = Actionable.GetActionKind();
+                _actionTime = Actionable.GetActionTime();
                 if (!value)
                 {
                     CurrentState = ActionState.Inactive;
                 }
                 else if (CurrentState == ActionState.Inactive)
                 {
-                    _currentActivationTime = _actionKind.ActivationTime;
-                    _currentCompletionTime = _actionKind.CompletionTime;
-                    _currentCooldownTime = _actionKind.CooldownTime;
+                    _currentActivationTime = _actionTime.ActivationTime;
+                    _currentCompletionTime = _actionTime.CompletionTime;
+                    _currentCooldownTime = _actionTime.CooldownTime;
                     _currentActivationLeft = _currentActivationTime;
                     _currentCompletionLeft = _currentCompletionTime;
                     _currentCooldownLeft = _currentCooldownTime;
@@ -82,15 +85,15 @@ namespace src.Action
 
         public ActionState AdvanceRound()
         {
-            _actionKind = Actionable.GetActionKind();
+            _actionTime = Actionable.GetActionTime();
             switch (CurrentState)
             {
                 case ActionState.Inactive:
                     return ActionState.Inactive;
                 case ActionState.Ready:
-                    _currentActivationTime = _actionKind.ActivationTime;
-                    _currentCompletionTime = _actionKind.CompletionTime;
-                    _currentCooldownTime = _actionKind.CooldownTime;
+                    _currentActivationTime = _actionTime.ActivationTime;
+                    _currentCompletionTime = _actionTime.CompletionTime;
+                    _currentCooldownTime = _actionTime.CooldownTime;
                     _currentActivationLeft = _currentActivationTime;
                     _currentCompletionLeft = _currentCompletionTime;
                     _currentCooldownLeft = _currentCooldownTime;
@@ -124,7 +127,7 @@ namespace src.Action
 
             if (CurrentState == ActionState.Completion)
             {
-                Actionable.Do(_currentActivationLeft, _currentTargets);
+                Actionable.Do(_currentActivationLeft, _self, _currentTargets);
                 if (_currentCompletionLeft <= _currentCompletionTime)
                 {
                     CurrentState = ActionState.Cooldown;

@@ -2,40 +2,72 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="169e91f8-792c-4581-8c6c-9904874d6ba1" name="Default Changelist" comment="Added sln">
-      <change afterPath="$PROJECT_DIR$/Assets/src/Action/ActionPriority.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/src/Action/ActionPriority.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/src/Action/Actionables/Shielder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/src/Targetable/Damageable.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/src/Targetable/Damageable/IDamageable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/src/Targetable/Damageable/IHealable.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/src/Targetable/Gatherable.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/src/Targetable/Gatherable/GatherPreferences.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/src/Targetable/Gatherable/IGatherable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/src/Targetable/Shieldable.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/src/Targetable/Shieldable/IShieldHealable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/src/Targetable/Shieldable/IShieldHealable.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/UpgradeHigherarchy.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/DroneKind.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/DroneKind.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/MaintenanceKind.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/MaintenanceKind.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/NavigationKind.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/NavigationKind.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ReplicationKind.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ReplicationKind.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ResearchKind.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ResearchKind.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ScavengerKind.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ScavengerKind.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/SensorKind.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/SensorKind.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ShieldKind.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ShieldKind.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/WeaponKind.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/WeaponKind.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/IActionKind.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/IActionKind.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/TargetableReference.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/Damageable.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/Gatherable.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/Gatherable/GatherPreferences.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/Shieldable.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Course Control/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Course Control/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Course Control/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Course Control/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Course Control/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Course Control/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/src/Action/Action.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Action/Action.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Action/IActionable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Action/IActionable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Targetable/IDamageable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Targetable/Damageable/IHealable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Targetable/IDamageable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Targetable/Damageable/IDamageable.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Targetable/IGatherable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Targetable/Gatherable/GatherPreferences.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Targetable/IGatherable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Targetable/Gatherable/IGatherable.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Targetable/IShieldable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Targetable/Shieldable/IShieldDamageable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Targetable/IShieldable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Targetable/Shieldable/IShieldDamageable.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Targetable/ITargetable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Targetable/ITargetable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ArtifactDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ArtifactDB" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/BuiltinAssemblies.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/gfu/cache/branches.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Library/gfu/cache/branches.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/gfu/cache/gitlocks.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Library/gfu/cache/gitlocks.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/gfu/cache/gitlog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Library/gfu/cache/gitlog.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/gfu/cache/gitstatusentries.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Library/gfu/cache/gitstatusentries.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/gfu/cache/gittrackingstatus.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Library/gfu/cache/gittrackingstatus.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/gfu/cache/repoinfo.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Library/gfu/cache/repoinfo.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Action/ActionKind.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Action/ActionTime.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Action/ActionKind.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Action/ActionTime.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/Actionables.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/Actionables/IActionable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/IActionable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/Actionables/IActionable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/IActionable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/Actionables/Shielder.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/Actionables/Shielder.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/TargetableReference.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/TargetableReference/TargetableReference.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/TargetableReference/TargetableReference.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/TargetableReference/TargetableReference.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/TargetableReference/TargetableReference.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/Targetables.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/Targetables/Damageable.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/Targetables/Damageable/IDamageable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/Damageable/IDamageable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/Targetables/Damageable/IDamageable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/Damageable/IDamageable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/Targetables/Damageable/IHealable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/Damageable/IHealable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/Targetables/Damageable/IHealable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/Damageable/IHealable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/Targetables/Gatherable.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/Targetables/Gatherable/GatherPreferences.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/Targetables/Gatherable/GatherPreferences.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/Gatherable/GatherPreferences.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/Targetables/Gatherable/IGatherable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/Gatherable/IGatherable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/Targetables/Gatherable/IGatherable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/Gatherable/IGatherable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/Targetables/ITargetable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/ITargetable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/Targetables/ITargetable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/ITargetable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/Targetables/Shieldable.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/Targetables/Shieldable/IShieldDamageable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/Shieldable/IShieldDamageable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/Targetables/Shieldable/IShieldDamageable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/Shieldable/IShieldDamageable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/Targetables/Shieldable/IShieldHealable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/Shieldable/IShieldHealable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/Targetables/Shieldable/IShieldHealable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/Shieldable/IShieldHealable.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,19 +78,31 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/src/Targetable/Shieldable/IShieldHealable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/src/Targetable/Damageable/IDamageable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/src/Targetable/Gatherable/IGatherable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/src/Targetable/Shieldable/IShieldDamageable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/src/Targetable/ITargetable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/src/Targetable/Gatherable/GatherPreferences.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/src/Action/ActionKind.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/src/Action/IActionable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/Shieldable/IShieldHealable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/MaintenanceKind.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/SensorKind.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ResearchKind.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/DroneKind.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/NavigationKind.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ReplicationKind.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ScavengerKind.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/WeaponKind.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/IActionKind.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Turn/TurnManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ShieldKind.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Turn/ActionPriority.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/TargetableReference/TargetableReference.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/Damageable/IDamageable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/Gatherable/IGatherable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/Shieldable/IShieldDamageable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/ITargetable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/Gatherable/GatherPreferences.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Action/ActionTime.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/IActionable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/Action/Action.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/Action/ActionPriority.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/Action/ActionState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/src/Action/Actionables/Shielder.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/src/Targetable/Damageable/IHealable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/Damageable/IHealable.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -67,11 +111,9 @@
         <option value="$PROJECT_DIR$/Assets/IActionable.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Action/ActionStage.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Action/ActionState.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Action/ActionKind.cs" />
         <option value="$PROJECT_DIR$/Assets/Test.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Targetable/IShieldable.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Action/IActionable.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Action/Action.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Action/ActionPriority.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Targetable/ITargetable.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Targetable/IShieldDamagable.cs" />
@@ -86,6 +128,31 @@
         <option value="$PROJECT_DIR$/Assets/src/Targetable/Damageable/IDamageable.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Targetable/Damageable/IHealable.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Action/Actionables/Shielder.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/TargetableReference/TargetableReference.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/Targetables/ITargetable.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Action/Action.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/Actionables/IActionable.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/ModelFramework/TargetableReference/TargetableReference.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/ModelFramework/Actionables/IActionable.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/ModelFramework/Actionables/Shielder.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/Shielder.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/TargetableReference/TargetableReference.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Action/ActionKind.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Action/ActionTime.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/IActionable.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/IActionKind.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ShieldKind.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ReplicationKind.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ScavingeKind.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ScavengerKind.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/WeaponKind.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/NavegationKind.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/NavigationKind.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/DroneKind.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ResearchKind.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/SensorKind.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/MaintenceKind.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/MaintenanceKind.cs" />
       </list>
     </option>
   </component>
@@ -115,7 +182,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
@@ -156,6 +223,7 @@
       <workItem from="1580941775100" duration="305000" />
       <workItem from="1580942359872" duration="2223000" />
       <workItem from="1581291903118" duration="13779000" />
+      <workItem from="1582146182473" duration="2534000" />
     </task>
     <servers />
   </component>
@@ -186,13 +254,21 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="737" y="242" key="RiderGenerateDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1581550912616" />
-    <state x="462" y="184" key="SettingsEditor" timestamp="1581294394745">
+    <state x="462" y="184" key="SettingsEditor" timestamp="1581553319695">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="462" y="184" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1581294394745" />
+    <state x="462" y="184" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1581553319695" />
+    <state x="605" y="137" width="708" height="804" key="find.popup" timestamp="1582146993263">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="605" y="137" width="708" height="804" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1582146993263" />
     <state width="600" height="424" key="javadoc.popup" timestamp="1581362402603">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="600" height="424" key="javadoc.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1581362402603" />
+    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup" timestamp="1582146986133">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="623" y="236" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1582146986133" />
   </component>
 </project>
