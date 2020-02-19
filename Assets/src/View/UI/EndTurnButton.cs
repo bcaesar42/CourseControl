@@ -5,14 +5,17 @@ using UnityEngine.UI;
 
 public class EndTurnButton : MonoBehaviour
 {
-    TurnManager rtm;
-    Button endTurnButton;
+    SceneManager sm;
+    Button button;
 
     // Start is called before the first frame update
     void Start()
     {
-        rtm = GameObject.Find("SceneManager").transform.GetComponent<TurnManager>();
-        endTurnButton = endTurnButton.GetComponent<Button>();
+        //Debug.Log("Creating Button");
+
+        sm = GameObject.Find("SceneManager").transform.GetComponent<SceneManager>();
+        button = GetComponent<Button>();
+        button.onClick.AddListener(TaskOnClick);
     }
 
     // Update is called once per frame
@@ -23,6 +26,6 @@ public class EndTurnButton : MonoBehaviour
 
     void TaskOnClick()
     {
-        rtm?.newTurn();
+        sm.newTurn();
     }
 }
