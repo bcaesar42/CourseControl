@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 1
-  lastUpdatedAtString: 2020-02-12T14:28:55.307-08:00
-  initializedAtString: 2020-02-11T11:14:58.727-08:00
+  lastUpdatedAtString: 2020-02-19T15:42:40.297-08:00
+  initializedAtString: 2020-02-19T15:42:40.297-08:00
   currentGitRemote:
     name: origin
     url: https://github.com/bcaesar42/CourseControl.git
@@ -24,14 +24,14 @@ MonoBehaviour:
     function: 0
     token: 
   currentGitBranch:
-    name: Backbone-Interfaces
-    tracking: origin/Backbone-Interfaces
+    name: MyBranch
+    tracking: origin/MyBranch
   currentConfigBranch:
-    name: Backbone-Interfaces
+    name: MyBranch
     remote:
       name: origin
       url: https://github.com/bcaesar42/CourseControl.git
-    trackingBranch: Backbone-Interfaces
+    trackingBranch: MyBranch
   currentConfigRemote:
     name: origin
     url: https://github.com/bcaesar42/CourseControl.git
