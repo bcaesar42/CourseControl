@@ -60,19 +60,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\src\Action\Action.cs" />
-    <Compile Include="Assets\src\Action\ActionKind.cs" />
+    <Compile Include="Assets\src\Action\ActionTime.cs" />
     <Compile Include="Assets\src\Action\ActionPriority.cs" />
     <Compile Include="Assets\src\Action\ActionState.cs" />
-    <Compile Include="Assets\src\Model\Actionables\IActionable.cs" />
-    <Compile Include="Assets\src\Model\Actionables\Shielder.cs" />
-    <Compile Include="Assets\src\Model\TargetableReference\TargetableReference.cs" />
-    <Compile Include="Assets\src\Model\Targetables\Damageable\IDamageable.cs" />
-    <Compile Include="Assets\src\Model\Targetables\Damageable\IHealable.cs" />
-    <Compile Include="Assets\src\Model\Targetables\Gatherable\GatherPreferences.cs" />
-    <Compile Include="Assets\src\Model\Targetables\Gatherable\IGatherable.cs" />
-    <Compile Include="Assets\src\Model\Targetables\ITargetable.cs" />
-    <Compile Include="Assets\src\Model\Targetables\Shieldable\IShieldDamageable.cs" />
-    <Compile Include="Assets\src\Model\Targetables\Shieldable\IShieldHealable.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\DroneKind.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\MaintenanceKind.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\NavigationKind.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\ReplicationKind.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\ResearchKind.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\ScavengerKind.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\SensorKind.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\ShieldKind.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\WeaponKind.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\Actionables\IActionable.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\Actionables\IActionKind.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\TargetableReference\TargetableReference.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\Targetables\Damageable\IDamageable.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\Targetables\Damageable\IHealable.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\Targetables\Gatherable\GatherPreferences.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\Targetables\Gatherable\IGatherable.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\Targetables\ITargetable.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\Targetables\Shieldable\IShieldDamageable.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\Targetables\Shieldable\IShieldHealable.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/BelfilsColton/Desktop/CourseControl/CourseControl/Course Control/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
@@ -643,6 +652,10 @@
     <Reference Include="Boo.Lang">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\src\Model\ModelConcrete\Actions" />
+    <Folder Include="Assets\src\Model\ModelConcrete\UpgradeHigherarchy" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
