@@ -1,4 +1,4 @@
-namespace src.Action
+namespace src.Model.ModelFramework.Actionables
 {
     public class ActionTime
     {

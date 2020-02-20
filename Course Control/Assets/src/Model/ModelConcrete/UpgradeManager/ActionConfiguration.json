@@ -1,0 +1,41 @@
+{
+  "actions": [
+    {
+      "name": "example entry",
+      "type": "example",
+      "actionKind": {
+        "actionTime": {
+          "activation": 1,
+          "completion": 1,
+          "cooldown": 1
+        },
+        "": "fields specific to the type of action"
+      },
+      "upgrades": [
+      ]
+    },
+    {
+      "name": "Laser1",
+      "type": "weapon",
+      "actionKind": {
+        "actionTime": {
+          "activation": 1,
+          "completion": 1,
+          "cooldown": 1
+        },
+        "": "fields specific to the type of action"
+      }
+    },
+    {
+      "name": "Drone1",
+      "type": "drone",
+      "actionKind": {
+        "actionTime": {
+          "activation": 1,
+          "completion": 1,
+          "cooldown": 1
+        }
+      }
+    }
+  ]
+}

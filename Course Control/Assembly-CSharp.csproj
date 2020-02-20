@@ -51,6 +51,10 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2019.3.0f6\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -60,9 +64,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\src\Action\Action.cs" />
-    <Compile Include="Assets\src\Action\ActionTime.cs" />
     <Compile Include="Assets\src\Action\ActionPriority.cs" />
     <Compile Include="Assets\src\Action\ActionState.cs" />
+    <Compile Include="Assets\src\Model\ModelConcrete\UpgradeManager\ActionUpgradeManager.cs" />
     <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\DroneKind.cs" />
     <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\MaintenanceKind.cs" />
     <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\NavigationKind.cs" />
@@ -72,6 +76,7 @@
     <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\SensorKind.cs" />
     <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\ShieldKind.cs" />
     <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\WeaponKind.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionTime.cs" />
     <Compile Include="Assets\src\Model\ModelFramework\Actionables\IActionable.cs" />
     <Compile Include="Assets\src\Model\ModelFramework\Actionables\IActionKind.cs" />
     <Compile Include="Assets\src\Model\ModelFramework\TargetableReference\TargetableReference.cs" />
@@ -82,6 +87,8 @@
     <Compile Include="Assets\src\Model\ModelFramework\Targetables\ITargetable.cs" />
     <Compile Include="Assets\src\Model\ModelFramework\Targetables\Shieldable\IShieldDamageable.cs" />
     <Compile Include="Assets\src\Model\ModelFramework\Targetables\Shieldable\IShieldHealable.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\UpgradeTree\UpgradeTreeNode.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\UpgradeTree\UpgradeTree.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/BelfilsColton/Desktop/CourseControl/CourseControl/Course Control/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
@@ -655,7 +662,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\src\Model\ModelConcrete\Actions" />
-    <Folder Include="Assets\src\Model\ModelConcrete\UpgradeHigherarchy" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\src\Model\ModelConcrete\UpgradeManager\ActionConfiguration.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

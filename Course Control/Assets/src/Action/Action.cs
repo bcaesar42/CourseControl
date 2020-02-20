@@ -9,7 +9,6 @@ namespace src.Action
     public class Action
     {
         public readonly IActionable Actionable;
-        private ITargetable _self;
         private ActionTime _actionTime;
 
         private int _currentActivationTime;
@@ -24,7 +23,6 @@ namespace src.Action
         protected Action(IActionable actionable, ITargetable self)
         {
             Actionable = actionable;
-            this._self = self;
         }
 
         private ActionState _currentState;
@@ -47,7 +45,7 @@ namespace src.Action
             get => CurrentState == ActionState.Ready;
             set
             {
-                _actionTime = Actionable.GetActionTime();
+                _actionTime = Actionable.GetActionKind().GetActionTime();
                 if (!value)
                 {
                     CurrentState = ActionState.Inactive;
@@ -85,7 +83,7 @@ namespace src.Action
 
         public ActionState AdvanceRound()
         {
-            _actionTime = Actionable.GetActionTime();
+            _actionTime = Actionable.GetActionKind().GetActionTime();
             switch (CurrentState)
             {
                 case ActionState.Inactive:
@@ -127,7 +125,7 @@ namespace src.Action
 
             if (CurrentState == ActionState.Completion)
             {
-                Actionable.Do(_currentActivationLeft, _self, _currentTargets);
+                Actionable.Do(_currentActivationLeft, _currentTargets);
                 if (_currentCompletionLeft <= _currentCompletionTime)
                 {
                     CurrentState = ActionState.Cooldown;
