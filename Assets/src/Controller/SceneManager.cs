@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using src.Controller.ActionKindManager;
 using src.Controller.TargetManager;
@@ -14,7 +13,7 @@ using UnityEngine;
  */
 
 
-public class SceneManager : MonoBehaviour
+public class SceneManager
 {
     List<BaseShip> shipList;
     TurnManager turnManager;
@@ -24,31 +23,11 @@ public class SceneManager : MonoBehaviour
     //ActionManager actionManager; TODO: figure out how to get actionManager active
 
     //Assuming that we construct ships elsewhere (on another scene) and pass them in when the game scene is started
-
-    void Start()
+    public SceneManager(List<BaseShip> shipList)
     {
-        //this.shipList = shipList;
+        this.shipList = shipList;
         actionRunner = new ActionRunner();
-
         turnManager = new TurnManager(actionRunner);
-
-        //test();
-    }
-
-    public void test()
-    {
-        Debug.Log("STARTING TEST");
-        turnManager.addPlayer(Guid.NewGuid());
-        turnManager.addPlayer(Guid.NewGuid());
-        turnManager.addPlayer(Guid.NewGuid());
-        turnManager.addPlayer(Guid.NewGuid());
-
-        turnManager.start();
-    }
-
-    public void newTurn()
-    {
-        turnManager.newTurn();
     }
 
 }
