@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using src.Turn;
+using UnityEngine;
 
 public class TurnManager
 {
@@ -16,6 +17,7 @@ public class TurnManager
 
     public void addPlayer(Guid id)
     {
+        //Debug.Log("Added Player: " + id);
         playerList.Add(id);
         
     }
@@ -33,6 +35,8 @@ public class TurnManager
     public void newTurn()
     {
         int ix = playerList.IndexOf(currentPlayer);
+
+        //Debug.Log("currentPlayer: " + currentPlayer + " Index: " + ix);
 
         if (ix < playerList.Count - 1)
         {
