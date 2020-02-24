@@ -5,15 +5,19 @@ namespace src.Model.ModelFramework.Actionables
 {
     public abstract class ActionKind
     {
-        public readonly Guid ActionKindId;
+        public readonly string ActionName;
         public readonly ActionTime ActionTime;
         public readonly int ActionLevel;
+        public readonly string Description;
+        public readonly string RoomModel;
         
-        protected ActionKind(Guid actionKindId, ActionTime actionTime, int actionLevel)
+        protected ActionKind(string actionName, ActionTime actionTime, int actionLevel, string description, string roomModel)
         {
-            ActionKindId = actionKindId;
+            ActionName = actionName;
             ActionTime = actionTime;
             ActionLevel = actionLevel;
+            Description = description;
+            RoomModel = roomModel;
         }
     }
 }

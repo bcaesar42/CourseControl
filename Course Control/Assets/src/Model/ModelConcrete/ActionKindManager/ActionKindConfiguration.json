@@ -1,0 +1,111 @@
+{
+  "actions": [
+    {
+      "name": "string - Specific name of action, each level of this action must have the same name",
+      "type": "string - The kind of action laser, missile, drone, scavenge, heal, ect. For this example laser.",
+      "level": "int - The upgrade level of that action either 1, 2, or 3. 1 being the base level that an action starts at and then gets upgraded to 2 and then to 3",
+      "actionKind": {
+        "actionTime": {
+          "activation": "int - How many rounds it will take once the action is selected to start doing something",
+          "completion": "int - How many rounds this action will be doing something. Must be at least one. Ex 3",
+          "cooldown": "int - How many rounds once this action has moved out of completion time before it can be used again"
+        },
+        "completionTimeValues": [
+          {
+            "round": "int - Compounds to one of the numbers in the completion time. Those values are used for that round in completion time. If you specify the number above the completion value the values in this object will be used for all completion rounds and this should be the only object in the array. In this example either 1, 2, 3, or 4 should be specified.",
+            "damage": "int - How much damage the target will take from a single shot",
+            "shots": "int - How many shots will be fired that round",
+            "chanceToHit": "int - 0 to 100 where 0 means guaranteed miss and 100 means guaranteed hit. A targets chance to dodge will be subtracted from the chance to hit before it is calculated if the shot actually hits"
+          }
+        ],
+        "nonRoundDependantValues": {
+        }
+      }
+    },
+    {
+      "name": "Hull Beam",
+      "type": "weapon",
+      "level": 1,
+      "actionKind": {
+        "actionTime": {
+          "activation": 0,
+          "completion": 1,
+          "cooldown": 1
+        },
+        "completionTimeValues": [
+          {
+            "round": 1,
+            "damage": 4,
+            "shots": 1,
+            "chanceToHit": 88
+          }
+        ],
+        "nonRoundDependantValues": {
+        }
+      }
+    },
+    {
+      "name": "Burst Cannon",
+      "type": "weapon",
+      "level": 1,
+      "actionKind": {
+        "actionTime": {
+          "activation": 1,
+          "completion": 1,
+          "cooldown": 0
+        },
+        "completionTimeValues": [
+          {
+            "round": 1,
+            "damage": 1,
+            "shots": 4,
+            "chanceToHit": 68
+          }
+        ],
+        "nonRoundDependantValues": {
+        }
+      }
+    },
+    {
+      "name": "Calvin Missile",
+      "type": "drone",
+      "level": 1,
+      "actionKind": {
+        "actionTime": {
+          "activation": 1,
+          "completion": 1,
+          "cooldown": 1
+        },
+        "completionTimeValues": [
+          {
+            "round": 1,
+            "tbd": ""
+          }
+        ],
+        "nonRoundDependantValues": {
+          
+        }
+      }
+    },
+    {
+      "name": "Repair Bay",
+      "type": "heal",
+      "level": 1,
+      "actionKind": {
+        "actionTime": {
+          "activation": 0,
+          "completion": 1,
+          "cooldown": 2
+        },
+        "completionTimeValues": [
+          {
+            "round": 1,
+            "heal": 3
+          }
+        ],
+        "nonRoundDependantValues": {
+        }
+      }
+    }
+  ]
+}

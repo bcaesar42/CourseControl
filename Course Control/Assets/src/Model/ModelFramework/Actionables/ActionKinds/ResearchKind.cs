@@ -1,12 +1,12 @@
+using System;
 using src.Action;
 
 namespace src.Model.ModelFramework.Actionables.ActionKinds
 {
     public class ResearchKind: ActionKind
     {
-        public ActionTime GetActionTime()
+        public ResearchKind(string actionName, ActionTime actionTime, int actionLevel) : base(actionName, actionTime, actionLevel)
         {
-            throw new System.NotImplementedException();
         }
     }
 }

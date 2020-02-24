@@ -25,11 +25,21 @@
           </e>
           <e p="Model" t="Include">
             <e p="ModelConcrete" t="Include">
-              <e p="Actions" t="Include" />
-              <e p="ActionUpgradeManager" t="Include">
-                <e p="ActionConfiguration.json" t="Include" />
-                <e p="ActionConfigurationExample.json" t="Include" />
-                <e p="ActionManager.cs" t="Include" />
+              <e p="ActionKindManager" t="Include">
+                <e p="ActionKindConfiguration.json" t="Include" />
+                <e p="ActionKindConfigurationExample.json" t="Include" />
+                <e p="ActionKindManager.cs" t="Include" />
+              </e>
+              <e p="Actions" t="Include">
+                <e p="Drone.cs" t="Include" />
+                <e p="Heal.cs" t="Include" />
+                <e p="Navigation.cs" t="Include" />
+                <e p="Replication.cs" t="Include" />
+                <e p="Research.cs" t="Include" />
+                <e p="Scavenger.cs" t="Include" />
+                <e p="Sensor.cs" t="Include" />
+                <e p="Shield.cs" t="Include" />
+                <e p="Weapon.cs" t="Include" />
               </e>
               <e p="Targets" t="Include" />
             </e>
@@ -38,7 +48,7 @@
                 <e p="ActionKind.cs" t="Include" />
                 <e p="ActionKinds" t="Include">
                   <e p="DroneKind.cs" t="Include" />
-                  <e p="MaintenanceKind.cs" t="Include" />
+                  <e p="HealKind.cs" t="Include" />
                   <e p="NavigationKind.cs" t="Include" />
                   <e p="ReplicationKind.cs" t="Include" />
                   <e p="ResearchKind.cs" t="Include" />
@@ -67,10 +77,6 @@
                   <e p="IShieldDamageable.cs" t="Include" />
                   <e p="IShieldHealable.cs" t="Include" />
                 </e>
-              </e>
-              <e p="UpgradeTree" t="Include">
-                <e p="UpgradeTree.cs" t="Include" />
-                <e p="UpgradeTreeNode.cs" t="Include" />
               </e>
             </e>
           </e>

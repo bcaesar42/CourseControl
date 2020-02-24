@@ -1,12 +1,9 @@
-using src.Action;
-
-namespace src.Model.ModelFramework.Actionables.ActionKinds
+namespace src.Model.ModelFramework.Actionables.ActionStructures
 {
     public class DroneKind: ActionKind
     {
-        public ActionTime GetActionTime()
+        public DroneKind(string actionName, ActionTime actionTime, int actionLevel) : base(actionName, actionTime, actionLevel)
         {
-            throw new System.NotImplementedException();
         }
     }
 }
