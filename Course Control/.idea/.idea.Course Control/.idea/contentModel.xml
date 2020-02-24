@@ -26,13 +26,16 @@
           <e p="Model" t="Include">
             <e p="ModelConcrete" t="Include">
               <e p="Actions" t="Include" />
-              <e p="UpgradeManager" t="Include">
+              <e p="ActionUpgradeManager" t="Include">
                 <e p="ActionConfiguration.json" t="Include" />
-                <e p="ActionUpgradeManager.cs" t="Include" />
+                <e p="ActionConfigurationExample.json" t="Include" />
+                <e p="ActionManager.cs" t="Include" />
               </e>
+              <e p="Targets" t="Include" />
             </e>
             <e p="ModelFramework" t="Include">
               <e p="Actionables" t="Include">
+                <e p="ActionKind.cs" t="Include" />
                 <e p="ActionKinds" t="Include">
                   <e p="DroneKind.cs" t="Include" />
                   <e p="MaintenanceKind.cs" t="Include" />
@@ -46,7 +49,6 @@
                 </e>
                 <e p="ActionTime.cs" t="Include" />
                 <e p="IActionable.cs" t="Include" />
-                <e p="IActionKind.cs" t="Include" />
               </e>
               <e p="TargetableReference" t="Include">
                 <e p="TargetableReference.cs" t="Include" />

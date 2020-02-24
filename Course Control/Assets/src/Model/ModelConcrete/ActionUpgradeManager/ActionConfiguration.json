@@ -3,6 +3,7 @@
     {
       "name": "example entry",
       "type": "example",
+      "level": 1,
       "actionKind": {
         "actionTime": {
           "activation": 1,
@@ -10,13 +11,12 @@
           "cooldown": 1
         },
         "": "fields specific to the type of action"
-      },
-      "upgrades": [
-      ]
+      }
     },
     {
       "name": "Laser1",
       "type": "weapon",
+      "level": 1,
       "actionKind": {
         "actionTime": {
           "activation": 1,
@@ -29,6 +29,7 @@
     {
       "name": "Drone1",
       "type": "drone",
+      "level": 1,
       "actionKind": {
         "actionTime": {
           "activation": 1,

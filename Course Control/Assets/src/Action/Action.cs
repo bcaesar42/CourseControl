@@ -45,7 +45,7 @@ namespace src.Action
             get => CurrentState == ActionState.Ready;
             set
             {
-                _actionTime = Actionable.GetActionKind().GetActionTime();
+                _actionTime = Actionable.GetActionKind().ActionTime;
                 if (!value)
                 {
                     CurrentState = ActionState.Inactive;
@@ -83,7 +83,7 @@ namespace src.Action
 
         public ActionState AdvanceRound()
         {
-            _actionTime = Actionable.GetActionKind().GetActionTime();
+            _actionTime = Actionable.GetActionKind().ActionTime;
             switch (CurrentState)
             {
                 case ActionState.Inactive:

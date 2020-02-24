@@ -1,0 +1,132 @@
+{
+  "actions": [
+    {
+      "name": "string - Specific name of action, each level of this action must have the same name",
+      "type": "string - The kind of action laser, missile, drone, scavenge, heal, ect. For this example laser.",
+      "level": "int - The upgrade level of that action either 1, 2, or 3. 1 being the base level that an action starts at and then gets upgraded to 2 and then to 3",
+      "actionKind": {
+        "actionTime": {
+          "activation": "int - How many rounds it will take once the action is selected to start doing something",
+          "completion": "int - How many rounds this action will be doing something. Must be at least one. Ex 3",
+          "cooldown": "int - How many rounds once this action has moved out of completion time before it can be used again"
+        },
+        "completionTimeValues": [
+          {
+            "round": "int - Compounds to one of the numbers in the completion time. Those values are used for that round in completion time. If you specify the number above the completion value the values in this object will be used for all completion rounds and this should be the only object in the array. In this example either 1, 2, 3, or 4 should be specified.",
+            "damage": "int - How much damage the target will take from a single shot",
+            "shots": "int - How many shots will be fired that round",
+            "chanceToHit": "int - 0 to 100 where 0 means guaranteed miss and 100 means guaranteed hit. A targets chance to dodge will be subtracted from the chance to hit before it is calculated if the shot actually hits"
+          }
+        ],
+        "nonRoundDependantValues": {
+          
+        }
+      }
+    }
+  ],
+  "full list of completionTimeValues for each type. Could change over time. Here just for reference.": {
+    "laser": {
+      "round": "int - Compounds to one of the numbers in the completion time. Those values are used for that round in completion time. If you specify the number above the completion value the values in this object will be used for all completion rounds and this should be the only object in the array. In this example either 1, 2, 3, or 4 should be specified.",
+      "damage": "int - How much damage the target will take from a single shot",
+      "shots": "int - How many shots will be fired that round",
+      "chanceToHit": "int - 0 to 100 where 0 means guaranteed miss and 100 means guaranteed hit."
+    },
+    "missile": {
+      "round": "int - Compounds to one of the numbers in the completion time. Those values are used for that round in completion time. If you specify the number above the completion value the values in this object will be used for all completion rounds and this should be the only object in the array. In this example either 1, 2, 3, or 4 should be specified.",
+      "damage": "int - How much damage the target will take from a single shot",
+      "shots": "int - How many shots will be fired that round",
+      "roundsToTarget": "int  - How many rounds it takes for the missile to hit the target must be at least 1.",
+      "missileHp": "int - How much hp the missile has while it is getting to its target",
+      "chanceToHit": "int - 0 to 100 where 0 means guaranteed miss and 100 means guaranteed hit."
+    },
+    "emp": {
+      "round": "int - Compounds to one of the numbers in the completion time. Those values are used for that round in completion time. If you specify the number above the completion value the values in this object will be used for all completion rounds and this should be the only object in the array. In this example either 1, 2, 3, or 4 should be specified."
+      "to be determined": ""
+    },
+    "heal": {
+      "round": "int - Compounds to one of the numbers in the completion time. Those values are used for that round in completion time. If you specify the number above the completion value the values in this object will be used for all completion rounds and this should be the only object in the array. In this example either 1, 2, 3, or 4 should be specified."
+      "heal": "int - amount to heal the target by"
+    },
+    "scavenge": {
+      "round": "int - Compounds to one of the numbers in the completion time. Those values are used for that round in completion time. If you specify the number above the completion value the values in this object will be used for all completion rounds and this should be the only object in the array. In this example either 1, 2, 3, or 4 should be specified."
+      "to be determined": ""
+    },
+    "navigation": {
+      "round": "int - Compounds to one of the numbers in the completion time. Those values are used for that round in completion time. If you specify the number above the completion value the values in this object will be used for all completion rounds and this should be the only object in the array. In this example either 1, 2, 3, or 4 should be specified.",
+      "chanceToDodge": "int - between 0 and 100. 0 meaning you are not dodging at all and 100 meaning you will always dodge"
+    },
+    "replicationCenter": {
+      "round": "int - Compounds to one of the numbers in the completion time. Those values are used for that round in completion time. If you specify the number above the completion value the values in this object will be used for all completion rounds and this should be the only object in the array. In this example either 1, 2, 3, or 4 should be specified.",
+      "to be determined, most of what will change in the upgrade of this is the activation time": ""
+    },
+    "sensors": {
+      "round": "int - Compounds to one of the numbers in the completion time. Those values are used for that round in completion time. If you specify the number above the completion value the values in this object will be used for all completion rounds and this should be the only object in the array. In this example either 1, 2, 3, or 4 should be specified."
+      "to be determined": ""
+    },
+    "research, most of what will change in the upgrade of this is the activation time": {
+      "round": "int - Compounds to one of the numbers in the completion time. Those values are used for that round in completion time. If you specify the number above the completion value the values in this object will be used for all completion rounds and this should be the only object in the array. In this example either 1, 2, 3, or 4 should be specified."
+    },
+    "laserDrone": {
+      "round": "int - Compounds to one of the numbers in the completion time. Those values are used for that round in completion time. If you specify the number above the completion value the values in this object will be used for all completion rounds and this should be the only object in the array. In this example either 1, 2, 3, or 4 should be specified.",
+      "damage": "int - How much damage the target will take from a single shot",
+      "shots": "int - How many shots will be fired that round",
+      "chanceToHit": "int - 0 to 100 where 0 means guaranteed miss and 100 means guaranteed hit."
+    },
+    "shieldDrone": {
+      "round": "int - Compounds to one of the numbers in the completion time. Those values are used for that round in completion time. If you specify the number above the completion value the values in this object will be used for all completion rounds and this should be the only object in the array. In this example either 1, 2, 3, or 4 should be specified."
+      "tempHp": "int - number of temp hp given to the target that round"
+    },
+    "empDrone": {
+      "round": "int - Compounds to one of the numbers in the completion time. Those values are used for that round in completion time. If you specify the number above the completion value the values in this object will be used for all completion rounds and this should be the only object in the array. In this example either 1, 2, 3, or 4 should be specified.",
+      "to be determined": ""
+    },
+    "shield": {
+      "round": "int - Compounds to one of the numbers in the completion time. Those values are used for that round in completion time. If you specify the number above the completion value the values in this object will be used for all completion rounds and this should be the only object in the array. In this example either 1, 2, 3, or 4 should be specified."
+      "tempHp": "int - number of temp hp given to the target that round"
+    }
+  },
+  "full list of nonRoundDependantValues for each type. Could change over time. Here just for reference.": {
+    "laser": {
+      
+    },
+    "missile": {
+      
+    },
+    "emp": {
+      
+    },
+    "heal": {
+      
+    },
+    "scavenge": {
+      
+    },
+    "navigation": {
+      
+    },
+    "replicationCenter": {
+      
+    },
+    "sensors": {
+      
+    },
+    "research, most of what will change in the upgrade of this is the activation time": {
+      
+    },
+    "laserDrone": {
+      "maxHp": "int - The max hp of the drone",
+      "chanceToDodge": "int - between 0 and 100. 0 meaning you are not dodging at all and 100 meaning you will always dodge"
+    },
+    "shieldDrone": {
+      "maxHp": "int - The max hp of the drone",
+      "chanceToDodge": "int - between 0 and 100. 0 meaning you are not dodging at all and 100 meaning you will always dodge"
+    },
+    "empDrone": {
+      "maxHp": "int - The max hp of the drone",
+      "chanceToDodge": "int - between 0 and 100. 0 meaning you are not dodging at all and 100 meaning you will always dodge"
+    },
+    "shield": {
+      
+    }
+  }
+}

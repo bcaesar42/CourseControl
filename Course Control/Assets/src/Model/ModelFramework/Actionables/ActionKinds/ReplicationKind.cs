@@ -2,7 +2,7 @@ using src.Action;
 
 namespace src.Model.ModelFramework.Actionables.ActionKinds
 {
-    public class ReplicationKind: IActionKind
+    public class ReplicationKind: ActionKind
     {
         public ActionTime GetActionTime()
         {

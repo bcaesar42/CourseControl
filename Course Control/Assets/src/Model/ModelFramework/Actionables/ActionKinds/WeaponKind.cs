@@ -2,7 +2,7 @@ using src.Action;
 
 namespace src.Model.ModelFramework.Actionables.ActionKinds
 {
-    public class WeaponKind: IActionKind
+    public class WeaponKind: ActionKind
     {
         public ActionTime GetActionTime()
         {

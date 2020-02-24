@@ -2,7 +2,7 @@ using src.Action;
 
 namespace src.Model.ModelFramework.Actionables.ActionKinds
 {
-    public class DroneKind: IActionKind
+    public class DroneKind: ActionKind
     {
         public ActionTime GetActionTime()
         {
