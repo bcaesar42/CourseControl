@@ -1,4 +1,7 @@
-namespace src.Model.ModelFramework.Actionables.ActionStructures
+using System;
+using src.Action;
+
+namespace src.Model.ModelFramework.Actionables.ActionKinds
 {
     public class DroneKind: ActionKind
     {

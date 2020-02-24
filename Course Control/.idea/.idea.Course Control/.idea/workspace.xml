@@ -2,34 +2,61 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="169e91f8-792c-4581-8c6c-9904874d6ba1" name="Default Changelist" comment="Added sln">
-      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionUpgradeManager/ActionConfigurationExample.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionUpgradeManager/ActionConfigurationExample.json.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionUpgradeManager/ActionManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Targets.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKind.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionKindManager/ActionKindConfiguration.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionKindManager/ActionKindManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Drone.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Drone.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Heal.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Navigation.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Navigation.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Replication.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Replication.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Research.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Research.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Scavenger.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Scavenger.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Sensor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Sensor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Shield.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Shield.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Weapon.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Weapon.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/HealKind.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/HealKind.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Course Control/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Course Control/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Course Control/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Course Control/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Action/Action.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Action/Action.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/UpgradeManager.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionUpgradeManager.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/UpgradeManager/ActionConfiguration.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionUpgradeManager/ActionConfiguration.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/UpgradeManager/ActionConfiguration.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionUpgradeManager/ActionConfiguration.json.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/UpgradeManager/ActionUpgradeManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/UpgradeManager/ActionUpgradeManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionUpgradeManager/ActionManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionUpgradeManager.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionKindManager.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionUpgradeManager/ActionConfiguration.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionUpgradeManager/ActionConfiguration.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionKindManager/ActionKindConfiguration.json.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionUpgradeManager/ActionConfigurationExample.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionKindManager/ActionKindConfigurationExample.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionUpgradeManager/ActionConfigurationExample.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionKindManager/ActionKindConfigurationExample.json.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionUpgradeManager/ActionManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionUpgradeManager/ActionManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionKindManager/ActionKindManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKind.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKind.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/DroneKind.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/DroneKind.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/MaintenanceKind.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/MaintenanceKind.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/DroneKind.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/DroneKind.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/MaintenanceKind.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/MaintenanceKind.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Heal.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/NavigationKind.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/NavigationKind.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/NavigationKind.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/NavigationKind.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ReplicationKind.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ReplicationKind.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ReplicationKind.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ReplicationKind.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ResearchKind.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ResearchKind.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ResearchKind.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ResearchKind.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ScavengerKind.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ScavengerKind.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ScavengerKind.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ScavengerKind.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/SensorKind.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/SensorKind.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/SensorKind.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/SensorKind.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ShieldKind.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ShieldKind.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ShieldKind.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ShieldKind.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/WeaponKind.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/WeaponKind.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/IActionKind.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/IActionKind.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKind.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/IActionable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/IActionable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/UpgradeTree/UpgradeTree.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/UpgradeTree/UpgradeTree.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/UpgradeTree/UpgradeTreeNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/UpgradeTree/UpgradeTreeNode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/WeaponKind.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/WeaponKind.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/UpgradeTree.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/UpgradeTree/UpgradeTree.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/UpgradeTree/UpgradeTree.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/UpgradeTree/UpgradeTreeNode.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Model/ModelFramework/UpgradeTree/UpgradeTreeNode.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,26 +82,31 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/Shieldable/IShieldHealable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/MaintenanceKind.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Heal.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/SensorKind.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ResearchKind.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/DroneKind.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/NavigationKind.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ReplicationKind.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Sensor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Research.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Drone.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Navigation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ScavengerKind.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionUpgradeManager/ActionConfiguration.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/WeaponKind.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Replication.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ResearchKind.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Scavenger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionKindManager/ActionKindConfiguration.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Weapon.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKind.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/Turn/TurnManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/UpgradeTree/UpgradeTreeNode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ShieldKind.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Shield.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/Turn/ActionPriority.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/UpgradeTree/UpgradeTree.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionUpgradeManager/ActionConfigurationExample.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionKindManager/ActionKindConfigurationExample.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/TargetableReference/TargetableReference.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ReplicationKind.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/Damageable/IDamageable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/NavigationKind.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/Gatherable/IGatherable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/HealKind.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/Shieldable/IShieldDamageable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/DroneKind.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/ITargetable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/Gatherable/GatherPreferences.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionTime.cs" root0="FORCE_HIGHLIGHTING" />
@@ -82,45 +114,18 @@
     <setting file="file://$PROJECT_DIR$/Assets/src/Action/Action.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/Action/ActionPriority.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/Action/ActionState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionUpgradeManager/ActionManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/WeaponKind.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ShieldKind.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionKindManager/ActionKindManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/Model/ModelFramework/Targetables/Damageable/IHealable.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/src/Targetable/ITargetable.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Targetable/IShieldDamagable.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Targetable/IShieldHealable.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Targetable/IGatherable.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Targetable/IHealable.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Targetable/IDamageable.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Targetable/Gatherable/GatherPreferences.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Targetable/Gatherable/IGatherable.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Targetable/Shieldable/IShieldDamageable.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Targetable/Shieldable/IShieldHealable.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Targetable/Damageable/IDamageable.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Targetable/Damageable/IHealable.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Action/Actionables/Shielder.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Model/TargetableReference/TargetableReference.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Model/Targetables/ITargetable.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Model/Actionables/IActionable.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/ModelFramework/TargetableReference/TargetableReference.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/ModelFramework/Actionables/IActionable.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/ModelFramework/Actionables/Shielder.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/Shielder.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/TargetableReference/TargetableReference.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Action/ActionKind.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Action/ActionTime.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ShieldKind.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ReplicationKind.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ScavingeKind.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/WeaponKind.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/NavegationKind.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/NavigationKind.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/DroneKind.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ResearchKind.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/MaintenceKind.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/MaintenanceKind.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/UpgradeTree/IUpgradeTree.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/UpgradeTree/UpgradeTreeNode.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/UpgradeTree/IUpgradeTreeNode.cs" />
@@ -133,12 +138,41 @@
         <option value="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionUpgradeImporter/ActionUpgradeImporter.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionUpgradeImporter/ActionConfiguration.json" />
         <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/IActionKind.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Action/Action.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionUpgradeManager/ActionUpgradeManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionUpgradeManager/ActionConfigurationExample.json" />
-        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/SensorKind.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ScavengerKind.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/IActionable.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/MaintenanceKind.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/LaserKind.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/MissileKind.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionUpgradeManager/ActionConfiguration.json" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKindFactorys.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKindFactories.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionUpgradeManager/ActionConfigurationExample.json" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionUpgradeManager/ActionManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/DroneKind.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/Action.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/Scavenger.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionStructures/Drone.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Action/Action.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/ActionKindManager/ActionManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKind.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionStructures/DroneKind.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Drone.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Heal.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Navigation.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Replication.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Research.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Scavenger.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Sensor.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Shield.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelConcrete/Actions/Weapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/HealKind.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/NavigationKind.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ReplicationKind.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ResearchKind.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ScavengerKind.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/SensorKind.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/ShieldKind.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Model/ModelFramework/Actionables/ActionKinds/WeaponKind.cs" />
       </list>
     </option>
   </component>
@@ -212,6 +246,7 @@
       <workItem from="1582146182473" duration="2534000" />
       <workItem from="1582149613163" duration="12652000" />
       <workItem from="1582500145984" duration="5048000" />
+      <workItem from="1582568019869" duration="8708000" />
     </task>
     <servers />
   </component>
@@ -238,10 +273,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Added sln" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="737" y="242" key="RiderGenerateDialog" timestamp="1581550912616">
+    <state x="737" y="242" key="RiderGenerateDialog" timestamp="1582579324828">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="737" y="242" key="RiderGenerateDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1581550912616" />
+    <state x="737" y="242" key="RiderGenerateDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1582579324828" />
     <state x="462" y="184" key="SettingsEditor" timestamp="1581553319695">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

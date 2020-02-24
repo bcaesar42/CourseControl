@@ -1,12 +1,12 @@
+using System;
 using src.Action;
 
 namespace src.Model.ModelFramework.Actionables.ActionKinds
 {
     public class ShieldKind: ActionKind
     {
-        public ActionTime GetActionTime()
+        public ShieldKind(string actionName, ActionTime actionTime, int actionLevel) : base(actionName, actionTime, actionLevel)
         {
-            throw new System.NotImplementedException();
         }
     }
 }

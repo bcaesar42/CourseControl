@@ -66,9 +66,18 @@
     <Compile Include="Assets\src\Action\Action.cs" />
     <Compile Include="Assets\src\Action\ActionPriority.cs" />
     <Compile Include="Assets\src\Action\ActionState.cs" />
-    <Compile Include="Assets\src\Model\ModelConcrete\ActionUpgradeManager\ActionManager.cs" />
+    <Compile Include="Assets\src\Model\ModelConcrete\Actions\Drone.cs" />
+    <Compile Include="Assets\src\Model\ModelConcrete\Actions\Heal.cs" />
+    <Compile Include="Assets\src\Model\ModelConcrete\Actions\Navigation.cs" />
+    <Compile Include="Assets\src\Model\ModelConcrete\Actions\Replication.cs" />
+    <Compile Include="Assets\src\Model\ModelConcrete\Actions\Research.cs" />
+    <Compile Include="Assets\src\Model\ModelConcrete\Actions\Scavenger.cs" />
+    <Compile Include="Assets\src\Model\ModelConcrete\Actions\Sensor.cs" />
+    <Compile Include="Assets\src\Model\ModelConcrete\Actions\Shield.cs" />
+    <Compile Include="Assets\src\Model\ModelConcrete\Actions\Weapon.cs" />
+    <Compile Include="Assets\src\Model\ModelConcrete\ActionKindManager\ActionKindManager.cs" />
     <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\DroneKind.cs" />
-    <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\MaintenanceKind.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\HealKind.cs" />
     <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\NavigationKind.cs" />
     <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\ReplicationKind.cs" />
     <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\ResearchKind.cs" />
@@ -87,8 +96,6 @@
     <Compile Include="Assets\src\Model\ModelFramework\Targetables\ITargetable.cs" />
     <Compile Include="Assets\src\Model\ModelFramework\Targetables\Shieldable\IShieldDamageable.cs" />
     <Compile Include="Assets\src\Model\ModelFramework\Targetables\Shieldable\IShieldHealable.cs" />
-    <Compile Include="Assets\src\Model\ModelFramework\UpgradeTree\UpgradeTreeNode.cs" />
-    <Compile Include="Assets\src\Model\ModelFramework\UpgradeTree\UpgradeTree.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/BelfilsColton/Desktop/CourseControl/CourseControl/Course Control/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
@@ -661,12 +668,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\src\Model\ModelConcrete\Actions" />
     <Folder Include="Assets\src\Model\ModelConcrete\Targets" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\src\Model\ModelConcrete\ActionUpgradeManager\ActionConfiguration.json" />
-    <Content Include="Assets\src\Model\ModelConcrete\ActionUpgradeManager\ActionConfigurationExample.json" />
+    <Content Include="Assets\src\Model\ModelConcrete\ActionKindManager\ActionKindConfiguration.json" />
+    <Content Include="Assets\src\Model\ModelConcrete\ActionKindManager\ActionKindConfigurationExample.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
