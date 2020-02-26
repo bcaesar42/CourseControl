@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 
 public abstract class BaseRoom : MonoBehaviour
 {
-    Text CrewCountText;
+    TextMesh CrewCountText;
     String RoomName;
 
     public BaseRoom(String roomName, int currentCrewCount, int maxCrewCount)
@@ -67,7 +67,8 @@ public abstract class BaseRoom : MonoBehaviour
     {
         Debug.Log($"Created {RoomName}.");
 
-        CrewCountText = GameObject.Find($"{RoomName.Replace(" ","")}CrewCount").GetComponent<Text>();
+        //CrewCountText = GameObject.Find($"{RoomName.Replace(" ", "")}CrewCount").GetComponent<Text>();
+        CrewCountText = GameObject.Find($"{RoomName.Replace(" ", "")}CrewCount").GetComponent<TextMesh>();
         CrewCountText.text = $"{CrewCount}";
     }
 
