@@ -63,9 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\src\Action\Action.cs" />
-    <Compile Include="Assets\src\Action\ActionPriority.cs" />
-    <Compile Include="Assets\src\Action\ActionState.cs" />
+    <Compile Include="Assets\src\Controller\ActionKindManager\ActionManager.cs" />
+    <Compile Include="Assets\src\Controller\TargetManager\TargetManager.cs" />
     <Compile Include="Assets\src\Model\ModelConcrete\Actions\Drone.cs" />
     <Compile Include="Assets\src\Model\ModelConcrete\Actions\Heal.cs" />
     <Compile Include="Assets\src\Model\ModelConcrete\Actions\Navigation.cs" />
@@ -75,20 +74,29 @@
     <Compile Include="Assets\src\Model\ModelConcrete\Actions\Sensor.cs" />
     <Compile Include="Assets\src\Model\ModelConcrete\Actions\Shield.cs" />
     <Compile Include="Assets\src\Model\ModelConcrete\Actions\Weapon.cs" />
-    <Compile Include="Assets\src\Model\ModelConcrete\ActionKindManager\ActionKindManager.cs" />
-    <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\DroneKind.cs" />
-    <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\HealKind.cs" />
-    <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\NavigationKind.cs" />
-    <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\ReplicationKind.cs" />
-    <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\ResearchKind.cs" />
-    <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\ScavengerKind.cs" />
-    <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\SensorKind.cs" />
-    <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\ShieldKind.cs" />
-    <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKinds\WeaponKind.cs" />
-    <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionTime.cs" />
-    <Compile Include="Assets\src\Model\ModelFramework\Actionables\IActionable.cs" />
-    <Compile Include="Assets\src\Model\ModelFramework\Actionables\ActionKind.cs" />
-    <Compile Include="Assets\src\Model\ModelFramework\TargetableReference\TargetableReference.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\ActionFramework\ActionModels\DroneModel.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\ActionFramework\ActionModels\HealModel.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\ActionFramework\ActionModels\NavigationModel.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\ActionFramework\ActionModels\ReplicationModel.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\ActionFramework\ActionModels\ResearchModel.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\ActionFramework\ActionModels\ScavengerModel.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\ActionFramework\ActionModels\SensorModel.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\ActionFramework\ActionModels\ShieldModel.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\ActionFramework\ActionModels\WeaponModel.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\ActionFramework\ActionPriority.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\ActionFramework\ActionState.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\ActionFramework\ActionTime.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\ActionFramework\ActionTurnModels\DroneTurnModel.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\ActionFramework\ActionTurnModels\HealTurnModel.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\ActionFramework\ActionTurnModels\NavigationTurnModel.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\ActionFramework\ActionTurnModels\ReplicationTurnModel.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\ActionFramework\ActionTurnModels\ResearchTurnModel.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\ActionFramework\ActionTurnModels\ScavengerTurnModel.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\ActionFramework\ActionTurnModels\SensorTurnModel.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\ActionFramework\ActionTurnModels\ShieldTurnModel.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\ActionFramework\ActionTurnModels\WeaponTurnModel.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\ActionFramework\Action.cs" />
+    <Compile Include="Assets\src\Model\ModelFramework\ActionFramework\ActionModel.cs" />
     <Compile Include="Assets\src\Model\ModelFramework\Targetables\Damageable\IDamageable.cs" />
     <Compile Include="Assets\src\Model\ModelFramework\Targetables\Damageable\IHealable.cs" />
     <Compile Include="Assets\src\Model\ModelFramework\Targetables\Gatherable\GatherPreferences.cs" />
@@ -671,8 +679,8 @@
     <Folder Include="Assets\src\Model\ModelConcrete\Targets" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\src\Model\ModelConcrete\ActionKindManager\ActionKindConfiguration.json" />
-    <Content Include="Assets\src\Model\ModelConcrete\ActionKindManager\ActionKindConfigurationExample.json" />
+    <Content Include="Assets\src\Controller\ActionKindManager\ActionKindConfiguration.json" />
+    <Content Include="Assets\src\Controller\ActionKindManager\ActionKindConfigurationExample.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

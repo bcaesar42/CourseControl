@@ -1,33 +1,31 @@
 using System;
 using System.Collections.Generic;
+using src.Controller.TargetManager;
 using src.Model.ModelFramework.Actionables;
+using src.Model.ModelFramework.Actionables.ActionModels;
 using src.Model.ModelFramework.Targetables;
+using UnityEngine.Networking;
+using Action = src.Model.ModelFramework.Actionables.Action;
 
 namespace src.Model.ModelConcrete.Actions
 {
-    public class Replication: IActionable
+    public class Replication: Action
     {
-        public Guid GetSelfId()
+        public Replication(TargetManager targetManager, Guid actionId, Guid actionInstanceId, Guid selfId, Guid teamId) : base(targetManager, actionId, actionInstanceId, selfId, teamId)
+        {
+        }
+
+        public override ActionModel GetActionModel()
         {
             throw new NotImplementedException();
         }
 
-        public Guid GetTeamId()
+        public override IEnumerable<ITargetable> AvailableTargets()
         {
             throw new NotImplementedException();
         }
 
-        public ActionKind GetActionKind()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<ITargetable> AvailableTargets()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Do(int turnNumber, IEnumerable<ITargetable> targets)
+        protected override void DoAction(int roundNum, IEnumerable<ITargetable> targets)
         {
             throw new NotImplementedException();
         }
