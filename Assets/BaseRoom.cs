@@ -8,9 +8,9 @@ using UnityEngine.EventSystems;
 public abstract class BaseRoom : MonoBehaviour
 {
     TextMesh CrewCountText;
-    String RoomName;
+    string RoomName;
 
-    public BaseRoom(String roomName, int currentCrewCount, int maxCrewCount)
+    public BaseRoom(string roomName, int currentCrewCount, int maxCrewCount)
     {
         RoomName = roomName;
         MaxCrew = maxCrewCount;
@@ -65,7 +65,7 @@ public abstract class BaseRoom : MonoBehaviour
 
     void Start()
     {
-        Debug.Log($"Created {RoomName}.");
+        //Debug.Log($"Created {RoomName}.");
 
         //CrewCountText = GameObject.Find($"{RoomName.Replace(" ", "")}CrewCount").GetComponent<Text>();
         CrewCountText = GameObject.Find($"{RoomName.Replace(" ", "")}CrewCount").GetComponent<TextMesh>();
@@ -75,7 +75,7 @@ public abstract class BaseRoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CrewCountText.text = $"{CrewCount}";
+        //CrewCountText.text = $"{CrewCount}";
     }
 
     public void AddCrew()
@@ -91,5 +91,15 @@ public abstract class BaseRoom : MonoBehaviour
     public void ResetCrew()
     {
         _crewCount = 0;
+    }
+
+    public override String ToString()
+    {
+        return RoomName;
+    }
+
+    public int GetCrewCount()
+    {
+        return _crewCount;
     }
 }
