@@ -8,7 +8,8 @@ namespace src.Model.ModelFramework.ActionFramework.ActionModels
     {
         public readonly IEnumerable<ScavengerTurnModel> ScavengerTurnModel;
         
-        public ScavengerModel(string actionName, ActionTime actionTime, int actionLevel, string description, string roomModel, IEnumerable<ScavengerTurnModel> scavengerTurnModel) : base(actionName, actionTime, actionLevel, description, roomModel)
+        public ScavengerModel(string actionName, ActionTime actionTime, int actionLevel, string description,
+            string roomModel, IEnumerable<ScavengerTurnModel> scavengerTurnModel, ActionPriority priority) : base(actionName, actionTime, actionLevel, description, roomModel, priority)
         {
             ScavengerTurnModel = scavengerTurnModel;
         }

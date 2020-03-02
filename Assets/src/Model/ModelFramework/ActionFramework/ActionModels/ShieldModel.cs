@@ -8,7 +8,7 @@ namespace src.Model.ModelFramework.ActionFramework.ActionModels
     {
         public readonly IEnumerable<ShieldTurnModel> ShieldTurnModel;
 
-        public ShieldModel(string actionName, ActionTime actionTime, int actionLevel, string description, string roomModel, IEnumerable<ShieldTurnModel> shieldTurnModel) : base(actionName, actionTime, actionLevel, description, roomModel)
+        public ShieldModel(string actionName, ActionTime actionTime, int actionLevel, string description, string roomModel, IEnumerable<ShieldTurnModel> shieldTurnModel, ActionPriority priority) : base(actionName, actionTime, actionLevel, description, roomModel, priority)
         {
             ShieldTurnModel = shieldTurnModel;
         }

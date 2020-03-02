@@ -14,6 +14,7 @@ namespace src.Model.ModelFramework.ActionFramework
         public readonly Guid ActionInstanceId;
         public readonly Guid SelfId;
         public readonly Guid TeamId;
+        public readonly ActionPriority Priority;
 
         protected IEnumerable<ITargetable> Targets;
 

@@ -8,7 +8,7 @@ namespace src.Model.ModelFramework.ActionFramework.ActionModels
     {
         public readonly IEnumerable<WeaponTurnModel> WeaponTurnModel;
         
-        public WeaponModel(string actionName, ActionTime actionTime, int actionLevel, string description, string roomModel, IEnumerable<WeaponTurnModel> weaponTurnModel) : base(actionName, actionTime, actionLevel, description, roomModel)
+        public WeaponModel(string actionName, ActionTime actionTime, int actionLevel, string description, string roomModel, IEnumerable<WeaponTurnModel> weaponTurnModel, ActionPriority priority) : base(actionName, actionTime, actionLevel, description, roomModel, priority)
         {
             WeaponTurnModel = weaponTurnModel;
         }

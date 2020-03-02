@@ -8,7 +8,8 @@ namespace src.Model.ModelFramework.ActionFramework.ActionModels
     {
         public readonly IEnumerable<SensorTurnModel> SensorTurnModel;
         
-        public SensorModel(string actionName, ActionTime actionTime, int actionLevel, string description, string roomModel, IEnumerable<SensorTurnModel> sensorTurnModel) : base(actionName, actionTime, actionLevel, description, roomModel)
+        public SensorModel(string actionName, ActionTime actionTime, int actionLevel, string description,
+            string roomModel, IEnumerable<SensorTurnModel> sensorTurnModel, ActionPriority priority) : base(actionName, actionTime, actionLevel, description, roomModel, priority)
         {
             SensorTurnModel = sensorTurnModel;
         }

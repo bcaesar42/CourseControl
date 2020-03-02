@@ -27,6 +27,7 @@ namespace src.Controller.ActionKindManager
                     var description = jToken["description"].Value<string>();
                     var level = jToken["level"].Value<int>();
                     var roomModel = jToken["roomModel"].Value<string>();
+                    var priority = jToken["priority"].Value<int>();
                     var actionTimeJson = jToken["actionTime"];
                     var activation = actionTimeJson["activation"].Value<int>();
                     var completion = actionTimeJson["completion"].Value<int>();
@@ -49,7 +50,7 @@ namespace src.Controller.ActionKindManager
                                     var chanceToHit = turnModel["chanceToHit"].Value<int>();
                                     turnModels.Add(new WeaponTurnModel(roundNumber, damage, shots, chanceToHit));
                                 }
-                                ActionModels.Add(new WeaponModel(name, actionTime, level, description, roomModel, turnModels));
+                                ActionModels.Add(new WeaponModel(name, actionTime, level, description, roomModel, turnModels, (ActionPriority) priority));
                                 break;
                             case "drone:":
                                 var droneTurnModels = new List<DroneTurnModel>();
@@ -58,7 +59,7 @@ namespace src.Controller.ActionKindManager
                                     var roundNumber = turnModel["round"].Value<int>();
                                     droneTurnModels.Add(new DroneTurnModel(roundNumber));
                                 }
-                                ActionModels.Add(new DroneModel(name, actionTime, level, description, roomModel, droneTurnModels));
+                                ActionModels.Add(new DroneModel(name, actionTime, level, description, roomModel, droneTurnModels, (ActionPriority) priority));
                                 break;
                             case "sensor":
                                 var sensorTurnModels = new List<SensorTurnModel>();
@@ -67,7 +68,7 @@ namespace src.Controller.ActionKindManager
                                     var roundNumber = turnModel["round"].Value<int>();
                                     sensorTurnModels.Add(new SensorTurnModel(roundNumber));
                                 }
-                                ActionModels.Add(new SensorModel(name, actionTime, level, description, roomModel, sensorTurnModels));
+                                ActionModels.Add(new SensorModel(name, actionTime, level, description, roomModel, sensorTurnModels, (ActionPriority) priority));
                                 break;
                             case "scavenge":
                                 var scavengeTurnModels = new List<ScavengerTurnModel>();
@@ -76,7 +77,7 @@ namespace src.Controller.ActionKindManager
                                     var roundNumber = turnModel["round"].Value<int>();
                                     scavengeTurnModels.Add(new ScavengerTurnModel(roundNumber));
                                 }
-                                ActionModels.Add(new ScavengerModel(name, actionTime, level, description, roomModel, scavengeTurnModels));
+                                ActionModels.Add(new ScavengerModel(name, actionTime, level, description, roomModel, scavengeTurnModels, (ActionPriority) priority));
                                 break;
                             case "navigation":
                                 var navigationTurnModels = new List<NavigationTurnModel>();
@@ -86,7 +87,7 @@ namespace src.Controller.ActionKindManager
                                     var chanceToDodge = turnModel["chanceToDodge"].Value<int>();
                                     navigationTurnModels.Add(new NavigationTurnModel(chanceToDodge, roundNumber));
                                 }
-                                ActionModels.Add(new NavigationModel(name, actionTime, level, description, roomModel, navigationTurnModels));
+                                ActionModels.Add(new NavigationModel(name, actionTime, level, description, roomModel, navigationTurnModels, (ActionPriority) priority));
                                 break;
                             case "replicationCenter":
                                 var replicationTurnModels = new List<ReplicationTurnModel>();
@@ -95,7 +96,7 @@ namespace src.Controller.ActionKindManager
                                     var roundNumber = turnModel["round"].Value<int>();
                                     replicationTurnModels.Add(new ReplicationTurnModel(roundNumber));
                                 }
-                                ActionModels.Add(new ReplicationModel(name, actionTime, level, description, roomModel, replicationTurnModels));
+                                ActionModels.Add(new ReplicationModel(name, actionTime, level, description, roomModel, replicationTurnModels, (ActionPriority) priority));
                                 break;
                             case "sensors":
                                 var sensorsTurnModels = new List<SensorTurnModel>();
@@ -104,7 +105,7 @@ namespace src.Controller.ActionKindManager
                                     var roundNumber = turnModel["round"].Value<int>();
                                     sensorsTurnModels.Add(new SensorTurnModel(roundNumber));
                                 }
-                                ActionModels.Add(new SensorModel(name, actionTime, level, description, roomModel, sensorsTurnModels));
+                                ActionModels.Add(new SensorModel(name, actionTime, level, description, roomModel, sensorsTurnModels, (ActionPriority) priority));
                                 break;
                             case "research":
                                 var researchTurnModels = new List<ResearchTurnModel>();
@@ -113,7 +114,7 @@ namespace src.Controller.ActionKindManager
                                     var roundNumber = turnModel["round"].Value<int>();
                                     researchTurnModels.Add(new ResearchTurnModel(roundNumber));
                                 }
-                                ActionModels.Add(new ResearchModel(name, actionTime, level, description, roomModel, researchTurnModels));
+                                ActionModels.Add(new ResearchModel(name, actionTime, level, description, roomModel, researchTurnModels, (ActionPriority) priority));
                                 break;
                             case "shield":
                                 var shieldTurnModels = new List<ShieldTurnModel>();
@@ -123,7 +124,7 @@ namespace src.Controller.ActionKindManager
                                     var tempHp = turnModel["tempHp"].Value<int>();
                                     shieldTurnModels.Add(new ShieldTurnModel(tempHp, roundNumber));
                                 }
-                                ActionModels.Add(new ShieldModel(name, actionTime, level, description, roomModel, shieldTurnModels));
+                                ActionModels.Add(new ShieldModel(name, actionTime, level, description, roomModel, shieldTurnModels, (ActionPriority) priority));
                                 break;
                             case "heal":
                                 var healTurnModels = new List<HealTurnModel>();
@@ -133,7 +134,7 @@ namespace src.Controller.ActionKindManager
                                     var heal = turnModel["heal"].Value<int>();
                                     healTurnModels.Add(new HealTurnModel(heal, roundNumber));
                                 }
-                                ActionModels.Add(new HealModel(name, actionTime, level, description, roomModel, healTurnModels));
+                                ActionModels.Add(new HealModel(name, actionTime, level, description, roomModel, healTurnModels, (ActionPriority) priority));
                                 break;
                             case "projectile":
                                 var projectileTurnModels = new List<ProjectileTurnModel>();
@@ -142,7 +143,7 @@ namespace src.Controller.ActionKindManager
                                     var roundNumber = turnModel["round"].Value<int>();
                                     projectileTurnModels.Add(new ProjectileTurnModel(roundNumber));
                                 }
-                                ActionModels.Add(new ProjectileModel(name, actionTime, level, description, roomModel, projectileTurnModels));
+                                ActionModels.Add(new ProjectileModel(name, actionTime, level, description, roomModel, projectileTurnModels, (ActionPriority) priority));
                                 break;
                         }
                     }

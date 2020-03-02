@@ -2,9 +2,10 @@ namespace src.Model.ModelFramework.ActionFramework
 {
     public enum ActionPriority
     {
-        Reconnaissance = 10,
-        Heal = 20,
-        Shields = 30,
-        Lasers = 40,
+        VeryLow,    // 0
+        Low,        // 1
+        Moderate,   // 2
+        High,       // 3
+        VeryHigh    // 4
     }
 }

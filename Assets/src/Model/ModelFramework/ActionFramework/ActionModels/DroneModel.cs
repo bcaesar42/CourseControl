@@ -8,7 +8,8 @@ namespace src.Model.ModelFramework.ActionFramework.ActionModels
     {
         public readonly IEnumerable<DroneTurnModel> DroneTurnModel;
         
-        public DroneModel(string actionName, ActionTime actionTime, int actionLevel, string description, string roomModel, IEnumerable<DroneTurnModel> droneTurnModel) : base(actionName, actionTime, actionLevel, description, roomModel)
+        public DroneModel(string actionName, ActionTime actionTime, int actionLevel, string description,
+            string roomModel, IEnumerable<DroneTurnModel> droneTurnModel, ActionPriority priority) : base(actionName, actionTime, actionLevel, description, roomModel, priority)
         {
             DroneTurnModel = droneTurnModel;
         }

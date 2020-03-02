@@ -8,7 +8,8 @@ namespace src.Model.ModelFramework.ActionFramework.ActionModels
     {
         public readonly IEnumerable<ResearchTurnModel> ResearchTurnModel;
         
-        public ResearchModel(string actionName, ActionTime actionTime, int actionLevel, string description, string roomModel, IEnumerable<ResearchTurnModel> researchTurnModel) : base(actionName, actionTime, actionLevel, description, roomModel)
+        public ResearchModel(string actionName, ActionTime actionTime, int actionLevel, string description,
+            string roomModel, IEnumerable<ResearchTurnModel> researchTurnModel, ActionPriority priority) : base(actionName, actionTime, actionLevel, description, roomModel, priority)
         {
             ResearchTurnModel = researchTurnModel;
         }
