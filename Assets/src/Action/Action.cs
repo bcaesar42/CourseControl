@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using src.Action;
@@ -6,6 +7,7 @@ using src.Model.ModelFramework.Targetables;
 
 namespace src.Action
 {
+    [Obsolete("use Model.ModelConcrete.Actions instead")]
     public class Action
     {
         public readonly IActionable Actionable;

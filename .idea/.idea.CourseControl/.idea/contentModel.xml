@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\BelfilsColton\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\BelfilsColton\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_CourseControl.1311588115.00" t="ExcludeRecursive" />
+    <e p="C:\Users\BelfilsColton\Desktop\CourseControl" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="BaseRoom.cs" t="Include" />
+        <e p="DroneBay.cs" t="Include" />
+        <e p="MaintenanceBay.cs" t="Include" />
+        <e p="MedicalBay.cs" t="Include" />
+        <e p="NavigationRoom.cs" t="Include" />
+        <e p="ReplicationCenter.cs" t="Include" />
+        <e p="ResearchCenter.cs" t="Include" />
+        <e p="ScavengeBay.cs" t="Include" />
+        <e p="SensorRoom.cs" t="Include" />
+        <e p="ShieldBay.cs" t="Include" />
+        <e p="src" t="Include">
+          <e p="Action" t="Include">
+            <e p="Action.cs" t="Include" />
+            <e p="ActionPriority.cs" t="Include" />
+            <e p="ActionState.cs" t="Include" />
+            <e p="ActionTime.cs" t="Include" />
+          </e>
+          <e p="Controller" t="Include">
+            <e p="ActionKindManager" t="Include">
+              <e p="ActionManager.cs" t="Include" />
+            </e>
+            <e p="TargetManager" t="Include">
+              <e p="TargetManager.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Model" t="Include">
+            <e p="ModelConcrete" t="Include">
+              <e p="Actions" t="Include">
+                <e p="Drone.cs" t="Include" />
+                <e p="Heal.cs" t="Include" />
+                <e p="Navigation.cs" t="Include" />
+                <e p="Projectile.cs" t="Include" />
+                <e p="Replication.cs" t="Include" />
+                <e p="Research.cs" t="Include" />
+                <e p="Scavenger.cs" t="Include" />
+                <e p="Sensor.cs" t="Include" />
+                <e p="Shield.cs" t="Include" />
+                <e p="Weapon.cs" t="Include" />
+              </e>
+            </e>
+            <e p="ModelFramework" t="Include">
+              <e p="Actionables" t="Include">
+                <e p="IActionable.cs" t="Include" />
+                <e p="IActionKind.cs" t="Include" />
+              </e>
+              <e p="ActionFramework" t="Include">
+                <e p="Action.cs" t="Include" />
+                <e p="ActionModel.cs" t="Include" />
+                <e p="ActionModels" t="Include">
+                  <e p="DroneModel.cs" t="Include" />
+                  <e p="HealModel.cs" t="Include" />
+                  <e p="NavigationModel.cs" t="Include" />
+                  <e p="ProjectileModel.cs" t="Include" />
+                  <e p="ReplicationModel.cs" t="Include" />
+                  <e p="ResearchModel.cs" t="Include" />
+                  <e p="ScavengerModel.cs" t="Include" />
+                  <e p="SensorModel.cs" t="Include" />
+                  <e p="ShieldModel.cs" t="Include" />
+                  <e p="WeaponModel.cs" t="Include" />
+                </e>
+                <e p="ActionPriority.cs" t="Include" />
+                <e p="ActionState.cs" t="Include" />
+                <e p="ActionTime.cs" t="Include" />
+                <e p="ActionTurnModel.cs" t="Include" />
+                <e p="ActionTurnModels" t="Include">
+                  <e p="DroneTurnModel.cs" t="Include" />
+                  <e p="HealTurnModel.cs" t="Include" />
+                  <e p="NavigationTurnModel.cs" t="Include" />
+                  <e p="ProjectileTurnModel.cs" t="Include" />
+                  <e p="ReplicationTurnModel.cs" t="Include" />
+                  <e p="ResearchTurnModel.cs" t="Include" />
+                  <e p="ScavengerTurnModel.cs" t="Include" />
+                  <e p="SensorTurnModel.cs" t="Include" />
+                  <e p="ShieldTurnModel.cs" t="Include" />
+                  <e p="WeaponTurnModel.cs" t="Include" />
+                </e>
+              </e>
+              <e p="TargetableReference" t="Include">
+                <e p="TargetableReference.cs" t="Include" />
+              </e>
+              <e p="Targetables" t="Include">
+                <e p="Damageable" t="Include">
+                  <e p="IDamageable.cs" t="Include" />
+                  <e p="IHealable.cs" t="Include" />
+                </e>
+                <e p="Gatherable" t="Include">
+                  <e p="GatherPreferences.cs" t="Include" />
+                  <e p="IGatherable.cs" t="Include" />
+                </e>
+                <e p="ITargetable.cs" t="Include" />
+                <e p="Shieldable" t="Include">
+                  <e p="IShieldDamageable.cs" t="Include" />
+                  <e p="IShieldHealable.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+          <e p="Turn" t="Include">
+            <e p="ActionPriority.cs" t="Include" />
+            <e p="TurnManager.cs" t="Include" />
+          </e>
+        </e>
+        <e p="WeaponsBay.cs" t="Include" />
+      </e>
+      <e p="CourseControl.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="packages.config" t="Include" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
