@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace src.Turn
-{
+{/*
     public class TurnManager
     {
         // Properties and fields:
@@ -34,5 +34,5 @@ namespace src.Turn
         }
 
 
-    }
+    } */
 }

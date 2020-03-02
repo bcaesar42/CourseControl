@@ -13,11 +13,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 2
-  lastUpdatedAtString: 2020-02-12T15:40:37.636-08:00
-  initializedAtString: 2020-02-12T14:28:55.593-08:00
+  lastUpdatedAtString: 2020-02-27T16:15:52.771-08:00
+  initializedAtString: 2020-02-27T16:15:52.756-08:00
   localBranches:
-  - name: Action-Interfaces
-    tracking: origin/Action-Interfaces
   - name: Backbone-Interfaces
     tracking: origin/Backbone-Interfaces
   - name: master
@@ -33,6 +31,12 @@ MonoBehaviour:
     tracking: '[None]'
   - name: origin/MyBranch
     tracking: '[None]'
+  - name: origin/Re-adding_Art
+    tracking: '[None]'
+  - name: origin/RebuildingRepo
+    tracking: '[None]'
+  - name: origin/Rooms
+    tracking: '[None]'
   remotes:
   - name: origin
     url: https://github.com/bcaesar42/CourseControl.git
@@ -43,15 +47,9 @@ MonoBehaviour:
     token: 
   localConfigBranches:
     keys:
-    - Action-Interfaces
     - Backbone-Interfaces
     - master
     values:
-    - name: Action-Interfaces
-      remote:
-        name: origin
-        url: https://github.com/bcaesar42/CourseControl.git
-      trackingBranch: Backbone-Interfaces
     - name: Backbone-Interfaces
       remote:
         name: origin
@@ -72,6 +70,9 @@ MonoBehaviour:
       - EricPrototype
       - master
       - MyBranch
+      - Re-adding_Art
+      - RebuildingRepo
+      - Rooms
     subKeyValues:
     - Values:
       - name: ArtBranch
@@ -95,6 +96,21 @@ MonoBehaviour:
           url: https://github.com/bcaesar42/CourseControl.git
         trackingBranch: 
       - name: MyBranch
+        remote:
+          name: origin
+          url: https://github.com/bcaesar42/CourseControl.git
+        trackingBranch: 
+      - name: Re-adding_Art
+        remote:
+          name: origin
+          url: https://github.com/bcaesar42/CourseControl.git
+        trackingBranch: 
+      - name: RebuildingRepo
+        remote:
+          name: origin
+          url: https://github.com/bcaesar42/CourseControl.git
+        trackingBranch: 
+      - name: Rooms
         remote:
           name: origin
           url: https://github.com/bcaesar42/CourseControl.git

@@ -13,12 +13,132 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 6
-  lastUpdatedAtString: 2020-02-12T15:57:22.436-08:00
-  initializedAtString: 2020-02-11T11:15:00.417-08:00
+  lastUpdatedAtString: 2020-03-02T00:46:27.516-08:00
+  initializedAtString: 2020-03-02T00:45:37.177-08:00
   entries:
+  - path: Course Control\Assembly-CSharp.csproj
+    fullPath: C:\Users\User\Documents\Programming\Senior Project\CourseControl\Course
+      Control\Assembly-CSharp.csproj
+    projectPath: Assembly-CSharp.csproj
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Assembly-CSharp-Editor-firstpass.csproj
+    fullPath: C:\Users\User\Documents\Programming\Senior Project\CourseControl\Course
+      Control\Assembly-CSharp-Editor-firstpass.csproj
+    projectPath: Assembly-CSharp-Editor-firstpass.csproj
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Assets\src\Controller\TargetManager\TargetManager.cs
+    fullPath: C:\Users\User\Documents\Programming\Senior Project\CourseControl\Course
+      Control\Assets\src\Controller\TargetManager\TargetManager.cs
+    projectPath: Assets\src\Controller\TargetManager\TargetManager.cs
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Assets\src\Model\ModelConcrete\Targets.meta
+    fullPath: C:\Users\User\Documents\Programming\Senior Project\CourseControl\Course
+      Control\Assets\src\Model\ModelConcrete\Targets.meta
+    projectPath: Assets\src\Model\ModelConcrete\Targets.meta
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Course Control\Assets\src\Turn.meta
+    fullPath: C:\Users\User\Documents\Programming\Senior Project\CourseControl\Course
+      Control\Assets\src\Turn.meta
+    projectPath: Assets\src\Turn.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Assets\src\Turn\ActionPriority.cs.meta
+    fullPath: C:\Users\User\Documents\Programming\Senior Project\CourseControl\Course
+      Control\Assets\src\Turn\ActionPriority.cs.meta
+    projectPath: Assets\src\Turn\ActionPriority.cs.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Assets\src\Turn\TurnManager.cs.meta
+    fullPath: C:\Users\User\Documents\Programming\Senior Project\CourseControl\Course
+      Control\Assets\src\Turn\TurnManager.cs.meta
+    projectPath: Assets\src\Turn\TurnManager.cs.meta
+    originalPath: 
+    indexStatus: 1
+    workTreeStatus: 1
+  - path: Course Control\Course Control.sln
+    fullPath: C:\Users\User\Documents\Programming\Senior Project\CourseControl\Course
+      Control\Course Control.sln
+    projectPath: Course Control.sln
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\ArtifactDB
+    fullPath: C:\Users\User\Documents\Programming\Senior Project\CourseControl\Course
+      Control\Library\ArtifactDB
+    projectPath: Library\ArtifactDB
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\CurrentLayout-default.dwlt
+    fullPath: C:\Users\User\Documents\Programming\Senior Project\CourseControl\Course
+      Control\Library\CurrentLayout-default.dwlt
+    projectPath: Library\CurrentLayout-default.dwlt
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\gfu\cache\branches.yaml
+    fullPath: C:\Users\User\Documents\Programming\Senior Project\CourseControl\Course
+      Control\Library\gfu\cache\branches.yaml
+    projectPath: Library\gfu\cache\branches.yaml
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\gfu\cache\gitlocks.yaml
+    fullPath: C:\Users\User\Documents\Programming\Senior Project\CourseControl\Course
+      Control\Library\gfu\cache\gitlocks.yaml
+    projectPath: Library\gfu\cache\gitlocks.yaml
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\gfu\cache\gitlog.yaml
+    fullPath: C:\Users\User\Documents\Programming\Senior Project\CourseControl\Course
+      Control\Library\gfu\cache\gitlog.yaml
+    projectPath: Library\gfu\cache\gitlog.yaml
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\gfu\cache\gitstatusentries.yaml
+    fullPath: C:\Users\User\Documents\Programming\Senior Project\CourseControl\Course
+      Control\Library\gfu\cache\gitstatusentries.yaml
+    projectPath: Library\gfu\cache\gitstatusentries.yaml
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\gfu\cache\gittrackingstatus.yaml
+    fullPath: C:\Users\User\Documents\Programming\Senior Project\CourseControl\Course
+      Control\Library\gfu\cache\gittrackingstatus.yaml
+    projectPath: Library\gfu\cache\gittrackingstatus.yaml
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\gfu\cache\repoinfo.yaml
+    fullPath: C:\Users\User\Documents\Programming\Senior Project\CourseControl\Course
+      Control\Library\gfu\cache\repoinfo.yaml
+    projectPath: Library\gfu\cache\repoinfo.yaml
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Course Control\Library\ScriptAssemblies\Assembly-CSharp.dll
+    fullPath: C:\Users\User\Documents\Programming\Senior Project\CourseControl\Course
+      Control\Library\ScriptAssemblies\Assembly-CSharp.dll
+    projectPath: Library\ScriptAssemblies\Assembly-CSharp.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
   - path: Course Control\Library\SourceAssetDB
-    fullPath: C:\Users\BelfilsColton\Desktop\CourseControl\CourseControl\Course Control\Library\SourceAssetDB
+    fullPath: C:\Users\User\Documents\Programming\Senior Project\CourseControl\Course
+      Control\Library\SourceAssetDB
     projectPath: Library\SourceAssetDB
     originalPath: 
-    indexStatus: 3
-    workTreeStatus: 0
+    indexStatus: 0
+    workTreeStatus: 3
