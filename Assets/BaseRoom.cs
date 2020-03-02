@@ -68,8 +68,8 @@ public abstract class BaseRoom : MonoBehaviour
         //Debug.Log($"Created {RoomName}.");
 
         //CrewCountText = GameObject.Find($"{RoomName.Replace(" ", "")}CrewCount").GetComponent<Text>();
-        CrewCountText = GameObject.Find($"{RoomName.Replace(" ", "")}CrewCount").GetComponent<TextMesh>();
-        CrewCountText.text = $"{CrewCount}";
+        //CrewCountText = GameObject.Find($"{RoomName.Replace(" ", "")}CrewCount").GetComponent<TextMesh>();
+        //CrewCountText.text = $"{CrewCount}";
     }
 
     // Update is called once per frame

@@ -38,10 +38,13 @@ public class RoomView : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //Update room counts
         int ix = 0;
         foreach (BaseRoom room in Rooms)
         {
             Labels[ix].text = "" + room.GetCrewCount();
+            ix++;
         }
     }
 }
