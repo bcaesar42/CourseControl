@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Count
   - Room
+  - ShipCamera
   layers:
   - Default
   - TransparentFX

@@ -58,5 +58,8 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+<<<<<<< HEAD
+=======
 # IDE specific files
 /.idea/
+>>>>>>> 96e599b... Merge remote-tracking branch 'origin/ActionInfrastructure' into ActionInfrastructure

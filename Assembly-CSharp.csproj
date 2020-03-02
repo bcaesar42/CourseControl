@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\BaseRoom.cs" />
     <Compile Include="Assets\DroneBay.cs" />
+    <Compile Include="Assets\InformationHUD.cs" />
     <Compile Include="Assets\MaintenanceBay.cs" />
     <Compile Include="Assets\MedicalBay.cs" />
     <Compile Include="Assets\NavigationRoom.cs" />
