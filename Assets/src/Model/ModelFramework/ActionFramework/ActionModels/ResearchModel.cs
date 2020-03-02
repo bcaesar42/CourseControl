@@ -1,12 +1,14 @@
-using src.Model.ModelFramework.Actionables.ActionTurnModels;
+using System.Collections.Generic;
+using src.Model.ModelFramework.Actionables;
+using src.Model.ModelFramework.ActionFramework.ActionTurnModels;
 
-namespace src.Model.ModelFramework.Actionables.ActionModels
+namespace src.Model.ModelFramework.ActionFramework.ActionModels
 {
     public class ResearchModel: ActionModel
     {
-        public readonly ResearchTurnModel[] ResearchTurnModel;
+        public readonly IEnumerable<ResearchTurnModel> ResearchTurnModel;
         
-        public ResearchModel(string actionName, ActionTime actionTime, int actionLevel, string description, string roomModel, ResearchTurnModel[] researchTurnModel) : base(actionName, actionTime, actionLevel, description, roomModel)
+        public ResearchModel(string actionName, ActionTime actionTime, int actionLevel, string description, string roomModel, IEnumerable<ResearchTurnModel> researchTurnModel) : base(actionName, actionTime, actionLevel, description, roomModel)
         {
             ResearchTurnModel = researchTurnModel;
         }

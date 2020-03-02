@@ -1,12 +1,14 @@
-using src.Model.ModelFramework.Actionables.ActionTurnModels;
+using System.Collections.Generic;
+using src.Model.ModelFramework.Actionables;
+using src.Model.ModelFramework.ActionFramework.ActionTurnModels;
 
-namespace src.Model.ModelFramework.Actionables.ActionModels
+namespace src.Model.ModelFramework.ActionFramework.ActionModels
 {
     public class NavigationModel: ActionModel
     {
-        public readonly NavigationTurnModel[] NavigationTurnModel;
+        public readonly IEnumerable<NavigationTurnModel> NavigationTurnModel;
         
-        public NavigationModel(string actionName, ActionTime actionTime, int actionLevel, string description, string roomModel, NavigationTurnModel[] navigationTurnModel) : base(actionName, actionTime, actionLevel, description, roomModel)
+        public NavigationModel(string actionName, ActionTime actionTime, int actionLevel, string description, string roomModel, IEnumerable<NavigationTurnModel> navigationTurnModel) : base(actionName, actionTime, actionLevel, description, roomModel)
         {
             NavigationTurnModel = navigationTurnModel;
         }

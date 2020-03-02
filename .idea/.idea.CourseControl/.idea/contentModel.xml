@@ -37,6 +37,7 @@
                 <e p="Drone.cs" t="Include" />
                 <e p="Heal.cs" t="Include" />
                 <e p="Navigation.cs" t="Include" />
+                <e p="Projectile.cs" t="Include" />
                 <e p="Replication.cs" t="Include" />
                 <e p="Research.cs" t="Include" />
                 <e p="Scavenger.cs" t="Include" />
@@ -47,17 +48,6 @@
             </e>
             <e p="ModelFramework" t="Include">
               <e p="Actionables" t="Include">
-                <e p="ActionKinds" t="Include">
-                  <e p="DroneKind.cs" t="Include" />
-                  <e p="MaintenanceKind.cs" t="Include" />
-                  <e p="NavigationKind.cs" t="Include" />
-                  <e p="ReplicationKind.cs" t="Include" />
-                  <e p="ResearchKind.cs" t="Include" />
-                  <e p="ScavengerKind.cs" t="Include" />
-                  <e p="SensorKind.cs" t="Include" />
-                  <e p="ShieldKind.cs" t="Include" />
-                  <e p="WeaponKind.cs" t="Include" />
-                </e>
                 <e p="IActionable.cs" t="Include" />
                 <e p="IActionKind.cs" t="Include" />
               </e>
@@ -68,6 +58,7 @@
                   <e p="DroneModel.cs" t="Include" />
                   <e p="HealModel.cs" t="Include" />
                   <e p="NavigationModel.cs" t="Include" />
+                  <e p="ProjectileModel.cs" t="Include" />
                   <e p="ReplicationModel.cs" t="Include" />
                   <e p="ResearchModel.cs" t="Include" />
                   <e p="ScavengerModel.cs" t="Include" />
@@ -78,10 +69,12 @@
                 <e p="ActionPriority.cs" t="Include" />
                 <e p="ActionState.cs" t="Include" />
                 <e p="ActionTime.cs" t="Include" />
+                <e p="ActionTurnModel.cs" t="Include" />
                 <e p="ActionTurnModels" t="Include">
                   <e p="DroneTurnModel.cs" t="Include" />
                   <e p="HealTurnModel.cs" t="Include" />
                   <e p="NavigationTurnModel.cs" t="Include" />
+                  <e p="ProjectileTurnModel.cs" t="Include" />
                   <e p="ReplicationTurnModel.cs" t="Include" />
                   <e p="ResearchTurnModel.cs" t="Include" />
                   <e p="ScavengerTurnModel.cs" t="Include" />
@@ -120,6 +113,7 @@
       <e p="CourseControl.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
+      <e p="packages.config" t="Include" />
       <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
   </component>

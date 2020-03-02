@@ -1,7 +1,9 @@
-namespace src.Model.ModelFramework.Actionables.ActionTurnModels
+namespace src.Model.ModelFramework.ActionFramework.ActionTurnModels
 {
-    public class DroneTurnModel
+    public class DroneTurnModel: ActionTurnModel
     {
-        
+        public DroneTurnModel(int roundNumber) : base(roundNumber)
+        {
+        }
     }
 }

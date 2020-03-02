@@ -1,10 +1,10 @@
-namespace src.Model.ModelFramework.Actionables.ActionTurnModels
+namespace src.Model.ModelFramework.ActionFramework.ActionTurnModels
 {
-    public class ShieldTurnModel
+    public class ShieldTurnModel: ActionTurnModel
     {
         public readonly int TempHp;
 
-        public ShieldTurnModel(int tempHp)
+        public ShieldTurnModel(int tempHp, int roundNumber) : base(roundNumber)
         {
             this.TempHp = tempHp;
         }

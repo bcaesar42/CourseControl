@@ -1,4 +1,6 @@
-namespace src.Model.ModelFramework.Actionables
+using src.Model.ModelFramework.Actionables;
+
+namespace src.Model.ModelFramework.ActionFramework
 {
     public abstract class ActionModel
     {

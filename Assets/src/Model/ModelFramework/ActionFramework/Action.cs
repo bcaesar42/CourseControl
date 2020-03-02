@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
 using src.Controller.TargetManager;
+using src.Model.ModelFramework.Actionables;
 using src.Model.ModelFramework.Targetables;
 
-namespace src.Model.ModelFramework.Actionables
+namespace src.Model.ModelFramework.ActionFramework
 {
     public abstract class Action
     {

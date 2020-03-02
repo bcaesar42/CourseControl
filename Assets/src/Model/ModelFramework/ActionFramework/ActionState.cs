@@ -1,4 +1,4 @@
-namespace src.Model.ModelFramework.Actionables
+namespace src.Model.ModelFramework.ActionFramework
 {
     public enum ActionState
     {

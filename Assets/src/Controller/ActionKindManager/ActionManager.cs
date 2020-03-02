@@ -5,13 +5,15 @@ using System.IO;
 using System.Linq;
 using Newtonsoft.Json.Linq;
 using src.Model.ModelFramework.Actionables;
-using src.Model.ModelFramework.Actionables.ActionModels;
+using src.Model.ModelFramework.ActionFramework;
+using src.Model.ModelFramework.ActionFramework.ActionModels;
+using src.Model.ModelFramework.ActionFramework.ActionTurnModels;
 
 namespace src.Controller.ActionKindManager
 {
     public static class ActionManager
     {
-        private static readonly Collection<Model.ModelFramework.Actionables.ActionModel> ActionKinds = new Collection<Model.ModelFramework.Actionables.ActionModel>();
+        private static readonly Collection<ActionModel> ActionModels = new Collection<ActionModel>();
 
         public static void InitializeManager()
         {
@@ -38,26 +40,109 @@ namespace src.Controller.ActionKindManager
                         switch (type)
                         {
                             case "weapon":
-                                
-                                var w = new WeaponModel(name, actionTime, level, description, roomModel);
+                                var turnModels = new List<WeaponTurnModel>();
+                                foreach (var turnModel in completionTimeValues.Children())
+                                {
+                                    var roundNumber = turnModel["round"].Value<int>();
+                                    var damage = turnModel["damage"].Value<int>();
+                                    var shots = turnModel["shots"].Value<int>();
+                                    var chanceToHit = turnModel["chanceToHit"].Value<int>();
+                                    turnModels.Add(new WeaponTurnModel(roundNumber, damage, shots, chanceToHit));
+                                }
+                                ActionModels.Add(new WeaponModel(name, actionTime, level, description, roomModel, turnModels));
                                 break;
                             case "drone:":
+                                var droneTurnModels = new List<DroneTurnModel>();
+                                foreach (var turnModel in completionTimeValues.Children())
+                                {
+                                    var roundNumber = turnModel["round"].Value<int>();
+                                    droneTurnModels.Add(new DroneTurnModel(roundNumber));
+                                }
+                                ActionModels.Add(new DroneModel(name, actionTime, level, description, roomModel, droneTurnModels));
                                 break;
                             case "sensor":
+                                var sensorTurnModels = new List<SensorTurnModel>();
+                                foreach (var turnModel in completionTimeValues.Children())
+                                {
+                                    var roundNumber = turnModel["round"].Value<int>();
+                                    sensorTurnModels.Add(new SensorTurnModel(roundNumber));
+                                }
+                                ActionModels.Add(new SensorModel(name, actionTime, level, description, roomModel, sensorTurnModels));
                                 break;
                             case "scavenge":
+                                var scavengeTurnModels = new List<ScavengerTurnModel>();
+                                foreach (var turnModel in completionTimeValues.Children())
+                                {
+                                    var roundNumber = turnModel["round"].Value<int>();
+                                    scavengeTurnModels.Add(new ScavengerTurnModel(roundNumber));
+                                }
+                                ActionModels.Add(new ScavengerModel(name, actionTime, level, description, roomModel, scavengeTurnModels));
                                 break;
                             case "navigation":
+                                var navigationTurnModels = new List<NavigationTurnModel>();
+                                foreach (var turnModel in completionTimeValues.Children())
+                                {
+                                    var roundNumber = turnModel["round"].Value<int>();
+                                    var chanceToDodge = turnModel["chanceToDodge"].Value<int>();
+                                    navigationTurnModels.Add(new NavigationTurnModel(chanceToDodge, roundNumber));
+                                }
+                                ActionModels.Add(new NavigationModel(name, actionTime, level, description, roomModel, navigationTurnModels));
                                 break;
                             case "replicationCenter":
+                                var replicationTurnModels = new List<ReplicationTurnModel>();
+                                foreach (var turnModel in completionTimeValues.Children())
+                                {
+                                    var roundNumber = turnModel["round"].Value<int>();
+                                    replicationTurnModels.Add(new ReplicationTurnModel(roundNumber));
+                                }
+                                ActionModels.Add(new ReplicationModel(name, actionTime, level, description, roomModel, replicationTurnModels));
                                 break;
                             case "sensors":
+                                var sensorsTurnModels = new List<SensorTurnModel>();
+                                foreach (var turnModel in completionTimeValues.Children())
+                                {
+                                    var roundNumber = turnModel["round"].Value<int>();
+                                    sensorsTurnModels.Add(new SensorTurnModel(roundNumber));
+                                }
+                                ActionModels.Add(new SensorModel(name, actionTime, level, description, roomModel, sensorsTurnModels));
                                 break;
                             case "research":
+                                var researchTurnModels = new List<ResearchTurnModel>();
+                                foreach (var turnModel in completionTimeValues.Children())
+                                {
+                                    var roundNumber = turnModel["round"].Value<int>();
+                                    researchTurnModels.Add(new ResearchTurnModel(roundNumber));
+                                }
+                                ActionModels.Add(new ResearchModel(name, actionTime, level, description, roomModel, researchTurnModels));
                                 break;
                             case "shield":
+                                var shieldTurnModels = new List<ShieldTurnModel>();
+                                foreach (var turnModel in completionTimeValues.Children())
+                                {
+                                    var roundNumber = turnModel["round"].Value<int>();
+                                    var tempHp = turnModel["tempHp"].Value<int>();
+                                    shieldTurnModels.Add(new ShieldTurnModel(tempHp, roundNumber));
+                                }
+                                ActionModels.Add(new ShieldModel(name, actionTime, level, description, roomModel, shieldTurnModels));
                                 break;
                             case "heal":
+                                var healTurnModels = new List<HealTurnModel>();
+                                foreach (var turnModel in completionTimeValues.Children())
+                                {
+                                    var roundNumber = turnModel["round"].Value<int>();
+                                    var heal = turnModel["heal"].Value<int>();
+                                    healTurnModels.Add(new HealTurnModel(heal, roundNumber));
+                                }
+                                ActionModels.Add(new HealModel(name, actionTime, level, description, roomModel, healTurnModels));
+                                break;
+                            case "projectile":
+                                var projectileTurnModels = new List<ProjectileTurnModel>();
+                                foreach (var turnModel in completionTimeValues.Children())
+                                {
+                                    var roundNumber = turnModel["round"].Value<int>();
+                                    projectileTurnModels.Add(new ProjectileTurnModel(roundNumber));
+                                }
+                                ActionModels.Add(new ProjectileModel(name, actionTime, level, description, roomModel, projectileTurnModels));
                                 break;
                         }
                     }
@@ -65,20 +150,25 @@ namespace src.Controller.ActionKindManager
             }
         }
 
-        public static IEnumerable<T> GetKind<T>() where T : Model.ModelFramework.Actionables.ActionModel
+        public static IEnumerable<T> GetModelKind<T>() where T : ActionModel
         {
-            var actionKinds = ActionKinds.Where(kind => kind.GetType() == typeof(T));
-            var enumerable = actionKinds as Model.ModelFramework.Actionables.ActionModel[] ?? actionKinds.ToArray();
+            var actionKinds = ActionModels.Where(actionModel => actionModel.GetType() == typeof(T));
+            var enumerable = actionKinds as ActionModel[] ?? actionKinds.ToArray();
             return enumerable.Cast<T>();
         }
 
-        public static IEnumerable<T> GetUpgrades<T>(T actionKind) where T : Model.ModelFramework.Actionables.ActionModel
+        public static IEnumerable<T> GetUpgrades<T>(T actionModel) where T : ActionModel
         {
-            var upgrades = ActionKinds.Where(kind =>
-                kind.ActionName == actionKind.ActionName && kind.ActionLevel == actionKind.ActionLevel + 1);
+            var upgrades = ActionModels.Where(model =>
+                model.ActionName == actionModel.ActionName && model.ActionLevel == actionModel.ActionLevel + 1);
             return upgrades.Cast<T>();
         }
 
-        public static IEnumerable<> Get
+        public static IEnumerable<T> GetActionModel<T>(string actionName, int upgradeLevel) where T : ActionModel
+        {
+            var model = ActionModels.Where(actionModel =>
+                actionModel.ActionName == actionName && actionModel.ActionLevel == upgradeLevel);
+            return model.Cast<T>();
+        }
     }
 }

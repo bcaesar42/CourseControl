@@ -1,6 +1,9 @@
-namespace src.Model.ModelFramework.Actionables.ActionTurnModels
+namespace src.Model.ModelFramework.ActionFramework.ActionTurnModels
 {
-    public class ScavengerTurnModel
+    public class ScavengerTurnModel: ActionTurnModel
     {
+        public ScavengerTurnModel(int roundNumber) : base(roundNumber)
+        {
+        }
     }
 }
