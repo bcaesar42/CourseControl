@@ -1,9 +1,11 @@
+using System;
 using System.Collections.Generic;
 using src.Action;
 using src.Model.ModelFramework.Targetables;
 
 namespace src.Model.ModelFramework.Actionables
 {
+    [Obsolete("use Model.ModelFramework.ActionFramework.Action instead")]
     public interface IActionable
     {
         ActionTime GetActionTime();
