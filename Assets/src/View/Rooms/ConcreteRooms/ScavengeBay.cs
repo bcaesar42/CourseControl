@@ -4,7 +4,6 @@
     {
         public ScavengeBay() : base("Scavenge Bay", 0, 3)
         {
-
         }
     }
 }

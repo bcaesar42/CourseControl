@@ -6,20 +6,22 @@ namespace src.View.Rooms
 {
     public abstract class BaseRoom : MonoBehaviour
     {
-        Text CrewCountText;
-        String RoomName;
+        private int _crewCount;
 
-        public BaseRoom(String roomName, int currentCrewCount, int maxCrewCount)
+        private int _maxCrew;
+        private Text CrewCountText;
+        private readonly string RoomName;
+
+        public BaseRoom(string roomName, int currentCrewCount, int maxCrewCount)
         {
             RoomName = roomName;
             MaxCrew = maxCrewCount;
             CrewCount = currentCrewCount;
         }
 
-        private int _maxCrew;
         private int MaxCrew
         {
-            get { return _maxCrew; }
+            get => _maxCrew;
             set
             {
                 if (value < 1)
@@ -32,10 +34,9 @@ namespace src.View.Rooms
             }
         }
 
-        private int _crewCount;
         private int CrewCount
         {
-            get { return _crewCount; }
+            get => _crewCount;
             set
             {
                 if (value > MaxCrew || value < 0)
@@ -62,16 +63,16 @@ namespace src.View.Rooms
             }
         }
 
-        void Start()
+        private void Start()
         {
             Debug.Log($"Created {RoomName}.");
 
-            CrewCountText = GameObject.Find($"{RoomName.Replace(" ","")}CrewCount").GetComponent<Text>();
+            CrewCountText = GameObject.Find($"{RoomName.Replace(" ", "")}CrewCount").GetComponent<Text>();
             CrewCountText.text = $"{CrewCount}";
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
             CrewCountText.text = $"{CrewCount}";
         }

@@ -4,7 +4,6 @@
     {
         public SensorRoom() : base("Sensor Room", 0, 3)
         {
-
         }
     }
 }

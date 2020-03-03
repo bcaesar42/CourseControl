@@ -4,7 +4,6 @@
     {
         public WeaponsBay() : base("Weapons Bay", 0, 3)
         {
-
         }
     }
 }

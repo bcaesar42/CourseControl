@@ -4,7 +4,6 @@
     {
         public MedicalBay() : base("Medical Bay", 0, 3)
         {
-        
         }
     }
 }

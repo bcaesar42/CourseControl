@@ -4,7 +4,6 @@
     {
         public NavigationRoom() : base("Navigation Room", 0, 3)
         {
-
         }
     }
 }

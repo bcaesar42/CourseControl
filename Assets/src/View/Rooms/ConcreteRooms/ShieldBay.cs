@@ -4,7 +4,6 @@
     {
         public ShieldBay() : base("Shield Bay", 0, 3)
         {
-
         }
     }
 }

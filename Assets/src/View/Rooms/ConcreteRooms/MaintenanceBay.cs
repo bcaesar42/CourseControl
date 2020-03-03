@@ -4,7 +4,6 @@
     {
         public MaintenanceBay() : base("Maintenance Bay", 0, 3)
         {
-
         }
     }
 }

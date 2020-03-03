@@ -34,10 +34,6 @@
               </e>
             </e>
             <e p="ModelFramework" t="Include">
-              <e p="Actionables" t="Include">
-                <e p="IActionable.cs" t="Include" />
-                <e p="IActionKind.cs" t="Include" />
-              </e>
               <e p="ActionFramework" t="Include">
                 <e p="Action.cs" t="Include" />
                 <e p="ActionModel.cs" t="Include" />

@@ -4,7 +4,6 @@
     {
         public ResearchCenter() : base("Research Center", 0, 3)
         {
-
         }
     }
 }

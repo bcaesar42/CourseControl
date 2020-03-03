@@ -4,7 +4,6 @@
     {
         public ReplicationCenter() : base("Replication Center", 0, 3)
         {
-
         }
     }
 }

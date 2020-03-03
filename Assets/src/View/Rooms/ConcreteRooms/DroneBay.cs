@@ -4,7 +4,6 @@
     {
         public DroneBay() : base("Drone Bay", 0, 3)
         {
-
         }
     }
 }
