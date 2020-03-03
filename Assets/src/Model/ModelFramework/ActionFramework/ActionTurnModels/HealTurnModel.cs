@@ -1,6 +1,6 @@
 namespace src.Model.ModelFramework.ActionFramework.ActionTurnModels
 {
-    public class HealTurnModel: ActionTurnModel
+    public class HealTurnModel : ActionTurnModel
     {
         public readonly int Heal;
 

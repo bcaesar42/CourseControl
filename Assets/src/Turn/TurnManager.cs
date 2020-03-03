@@ -1,22 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace src.Turn
 {
     public class TurnManager
     {
-        // Properties and fields:
-        private IEnumerable<Action.Action> SubscribedActions_VeryLow { get; set; }
-        private IEnumerable<Action.Action> SubscribedActions_Low { get; set; }
-        private IEnumerable<Action.Action> SubscribedActions_Moderate { get; set; }
-        private IEnumerable<Action.Action> SubscribedActions_High { get; set; }
-        private IEnumerable<Action.Action> SubscribedActions_VeryHigh { get; set; }
-        public int TurnNum { get; private set; }
-
-
         // Constructor:
         public TurnManager()
         {
@@ -27,14 +16,23 @@ namespace src.Turn
             SubscribedActions_VeryHigh = new List<Action.Action>();
         }
 
+        // Properties and fields:
+        private IEnumerable<Action.Action> SubscribedActions_VeryLow { get; }
+        private IEnumerable<Action.Action> SubscribedActions_Low { get; }
+        private IEnumerable<Action.Action> SubscribedActions_Moderate { get; }
+        private IEnumerable<Action.Action> SubscribedActions_High { get; }
+        private IEnumerable<Action.Action> SubscribedActions_VeryHigh { get; }
+        public int TurnNum { get; private set; }
+
 
         // Methods:
-        public bool SubscribeAction(Action.Action action, ActionPriority priority) // The first "Action" specifies the namespace, the second "Action" specifies the class.
+        public bool
+            SubscribeAction(Action.Action action,
+                ActionPriority priority) // The first "Action" specifies the namespace, the second "Action" specifies the class.
         {
-            bool didSubscribe = false;
+            var didSubscribe = false;
 
             if (action != null)
-            {
                 switch (priority)
                 {
                     case ActionPriority.VeryLow:
@@ -53,11 +51,8 @@ namespace src.Turn
                         SubscribedActions_VeryHigh.Append(action);
                         break;
                 }
-            }
 
             return didSubscribe;
         }
-
-
     }
 }

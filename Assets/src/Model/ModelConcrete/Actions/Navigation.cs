@@ -1,16 +1,16 @@
 using System;
 using System.Collections.Generic;
 using src.Controller.TargetManager;
-using src.Model.ModelFramework.Actionables;
 using src.Model.ModelFramework.ActionFramework;
 using src.Model.ModelFramework.Targetables;
 using Action = src.Model.ModelFramework.ActionFramework.Action;
 
 namespace src.Model.ModelConcrete.Actions
 {
-    public class Navigation: ModelFramework.ActionFramework.Action
+    public class Navigation : Action
     {
-        public Navigation(TargetManager targetManager, Guid actionId, Guid actionInstanceId, Guid selfId, Guid teamId) : base(targetManager, actionId, actionInstanceId, selfId, teamId)
+        public Navigation(TargetManager targetManager, Guid actionId, Guid actionInstanceId, Guid selfId, Guid teamId) :
+            base(targetManager, actionId, actionInstanceId, selfId, teamId)
         {
         }
 
