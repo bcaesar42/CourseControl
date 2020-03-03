@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 public class RealTurnManager
 {
@@ -11,29 +12,29 @@ public class RealTurnManager
         playerList = new List<Guid>();
     }
 
-    public addPlayer(Guid id /*ActionRunner actionRunner*/)
+    public void addPlayer(Guid id /*ActionRunner actionRunner*/)
     {
         playerList.Add(id);
         //this.actionRunner = actionRunner
     }
 
-    public removePlayer(Guid id)
+    public void removePlayer(Guid id)
     {
         playerList.Remove(id);
     }
 
     public void start()
     {
-        currentPlayer = playerList.IndexOf(0);
+        currentPlayer = playerList[0];
     }
 
     public void newTurn()
     {
-        int ix = playerList.FindIndex(currentPlayer);
+        int ix = playerList.IndexOf(currentPlayer);
 
         if (ix < playerList.Count - 1)
         {
-            currentPlayer = playerList.FindIndex(ix + 1);
+            currentPlayer = playerList[ix + 1];
             //Do whatever we will do to update view and whatnot at this stage.
         }
         else
@@ -45,7 +46,7 @@ public class RealTurnManager
     public void newRound()
     {
         //actionRunner.runActions();
-        currentPlayer = playerList.IndexOf(0);
+        currentPlayer = playerList[0];
         //Do whatever we will do to update and reset thing when we beging a new round.
         //Do whatever we will do to update view to current player
     }
