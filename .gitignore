@@ -60,3 +60,7 @@ crashlytics-build.properties
 
 # IDE specific files
 /.idea/
+
+# Unneeded files from artwork
+*.max
+*.ai
