@@ -6,10 +6,14 @@
     <e p="C:\Users\BelfilsColton\Desktop\CourseControl" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="EndTurnButton.cs" t="Include" />
         <e p="src" t="Include">
           <e p="Controller" t="Include">
             <e p="ActionKindManager" t="Include">
               <e p="ActionManager.cs" t="Include" />
+            </e>
+            <e p="RealTurnManager" t="Include">
+              <e p="RealTurnManager.cs" t="Include" />
             </e>
             <e p="RoomEventManager" t="Include">
               <e p="RoomEventManager.cs" t="Include" />
@@ -91,6 +95,9 @@
             <e p="TurnManager.cs" t="Include" />
           </e>
           <e p="View" t="Include">
+            <e p="HealthBar" t="Include">
+              <e p="HealthBar.cs" t="Include" />
+            </e>
             <e p="Rooms" t="Include">
               <e p="BaseRoom.cs" t="Include" />
               <e p="ConcreteRooms" t="Include">
@@ -112,7 +119,6 @@
       <e p="CourseControl.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
-      <e p="packages.config" t="Include" />
       <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
   </component>
