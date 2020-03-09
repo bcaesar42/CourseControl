@@ -65,16 +65,16 @@ namespace src.View.Rooms
 
         private void Start()
         {
-            Debug.Log($"Created {RoomName}.");
-
-            CrewCountText = GameObject.Find($"{RoomName.Replace(" ", "")}CrewCount").GetComponent<Text>();
-            CrewCountText.text = $"{CrewCount}";
+            // Debug.Log($"Created {RoomName}.");
+            //
+            // CrewCountText = GameObject.Find($"{RoomName.Replace(" ", "")}CrewCount").GetComponent<Text>();
+            // CrewCountText.text = $"{CrewCount}";
         }
 
         // Update is called once per frame
         private void Update()
         {
-            CrewCountText.text = $"{CrewCount}";
+            // CrewCountText.text = $"{CrewCount}";
         }
 
         public void AddCrew()
@@ -90,6 +90,11 @@ namespace src.View.Rooms
         public void ResetCrew()
         {
             _crewCount = 0;
+        }
+
+        public int GetCrewCount()
+        {
+            return _crewCount;
         }
     }
 }

@@ -934,15 +934,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1718920724}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 2fe733f6aea5f47859a619cad46e5d5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rooms: []
-  Labels: []
-  <Description>k__BackingField: 
-  <ModelPath>k__BackingField: 
-  <CrewCount>k__BackingField: 0
-  <State>k__BackingField: 0
 --- !u!1 &1775316292
 GameObject:
   m_ObjectHideFlags: 0

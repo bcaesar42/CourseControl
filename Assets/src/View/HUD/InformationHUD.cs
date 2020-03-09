@@ -30,7 +30,6 @@ namespace src.View.HUD
 
             ShipAndShieldHealth.text =
                 $"Hull Integrity: {ShipHealth} / {ShipTotal}\nShield Strength: {ShieldHealth} / {ShieldTotal}";
-            throw new NotImplementedException();
         }
     }
 }
