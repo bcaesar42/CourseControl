@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\BelfilsColton\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\BelfilsColton\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_CourseControl.1311588115.00" t="ExcludeRecursive" />
-    <e p="C:\Users\BelfilsColton\Desktop\CourseControl" t="IncludeRecursive">
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="EndTurnButton.cs" t="Include" />
@@ -95,9 +93,6 @@
             <e p="TurnManager.cs" t="Include" />
           </e>
           <e p="View" t="Include">
-            <e p="HealthBar" t="Include">
-              <e p="HealthBar.cs" t="Include" />
-            </e>
             <e p="Rooms" t="Include">
               <e p="BaseRoom.cs" t="Include" />
               <e p="ConcreteRooms" t="Include">
@@ -113,13 +108,25 @@
                 <e p="WeaponsBay.cs" t="Include" />
               </e>
             </e>
+            <e p="StatusUi" t="Include">
+              <e p="CanvasTipText" t="Include">
+                <e p="CanvasTipText.cs" t="Include" />
+              </e>
+              <e p="HealthBar" t="Include">
+                <e p="HealthBar.cs" t="Include" />
+                <e p="HealthBarMax.cs" t="Include" />
+              </e>
+            </e>
           </e>
         </e>
       </e>
       <e p="CourseControl.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
-      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Temp/bin" t="ExcludeRecursive" />
     </e>
+    <e p="$USER_HOME$/Library/Caches/Rider2019.1/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.1/resharper-host/local/Transient/ReSharperHost/v191/SolutionCaches/_CourseControl.1359584183.00" t="ExcludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/scratches" t="IncludeRecursive" />
   </component>
 </project>
