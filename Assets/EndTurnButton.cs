@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EndTurnButton : MonoBehaviour
 {
-    RealTurnManager rtm;
+    TurnManager tm;
 
     // Start is called before the first frame update
     void Start()

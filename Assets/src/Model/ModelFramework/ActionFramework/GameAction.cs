@@ -5,7 +5,7 @@ using src.Model.ModelFramework.Targetables;
 
 namespace src.Model.ModelFramework.ActionFramework
 {
-    public abstract class Action
+    public abstract class GameAction
     {
         private readonly Guid _actionId;
 
@@ -26,7 +26,7 @@ namespace src.Model.ModelFramework.ActionFramework
 
         protected IEnumerable<ITargetable> Targets;
 
-        protected Action(TargetManager targetManager, Guid actionId, Guid actionInstanceId, Guid selfId, Guid teamId)
+        protected GameAction(TargetManager targetManager, Guid actionId, Guid actionInstanceId, Guid selfId, Guid teamId)
         {
             _targetManager = targetManager;
             _actionId = actionId;
