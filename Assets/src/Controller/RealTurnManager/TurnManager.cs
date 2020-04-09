@@ -1,21 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using src.Turn;
 
-public class RealTurnManager
+public class TurnManager
 {
     List<Guid> playerList;
     Guid currentPlayer;
-    //ActionRunner actionRunner
+    ActionRunner actionRunner;
 
-    public RealTurnManager()
+    public TurnManager()
     {
         playerList = new List<Guid>();
     }
 
-    public void addPlayer(Guid id /*ActionRunner actionRunner*/)
+    public void addPlayer(Guid id, ActionRunner actionRunner)
     {
         playerList.Add(id);
-        //this.actionRunner = actionRunner
+        this.actionRunner = actionRunner;
     }
 
     public void removePlayer(Guid id)

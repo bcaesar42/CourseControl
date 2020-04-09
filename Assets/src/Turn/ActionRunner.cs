@@ -1,36 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using src.Model.ModelFramework.ActionFramework;
 
 namespace src.Turn
 {
-    public class TurnManager
+    public class ActionRunner
     {
         // Constructor:
-        public TurnManager()
+        public ActionRunner()
         {
-            SubscribedActions_VeryLow = new List<Action>();
-            SubscribedActions_Low = new List<Action>();
-            SubscribedActions_Moderate = new List<Action>();
-            SubscribedActions_High = new List<Action>();
-            SubscribedActions_VeryHigh = new List<Action>();
+            SubscribedActions_VeryLow = new List<GameAction>();
+            SubscribedActions_Low = new List<GameAction>();
+            SubscribedActions_Moderate = new List<GameAction>();
+            SubscribedActions_High = new List<GameAction>();
+            SubscribedActions_VeryHigh = new List<GameAction>();
         }
 
         // Properties and fields:
-        private IEnumerable<Action> SubscribedActions_VeryLow { get; }
-        private IEnumerable<Action> SubscribedActions_Low { get; }
-        private IEnumerable<Action> SubscribedActions_Moderate { get; }
-        private IEnumerable<Action> SubscribedActions_High { get; }
-        private IEnumerable<Action> SubscribedActions_VeryHigh { get; }
+        private IEnumerable<GameAction> SubscribedActions_VeryLow { get; }
+        private IEnumerable<GameAction> SubscribedActions_Low { get; }
+        private IEnumerable<GameAction> SubscribedActions_Moderate { get; }
+        private IEnumerable<GameAction> SubscribedActions_High { get; }
+        private IEnumerable<GameAction> SubscribedActions_VeryHigh { get; }
         public int TurnNum { get; private set; }
 
 
         // Methods:
         public bool
-            SubscribeAction(Action action,
-                ActionPriority priority) // The first "Action" specifies the namespace, the second "Action" specifies the class.
+            SubscribeAction(GameAction action) // The first "Action" specifies the namespace, the second "Action" specifies the class.
         {
             var didSubscribe = false;
+
+            ActionPriority priority = action.Priority;
 
             if (action != null)
                 switch (priority)
