@@ -14,7 +14,8 @@ public class RoomView : MonoBehaviour
     Dictionary<BaseRoom, TextMesh> RoomMap = new Dictionary<BaseRoom, TextMesh>();
 
     string Description { get; set; }
-    string ModelPath { get; set; }
+    string ShipModelPath { get; set; }
+    string RoomModelPath { get; set; }
     int CrewCount { get; set; }
     //ActionState State;
 
@@ -25,17 +26,37 @@ public class RoomView : MonoBehaviour
         TextMesh text;
         BaseRoom room;
 
-        foreach (string prefix in prefixes)
+
+        //Worked when rooms were predefined per ship.
+        //foreach (string prefix in prefixes)
+        //{
+        //    string fullRoom = prefix + "CrewCount";
+        //    try {
+        //        text = GameObject.Find(fullRoom).GetComponent<TextMesh>();
+        //        room = GameObject.Find(prefix).GetComponent<BaseRoom>();
+        //        print("Successfully created a " + fullRoom);
+        //        Labels.Add(text);
+        //        Rooms.Add(room);
+        //        RoomMap.Add(room, text);
+        //    } catch (NullReferenceException e)
+        //    {
+        //        //print(e.Message);
+        //    }
+        //}
+
+        GameObject Player = GameObject.Find("Player");
+        for (int ix = 0; ix < 8; ix++)
         {
-            string fullRoom = prefix + "CrewCount";
-            try {
-                text = GameObject.Find(fullRoom).GetComponent<TextMesh>();
-                room = GameObject.Find(prefix).GetComponent<BaseRoom>();
-                print("Successfully created a " + fullRoom);
+            try
+            {
+                text = GameObject.Find($"Slot{ix}CrewCount").GetComponent<TextMesh>();
+                room = GameObject.Find($"Slot{ix}").GetComponent<BaseRoom>();
+                print("Successfully created a " + prefixes[ix]);
                 Labels.Add(text);
                 Rooms.Add(room);
                 RoomMap.Add(room, text);
-            } catch (NullReferenceException e)
+            }
+            catch (NullReferenceException e)
             {
                 //print(e.Message);
             }
@@ -47,7 +68,7 @@ public class RoomView : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //Worked when rooms were predefined per ship.
         //Update room counts
         int ix = 0;
         foreach (BaseRoom room in Rooms)
