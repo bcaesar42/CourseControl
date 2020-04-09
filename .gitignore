@@ -62,5 +62,5 @@ crashlytics-build.properties
 /.idea/
 
 # Unneeded files from artwork
-*.max
+
 *.ai
