@@ -23,6 +23,6 @@ public class EndTurnButton : MonoBehaviour
 
     void TaskOnClick()
     {
-        rtm.newTurn();
+        rtm?.newTurn();
     }
 }
