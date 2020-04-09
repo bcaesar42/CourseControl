@@ -116,6 +116,11 @@
                 <e p="HealthBar.cs" t="Include" />
                 <e p="HealthBarMax.cs" t="Include" />
               </e>
+              <e p="ShieldIndicator" t="Include">
+                <e p="ShieldIndicatorBar.cs" t="Include" />
+                <e p="ShieldIndicatorCell.cs" t="Include" />
+                <e p="ShieldIndicatorManager.cs" t="Include" />
+              </e>
             </e>
           </e>
         </e>
