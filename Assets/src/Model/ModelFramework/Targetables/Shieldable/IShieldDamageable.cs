@@ -1,9 +1,9 @@
 namespace src.Model.ModelFramework.Targetables.Shieldable
 {
-    public interface IShieldable : ITargetable
+    public interface IShieldDamagable : ITargetable
     {
         int MaxShieldCount();
         int CurrentShieldCount();
-        void DamageShield(int damageCount);
+        int DamageShield(int damageCount);
     }
 }

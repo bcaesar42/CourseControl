@@ -7,7 +7,7 @@ using src.Model.ModelFramework.Targetables.Shieldable;
 using src.View.Rooms;
 using UnityEngine;
 
-public class BaseShip : MonoBehaviour, ITargetable, IDamageable, IShieldable, IHealable
+public class BaseShip : ITargetable, IDamageable, IShieldHealable, IShieldDamagable, IHealable
 {
     Guid selfID;
     Guid teamID;
@@ -20,9 +20,20 @@ public class BaseShip : MonoBehaviour, ITargetable, IDamageable, IShieldable, IH
     private int crewCount;     //current unallocated crew
     private int maxCrew; //Overall crew the ship has
 
-
     List<BaseRoom> roomList;
 
+    public int allocateCrew()
+    {
+        crewCount--;
+        return crewCount;
+    }
+
+    public int freeCrew()
+    {
+        crewCount++;
+        return crewCount;
+    }
+    
     public int getMaxCrew()
     {
         return maxCrew;
@@ -43,14 +54,27 @@ public class BaseShip : MonoBehaviour, ITargetable, IDamageable, IShieldable, IH
         return currentShield;
     }
 
-    public void Damage(int damageCount)
+    public int Damage(int damageCount)
     {
         currentHP -= damageCount;
+        if (currentHP < 0) currentHP = 0;
+        return currentHP;
     }
 
-    public void DamageShield(int damageCount)
+    public int DamageShield(int damageCount)
     {
+
         currentShield -= damageCount;
+
+        if (currentShield < 0) currentShield = 0;
+        return currentShield;
+    }
+
+    public int HealShield(int healCount)
+    {
+        currentShield += healCount;
+        if (currentShield > maxShield) { currentShield = maxShield; }
+        return currentShield;
     }
 
     public Guid GetSelfId()
@@ -63,9 +87,11 @@ public class BaseShip : MonoBehaviour, ITargetable, IDamageable, IShieldable, IH
         return teamID;
     }
 
-    public void Heal(int healCount)
+    public int Heal(int healCount)
     {
         currentHP += healCount;
+        if (currentShield > maxShield) { currentShield = maxShield; }
+        return currentHP;
     }
 
     public int MaxShieldCount()
@@ -78,15 +104,4 @@ public class BaseShip : MonoBehaviour, ITargetable, IDamageable, IShieldable, IH
         return maxHP;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

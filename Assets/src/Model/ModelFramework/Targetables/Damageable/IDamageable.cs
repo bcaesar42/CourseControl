@@ -4,6 +4,6 @@ namespace src.Model.ModelFramework.Targetables.Damageable
     {
         int TotalHP();
         int CurrentHP();
-        void Damage(int damageCount);
+        int Damage(int damageCount);
     }
 }
