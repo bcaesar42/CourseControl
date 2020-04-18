@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 namespace src.View.StatusUi.HealthBar
 {
@@ -33,7 +32,6 @@ namespace src.View.StatusUi.HealthBar
             _currentAnimationHealth = _health;
 
             _healthBarTransform = GetComponent<RectTransform>();
-            GetComponent<SVGImage>();
 
             _canvasTipText = GameObject.Find("CanvasTipText");
             _tipText = _canvasTipText.GetComponent<CanvasTipText.CanvasTipText>();
@@ -46,8 +44,8 @@ namespace src.View.StatusUi.HealthBar
 
             if (Screen.width == _penultimateScreenWidth)
             {
-                _healthBarTransform.sizeDelta = new Vector2((Screen.width - 105) / (float)_healthMax * _health,
-                    _healthBarTransform.sizeDelta.y);
+                //_healthBarTransform.sizeDelta = new Vector2((Screen.width - 105) / (float)_healthMax * _health,
+                //    _healthBarTransform.sizeDelta.y);
                 
                 if (Math.Abs(_health - _currentAnimationHealth) > 0.01)
                 {
