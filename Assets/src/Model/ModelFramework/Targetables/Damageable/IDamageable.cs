@@ -4,10 +4,6 @@ namespace src.Model.ModelFramework.Targetables.Damageable
     {
         int TotalHP();
         int CurrentHP();
-<<<<<<< HEAD
         int Damage(int damageCount);
-=======
-        void Damage(int damageCount);
->>>>>>> ShipBranch
     }
 }

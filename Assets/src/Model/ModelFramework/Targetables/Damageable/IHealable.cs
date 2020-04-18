@@ -4,10 +4,6 @@ namespace src.Model.ModelFramework.Targetables.Damageable
     {
         int TotalHP();
         int CurrentHP();
-<<<<<<< HEAD
         int Heal(int healCount);
-=======
-        void Heal(int healCount);
->>>>>>> ShipBranch
     }
 }

@@ -4,6 +4,6 @@ namespace src.Model.ModelFramework.Targetables.Shieldable
     {
         int MaxShieldCount();
         int CurrentShieldCount();
-        void DamageShield(int damageCount);
+        int DamageShield(int damageCount);
     }
 }

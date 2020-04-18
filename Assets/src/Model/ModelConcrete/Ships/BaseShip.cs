@@ -7,11 +7,7 @@ using src.Model.ModelFramework.Targetables.Shieldable;
 using src.View.Rooms;
 using UnityEngine;
 
-<<<<<<< HEAD
 public class BaseShip : ITargetable, IDamageable, IShieldHealable, IShieldDamagable, IHealable
-=======
-public class BaseShip : MonoBehaviour, ITargetable, IDamageable, IShieldable, IHealable
->>>>>>> ShipBranch
 {
     Guid selfID;
     Guid teamID;
@@ -24,7 +20,6 @@ public class BaseShip : MonoBehaviour, ITargetable, IDamageable, IShieldable, IH
     private int crewCount;     //current unallocated crew
     private int maxCrew; //Overall crew the ship has
 
-<<<<<<< HEAD
     List<BaseRoom> roomList;
 
     public int allocateCrew()
@@ -39,11 +34,6 @@ public class BaseShip : MonoBehaviour, ITargetable, IDamageable, IShieldable, IH
         return crewCount;
     }
     
-=======
-
-    List<BaseRoom> roomList;
-
->>>>>>> ShipBranch
     public int getMaxCrew()
     {
         return maxCrew;
@@ -64,7 +54,6 @@ public class BaseShip : MonoBehaviour, ITargetable, IDamageable, IShieldable, IH
         return currentShield;
     }
 
-<<<<<<< HEAD
     public int Damage(int damageCount)
     {
         currentHP -= damageCount;
@@ -86,16 +75,6 @@ public class BaseShip : MonoBehaviour, ITargetable, IDamageable, IShieldable, IH
         currentShield += healCount;
         if (currentShield > maxShield) { currentShield = maxShield; }
         return currentShield;
-=======
-    public void Damage(int damageCount)
-    {
-        currentHP -= damageCount;
-    }
-
-    public void DamageShield(int damageCount)
-    {
-        currentShield -= damageCount;
->>>>>>> ShipBranch
     }
 
     public Guid GetSelfId()
@@ -108,17 +87,11 @@ public class BaseShip : MonoBehaviour, ITargetable, IDamageable, IShieldable, IH
         return teamID;
     }
 
-<<<<<<< HEAD
     public int Heal(int healCount)
     {
         currentHP += healCount;
         if (currentShield > maxShield) { currentShield = maxShield; }
         return currentHP;
-=======
-    public void Heal(int healCount)
-    {
-        currentHP += healCount;
->>>>>>> ShipBranch
     }
 
     public int MaxShieldCount()
@@ -131,18 +104,4 @@ public class BaseShip : MonoBehaviour, ITargetable, IDamageable, IShieldable, IH
         return maxHP;
     }
 
-<<<<<<< HEAD
-=======
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
->>>>>>> ShipBranch
 }
