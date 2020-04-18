@@ -13,16 +13,22 @@ namespace src.View.Rooms
         private Text CrewCountText;
         private readonly string RoomName;
         private GameAction roomAction;
+<<<<<<< HEAD
         public readonly Guid SelfId;
         public readonly Guid TeamId;
         public BaseShip ship;
+=======
+>>>>>>> ShipBranch
 
         public BaseRoom(BaseShip ship, string roomName, int currentCrewCount, int maxCrewCount, Guid SelfId, Guid TeamId)
         {
             RoomName = roomName;
             MaxCrew = maxCrewCount;
             CrewCount = currentCrewCount;
+<<<<<<< HEAD
             this.ship = ship;
+=======
+>>>>>>> ShipBranch
             //roomAction gets instantiated as a concrete by the concrete class of Room being used.
         }
 
