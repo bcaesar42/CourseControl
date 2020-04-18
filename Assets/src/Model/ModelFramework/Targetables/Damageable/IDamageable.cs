@@ -2,8 +2,8 @@ namespace src.Model.ModelFramework.Targetables.Damageable
 {
     public interface IDamageable : ITargetable
     {
-        int TotalHp();
-        int CurrentHp();
-        int Damage(int damageCount);
+        int TotalHP();
+        int CurrentHP();
+        void Damage(int damageCount);
     }
 }

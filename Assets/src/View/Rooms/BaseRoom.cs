@@ -1,4 +1,5 @@
 ﻿using System;
+using src.Model.ModelFramework.ActionFramework;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,12 +12,14 @@ namespace src.View.Rooms
         private int _maxCrew;
         private Text CrewCountText;
         private readonly string RoomName;
+        private GameAction roomAction;
 
         public BaseRoom(string roomName, int currentCrewCount, int maxCrewCount)
         {
             RoomName = roomName;
             MaxCrew = maxCrewCount;
             CrewCount = currentCrewCount;
+            //roomAction gets instantiated as a concrete by the concrete class of Room being used.
         }
 
         private int MaxCrew
