@@ -8,15 +8,16 @@ public class TurnManager
     Guid currentPlayer;
     ActionRunner actionRunner;
 
-    public TurnManager()
+    public TurnManager(ActionRunner actionRunner)
     {
         playerList = new List<Guid>();
+        this.actionRunner = actionRunner;
     }
 
-    public void addPlayer(Guid id, ActionRunner actionRunner)
+    public void addPlayer(Guid id)
     {
         playerList.Add(id);
-        this.actionRunner = actionRunner;
+        
     }
 
     public void removePlayer(Guid id)
