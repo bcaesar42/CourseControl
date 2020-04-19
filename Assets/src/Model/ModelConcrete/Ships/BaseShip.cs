@@ -35,7 +35,7 @@ public class BaseShip : ITargetable, IDamageable, IShieldHealable, IShieldDamaga
         }
     }
 
-    public boolean freeCrew(int crewFreed)
+    public Boolean freeCrew(int crewFreed)
     {
         if (crewCount + crewFreed <= maxCrew)
         {

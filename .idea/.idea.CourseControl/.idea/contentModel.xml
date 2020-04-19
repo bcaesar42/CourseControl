@@ -4,20 +4,20 @@
     <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="EndTurnButton.cs" t="Include" />
         <e p="src" t="Include">
           <e p="Controller" t="Include">
             <e p="ActionKindManager" t="Include">
               <e p="ActionManager.cs" t="Include" />
             </e>
-            <e p="RealTurnManager" t="Include">
-              <e p="RealTurnManager.cs" t="Include" />
-            </e>
             <e p="RoomEventManager" t="Include">
               <e p="RoomEventManager.cs" t="Include" />
             </e>
+            <e p="SceneManager.cs" t="Include" />
             <e p="TargetManager" t="Include">
               <e p="TargetManager.cs" t="Include" />
+            </e>
+            <e p="TurnManager" t="Include">
+              <e p="TurnManager.cs" t="Include" />
             </e>
           </e>
           <e p="Model" t="Include">
@@ -34,10 +34,12 @@
                 <e p="Shield.cs" t="Include" />
                 <e p="Weapon.cs" t="Include" />
               </e>
+              <e p="Ships" t="Include">
+                <e p="BaseShip.cs" t="Include" />
+              </e>
             </e>
             <e p="ModelFramework" t="Include">
               <e p="ActionFramework" t="Include">
-                <e p="Action.cs" t="Include" />
                 <e p="ActionModel.cs" t="Include" />
                 <e p="ActionModels" t="Include">
                   <e p="DroneModel.cs" t="Include" />
@@ -67,6 +69,7 @@
                   <e p="ShieldTurnModel.cs" t="Include" />
                   <e p="WeaponTurnModel.cs" t="Include" />
                 </e>
+                <e p="GameAction.cs" t="Include" />
               </e>
               <e p="TargetableReference" t="Include">
                 <e p="TargetableReference.cs" t="Include" />
@@ -89,8 +92,7 @@
             </e>
           </e>
           <e p="Turn" t="Include">
-            <e p="ActionPriority.cs" t="Include" />
-            <e p="TurnManager.cs" t="Include" />
+            <e p="ActionRunner.cs" t="Include" />
           </e>
           <e p="View" t="Include">
             <e p="Rooms" t="Include">
@@ -120,6 +122,9 @@
                 <e p="ShieldIndicatorCell.cs" t="Include" />
                 <e p="ShieldIndicatorManager.cs" t="Include" />
               </e>
+            </e>
+            <e p="UI" t="Include">
+              <e p="EndTurnButton.cs" t="Include" />
             </e>
           </e>
         </e>
