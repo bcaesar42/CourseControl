@@ -22,16 +22,30 @@ public class BaseShip : ITargetable, IDamageable, IShieldHealable, IShieldDamaga
 
     List<BaseRoom> roomList;
 
-    public int allocateCrew()
+    public Boolean allocateCrew(int crewAllocated)
     {
-        crewCount--;
-        return crewCount;
+        if(crewCount - crewAllocated >= 0)
+        {
+            crewCount -= crewAllocated;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
-    public int freeCrew()
+    public boolean freeCrew(int crewFreed)
     {
-        crewCount++;
-        return crewCount;
+        if (crewCount + crewFreed <= maxCrew)
+        {
+            crewCount += crewFreed;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     
     public int getMaxCrew()
