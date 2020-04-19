@@ -53,7 +53,6 @@ namespace src.Controller.TargetManager
                         }
                     }
                 }
-
         */
         public void RemoveTarget(Guid id)
         {

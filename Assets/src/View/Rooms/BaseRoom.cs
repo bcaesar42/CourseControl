@@ -5,26 +5,30 @@ using UnityEngine.UI;
 
 namespace src.View.Rooms
 {
-    public abstract class BaseRoom : MonoBehaviour
+    public abstract class BaseRoom
     {
-        private int _crewCount;
-
-        private int _maxCrew;
+        private int roomCrewCount;
+        private int roomMaxCrew;
+        private int roomMinCrew;
         private Text CrewCountText;
         private readonly string RoomName;
         private GameAction roomAction;
+        public readonly Guid SelfId;
+        public readonly Guid TeamId;
+        public BaseShip ship;
 
-        public BaseRoom(string roomName, int currentCrewCount, int maxCrewCount)
+        public BaseRoom(BaseShip ship, string roomName, int currentCrewCount, int maxCrewCount, Guid SelfId, Guid TeamId)
         {
             RoomName = roomName;
             MaxCrew = maxCrewCount;
             CrewCount = currentCrewCount;
+            this.ship = ship;
             //roomAction gets instantiated as a concrete by the concrete class of Room being used.
         }
 
         private int MaxCrew
         {
-            get => _maxCrew;
+            get => roomMaxCrew;
             set
             {
                 if (value < 1)
@@ -33,13 +37,13 @@ namespace src.View.Rooms
                     throw new ArgumentOutOfRangeException(nameof(MaxCrew));
                 }
 
-                _maxCrew = value;
+                roomMaxCrew = value;
             }
         }
 
         private int CrewCount
         {
-            get => _crewCount;
+            get => roomCrewCount;
             set
             {
                 if (value > MaxCrew || value < 0)
@@ -48,21 +52,38 @@ namespace src.View.Rooms
                     throw new ArgumentOutOfRangeException(nameof(CrewCount));
                 }
 
-                _crewCount = value;
+                roomCrewCount = value;
+            }
+        }
+
+        private int MinCrewCount
+        {
+            get => roomMinCrew;
+            set
+            {
+                if (value > MaxCrew || value < 1)
+                {
+                    Debug.Log($"Error updating mincrew count. Tried to update to {value}");
+                    throw new ArgumentOutOfRangeException(nameof(CrewCount));
+                }
+
+                roomMinCrew = value;
             }
         }
 
         public void OnMouseDown()
         {
-            if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftControl))
+            if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftControl) && roomCrewCount > roomMaxCrew)
             {
                 Debug.Log("Right click");
-                RemoveCrew();
+                AddCrew();
+                ship.allocateCrew();
             }
-            else if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftControl))
+            else if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftControl) && roomCrewCount > 0)
             {
                 Debug.Log("Left click");
-                AddCrew();
+                RemoveCrew();
+                ship.freeCrew();
             }
         }
 
@@ -82,17 +103,17 @@ namespace src.View.Rooms
 
         public void AddCrew()
         {
-            CrewCount++;
+            roomCrewCount++;
         }
 
         public void RemoveCrew()
         {
-            CrewCount--;
+            roomCrewCount--;
         }
 
         public void ResetCrew()
         {
-            _crewCount = 0;
+            roomCrewCount = 0;
         }
     }
 }
