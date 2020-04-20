@@ -2,7 +2,8 @@
 {
     public class ResearchCenter : BaseRoom
     {
-        public ResearchCenter() : base("Research Center", 0, 3)
+        public ResearchCenter(BaseShip ship, System.Guid teamId) 
+            : base(ship, "Research Center", 0, 3, new System.Guid(), teamId)
         {
         }
     }
