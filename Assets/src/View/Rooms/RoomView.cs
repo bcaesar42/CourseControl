@@ -6,6 +6,7 @@ using src.Model.ModelFramework.ActionFramework;
 using src.View.Rooms;
 using src.View.Rooms.ConcreteRooms;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 
 public class RoomView : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class RoomView : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string[] prefixes = {"DroneBay", "MaintenanceBay", "MedicalBay", "NavigationRoom", "ReplicationCenter", "ResearchCenter", "ScavengeBay", "SensorRoom", "ShieldBay", "WeaponsBay"};
+        string[] prefixes = {"WeaponsBay", "DroneBay", "MaintenanceBay", "NavigationRoom", "ResearchCenter", "ScavengeBay", "ShieldBay", "SensorRoom"};
         TextMesh text;
         BaseRoom room;
 
@@ -117,6 +118,12 @@ public class RoomView : MonoBehaviour
             Labels.Add(text); //Necessary?
             Rooms.Add(room); //Necessary?
             RoomMap.Add(room, text);
+            objPrefab = Resources.Load("SensorRoom") as GameObject;
+            obj = Instantiate(objPrefab, target, Quaternion.identity);
+            target = new Vector3(-12.14f, -6.88f, -55.88f);
+            obj.transform.Rotate(new Vector3(-90, 0, 0));
+            obj.transform.position = target;
+
         }
         catch (NullReferenceException e)
         {
