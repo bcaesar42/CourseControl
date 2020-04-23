@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using src.Controller.TargetManager;
 using src.Model.ModelFramework.Targetables;
 
@@ -71,6 +72,8 @@ namespace src.Model.ModelFramework.ActionFramework
                 }
             }
         }
+
+        public Task PerformAction { get; internal set; }
 
         public abstract ActionModel GetActionModel(); //
 

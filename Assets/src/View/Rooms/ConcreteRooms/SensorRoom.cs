@@ -2,7 +2,8 @@
 {
     public class SensorRoom : BaseRoom
     {
-        public SensorRoom() : base("Sensor Room", 0, 3)
+        public SensorRoom(BaseShip ship, System.Guid teamId) 
+            : base(ship, "Sensor Room", 0, 3, new System.Guid(), teamId)
         {
         }
     }

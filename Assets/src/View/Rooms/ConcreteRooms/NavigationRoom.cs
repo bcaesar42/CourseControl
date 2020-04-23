@@ -2,7 +2,8 @@
 {
     public class NavigationRoom : BaseRoom
     {
-        public NavigationRoom() : base("Navigation Room", 0, 3)
+        public NavigationRoom(BaseShip ship, System.Guid teamId) 
+            : base(ship, "Navigation Room", 0, 3, new System.Guid(), teamId)
         {
         }
     }

@@ -77,13 +77,13 @@ namespace src.View.Rooms
             {
                 Debug.Log("Right click");
                 AddCrew();
-                ship.allocateCrew();
+                ship.allocateCrew(1);
             }
             else if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftControl) && roomCrewCount > 0)
             {
                 Debug.Log("Left click");
                 RemoveCrew();
-                ship.freeCrew();
+                ship.freeCrew(1);
             }
         }
 

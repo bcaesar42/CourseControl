@@ -2,7 +2,8 @@
 {
     public class ScavengeBay : BaseRoom
     {
-        public ScavengeBay() : base("Scavenge Bay", 0, 3)
+        public ScavengeBay(BaseShip ship, System.Guid teamId) 
+            : base(ship, "Scavenge Bay", 0, 3, new System.Guid(), teamId)
         {
         }
     }
