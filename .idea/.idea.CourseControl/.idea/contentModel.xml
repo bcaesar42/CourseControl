@@ -22,7 +22,7 @@
           </e>
           <e p="Model" t="Include">
             <e p="ModelConcrete" t="Include">
-              <e p="Actions" t="Include">
+              <e p="GameActions" t="Include">
                 <e p="Drone.cs" t="Include" />
                 <e p="Heal.cs" t="Include" />
                 <e p="Navigation.cs" t="Include" />
@@ -41,18 +41,6 @@
             <e p="ModelFramework" t="Include">
               <e p="ActionFramework" t="Include">
                 <e p="ActionModel.cs" t="Include" />
-                <e p="ActionModels" t="Include">
-                  <e p="DroneModel.cs" t="Include" />
-                  <e p="HealModel.cs" t="Include" />
-                  <e p="NavigationModel.cs" t="Include" />
-                  <e p="ProjectileModel.cs" t="Include" />
-                  <e p="ReplicationModel.cs" t="Include" />
-                  <e p="ResearchModel.cs" t="Include" />
-                  <e p="ScavengerModel.cs" t="Include" />
-                  <e p="SensorModel.cs" t="Include" />
-                  <e p="ShieldModel.cs" t="Include" />
-                  <e p="WeaponModel.cs" t="Include" />
-                </e>
                 <e p="ActionPriority.cs" t="Include" />
                 <e p="ActionState.cs" t="Include" />
                 <e p="ActionTime.cs" t="Include" />

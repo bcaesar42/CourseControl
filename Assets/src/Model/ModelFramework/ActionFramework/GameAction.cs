@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using src.Controller.ActionKindManager;
 using src.Controller.TargetManager;
 using src.Model.ModelFramework.Targetables;
 
@@ -7,18 +8,15 @@ namespace src.Model.ModelFramework.ActionFramework
 {
     public abstract class GameAction
     {
-        private string actionName; //Name of the action
-        private readonly Guid _actionId;
-        private ActionModel model;
-
-        private readonly TargetManager _targetManager;
-        public readonly Guid ActionInstanceId;
-        public readonly ActionPriority Priority;
+        //private string actionName; //Name of the action
+        public readonly Guid ActionId;
         public readonly Guid SelfId;
         public readonly Guid TeamId;
-        public int level;
-        private int _currentActivationLeft;
 
+
+        public ActionModel ActionModel { get; private set; }
+
+        private int _currentActivationLeft;
         private int _currentActivationTime;
         private int _currentCompletionLeft;
         private int _currentCompletionTime;
@@ -29,11 +27,10 @@ namespace src.Model.ModelFramework.ActionFramework
 
         protected IEnumerable<ITargetable> Targets;
 
-        protected GameAction(TargetManager targetManager, Guid actionId, Guid actionInstanceId, Guid selfId, Guid teamId)
+        protected GameAction(ActionModel actionModel, Guid actionId, Guid selfId, Guid teamId)
         {
-            _targetManager = targetManager;
-            _actionId = actionId;
-            ActionInstanceId = actionInstanceId;
+            ActionModel = actionModel;
+            ActionId = actionId;
             SelfId = selfId;
             TeamId = teamId;
         }
@@ -72,7 +69,7 @@ namespace src.Model.ModelFramework.ActionFramework
             }
         }
 
-        public abstract ActionModel GetActionModel(); //
+        public abstract ActionModel GetActionModel();
 
         public abstract IEnumerable<ITargetable> AvailableTargets();
 

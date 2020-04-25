@@ -9,11 +9,13 @@ using src.Model.ModelFramework.ActionFramework.ActionTurnModels;
 
 namespace src.Controller.ActionKindManager
 {
-    public static class ActionManager
+    public class ActionManager
     {
-        private static readonly Collection<ActionModel> ActionModels = new Collection<ActionModel>();
+        public static readonly ActionManager instance = new ActionManager();
+        
+        private readonly Collection<ActionModel> ActionModels = new Collection<ActionModel>();
 
-        public static void InitializeManager()
+        private ActionManager()
         {
             var json = File.ReadAllText("ActionConfiguration.json");
             var conf = JObject.Parse(json);
@@ -59,8 +61,7 @@ namespace src.Controller.ActionKindManager
                                     droneTurnModels.Add(new DroneTurnModel(roundNumber));
                                 }
 
-                                ActionModels.Add(new DroneModel(name, actionTime, level, description, roomModel,
-                                    droneTurnModels, (ActionPriority) priority));
+                                ActionModels.Add(new DroneModel(name, actionTime, level, description, roomModel, (ActionPriority) priority));
                                 break;
                             case "sensor":
                                 var sensorTurnModels = new List<SensorTurnModel>();
@@ -169,21 +170,21 @@ namespace src.Controller.ActionKindManager
                 }
         }
 
-        public static IEnumerable<T> GetModelKind<T>() where T : ActionModel
+        public IEnumerable<T> GetActionModelKind<T>() where T : ActionModel
         {
             var actionKinds = ActionModels.Where(actionModel => actionModel.GetType() == typeof(T));
             var enumerable = actionKinds as ActionModel[] ?? actionKinds.ToArray();
             return enumerable.Cast<T>();
         }
 
-        public static IEnumerable<T> GetUpgrades<T>(T actionModel) where T : ActionModel
+        public IEnumerable<T> GetUpgrades<T>(T actionModel) where T : ActionModel
         {
             var upgrades = ActionModels.Where(model =>
                 model.ActionName == actionModel.ActionName && model.ActionLevel == actionModel.ActionLevel + 1);
             return upgrades.Cast<T>();
         }
 
-        public static IEnumerable<T> GetActionModel<T>(string actionName, int upgradeLevel) where T : ActionModel
+        public IEnumerable<T> GetActionModel<T>(string actionName, int upgradeLevel) where T : ActionModel
         {
             var model = ActionModels.Where(actionModel =>
                 actionModel.ActionName == actionName && actionModel.ActionLevel == upgradeLevel);

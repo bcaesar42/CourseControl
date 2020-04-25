@@ -1,15 +1,15 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using src.Controller.TargetManager;
 using src.Model.ModelFramework.ActionFramework;
 using src.Model.ModelFramework.Targetables;
 using Action = src.Model.ModelFramework.ActionFramework.GameAction;
 
-namespace src.Model.ModelConcrete.Actions
+namespace src.Model.ModelConcrete.GameActions
 {
-    public class Drone : Action
+    public class Projectile : Action
     {
-        public Drone(TargetManager targetManager, Guid actionId, Guid actionInstanceId, Guid selfId, Guid teamId) :
+        public Projectile(TargetManager targetManager, Guid actionId, Guid actionInstanceId, Guid selfId, Guid teamId) :
             base(targetManager, actionId, actionInstanceId, selfId, teamId)
         {
         }

@@ -5,12 +5,12 @@ using src.Model.ModelFramework.ActionFramework;
 using src.Model.ModelFramework.Targetables;
 using Action = src.Model.ModelFramework.ActionFramework.GameAction;
 
-namespace src.Model.ModelConcrete.Actions
+namespace src.Model.ModelConcrete.GameActions
 {
-    public class Sensor : Action
+    public class Replication : Action
     {
-        public Sensor(TargetManager targetManager, Guid actionId, Guid actionInstanceId, Guid selfId, Guid teamId) :
-            base(targetManager, actionId, actionInstanceId, selfId, teamId)
+        public Replication(TargetManager targetManager, Guid actionId, Guid actionInstanceId, Guid selfId, Guid teamId)
+            : base(targetManager, actionId, actionInstanceId, selfId, teamId)
         {
         }
 

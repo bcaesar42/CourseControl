@@ -5,11 +5,11 @@ using src.Model.ModelFramework.ActionFramework;
 using src.Model.ModelFramework.Targetables;
 using Action = src.Model.ModelFramework.ActionFramework.GameAction;
 
-namespace src.Model.ModelConcrete.Actions
+namespace src.Model.ModelConcrete.GameActions
 {
-    public class Navigation : Action
+    public class Research : Action
     {
-        public Navigation(TargetManager targetManager, Guid actionId, Guid actionInstanceId, Guid selfId, Guid teamId) :
+        public Research(TargetManager targetManager, Guid actionId, Guid actionInstanceId, Guid selfId, Guid teamId) :
             base(targetManager, actionId, actionInstanceId, selfId, teamId)
         {
         }

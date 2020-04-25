@@ -1,15 +1,15 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using src.Controller.TargetManager;
 using src.Model.ModelFramework.ActionFramework;
 using src.Model.ModelFramework.Targetables;
 using Action = src.Model.ModelFramework.ActionFramework.GameAction;
 
-namespace src.Model.ModelConcrete.Actions
+namespace src.Model.ModelConcrete.GameActions
 {
-    public class Projectile : Action
+    public class Scavenger : Action
     {
-        public Projectile(TargetManager targetManager, Guid actionId, Guid actionInstanceId, Guid selfId, Guid teamId) :
+        public Scavenger(TargetManager targetManager, Guid actionId, Guid actionInstanceId, Guid selfId, Guid teamId) :
             base(targetManager, actionId, actionInstanceId, selfId, teamId)
         {
         }

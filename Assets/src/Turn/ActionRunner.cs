@@ -27,30 +27,34 @@ namespace src.Turn
 
 
         // Methods:
-        public bool
-            SubscribeAction(GameAction action) // The first "Action" specifies the namespace, the second "Action" specifies the class.
+        public bool SubscribeAction(GameAction action) // The first "Action" specifies the namespace, the second "Action" specifies the class.
         {
             var didSubscribe = false;
 
-            ActionPriority priority = action.Priority;
+            ActionPriority priority = action.ActionModel.Priority;
 
             if (action != null)
                 switch (priority)
                 {
                     case ActionPriority.VeryLow:
                         SubscribedActions_VeryLow.Append(action);
+                        didSubscribe = true;
                         break;
                     case ActionPriority.Low:
                         SubscribedActions_Low.Append(action);
+                        didSubscribe = true;
                         break;
                     case ActionPriority.Moderate:
                         SubscribedActions_Moderate.Append(action);
+                        didSubscribe = true;
                         break;
                     case ActionPriority.High:
                         SubscribedActions_High.Append(action);
+                        didSubscribe = true;
                         break;
                     case ActionPriority.VeryHigh:
                         SubscribedActions_VeryHigh.Append(action);
+                        didSubscribe = true;
                         break;
                 }
 
