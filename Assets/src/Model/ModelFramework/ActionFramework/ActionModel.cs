@@ -6,6 +6,7 @@ namespace src.Model.ModelFramework.ActionFramework
     {
         //Fields shared by all action types
         public readonly string ActionName;
+        public readonly string ActionType;
         public readonly Guid ActionModelId;
         public readonly ActionTime ActionTime;
         public readonly int ActionLevel;
@@ -17,10 +18,11 @@ namespace src.Model.ModelFramework.ActionFramework
         public readonly ActionTurnModel[] ActionTurnModel;
 
 
-        protected ActionModel(string actionName, ActionTime actionTime, int actionLevel, string description,
+        protected ActionModel(string actionName, string actionType, ActionTime actionTime, int actionLevel, string description,
             string roomModel, ActionPriority priority, ActionTurnModel[] actionTurnModel)
         {
             ActionName = actionName;
+            ActionType = actionType;
             ActionTime = actionTime;
             ActionLevel = actionLevel;
             Description = description;

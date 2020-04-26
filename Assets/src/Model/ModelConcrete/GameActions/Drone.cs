@@ -8,17 +8,16 @@ namespace src.Model.ModelConcrete.GameActions
 {
     public class Drone : Action
     {
-        public Drone(ActionModel actionModel, Guid actionId, Guid selfId, Guid teamId) :
-            base(actionModel, actionId, selfId, teamId)
+        public Drone(ActionModel actionModel, Guid actionId, Guid selfId, Guid teamId) : base(actionModel, actionId, selfId, teamId)
         {
         }
 
-        public override ActionModel GetActionModel()
+        public override IEnumerable<ITargetable> AvailableTargets()
         {
             throw new NotImplementedException();
         }
 
-        public override IEnumerable<ITargetable> AvailableTargets()
+        public override bool IsValidActionModel(ActionModel actionModel)
         {
             throw new NotImplementedException();
         }

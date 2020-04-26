@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using src.Controller.ActionKindManager;
 using src.Controller.TargetManager;
 using src.Model.ModelFramework.Targetables;
+using UnityEngine;
 
 namespace src.Model.ModelFramework.ActionFramework
 {
@@ -13,8 +14,26 @@ namespace src.Model.ModelFramework.ActionFramework
         public readonly Guid SelfId;
         public readonly Guid TeamId;
 
-
-        public ActionModel ActionModel { get; private set; }
+        private ActionModel _actionModelBacking;
+        
+        public ActionModel ActionModel
+        {
+            get
+            {
+                return _actionModelBacking;
+            }
+            private set
+            {
+                if (IsValidActionModel(value))
+                {
+                    _actionModelBacking = value;
+                }
+                else
+                {
+                    Debug.Log($"Action: {ActionId} tried to assign ActionModel: {_actionModelBacking.ActionModelId} {_actionModelBacking.ActionName} but the actionModel was of the wrong type");
+                }
+            }
+        }
 
         private int _currentActivationLeft;
         private int _currentActivationTime;
@@ -57,9 +76,9 @@ namespace src.Model.ModelFramework.ActionFramework
                 }
                 else if (CurrentState == ActionState.Deactivated)
                 {
-                    _currentActivationTime = GetActionModel().ActionTime.ActivationTime;
-                    _currentCompletionTime = GetActionModel().ActionTime.CompletionTime;
-                    _currentCooldownTime = GetActionModel().ActionTime.CooldownTime;
+                    _currentActivationTime = ActionModel.ActionTime.ActivationTime;
+                    _currentCompletionTime = ActionModel.ActionTime.CompletionTime;
+                    _currentCooldownTime = ActionModel.ActionTime.CooldownTime;
                     _currentActivationLeft = _currentActivationTime;
                     _currentCompletionLeft = _currentCompletionTime;
                     _currentCooldownLeft = _currentCooldownTime;
@@ -69,9 +88,9 @@ namespace src.Model.ModelFramework.ActionFramework
             }
         }
 
-        public abstract ActionModel GetActionModel();
-
         public abstract IEnumerable<ITargetable> AvailableTargets();
+
+        public abstract bool IsValidActionModel(ActionModel actionModel);
 
         protected abstract void DoAction(int roundNum, IEnumerable<ITargetable> targets);
 
@@ -91,9 +110,9 @@ namespace src.Model.ModelFramework.ActionFramework
                 case ActionState.Deactivated:
                     return ActionState.Deactivated;
                 case ActionState.Ready:
-                    _currentActivationTime = GetActionModel().ActionTime.ActivationTime;
-                    _currentCompletionTime = GetActionModel().ActionTime.CompletionTime;
-                    _currentCooldownTime = GetActionModel().ActionTime.CooldownTime;
+                    _currentActivationTime = ActionModel.ActionTime.ActivationTime;
+                    _currentCompletionTime = ActionModel.ActionTime.CompletionTime;
+                    _currentCooldownTime = ActionModel.ActionTime.CooldownTime;
                     _currentActivationLeft = _currentActivationTime;
                     _currentCompletionLeft = _currentCompletionTime;
                     _currentCooldownLeft = _currentCooldownTime;

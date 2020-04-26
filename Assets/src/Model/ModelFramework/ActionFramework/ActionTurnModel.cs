@@ -1,8 +1,9 @@
-﻿namespace src.Model.ModelFramework.ActionFramework
+﻿using System;
+
+namespace src.Model.ModelFramework.ActionFramework
 {
     public abstract class ActionTurnModel
     {
-        public const int UNASSIGNED_FIELD = -78079921;
 
         //Shared by all actions
         public readonly int RoundNumber;
@@ -13,17 +14,17 @@
         }
         
         //health related
-        public int HealAmount = UNASSIGNED_FIELD;
-        public int DecreaseMaxHealthAmount = UNASSIGNED_FIELD;
-        public int IncreaseMaxHealthAmount = UNASSIGNED_FIELD;
+        public int? HealAmount = null;
+        public int? DecreaseMaxHealthAmount = null;
+        public int? IncreaseMaxHealthAmount = null;
         
         //Weapon related
-        public int DamagePerShot = UNASSIGNED_FIELD;
-        public int DamagePerShotIgnoreShield = UNASSIGNED_FIELD;
-        public int ShotsFired = UNASSIGNED_FIELD;
-        public int ChanceToHit = UNASSIGNED_FIELD;
-        public bool GuaranteedHit = false;
-        public int ChanceToDisableRoom = UNASSIGNED_FIELD;
+        public int? DamagePerShot = null;
+        public int? DamagePerShotIgnoreShield = null;
+        public int? ShotsFired = null;
+        public int? ChanceToHit = null;
+        public bool? GuaranteedHit = null;
+        public int? ChanceToDisableRoom = null;
         
         //Projectile related
         
@@ -32,16 +33,16 @@
         
         
         //Navigation related
-        public int ChanceToDodge = UNASSIGNED_FIELD;
+        public int? ChanceToDodge = null;
         
         //Shield related
-        public int ShieldCount = UNASSIGNED_FIELD;
+        public int? ShieldCount = null;
         
         //Crew related
-        public int IncreaseTotalCrewCount = UNASSIGNED_FIELD;
-        public int ChanceToIncreaseTotalCrewCount = UNASSIGNED_FIELD;
-        public int DecreasedTotalCrewCount = UNASSIGNED_FIELD;
-        public int ChanceToDecreasedTotalCrewCount = UNASSIGNED_FIELD;
+        public int? IncreaseTotalCrewCount = null;
+        public int? ChanceToIncreaseTotalCrewCount = null;
+        public int? DecreasedTotalCrewCount = null;
+        public int? ChanceToDecreasedTotalCrewCount = null;
         
         //Research related
         

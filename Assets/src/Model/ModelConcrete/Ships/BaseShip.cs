@@ -2,12 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using src.Model.ModelFramework.Targetables;
+using src.Model.ModelFramework.Targetables.Crewable;
 using src.Model.ModelFramework.Targetables.Damageable;
 using src.Model.ModelFramework.Targetables.Shieldable;
 using src.View.Rooms;
 using UnityEngine;
 
-public class BaseShip : ITargetable, IDamageable, IShieldHealable, IShieldDamagable, IHealable
+public class BaseShip : ITargetable, IDamageable, IShieldHealable, IShieldDamagable, IHealable, ICrewable
 {
     Guid selfID;
     Guid teamID;
@@ -17,16 +18,16 @@ public class BaseShip : ITargetable, IDamageable, IShieldHealable, IShieldDamaga
     private int maxShield;
     private int currentShield;
 
-    private int crewCount;     //current unallocated crew
+    private int crewCount; //current unallocated crew
     private int maxCrew; //Overall crew the ship has
 
     List<BaseRoom> roomList;
 
-    public Boolean allocateCrew(int crewAllocated)
+    public bool AllocateCrew(int crewToAllocate)
     {
-        if(crewCount - crewAllocated >= 0)
+        if (crewCount - crewToAllocate >= 0)
         {
-            crewCount -= crewAllocated;
+            crewCount -= crewToAllocate;
             return true;
         }
         else
@@ -35,11 +36,11 @@ public class BaseShip : ITargetable, IDamageable, IShieldHealable, IShieldDamaga
         }
     }
 
-    public Boolean freeCrew(int crewFreed)
+    public bool FreeCrew(int crewToFree)
     {
-        if (crewCount + crewFreed <= maxCrew)
+        if (crewCount + crewToFree <= maxCrew)
         {
-            crewCount += crewFreed;
+            crewCount += crewToFree;
             return true;
         }
         else
@@ -47,15 +48,40 @@ public class BaseShip : ITargetable, IDamageable, IShieldHealable, IShieldDamaga
             return false;
         }
     }
-    
-    public int getMaxCrew()
+
+    public int MaxCrewCount()
     {
         return maxCrew;
     }
 
-    public int getCrewCount()
+    public int CurrentCrewCount()
     {
         return crewCount;
+    }
+
+
+    public int IncreaseCrewCount(int amountToAdd)
+    {
+        if (amountToAdd < 1)
+        {
+            return maxCrew;
+        }
+
+        maxCrew += amountToAdd;
+        FreeCrew(amountToAdd);
+        return maxCrew;
+    }
+
+    public int DecreaseCrewCount(int amountToRemove)
+    {
+        if (amountToRemove < 1)
+        {
+            return maxCrew;
+        }
+
+        maxCrew -= amountToRemove;
+        AllocateCrew(amountToRemove);
+        return maxCrew;
     }
 
     public int CurrentHP()
@@ -77,7 +103,6 @@ public class BaseShip : ITargetable, IDamageable, IShieldHealable, IShieldDamaga
 
     public int DamageShield(int damageCount)
     {
-
         currentShield -= damageCount;
 
         if (currentShield < 0) currentShield = 0;
@@ -88,6 +113,7 @@ public class BaseShip : ITargetable, IDamageable, IShieldHealable, IShieldDamaga
     {
         currentShield += healCount;
         if (currentShield > maxShield) { currentShield = maxShield; }
+
         return currentShield;
     }
 
@@ -105,6 +131,7 @@ public class BaseShip : ITargetable, IDamageable, IShieldHealable, IShieldDamaga
     {
         currentHP += healCount;
         if (currentShield > maxShield) { currentShield = maxShield; }
+
         return currentHP;
     }
 
@@ -118,4 +145,33 @@ public class BaseShip : ITargetable, IDamageable, IShieldHealable, IShieldDamaga
         return maxHP;
     }
 
+
+    public int IncreaseMaxHealth(int amountToAdd)
+    {
+        if (amountToAdd < 1)
+        {
+            return maxHP;
+        }
+
+        maxHP += amountToAdd;
+        Heal(amountToAdd);
+        return maxHP;
+    }
+
+    public int DecreaseMaxHealth(int amountToRemove)
+    {
+        if (amountToRemove < 1)
+        {
+            return maxHP;
+        }
+
+        maxHP -= amountToRemove;
+
+        if (currentHP > maxHP)
+        {
+            currentHP = maxHP;
+        }
+        
+        return maxHP;
+    }
 }

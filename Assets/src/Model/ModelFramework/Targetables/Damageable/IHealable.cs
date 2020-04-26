@@ -5,5 +5,7 @@ namespace src.Model.ModelFramework.Targetables.Damageable
         int TotalHP();
         int CurrentHP();
         int Heal(int healCount);
+        int IncreaseMaxHealth(int amountToAdd);
+        int DecreaseMaxHealth(int amountToRemove);
     }
 }

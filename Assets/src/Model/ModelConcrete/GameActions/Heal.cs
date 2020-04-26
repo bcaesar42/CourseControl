@@ -1,28 +1,17 @@
 using System;
 using System.Collections.Generic;
-using src.Controller.ActionKindManager;
-using src.Controller.TargetManager;
 using src.Model.ModelFramework.ActionFramework;
-using src.Model.ModelFramework.ActionFramework.ActionModels;
 using src.Model.ModelFramework.Targetables;
 using src.Model.ModelFramework.Targetables.Damageable;
-using Action = src.Model.ModelFramework.ActionFramework.GameAction;
+using UnityEngine;
 
 namespace src.Model.ModelConcrete.GameActions
 {
-    public class Heal : Action
+    public class Heal : GameAction
     {
-        private ActionModel _actionModel;
-        
-        public Heal(TargetManager targetManager, Guid actionId, Guid actionInstanceId, Guid selfId, Guid teamId) : base(
-            targetManager, actionId, actionInstanceId, selfId, teamId)
+        public Heal(ActionModel actionModel, Guid actionId, Guid selfId, Guid teamId) : base(actionModel, actionId,
+            selfId, teamId)
         {
-            this._actionModel = ActionManager.instance.GetActionModel<HealModel>(actionId, 1);
-        }
-
-        public override ActionModel GetActionModel()
-        {
-            throw new NotImplementedException();
         }
 
         public override IEnumerable<ITargetable> AvailableTargets()
@@ -30,16 +19,31 @@ namespace src.Model.ModelConcrete.GameActions
             throw new NotImplementedException();
         }
 
+        public override bool IsValidActionModel(ActionModel actionModel)
+        {
+            return actionModel.ActionType == "heal";
+        }
+
         protected override void DoAction(int roundNum, IEnumerable<ITargetable> targets)
         {
-            int healamount = 0;
-            //TODO get heal amount from actionModelManager
-            
+            if (roundNum >= ActionModel.ActionTurnModel.Length)
+            {
+                Debug.Log(
+                    $"Heal action with Id: {ActionId} had round num of: {roundNum} when its round num should have ended at: {ActionModel.ActionTurnModel.Length}");
+                return;
+            }
+
+            int healAmount = this.ActionModel.ActionTurnModel[roundNum].HealAmount.GetValueOrDefault(0);
+            int maxIncreaseAmount = this.ActionModel.ActionTurnModel[roundNum].IncreaseMaxHealthAmount.GetValueOrDefault(0);
+            int maxDecreaseAmount = this.ActionModel.ActionTurnModel[roundNum].DecreaseMaxHealthAmount.GetValueOrDefault(0);
+
             foreach (var targetable in targets)
             {
                 if (targetable is IHealable healable)
                 {
-                    healable.Heal(healamount);
+                    healable.Heal(healAmount);
+                    healable.IncreaseMaxHealth(maxIncreaseAmount);
+                    healable.DecreaseMaxHealth(maxDecreaseAmount);
                 }
             }
         }

@@ -2,28 +2,23 @@ using System;
 using System.Collections.Generic;
 using src.Controller.TargetManager;
 using src.Model.ModelFramework.ActionFramework;
-using src.Model.ModelFramework.ActionFramework.ActionModels;
 using src.Model.ModelFramework.Targetables;
 using Action = src.Model.ModelFramework.ActionFramework.GameAction;
 
 namespace src.Model.ModelConcrete.GameActions
 {
-    public class Shield : Action
+    public class Shield : GameAction
     {
-        private ShieldModel _shieldModel;
-        
-        public Shield(TargetManager targetManager, Guid actionId, Guid actionInstanceId, Guid selfId, Guid teamId) :
-            base(targetManager, actionId, actionInstanceId, selfId, teamId)
+        public Shield(ActionModel actionModel, Guid actionId, Guid selfId, Guid teamId) : base(actionModel, actionId, selfId, teamId)
         {
-            //TODO get action from ActionManager
-        }
-
-        public override ActionModel GetActionModel()
-        {
-            return _shieldModel;
         }
 
         public override IEnumerable<ITargetable> AvailableTargets()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool IsValidActionModel(ActionModel actionModel)
         {
             throw new NotImplementedException();
         }

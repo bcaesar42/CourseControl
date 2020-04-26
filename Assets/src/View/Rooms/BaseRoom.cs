@@ -1,5 +1,6 @@
 ﻿using System;
 using src.Model.ModelFramework.ActionFramework;
+using src.Model.ModelFramework.Targetables.Crewable;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -77,13 +78,13 @@ namespace src.View.Rooms
             {
                 Debug.Log("Right click");
                 AddCrew();
-                ship.allocateCrew(1);
+                ship.AllocateCrew(1);
             }
             else if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftControl) && roomCrewCount > 0)
             {
                 Debug.Log("Left click");
                 RemoveCrew();
-                ship.freeCrew(1);
+                ship.FreeCrew(1);
             }
         }
 

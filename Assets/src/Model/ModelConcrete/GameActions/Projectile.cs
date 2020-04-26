@@ -7,19 +7,18 @@ using Action = src.Model.ModelFramework.ActionFramework.GameAction;
 
 namespace src.Model.ModelConcrete.GameActions
 {
-    public class Projectile : Action
+    public class Projectile : GameAction
     {
-        public Projectile(TargetManager targetManager, Guid actionId, Guid actionInstanceId, Guid selfId, Guid teamId) :
-            base(targetManager, actionId, actionInstanceId, selfId, teamId)
+        public Projectile(ActionModel actionModel, Guid actionId, Guid selfId, Guid teamId) : base(actionModel, actionId, selfId, teamId)
         {
         }
 
-        public override ActionModel GetActionModel()
+        public override IEnumerable<ITargetable> AvailableTargets()
         {
             throw new NotImplementedException();
         }
 
-        public override IEnumerable<ITargetable> AvailableTargets()
+        public override bool IsValidActionModel(ActionModel actionModel)
         {
             throw new NotImplementedException();
         }

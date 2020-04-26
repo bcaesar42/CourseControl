@@ -8,6 +8,7 @@
           <e p="Controller" t="Include">
             <e p="ActionKindManager" t="Include">
               <e p="ActionManager.cs" t="Include" />
+              <e p="NewActionManager.cs" t="Include" />
             </e>
             <e p="RoomEventManager" t="Include">
               <e p="RoomEventManager.cs" t="Include" />
@@ -45,24 +46,15 @@
                 <e p="ActionState.cs" t="Include" />
                 <e p="ActionTime.cs" t="Include" />
                 <e p="ActionTurnModel.cs" t="Include" />
-                <e p="ActionTurnModels" t="Include">
-                  <e p="DroneTurnModel.cs" t="Include" />
-                  <e p="HealTurnModel.cs" t="Include" />
-                  <e p="NavigationTurnModel.cs" t="Include" />
-                  <e p="ProjectileTurnModel.cs" t="Include" />
-                  <e p="ReplicationTurnModel.cs" t="Include" />
-                  <e p="ResearchTurnModel.cs" t="Include" />
-                  <e p="ScavengerTurnModel.cs" t="Include" />
-                  <e p="SensorTurnModel.cs" t="Include" />
-                  <e p="ShieldTurnModel.cs" t="Include" />
-                  <e p="WeaponTurnModel.cs" t="Include" />
-                </e>
                 <e p="GameAction.cs" t="Include" />
               </e>
               <e p="TargetableReference" t="Include">
                 <e p="TargetableReference.cs" t="Include" />
               </e>
               <e p="Targetables" t="Include">
+                <e p="Crewable" t="Include">
+                  <e p="ICrewable.cs" t="Include" />
+                </e>
                 <e p="Damageable" t="Include">
                   <e p="IDamageable.cs" t="Include" />
                   <e p="IHealable.cs" t="Include" />

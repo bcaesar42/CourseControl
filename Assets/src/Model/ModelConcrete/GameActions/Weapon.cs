@@ -1,22 +1,23 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using src.Controller.TargetManager;
 using src.Model.ModelFramework.ActionFramework;
 using src.Model.ModelFramework.Targetables;
-using Action = src.Model.ModelFramework.ActionFramework.GameAction;
+using src.Model.ModelFramework.Targetables.Damageable;
+using UnityEngine;
+using Random = System.Random;
 
 namespace src.Model.ModelConcrete.GameActions
 {
-    public class Weapon : Action
+    public class Weapon : GameAction
     {
-        public Weapon(TargetManager targetManager, Guid actionId, Guid actionInstanceId, Guid selfId, Guid teamId) :
-            base(targetManager, actionId, actionInstanceId, selfId, teamId)
-        {
-        }
+        private Random chanceToHitGen;
 
-        public override ActionModel GetActionModel()
+        public Weapon(ActionModel actionModel, Guid actionId, Guid selfId, Guid teamId) : base(actionModel, actionId,
+            selfId, teamId)
         {
-            throw new NotImplementedException();
+            chanceToHitGen = new Random();
         }
 
         public override IEnumerable<ITargetable> AvailableTargets()
@@ -24,9 +25,46 @@ namespace src.Model.ModelConcrete.GameActions
             throw new NotImplementedException();
         }
 
-        protected override void DoAction(int roundNum, IEnumerable<ITargetable> targets)
+        public override bool IsValidActionModel(ActionModel actionModel)
         {
-            throw new NotImplementedException();
+            return actionModel.ActionType == "weapon";
+        }
+
+        protected override void
+            DoAction(int roundNum, IEnumerable<ITargetable> targets)
+        {
+            if (roundNum >= ActionModel.ActionTurnModel.Length)
+            {
+                Debug.Log(
+                    $"Heal action with Id: {ActionId} had round num of: {roundNum} when its round num should have ended at: {ActionModel.ActionTurnModel.Length}");
+                return;
+            }
+
+            var turnModel = ActionModel.ActionTurnModel[roundNum];
+            var targetables = targets as ITargetable[] ?? targets.ToArray();
+            for (int i = 0; i < turnModel.ShotsFired; i++)
+            {
+                foreach (var targetable in targetables)
+                {
+                    if (turnModel.GuaranteedHit.GetValueOrDefault(false) || turnModel.ChanceToHit.GetValueOrDefault(0) >
+                        (int)(chanceToHitGen.NextDouble() * 99))
+                    {
+                        if (targetable is IDamageable damageable)
+                        {
+                            damageable.Damage(turnModel.DamagePerShot.GetValueOrDefault(0));
+                            damageable.Damage(turnModel.DamagePerShotIgnoreShield.GetValueOrDefault(0));
+                            damageable.DecreaseMaxHealth(turnModel.DecreaseMaxHealthAmount.GetValueOrDefault(0));
+                            //Need to add chanceToDisableRoom call
+                        }
+
+                        if (targetable is IHealable healable)
+                        {
+                            healable.Heal(turnModel.HealAmount.GetValueOrDefault(0));
+                            healable.IncreaseMaxHealth(turnModel.IncreaseMaxHealthAmount.GetValueOrDefault(0));
+                        }
+                    }
+                }
+            }
         }
     }
 }
