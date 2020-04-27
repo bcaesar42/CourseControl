@@ -14,10 +14,12 @@ public class CrewUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Replace with getting ship totals
         unallocated = 10;
         total = 10;
+
         crewCounts = GameObject.Find("Unallocated").GetComponent<Text>();
-        crewCounts.text = "Unallocated Crew: " + unallocated;
+        crewCounts.text = "Unallocated: " + unallocated + "\nTotal: " + total;
 
         Debug.Log("");
     }
@@ -25,8 +27,8 @@ public class CrewUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //UpdateCounts();
-        crewCounts.text = "Unallocated Crew: " + unallocated;
+        UpdateCounts();
+        crewCounts.text = "Unallocated: " + unallocated + "\nTotal: " + total;
     }
 
     private void UpdateCounts()
