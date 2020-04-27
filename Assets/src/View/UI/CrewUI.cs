@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CrewUI : MonoBehaviour
 {
-    public TextMeshProUGUI crewCounts;
+    public Text crewCounts;
     public List<GameObject> targets;
     private int unallocated;
     private int total;
@@ -15,18 +16,21 @@ public class CrewUI : MonoBehaviour
     {
         unallocated = 10;
         total = 10;
+        crewCounts = GameObject.Find("Unallocated").GetComponent<Text>();
         crewCounts.text = "Unallocated Crew: " + unallocated;
 
+        Debug.Log("");
     }
 
     // Update is called once per frame
     void Update()
     {
-        UpdateCounts();
+        //UpdateCounts();
+        crewCounts.text = "Unallocated Crew: " + unallocated;
     }
 
     private void UpdateCounts()
     {
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
     }
 }
