@@ -515,6 +515,7 @@ GameObject:
   - component: {fileID: 914205635}
   - component: {fileID: 914205634}
   - component: {fileID: 914205633}
+  - component: {fileID: 914205636}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
@@ -584,7 +585,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 914205634}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 914205636}
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &914205634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -621,6 +633,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914205631}
   m_CullTransparentMesh: 0
+--- !u!114 &914205636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914205631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc654415c8cf0934daf4f0356eeece37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1007890777
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,6 +969,7 @@ GameObject:
   - component: {fileID: 1336126306}
   - component: {fileID: 1336126305}
   - component: {fileID: 1336126304}
+  - component: {fileID: 1336126307}
   m_Layer: 5
   m_Name: OptionsButton
   m_TagString: Untagged
@@ -1014,7 +1039,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1336126305}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1336126307}
+        m_MethodName: ShowOptionsMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1336126305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1051,6 +1087,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336126302}
   m_CullTransparentMesh: 0
+--- !u!114 &1336126307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336126302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec7bef8c938f654cb9a577304751dd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1674510492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,6 +1458,7 @@ GameObject:
   - component: {fileID: 1862959643}
   - component: {fileID: 1862959642}
   - component: {fileID: 1862959641}
+  - component: {fileID: 1862959644}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -1479,7 +1528,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1862959642}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1862959644}
+        m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1862959642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1516,3 +1576,15 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1862959639}
   m_CullTransparentMesh: 0
+--- !u!114 &1862959644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862959639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ce0fedaad6af14db57ce2df5b837ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
