@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using src.Controller.TargetManager;
 using src.Model.ModelFramework.ActionFramework;
 using src.Model.ModelFramework.Targetables;
-using Action = src.Model.ModelFramework.ActionFramework.Action;
+using Action = src.Model.ModelFramework.ActionFramework.GameAction;
 
 namespace src.Model.ModelConcrete.Actions
 {
