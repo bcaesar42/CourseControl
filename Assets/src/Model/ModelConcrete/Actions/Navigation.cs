@@ -9,6 +9,8 @@ namespace src.Model.ModelConcrete.Actions
 {
     public class Navigation : Action
     {
+        private double _ChanceToDodge { get; set; } = .10;
+        public double ChanceToDodge { get => _ChanceToDodge; }
         public Navigation(TargetManager targetManager, Guid actionId, Guid actionInstanceId, Guid selfId, Guid teamId) :
             base(targetManager, actionId, actionInstanceId, selfId, teamId)
         {
@@ -26,7 +28,11 @@ namespace src.Model.ModelConcrete.Actions
 
         protected override void DoAction(int roundNum, IEnumerable<ITargetable> targets)
         {
-            throw new NotImplementedException();
+            _ChanceToDodge += .10;
+            if (_ChanceToDodge > 1)
+            {
+                _ChanceToDodge = 1;
+            } 
         }
     }
 }
