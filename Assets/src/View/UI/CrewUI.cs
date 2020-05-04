@@ -11,6 +11,8 @@ public class CrewUI : MonoBehaviour
     public List<GameObject> targets;
     private int unallocated;
     private int total;
+    private BaseShip ship;
+
     // Start is called before the first frame update
     void Start()
     {
