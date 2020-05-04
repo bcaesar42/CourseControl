@@ -38,8 +38,6 @@ namespace src.Model.ModelConcrete.Actions
             {
                 BaseShip playerShip = (BaseShip)AvailableTargets().FirstOrDefault();
                 playerShip.allocateCrew(1);
-                CurrentState = ActionState.Activation;
-                
             }
         }
     }
