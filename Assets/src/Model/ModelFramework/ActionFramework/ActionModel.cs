@@ -1,35 +1,22 @@
 using System;
+using System.Collections.Generic;
 
 namespace src.Model.ModelFramework.ActionFramework
 {
-    public abstract class ActionModel
+    public class ActionModel
     {
         //Fields shared by all action types
-        public readonly string ActionName;
-        public readonly string ActionType;
-        public readonly Guid ActionModelId;
-        public readonly ActionTime ActionTime;
-        public readonly int ActionLevel;
-        public readonly string Description;
-        public readonly string RoomModel;
-        public readonly ActionPriority Priority;
+        public string ActionName;
+        public string ActionType;
+        public Guid ActionModelId;
+        public ActionTime ActionTime;
+        public int ActionLevel;
+        public string Description;
+        public string RoomModel;
+        public string DamagedRoomModel;
+        public ActionPriority Priority;
         
         //Where all the actions will use different fields
-        public readonly ActionTurnModel[] ActionTurnModel;
-
-
-        protected ActionModel(string actionName, string actionType, ActionTime actionTime, int actionLevel, string description,
-            string roomModel, ActionPriority priority, ActionTurnModel[] actionTurnModel)
-        {
-            ActionName = actionName;
-            ActionType = actionType;
-            ActionTime = actionTime;
-            ActionLevel = actionLevel;
-            Description = description;
-            RoomModel = roomModel;
-            Priority = priority;
-
-            ActionTurnModel = actionTurnModel;
-        }
+        public ActionTurnModel[] ActionTurnModels;
     }
 }

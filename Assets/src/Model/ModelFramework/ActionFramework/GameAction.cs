@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using src.Controller.ActionKindManager;
 using src.Controller.TargetManager;
 using src.Model.ModelFramework.Targetables;
 using UnityEngine;
@@ -15,7 +14,7 @@ namespace src.Model.ModelFramework.ActionFramework
         public readonly Guid TeamId;
 
         private ActionModel _actionModelBacking;
-        
+
         public ActionModel ActionModel
         {
             get
@@ -30,7 +29,8 @@ namespace src.Model.ModelFramework.ActionFramework
                 }
                 else
                 {
-                    Debug.Log($"Action: {ActionId} tried to assign ActionModel: {_actionModelBacking.ActionModelId} {_actionModelBacking.ActionName} but the actionModel was of the wrong type");
+                    Debug.Log(
+                        $"Action: {ActionId} tried to assign ActionModel: {_actionModelBacking.ActionModelId} {_actionModelBacking.ActionName} but the actionModel was of the wrong type");
                 }
             }
         }
@@ -142,11 +142,13 @@ namespace src.Model.ModelFramework.ActionFramework
 
             if (CurrentState == ActionState.Completion)
             {
-                //Call the IActionable version of this
                 if (_currentCompletionLeft <= _currentCompletionTime)
                     CurrentState = ActionState.Cooldown;
                 else
+                {
+                    DoAction(_currentCooldownTime - _currentCompletionLeft, Targets);
                     return ActionState.Completion;
+                }
             }
 
             if (CurrentState == ActionState.Cooldown)

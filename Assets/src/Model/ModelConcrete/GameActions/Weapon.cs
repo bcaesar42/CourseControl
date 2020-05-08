@@ -33,14 +33,14 @@ namespace src.Model.ModelConcrete.GameActions
         protected override void
             DoAction(int roundNum, IEnumerable<ITargetable> targets)
         {
-            if (roundNum >= ActionModel.ActionTurnModel.Length)
+            if (roundNum >= ActionModel.ActionTurnModels.Length)
             {
                 Debug.Log(
-                    $"Heal action with Id: {ActionId} had round num of: {roundNum} when its round num should have ended at: {ActionModel.ActionTurnModel.Length}");
+                    $"Heal action with Id: {ActionId} had round num of: {roundNum} when its round num should have ended at: {ActionModel.ActionTurnModels.Length}");
                 return;
             }
 
-            var turnModel = ActionModel.ActionTurnModel[roundNum];
+            var turnModel = ActionModel.ActionTurnModels[roundNum];
             var targetables = targets as ITargetable[] ?? targets.ToArray();
             for (int i = 0; i < turnModel.ShotsFired; i++)
             {

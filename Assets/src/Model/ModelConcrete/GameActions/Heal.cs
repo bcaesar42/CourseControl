@@ -26,16 +26,16 @@ namespace src.Model.ModelConcrete.GameActions
 
         protected override void DoAction(int roundNum, IEnumerable<ITargetable> targets)
         {
-            if (roundNum >= ActionModel.ActionTurnModel.Length)
+            if (roundNum >= ActionModel.ActionTurnModels.Length)
             {
                 Debug.Log(
-                    $"Heal action with Id: {ActionId} had round num of: {roundNum} when its round num should have ended at: {ActionModel.ActionTurnModel.Length}");
+                    $"Heal action with Id: {ActionId} had round num of: {roundNum} when its round num should have ended at: {ActionModel.ActionTurnModels.Length}");
                 return;
             }
 
-            int healAmount = this.ActionModel.ActionTurnModel[roundNum].HealAmount.GetValueOrDefault(0);
-            int maxIncreaseAmount = this.ActionModel.ActionTurnModel[roundNum].IncreaseMaxHealthAmount.GetValueOrDefault(0);
-            int maxDecreaseAmount = this.ActionModel.ActionTurnModel[roundNum].DecreaseMaxHealthAmount.GetValueOrDefault(0);
+            int healAmount = this.ActionModel.ActionTurnModels[roundNum].HealAmount.GetValueOrDefault(0);
+            int maxIncreaseAmount = this.ActionModel.ActionTurnModels[roundNum].IncreaseMaxHealthAmount.GetValueOrDefault(0);
+            int maxDecreaseAmount = this.ActionModel.ActionTurnModels[roundNum].DecreaseMaxHealthAmount.GetValueOrDefault(0);
 
             foreach (var targetable in targets)
             {

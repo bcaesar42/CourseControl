@@ -2,16 +2,11 @@
 
 namespace src.Model.ModelFramework.ActionFramework
 {
-    public abstract class ActionTurnModel
+    public class ActionTurnModel
     {
 
         //Shared by all actions
-        public readonly int RoundNumber;
-
-        protected ActionTurnModel(int roundNumber)
-        {
-            RoundNumber = roundNumber;
-        }
+        public int RoundNumber;
         
         //health related
         public int? HealAmount = null;
