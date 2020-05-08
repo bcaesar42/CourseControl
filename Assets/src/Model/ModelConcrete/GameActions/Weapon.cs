@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using src.Controller.TargetManager;
 using src.Model.ModelFramework.ActionFramework;
+using src.Model.ModelFramework.TargetableFramework;
+using src.Model.ModelFramework.TargetableFramework.Damageable;
 using src.Model.ModelFramework.Targetables;
-using src.Model.ModelFramework.Targetables.Damageable;
 using UnityEngine;
 using Random = System.Random;
 
@@ -36,7 +37,7 @@ namespace src.Model.ModelConcrete.GameActions
             if (roundNum >= ActionModel.ActionTurnModels.Length)
             {
                 Debug.Log(
-                    $"Heal action with Id: {ActionId} had round num of: {roundNum} when its round num should have ended at: {ActionModel.ActionTurnModels.Length}");
+                    $"Heal action with Id: {ActionInstanceId} had round num of: {roundNum} when its round num should have ended at: {ActionModel.ActionTurnModels.Length}");
                 return;
             }
 

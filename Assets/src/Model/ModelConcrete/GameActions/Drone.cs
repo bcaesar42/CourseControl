@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using src.Model.ModelFramework.ActionFramework;
+using src.Model.ModelFramework.TargetableFramework;
 using src.Model.ModelFramework.Targetables;
 using Action = src.Model.ModelFramework.ActionFramework.GameAction;
 

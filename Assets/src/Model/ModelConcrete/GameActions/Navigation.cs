@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using src.Controller.TargetManager;
 using src.Model.ModelFramework.ActionFramework;
+using src.Model.ModelFramework.TargetableFramework;
 using src.Model.ModelFramework.Targetables;
 
 namespace src.Model.ModelConcrete.GameActions

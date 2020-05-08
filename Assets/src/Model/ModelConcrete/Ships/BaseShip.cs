@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using src.Controller.ActionModelManager;
+using src.Model.ModelFramework.ActionFramework;
+using src.Model.ModelFramework.ShipFramework;
+using src.Model.ModelFramework.TargetableFramework;
+using src.Model.ModelFramework.TargetableFramework.Damageable;
+using src.Model.ModelFramework.TargetableFramework.Shieldable;
 using src.Model.ModelFramework.Targetables;
 using src.Model.ModelFramework.Targetables.Crewable;
-using src.Model.ModelFramework.Targetables.Damageable;
-using src.Model.ModelFramework.Targetables.Shieldable;
 using src.View.Rooms;
 using UnityEngine;
 
-public class BaseShip : ITargetable, IDamageable, IShieldHealable, IShieldDamagable, IHealable, ICrewable
+public class BaseShip : ITargetable, IDamageable, IShieldable, IHealable, ICrewable
 {
     Guid selfID;
     Guid teamID;
@@ -18,16 +22,44 @@ public class BaseShip : ITargetable, IDamageable, IShieldHealable, IShieldDamaga
     private int maxShield;
     private int currentShield;
 
-    private int crewCount; //current unallocated crew
     private int maxCrew; //Overall crew the ship has
+    private int currentCrew; //current unallocated crew
+
+    private GameAction[] gameActions;
 
     List<BaseRoom> roomList;
 
+    public BaseShip(ShipModel model)
+    {
+        maxHP = model.InitialMaxHealth;
+        currentHP = model.InitialMaxHealth;
+        
+        maxCrew = model.InitialCrewCount;
+        currentCrew = model.InitialCrewCount;
+
+        selfID = Guid.NewGuid();
+        //TODO register selfId and ship with targetManager;
+
+        gameActions = new GameAction[7];
+        
+        foreach (var gameAction in gameActions)
+        {
+            //TODO foreach actionModel in model get an instance of its action type e.g. Weapon or Heal and then assign it to the index in gameAction
+        }
+
+        //gameAction1 = ActionManager.instance.GetActionModel(model.GameActionId1, 1);
+    }
+
+    public BaseShip(ShipModel model, Guid teamId) : this(model)
+    {
+        this.teamID = teamId;
+    }
+
     public bool AllocateCrew(int crewToAllocate)
     {
-        if (crewCount - crewToAllocate >= 0)
+        if (currentCrew - crewToAllocate >= 0)
         {
-            crewCount -= crewToAllocate;
+            currentCrew -= crewToAllocate;
             return true;
         }
         else
@@ -38,9 +70,9 @@ public class BaseShip : ITargetable, IDamageable, IShieldHealable, IShieldDamaga
 
     public bool FreeCrew(int crewToFree)
     {
-        if (crewCount + crewToFree <= maxCrew)
+        if (currentCrew + crewToFree <= maxCrew)
         {
-            crewCount += crewToFree;
+            currentCrew += crewToFree;
             return true;
         }
         else
@@ -56,7 +88,7 @@ public class BaseShip : ITargetable, IDamageable, IShieldHealable, IShieldDamaga
 
     public int CurrentCrewCount()
     {
-        return crewCount;
+        return currentCrew;
     }
 
 
@@ -105,16 +137,16 @@ public class BaseShip : ITargetable, IDamageable, IShieldHealable, IShieldDamaga
     {
         currentShield -= damageCount;
 
+        int resShieldState = currentShield;
+
         if (currentShield < 0) currentShield = 0;
-        return currentShield;
+        return resShieldState;
     }
 
-    public int HealShield(int healCount)
+    public void ActivateShield(int shieldCount)
     {
-        currentShield += healCount;
-        if (currentShield > maxShield) { currentShield = maxShield; }
-
-        return currentShield;
+        currentShield = shieldCount;
+        
     }
 
     public Guid GetSelfId()

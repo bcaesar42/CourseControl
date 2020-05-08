@@ -8,7 +8,7 @@ namespace src.Model.ModelFramework.ActionFramework
         //Fields shared by all action types
         public string ActionName;
         public string ActionType;
-        public Guid ActionModelId;
+        public Guid ActionId;
         public ActionTime ActionTime;
         public int ActionLevel;
         public string Description;

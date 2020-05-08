@@ -1,4 +1,4 @@
-namespace src.Model.ModelFramework.Targetables.Damageable
+namespace src.Model.ModelFramework.TargetableFramework.Damageable
 {
     public interface IHealable : ITargetable
     {

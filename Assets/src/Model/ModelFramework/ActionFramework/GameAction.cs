@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using src.Controller.TargetManager;
+using src.Model.ModelFramework.TargetableFramework;
 using src.Model.ModelFramework.Targetables;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ namespace src.Model.ModelFramework.ActionFramework
     public abstract class GameAction
     {
         //private string actionName; //Name of the action
-        public readonly Guid ActionId;
+        public readonly Guid ActionInstanceId;
         public readonly Guid SelfId;
         public readonly Guid TeamId;
 
@@ -30,7 +31,7 @@ namespace src.Model.ModelFramework.ActionFramework
                 else
                 {
                     Debug.Log(
-                        $"Action: {ActionId} tried to assign ActionModel: {_actionModelBacking.ActionModelId} {_actionModelBacking.ActionName} but the actionModel was of the wrong type");
+                        $"Action: {ActionInstanceId} tried to assign ActionModel: {_actionModelBacking.ActionId} {_actionModelBacking.ActionName} but the actionModel was of the wrong type");
                 }
             }
         }
@@ -49,7 +50,7 @@ namespace src.Model.ModelFramework.ActionFramework
         protected GameAction(ActionModel actionModel, Guid actionId, Guid selfId, Guid teamId)
         {
             ActionModel = actionModel;
-            ActionId = actionId;
+            ActionInstanceId = actionId;
             SelfId = selfId;
             TeamId = teamId;
         }

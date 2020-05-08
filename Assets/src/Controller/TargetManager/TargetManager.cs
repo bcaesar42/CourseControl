@@ -1,5 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json;
+using src.Model.ModelFramework.ActionFramework;
+using src.Model.ModelFramework.TargetableFramework;
 using src.Model.ModelFramework.Targetables;
 using UnityEngine;
 
@@ -9,6 +13,15 @@ namespace src.Controller.TargetManager
     {
         private GameObject scene;
         private readonly List<ITargetable> targetList = new List<ITargetable>();
+        
+        private TargetManager()
+        {
+            using (StreamReader r = new StreamReader("Assets/resources/BalanceConfig/ShipModels/ActionModels.json"))
+            {
+                string json = r.ReadToEnd();
+                ActionModels = JsonConvert.DeserializeObject<List<ActionModel>>(json);
+            }
+        }
 
         /*
                 private void getTargetableChildren(Transform parent) 

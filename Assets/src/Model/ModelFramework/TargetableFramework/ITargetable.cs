@@ -1,6 +1,6 @@
 using System;
 
-namespace src.Model.ModelFramework.Targetables
+namespace src.Model.ModelFramework.TargetableFramework
 {
     public interface ITargetable
     {

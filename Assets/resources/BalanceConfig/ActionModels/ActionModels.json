@@ -2,6 +2,7 @@
   {
     "ActionName": "example action",
     "ActionType": "example",
+    "ActionId": "this should be formatted as a guid",
     "ActionTime": {
       "activationTime": 1,
       "completionTime": 1,

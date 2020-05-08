@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -12,14 +13,14 @@ namespace src.Controller.ActionModelManager
     {
         public static readonly ActionManager instance = new ActionManager();
         
-        public ActionModel[] ActionModels;
+        public List<ActionModel> ActionModels;
 
         private ActionManager()
         {
             using (StreamReader r = new StreamReader("Assets/resources/BalanceConfig/ActionModels/ActionModels.json"))
             {
                 string json = r.ReadToEnd();
-                ActionModels = JsonConvert.DeserializeObject<ActionModel[]>(json);
+                ActionModels = JsonConvert.DeserializeObject<List<ActionModel>>(json);
             }
         }
 
@@ -37,11 +38,18 @@ namespace src.Controller.ActionModelManager
             return upgrades.Cast<T>();
         }
 
-        public IEnumerable<T> GetActionModel<T>(string actionName, int upgradeLevel) where T : ActionModel
+        public IEnumerable<T> GetActionModel<T>(Guid actionId, int upgradeLevel) where T : ActionModel
         {
             var model = ActionModels.Where(actionModel =>
-                actionModel.ActionName == actionName && actionModel.ActionLevel == upgradeLevel);
+                actionModel.ActionId == actionId && actionModel.ActionLevel == upgradeLevel);
             return model.Cast<T>();
+        }
+
+        public IEnumerable<ActionModel> GetActionModel(Guid actionId, int upgradeLevel)
+        {
+            var model = ActionModels.Where(actionModel =>
+                actionModel.ActionId == actionId && actionModel.ActionLevel == upgradeLevel);
+            return model;
         }
     }
 }
