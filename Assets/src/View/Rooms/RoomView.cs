@@ -12,11 +12,10 @@ public class RoomView : MonoBehaviour
     string Description { get; set; }
     string ShipModelPath { get; set; }
     string RoomModelPath { get; set; }
-    int CrewCount { get; set; }
     string[] selectedRooms { get; set; }
     BaseRoom room { get; set; }
     List<TextMesh> Labels { get; set; }
-    //ActionState State;
+    ActionState State { get; set; }
 
     // Start is called before the first frame update
     void Start()
@@ -114,6 +113,6 @@ public class RoomView : MonoBehaviour
 
     void StateChanged(string description, string modelPath, int crewCount, ActionState state)
     {
-
+        
     }
 }
