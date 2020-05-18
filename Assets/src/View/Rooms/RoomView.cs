@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using src.Model.ModelConcrete.Actions;
 using src.Model.ModelFramework.ActionFramework;
 using src.View.Rooms;
 using src.View.Rooms.ConcreteRooms;
@@ -39,65 +41,72 @@ public class RoomView : MonoBehaviour
          * Global variables could be cleaned up but I can't figure out how currently.
          */
 
-        try
-        {
-            GameObject objPrefab;
-            GameObject obj;
+        GameObject objPrefab;
+        GameObject obj;
 
-            for (int slotNumber = 0; slotNumber < Slots.Length; slotNumber++)
+        for (int slotNumber = 0; slotNumber < Slots.Length; slotNumber++)
+        {
+            text = GameObject.Find($"Slot{slotNumber}CrewCount").GetComponent<TextMesh>();
+            switch (selectedRooms[slotNumber].ToString())
             {
-                text = GameObject.Find($"Slot{slotNumber}CrewCount").GetComponent<TextMesh>();
-                switch (selectedRooms[slotNumber].ToString())
-                {
-                    case "WeaponsBay":
-                        room = GameObject.Find($"Slot{slotNumber}").AddComponent<WeaponsBay>() as WeaponsBay;
-                        objPrefab = Resources.Load("WeaponRoom") as GameObject;
-                        break;
-                    case "DroneBay":
-                        room = GameObject.Find($"Slot{slotNumber}").AddComponent<DroneBay>() as DroneBay;
-                        objPrefab = Resources.Load("DroneRoom") as GameObject;
-                        break;
-                    case "MaintenanceBay":
-                        room = GameObject.Find($"Slot{slotNumber}").AddComponent<MaintenanceBay>() as MaintenanceBay;
-                        objPrefab = Resources.Load("MaintenanceRoom") as GameObject;
-                        break;
-                    case "NavigationRoom":
-                        room = GameObject.Find($"Slot{slotNumber}").AddComponent<DroneBay>() as DroneBay;
-                        objPrefab = Resources.Load("DroneRoom") as GameObject;
-                        break;
-                    case "ResearchCenter":
-                        room = GameObject.Find($"Slot{slotNumber}").AddComponent<DroneBay>() as DroneBay;
-                        objPrefab = Resources.Load("DroneRoom") as GameObject;
-                        break;
-                    case "ScavengeBay":
-                        room = GameObject.Find($"Slot{slotNumber}").AddComponent<DroneBay>() as DroneBay;
-                        objPrefab = Resources.Load("DroneRoom") as GameObject;
-                        break;
-                    case "ShieldBay":
-                        room = GameObject.Find($"Slot{slotNumber}").AddComponent<DroneBay>() as DroneBay;
-                        objPrefab = Resources.Load("DroneRoom") as GameObject;
-                        break;
-                    case "SensorRoom":
-                        room = GameObject.Find($"Slot{slotNumber}").AddComponent<DroneBay>() as DroneBay;
-                        objPrefab = Resources.Load("DroneRoom") as GameObject;
-                        break;
-                    default:
-                        room = GameObject.Find($"Slot{slotNumber}").AddComponent<WeaponsBay>() as WeaponsBay;
-                        objPrefab = Resources.Load("WeaponRoom") as GameObject;
-                        break;
-                }
-                obj = Instantiate(objPrefab, transform.position, Quaternion.identity) as GameObject;
-                Labels.Add(text);
-                //obj.transform.Rotate(new Vector3(-90, 0, -90));
-                obj.transform.position = Slots[slotNumber];
-                RoomMap.Add(room, text);
+                case "WeaponsBay":
+                    room = GameObject.Find($"Slot{slotNumber}").AddComponent<WeaponsBay>() as WeaponsBay;
+                    objPrefab = Resources.Load("WeaponRoom") as GameObject;
+                    obj = Instantiate(objPrefab, transform.position, Quaternion.identity) as GameObject;
+                    obj.transform.Rotate(new Vector3(-90, 0, -90));
+                    break;
+                case "DroneBay":
+                    room = GameObject.Find($"Slot{slotNumber}").AddComponent<DroneBay>() as DroneBay;
+                    objPrefab = Resources.Load("DroneRoom") as GameObject;
+                    obj = Instantiate(objPrefab, transform.position, Quaternion.identity) as GameObject;
+                    obj.transform.Rotate(new Vector3(0, 0, -135));
+                    break;
+                case "MaintenanceBay":
+                    room = GameObject.Find($"Slot{slotNumber}").AddComponent<MaintenanceBay>() as MaintenanceBay;
+                    objPrefab = Resources.Load("MaintenanceRoom") as GameObject;
+                    obj = Instantiate(objPrefab, transform.position, Quaternion.identity) as GameObject;
+                    obj.transform.Rotate(new Vector3(0, 0, -90));
+                    break;
+                case "NavigationRoom":
+                    room = GameObject.Find($"Slot{slotNumber}").AddComponent<NavigationRoom>() as NavigationRoom;
+                    objPrefab = Resources.Load("NavigationRoom") as GameObject;
+                    obj = Instantiate(objPrefab, transform.position, Quaternion.identity) as GameObject;
+                    obj.transform.Rotate(new Vector3(-90, 0, 0));
+                    break;
+                case "ResearchCenter":
+                    room = GameObject.Find($"Slot{slotNumber}").AddComponent<ResearchCenter>() as ResearchCenter;
+                    objPrefab = Resources.Load("ResearchRoom") as GameObject;
+                    obj = Instantiate(objPrefab, transform.position, Quaternion.identity) as GameObject;
+                    obj.transform.Rotate(new Vector3(-90, 0, 0));
+                    break;
+                case "ScavengeBay":
+                    room = GameObject.Find($"Slot{slotNumber}").AddComponent<ScavengeBay>() as ScavengeBay;
+                    objPrefab = Resources.Load("ScavengeRoom") as GameObject;
+                    obj = Instantiate(objPrefab, transform.position, Quaternion.identity) as GameObject;
+                    break;
+                case "ShieldBay":
+                    room = GameObject.Find($"Slot{slotNumber}").AddComponent<ShieldBay>() as ShieldBay;
+                    objPrefab = Resources.Load("ShieldRoom") as GameObject;
+                    obj = Instantiate(objPrefab, transform.position, Quaternion.identity) as GameObject;
+                    obj.transform.Rotate(new Vector3(-90, 0, 0));
+                    break;
+                case "SensorRoom":
+                    room = GameObject.Find($"Slot{slotNumber}").AddComponent<SensorRoom>() as SensorRoom;
+                    objPrefab = Resources.Load("SensorRoom") as GameObject;
+                    obj = Instantiate(objPrefab, transform.position, Quaternion.identity) as GameObject;
+                    obj.transform.Rotate(new Vector3(-90, 0, 0));
+                    break;
+                default:
+                    room = GameObject.Find($"Slot{slotNumber}").AddComponent<WeaponsBay>() as WeaponsBay;
+                    objPrefab = Resources.Load("WeaponRoom") as GameObject;
+                    obj = Instantiate(objPrefab, transform.position, Quaternion.identity) as GameObject;
+                    obj.transform.Rotate(new Vector3(-90, 0, -90));
+                    break;
             }
+            Labels.Add(text);
+            obj.transform.position = Slots[slotNumber];
+            RoomMap.Add(room, text);
         }
-        catch (NullReferenceException e)
-        {
-            print(e.Message);
-        }
-
     }
 
     // Update is called once per frame
@@ -113,6 +122,9 @@ public class RoomView : MonoBehaviour
 
     void StateChanged(string description, string modelPath, int crewCount, ActionState state)
     {
+        State = state;
+        //crewCount necessary?
+        Description = description;
         
     }
 }
