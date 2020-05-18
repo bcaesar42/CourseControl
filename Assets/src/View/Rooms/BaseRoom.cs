@@ -16,6 +16,8 @@ namespace src.View.Rooms
         public readonly Guid SelfId;
         public readonly Guid TeamId;
         public BaseShip ship;
+        public int upgradeCost = 5;
+        public int upgradeLevel = 1;
 
         public BaseRoom(BaseShip ship, string roomName, int currentCrewCount, int maxCrewCount, Guid SelfId, Guid TeamId)
         {
@@ -115,5 +117,7 @@ namespace src.View.Rooms
         {
             roomCrewCount = 0;
         }
+
+        abstract public void Upgrade();
     }
 }
