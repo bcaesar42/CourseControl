@@ -1,4 +1,5 @@
 ﻿using System;
+using src.Model.ModelFramework.ActionFramework;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,7 @@ namespace src.View.Rooms
         private int _maxCrew;
         private Text CrewCountText;
         private readonly string RoomName;
+        public ActionState State { get; set; } = ActionState.Deactivated;
 
         public BaseRoom(string roomName, int currentCrewCount, int maxCrewCount)
         {
@@ -49,20 +51,6 @@ namespace src.View.Rooms
             }
         }
 
-        public void OnMouseDown()
-        {
-            if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftControl))
-            {
-                Debug.Log("Right click");
-                RemoveCrew();
-            }
-            else if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftControl))
-            {
-                Debug.Log("Left click");
-                AddCrew();
-            }
-        }
-
         private void Start()
         {
             // Debug.Log($"Created {RoomName}.");
@@ -74,7 +62,7 @@ namespace src.View.Rooms
         // Update is called once per frame
         private void Update()
         {
-            // CrewCountText.text = $"{CrewCount}";
+            
         }
 
         public void AddCrew()

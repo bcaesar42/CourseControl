@@ -116,8 +116,7 @@ public class RoomView : MonoBehaviour
         //Update room counts
         for (int ix = 0; ix < Labels.Count; ix++)
         {
-            Labels[ix].text = "" + room.GetCrewCount();
-            ix++;
+            Labels[ix].text = $"{room.GetCrewCount()}\n{room.State}";
         }
     }
 
