@@ -10,15 +10,15 @@ using UnityEngine;
 public class RoomView : MonoBehaviour
 {
 
-    Dictionary<BaseRoom, TextMesh> RoomMap { get; set; }
-    string Description { get; set; }
-    string ShipModelPath { get; set; }
-    string RoomModelPath { get; set; }
-    string[] selectedRooms { get; set; }
-    BaseRoom room { get; set; }
-    List<TextMesh> Labels { get; set; }
-    ActionState State { get; set; }
-    int CrewCount { get; set; }
+    private Dictionary<BaseRoom, TextMesh> RoomMap { get; set; }
+    private string Description { get; set; }
+    private string ShipModelPath { get; set; }
+    private string RoomModelPath { get; set; }
+    private string[] selectedRooms { get; set; }
+    private BaseRoom room { get; set; }
+    private List<TextMesh> Labels { get; set; }
+    private ActionState State { get; set; }
+    private int CrewCount { get; set; }
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +37,7 @@ public class RoomView : MonoBehaviour
 
         /*
          * Current behavior is fixed. Rooms are manually placed and oriented because they all require a specific orientation/position. Will try to make modular closer to project completion.
-         * Translation can be accomplished in a two step manner after all rooms have been placed.
+         * Translation can be accomplished in a two step manner after the room has been placed.
          * Will have to fix orientation in order to not rotate rooms.
          * Global variables could be cleaned up but I can't figure out how currently.
          */
@@ -124,9 +124,8 @@ public class RoomView : MonoBehaviour
     void StateChanged(string description, string modelPath, int crewCount, ActionState state)
     {
         State = state;
-        //crewCount necessary?
         Description = description ?? throw new ArgumentNullException(nameof(description));
         RoomModelPath = modelPath ?? throw new ArgumentNullException(nameof(modelPath));
-        CrewCount = crewCount;
+        CrewCount = crewCount; //crewCount is not used anywhere. Should we maybe remove this from StateChanged?
     }
 }
