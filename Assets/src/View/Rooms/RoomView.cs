@@ -18,6 +18,7 @@ public class RoomView : MonoBehaviour
     BaseRoom room { get; set; }
     List<TextMesh> Labels { get; set; }
     ActionState State { get; set; }
+    int CrewCount { get; set; }
 
     // Start is called before the first frame update
     void Start()
@@ -124,7 +125,8 @@ public class RoomView : MonoBehaviour
     {
         State = state;
         //crewCount necessary?
-        Description = description;
-        
+        Description = description ?? throw new ArgumentNullException(nameof(description));
+        RoomModelPath = modelPath ?? throw new ArgumentNullException(nameof(modelPath));
+        CrewCount = crewCount;
     }
 }
