@@ -1,5 +1,6 @@
 ﻿using System;
 using src.Model.ModelFramework.ActionFramework;
+using src.Model.ModelFramework.Targetables.Crewable;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -50,6 +51,37 @@ namespace src.View.Rooms
                 }
 
                 roomCrewCount = value;
+            }
+        }
+
+        private int MinCrewCount
+        {
+            get => roomMinCrew;
+            set
+            {
+                if (value > MaxCrew || value < 1)
+                {
+                    Debug.Log($"Error updating mincrew count. Tried to update to {value}");
+                    throw new ArgumentOutOfRangeException(nameof(CrewCount));
+                }
+
+                roomMinCrew = value;
+            }
+        }
+
+        public void OnMouseDown()
+        {
+            if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftControl) && roomCrewCount > roomMaxCrew)
+            {
+                Debug.Log("Right click");
+                AddCrew();
+                ship.AllocateCrew(1);
+            }
+            else if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftControl) && roomCrewCount > 0)
+            {
+                Debug.Log("Left click");
+                RemoveCrew();
+                ship.FreeCrew(1);
             }
         }
 

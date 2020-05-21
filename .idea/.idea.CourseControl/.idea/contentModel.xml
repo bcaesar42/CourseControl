@@ -5,14 +5,15 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="src" t="Include">
+          <e p="ActionManagerTester.cs" t="Include" />
           <e p="Controller" t="Include">
-            <e p="ActionKindManager" t="Include">
+            <e p="ActionModelManager" t="Include">
               <e p="ActionManager.cs" t="Include" />
             </e>
-            <e p="RoomEventManager" t="Include">
-              <e p="RoomEventManager.cs" t="Include" />
-            </e>
             <e p="SceneManager.cs" t="Include" />
+            <e p="ShipModelManager" t="Include">
+              <e p="ShipModelManager.cs" t="Include" />
+            </e>
             <e p="TargetManager" t="Include">
               <e p="TargetManager.cs" t="Include" />
             </e>
@@ -22,7 +23,7 @@
           </e>
           <e p="Model" t="Include">
             <e p="ModelConcrete" t="Include">
-              <e p="Actions" t="Include">
+              <e p="GameActions" t="Include">
                 <e p="Drone.cs" t="Include" />
                 <e p="Heal.cs" t="Include" />
                 <e p="Navigation.cs" t="Include" />
@@ -41,40 +42,19 @@
             <e p="ModelFramework" t="Include">
               <e p="ActionFramework" t="Include">
                 <e p="ActionModel.cs" t="Include" />
-                <e p="ActionModels" t="Include">
-                  <e p="DroneModel.cs" t="Include" />
-                  <e p="HealModel.cs" t="Include" />
-                  <e p="NavigationModel.cs" t="Include" />
-                  <e p="ProjectileModel.cs" t="Include" />
-                  <e p="ReplicationModel.cs" t="Include" />
-                  <e p="ResearchModel.cs" t="Include" />
-                  <e p="ScavengerModel.cs" t="Include" />
-                  <e p="SensorModel.cs" t="Include" />
-                  <e p="ShieldModel.cs" t="Include" />
-                  <e p="WeaponModel.cs" t="Include" />
-                </e>
                 <e p="ActionPriority.cs" t="Include" />
                 <e p="ActionState.cs" t="Include" />
                 <e p="ActionTime.cs" t="Include" />
                 <e p="ActionTurnModel.cs" t="Include" />
-                <e p="ActionTurnModels" t="Include">
-                  <e p="DroneTurnModel.cs" t="Include" />
-                  <e p="HealTurnModel.cs" t="Include" />
-                  <e p="NavigationTurnModel.cs" t="Include" />
-                  <e p="ProjectileTurnModel.cs" t="Include" />
-                  <e p="ReplicationTurnModel.cs" t="Include" />
-                  <e p="ResearchTurnModel.cs" t="Include" />
-                  <e p="ScavengerTurnModel.cs" t="Include" />
-                  <e p="SensorTurnModel.cs" t="Include" />
-                  <e p="ShieldTurnModel.cs" t="Include" />
-                  <e p="WeaponTurnModel.cs" t="Include" />
-                </e>
                 <e p="GameAction.cs" t="Include" />
               </e>
-              <e p="TargetableReference" t="Include">
-                <e p="TargetableReference.cs" t="Include" />
+              <e p="ShipFramework" t="Include">
+                <e p="ShipModel.cs" t="Include" />
               </e>
-              <e p="Targetables" t="Include">
+              <e p="TargetableFramework" t="Include">
+                <e p="Crewable" t="Include">
+                  <e p="ICrewable.cs" t="Include" />
+                </e>
                 <e p="Damageable" t="Include">
                   <e p="IDamageable.cs" t="Include" />
                   <e p="IHealable.cs" t="Include" />
@@ -85,8 +65,10 @@
                 </e>
                 <e p="ITargetable.cs" t="Include" />
                 <e p="Shieldable" t="Include">
-                  <e p="IShieldDamageable.cs" t="Include" />
-                  <e p="IShieldHealable.cs" t="Include" />
+                  <e p="IShieldable.cs" t="Include" />
+                </e>
+                <e p="Viewable" t="Include">
+                  <e p="IViewable.cs" t="Include" />
                 </e>
               </e>
             </e>

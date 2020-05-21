@@ -6,7 +6,7 @@ namespace src.View.StatusUi.HealthBar
 {
     public class HealthBar : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
-        private int _healthMax;
+        public int _healthMax;
         public int _health;
 
         private float _currentAnimationHealth;

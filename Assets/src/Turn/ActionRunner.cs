@@ -20,18 +20,11 @@ namespace src.Turn
 
 
         // Methods:
-        public bool SubscribeAction(GameAction action)
+        public bool SubscribeAction(GameAction action) // The first "Action" specifies the namespace, the second "Action" specifies the class.
         {
             bool didSubscribe = false;
 
-            if (action != null)
-            {
-                SubscribedActions.Append(action);
-                didSubscribe = true;
-            }
-            
-            return didSubscribe;
-        }
+            ActionPriority priority = action.ActionModel.Priority;
 
         public bool UnsubscribeAction(GameAction action)
         {
@@ -61,7 +54,26 @@ namespace src.Turn
 
                 foreach (Task task in tasks)
                 {
-                    task.Start();
+                    case ActionPriority.VeryLow:
+                        SubscribedActions_VeryLow.Append(action);
+                        didSubscribe = true;
+                        break;
+                    case ActionPriority.Low:
+                        SubscribedActions_Low.Append(action);
+                        didSubscribe = true;
+                        break;
+                    case ActionPriority.Moderate:
+                        SubscribedActions_Moderate.Append(action);
+                        didSubscribe = true;
+                        break;
+                    case ActionPriority.High:
+                        SubscribedActions_High.Append(action);
+                        didSubscribe = true;
+                        break;
+                    case ActionPriority.VeryHigh:
+                        SubscribedActions_VeryHigh.Append(action);
+                        didSubscribe = true;
+                        break;
                 }
 
                 await Task.WhenAll(tasks.ToArray()); // Wait for all Task from this priority level to finish before starting the Task of the next priority level.

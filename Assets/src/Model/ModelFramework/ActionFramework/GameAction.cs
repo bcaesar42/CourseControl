@@ -2,24 +2,42 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using src.Controller.TargetManager;
+using src.Model.ModelFramework.TargetableFramework;
 using src.Model.ModelFramework.Targetables;
+using UnityEngine;
 
 namespace src.Model.ModelFramework.ActionFramework
 {
     public abstract class GameAction
     {
-        private string actionName; //Name of the action
-        private readonly Guid _actionId;
-        private ActionModel model;
-
-        private readonly TargetManager _targetManager;
+        //private string actionName; //Name of the action
         public readonly Guid ActionInstanceId;
-        public readonly ActionPriority Priority;
         public readonly Guid SelfId;
         public readonly Guid TeamId;
-        public int level;
-        private int _currentActivationLeft;
 
+        private ActionModel _actionModelBacking;
+
+        public ActionModel ActionModel
+        {
+            get
+            {
+                return _actionModelBacking;
+            }
+            private set
+            {
+                if (IsValidActionModel(value))
+                {
+                    _actionModelBacking = value;
+                }
+                else
+                {
+                    Debug.Log(
+                        $"Action: {ActionInstanceId} tried to assign ActionModel: {_actionModelBacking.ActionId} {_actionModelBacking.ActionName} but the actionModel was of the wrong type");
+                }
+            }
+        }
+
+        private int _currentActivationLeft;
         private int _currentActivationTime;
         private int _currentCompletionLeft;
         private int _currentCompletionTime;
@@ -30,11 +48,10 @@ namespace src.Model.ModelFramework.ActionFramework
 
         protected IEnumerable<ITargetable> Targets;
 
-        protected GameAction(TargetManager targetManager, Guid actionId, Guid actionInstanceId, Guid selfId, Guid teamId)
+        protected GameAction(ActionModel actionModel, Guid actionId, Guid selfId, Guid teamId)
         {
-            _targetManager = targetManager;
-            _actionId = actionId;
-            ActionInstanceId = actionInstanceId;
+            ActionModel = actionModel;
+            ActionInstanceId = actionId;
             SelfId = selfId;
             TeamId = teamId;
         }
@@ -61,9 +78,9 @@ namespace src.Model.ModelFramework.ActionFramework
                 }
                 else if (CurrentState == ActionState.Deactivated)
                 {
-                    _currentActivationTime = GetActionModel().ActionTime.ActivationTime;
-                    _currentCompletionTime = GetActionModel().ActionTime.CompletionTime;
-                    _currentCooldownTime = GetActionModel().ActionTime.CooldownTime;
+                    _currentActivationTime = ActionModel.ActionTime.ActivationTime;
+                    _currentCompletionTime = ActionModel.ActionTime.CompletionTime;
+                    _currentCooldownTime = ActionModel.ActionTime.CooldownTime;
                     _currentActivationLeft = _currentActivationTime;
                     _currentCompletionLeft = _currentCompletionTime;
                     _currentCooldownLeft = _currentCooldownTime;
@@ -73,11 +90,9 @@ namespace src.Model.ModelFramework.ActionFramework
             }
         }
 
-        public Task PerformAction { get; internal set; }
-
-        public abstract ActionModel GetActionModel(); //
-
         public abstract IEnumerable<ITargetable> AvailableTargets();
+
+        public abstract bool IsValidActionModel(ActionModel actionModel);
 
         protected abstract void DoAction(int roundNum, IEnumerable<ITargetable> targets);
 
@@ -97,9 +112,9 @@ namespace src.Model.ModelFramework.ActionFramework
                 case ActionState.Deactivated:
                     return ActionState.Deactivated;
                 case ActionState.Ready:
-                    _currentActivationTime = GetActionModel().ActionTime.ActivationTime;
-                    _currentCompletionTime = GetActionModel().ActionTime.CompletionTime;
-                    _currentCooldownTime = GetActionModel().ActionTime.CooldownTime;
+                    _currentActivationTime = ActionModel.ActionTime.ActivationTime;
+                    _currentCompletionTime = ActionModel.ActionTime.CompletionTime;
+                    _currentCooldownTime = ActionModel.ActionTime.CooldownTime;
                     _currentActivationLeft = _currentActivationTime;
                     _currentCompletionLeft = _currentCompletionTime;
                     _currentCooldownLeft = _currentCooldownTime;
@@ -129,11 +144,13 @@ namespace src.Model.ModelFramework.ActionFramework
 
             if (CurrentState == ActionState.Completion)
             {
-                //Call the IActionable version of this
                 if (_currentCompletionLeft <= _currentCompletionTime)
                     CurrentState = ActionState.Cooldown;
                 else
+                {
+                    DoAction(_currentCooldownTime - _currentCompletionLeft, Targets);
                     return ActionState.Completion;
+                }
             }
 
             if (CurrentState == ActionState.Cooldown)

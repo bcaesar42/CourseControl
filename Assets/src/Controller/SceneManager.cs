@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using src.Controller.ActionKindManager;
 using src.Controller.TargetManager;
 using src.Turn;
 using UnityEngine;
