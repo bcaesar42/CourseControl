@@ -19,7 +19,7 @@ namespace src.Controller.TargetManager
             using (StreamReader r = new StreamReader("Assets/resources/BalanceConfig/ShipModels/ActionModels.json"))
             {
                 string json = r.ReadToEnd();
-                ActionModels = JsonConvert.DeserializeObject<List<ActionModel>>(json);
+                //ActionModels = JsonConvert.DeserializeObject<List<ActionModel>>(json);
             }
         }
 
