@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using src.Controller.TargetManager;
 using src.Model.ModelFramework.ActionFramework;
-using src.Model.ModelFramework.Targetables;
-using Action = src.Model.ModelFramework.ActionFramework.GameAction;
+using src.Model.ModelFramework.TargetableFramework;
 
 namespace src.Model.ModelConcrete.Actions
 {
-    public class Navigation : Action
+    public class Navigation : GameAction
     {
         private double _ChanceToDodge { get; set; } = .10;
         public double ChanceToDodge { get => _ChanceToDodge; }
@@ -44,6 +43,11 @@ namespace src.Model.ModelConcrete.Actions
             {
                 _ChanceToDodge = .10;
             }
+        }
+
+        public override bool IsValidActionModel(ActionModel actionModel)
+        {
+            throw new NotImplementedException();
         }
     }
 }

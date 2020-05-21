@@ -25,6 +25,7 @@ namespace src.Turn
             bool didSubscribe = false;
 
             ActionPriority priority = action.ActionModel.Priority;
+        }
 
         public bool UnsubscribeAction(GameAction action)
         {
@@ -54,26 +55,29 @@ namespace src.Turn
 
                 foreach (Task task in tasks)
                 {
-                    case ActionPriority.VeryLow:
-                        SubscribedActions_VeryLow.Append(action);
-                        didSubscribe = true;
-                        break;
-                    case ActionPriority.Low:
-                        SubscribedActions_Low.Append(action);
-                        didSubscribe = true;
-                        break;
-                    case ActionPriority.Moderate:
-                        SubscribedActions_Moderate.Append(action);
-                        didSubscribe = true;
-                        break;
-                    case ActionPriority.High:
-                        SubscribedActions_High.Append(action);
-                        didSubscribe = true;
-                        break;
-                    case ActionPriority.VeryHigh:
-                        SubscribedActions_VeryHigh.Append(action);
-                        didSubscribe = true;
-                        break;
+                    switch (/* This switch statement was missing. Do not know what should be here at this point and time - Jacob */)
+                    {
+                        case ActionPriority.VeryLow:
+                            SubscribedActions_VeryLow.Append(action);
+                            didSubscribe = true;
+                            break;
+                        case ActionPriority.Low:
+                            SubscribedActions_Low.Append(action);
+                            didSubscribe = true;
+                            break;
+                        case ActionPriority.Moderate:
+                            SubscribedActions_Moderate.Append(action);
+                            didSubscribe = true;
+                            break;
+                        case ActionPriority.High:
+                            SubscribedActions_High.Append(action);
+                            didSubscribe = true;
+                            break;
+                        case ActionPriority.VeryHigh:
+                            SubscribedActions_VeryHigh.Append(action);
+                            didSubscribe = true;
+                            break;
+                    }
                 }
 
                 await Task.WhenAll(tasks.ToArray()); // Wait for all Task from this priority level to finish before starting the Task of the next priority level.

@@ -1,17 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Transactions;
 using src.Controller.TargetManager;
 using src.Model.ModelFramework.ActionFramework;
-using src.Model.ModelFramework.Targetables;
-using UnityEditor;
-using Action = src.Model.ModelFramework.ActionFramework.GameAction;
+using src.Model.ModelFramework.TargetableFramework;
 
 namespace src.Model.ModelConcrete.Actions
 {
-    public class Replication : Action
+    public class Replication : GameAction
     {
         private TargetManager _TargetManger { get; set; }
         
@@ -37,8 +33,13 @@ namespace src.Model.ModelConcrete.Actions
             if (ActionUsable)
             {
                 BaseShip playerShip = (BaseShip)AvailableTargets().FirstOrDefault();
-                playerShip.allocateCrew(1);
+                playerShip.AllocateCrew(1);
             }
+        }
+
+        public override bool IsValidActionModel(ActionModel actionModel)
+        {
+            throw new NotImplementedException();
         }
     }
 }

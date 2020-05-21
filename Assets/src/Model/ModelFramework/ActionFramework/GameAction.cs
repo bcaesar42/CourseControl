@@ -17,6 +17,8 @@ namespace src.Model.ModelFramework.ActionFramework
 
         private ActionModel _actionModelBacking;
 
+        public abstract ActionModel GetActionModel();
+
         public ActionModel ActionModel
         {
             get

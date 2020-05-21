@@ -1,11 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using src.Controller.TargetManager;
 using src.Model.ModelFramework.ActionFramework;
 using src.Model.ModelFramework.TargetableFramework;
 using src.Model.ModelFramework.TargetableFramework.Damageable;
-using src.Model.ModelFramework.Targetables;
 using UnityEngine;
 using Random = System.Random;
 
@@ -22,6 +20,11 @@ namespace src.Model.ModelConcrete.GameActions
         }
 
         public override IEnumerable<ITargetable> AvailableTargets()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override ActionModel GetActionModel()
         {
             throw new NotImplementedException();
         }
