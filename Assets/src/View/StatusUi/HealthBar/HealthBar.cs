@@ -34,7 +34,7 @@ namespace src.View.StatusUi.HealthBar
             _healthBarTransform = GetComponent<RectTransform>();
 
             _canvasTipText = GameObject.Find("CanvasTipText");
-            _tipText = _canvasTipText.GetComponent<CanvasTipText.CanvasTipText>();
+            _tipText = GetComponent<CanvasTipText.CanvasTipText>();
         }
 
         private void Update()
