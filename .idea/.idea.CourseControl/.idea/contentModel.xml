@@ -95,6 +95,9 @@
             <e p="ActionRunner.cs" t="Include" />
           </e>
           <e p="View" t="Include">
+            <e p="HUD" t="Include">
+              <e p="InformationHud.cs" t="Include" />
+            </e>
             <e p="Rooms" t="Include">
               <e p="BaseRoom.cs" t="Include" />
               <e p="ConcreteRooms" t="Include">
@@ -135,6 +138,6 @@
       <e p="Temp/bin" t="ExcludeRecursive" />
     </e>
     <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_CourseControl.-1960158326.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_CourseControl.-1006051128.00" t="ExcludeRecursive" />
   </component>
 </project>

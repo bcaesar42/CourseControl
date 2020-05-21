@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: eacf2c8dd2832314f9964ed985acbd81
+=======
 guid: 7a8b6ab83cbfb5c41ba7b406a42ff1f0
+>>>>>>> master
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

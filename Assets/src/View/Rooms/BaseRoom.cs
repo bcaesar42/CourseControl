@@ -12,10 +12,7 @@ namespace src.View.Rooms
         private int roomMinCrew;
         private Text CrewCountText;
         private readonly string RoomName;
-        private GameAction roomAction;
-        public readonly Guid SelfId;
-        public readonly Guid TeamId;
-        public BaseShip ship;
+        public ActionState State { get; set; } = ActionState.Deactivated;
 
         public BaseRoom(BaseShip ship, string roomName, int currentCrewCount, int maxCrewCount, Guid SelfId, Guid TeamId)
         {
@@ -56,49 +53,18 @@ namespace src.View.Rooms
             }
         }
 
-        private int MinCrewCount
-        {
-            get => roomMinCrew;
-            set
-            {
-                if (value > MaxCrew || value < 1)
-                {
-                    Debug.Log($"Error updating mincrew count. Tried to update to {value}");
-                    throw new ArgumentOutOfRangeException(nameof(CrewCount));
-                }
-
-                roomMinCrew = value;
-            }
-        }
-
-        public void OnMouseDown()
-        {
-            if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftControl) && roomCrewCount > roomMaxCrew)
-            {
-                Debug.Log("Right click");
-                AddCrew();
-                ship.allocateCrew(1);
-            }
-            else if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftControl) && roomCrewCount > 0)
-            {
-                Debug.Log("Left click");
-                RemoveCrew();
-                ship.freeCrew(1);
-            }
-        }
-
         private void Start()
         {
-            Debug.Log($"Created {RoomName}.");
-
-            CrewCountText = GameObject.Find($"{RoomName.Replace(" ", "")}CrewCount").GetComponent<Text>();
-            CrewCountText.text = $"{CrewCount}";
+            // Debug.Log($"Created {RoomName}.");
+            //
+            // CrewCountText = GameObject.Find($"{RoomName.Replace(" ", "")}CrewCount").GetComponent<Text>();
+            // CrewCountText.text = $"{CrewCount}";
         }
 
         // Update is called once per frame
         private void Update()
         {
-            CrewCountText.text = $"{CrewCount}";
+            
         }
 
         public void AddCrew()
@@ -114,6 +80,11 @@ namespace src.View.Rooms
         public void ResetCrew()
         {
             roomCrewCount = 0;
+        }
+
+        public int GetCrewCount()
+        {
+            return _crewCount;
         }
     }
 }
