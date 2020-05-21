@@ -1,9 +1,13 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: a6e7d6f1a3d017046a6a5940b166f02c
 =======
 guid: 6144e738ee8fde3489b41b01401a8714
 >>>>>>> MainMenu
+=======
+guid: 70cd01f836a8a48468a5c25e42b900d3
+>>>>>>> endTurnButtonFix
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

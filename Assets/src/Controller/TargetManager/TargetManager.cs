@@ -23,50 +23,6 @@ namespace src.Controller.TargetManager
             }
         }
 
-        /*
-                private void getTargetableChildren(Transform parent) 
-                {
-                    ITargetable[] t = parent.gameObject.GetComponents<ITargetable>();
-
-                    foreach (ITargetable target in t)
-                    {
-                        if (target.getSelfId() == id) ;
-                        {
-                            targetList.Add(target);
-                        }
-                    }
-
-
-                    if (parent.childCount > 0)
-                    {
-                        foreach (Transform child in parent) //Should recusivly call down all children grabbing targetables and adding them.
-                        {
-                            getTargetableChildren(child);
-                        }
-                    }
-                }
-
-                    private void addTargetableChildren(Guid id, Transform parent)
-                {
-                    ITargetable[] t = parent.gameObject.GetComponents<ITargetable>();
-
-                    foreach (ITargetable target in t)
-                    {
-                        if (target.getSelfId() == id) ;
-                        {
-                            targetList.Add(target);
-                        }
-                    }
-
-                    if (parent.childCount > 0)
-                    {
-                        foreach (Transform child in parent) 
-                        {
-                            addTargetableChildren(id, child);
-                        }
-                    }
-                }
-        */
         public void RemoveTarget(Guid id)
         {
             foreach (var t in targetList)

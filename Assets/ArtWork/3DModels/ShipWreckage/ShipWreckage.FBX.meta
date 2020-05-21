@@ -1,13 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-guid: ff5c0f86740cfe248b2593fbe2cc61a1
-=======
-guid: e72c93b489e2f6842a268727da4682d4
->>>>>>> MainMenu
-=======
-guid: 60d37e081fcbc1e49b12595ad55259d6
->>>>>>> endTurnButtonFix
+guid: b233544fec12ac6428647946151d7801
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
