@@ -2,7 +2,8 @@
 {
     public class ShieldBay : BaseRoom
     {
-        public ShieldBay() : base("Shield Bay", 0, 3)
+        public ShieldBay(BaseShip ship, System.Guid teamId)
+            : base(ship, "Shield Bay", 0, 3, new System.Guid(), teamId)
         {
         }
     }

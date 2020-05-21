@@ -2,7 +2,8 @@
 {
     public class MedicalBay : BaseRoom
     {
-        public MedicalBay() : base("Medical Bay", 0, 3)
+        public MedicalBay(BaseShip ship, System.Guid teamId) 
+            : base(ship, "Medical Bay", 0, 3, new System.Guid(), teamId)
         {
         }
     }

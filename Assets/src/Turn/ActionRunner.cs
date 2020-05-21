@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using src.Model.ModelFramework.ActionFramework;
 
 namespace src.Turn
@@ -10,51 +11,61 @@ namespace src.Turn
         // Constructor:
         public ActionRunner()
         {
-            SubscribedActions_VeryLow = new List<GameAction>();
-            SubscribedActions_Low = new List<GameAction>();
-            SubscribedActions_Moderate = new List<GameAction>();
-            SubscribedActions_High = new List<GameAction>();
-            SubscribedActions_VeryHigh = new List<GameAction>();
+            SubscribedActions = new List<GameAction>();
         }
 
+
         // Properties and fields:
-        private IEnumerable<GameAction> SubscribedActions_VeryLow { get; }
-        private IEnumerable<GameAction> SubscribedActions_Low { get; }
-        private IEnumerable<GameAction> SubscribedActions_Moderate { get; }
-        private IEnumerable<GameAction> SubscribedActions_High { get; }
-        private IEnumerable<GameAction> SubscribedActions_VeryHigh { get; }
-        public int TurnNum { get; private set; }
+        private List<GameAction> SubscribedActions { get; set; }
 
 
         // Methods:
-        public bool
-            SubscribeAction(GameAction action) // The first "Action" specifies the namespace, the second "Action" specifies the class.
+        public bool SubscribeAction(GameAction action)
         {
-            var didSubscribe = false;
-
-            ActionPriority priority = action.Priority;
+            bool didSubscribe = false;
 
             if (action != null)
-                switch (priority)
+            {
+                SubscribedActions.Append(action);
+                didSubscribe = true;
+            }
+            
+            return didSubscribe;
+        }
+
+        public bool UnsubscribeAction(GameAction action)
+        {
+            bool didUnsubscribe = false;
+
+            if (action != null && SubscribedActions.Contains(action))
+            {
+                SubscribedActions.Remove(action);
+                didUnsubscribe = true;
+            }
+
+            return didUnsubscribe;
+        }
+
+        public void Reset()
+        {
+            SubscribedActions = new List<GameAction>();
+        }
+
+        public async void RunActions()
+        {
+            IOrderedEnumerable<IGrouping<ActionPriority, GameAction>> priorityGroups = SubscribedActions.GroupBy(action => action.Priority).OrderBy(group => group.Key);
+
+            foreach (IGrouping<ActionPriority, GameAction> priorityGroup in priorityGroups)
+            {
+                IEnumerable<Task> tasks = priorityGroup.Select(action => action.PerformAction);
+
+                foreach (Task task in tasks)
                 {
-                    case ActionPriority.VeryLow:
-                        SubscribedActions_VeryLow.Append(action);
-                        break;
-                    case ActionPriority.Low:
-                        SubscribedActions_Low.Append(action);
-                        break;
-                    case ActionPriority.Moderate:
-                        SubscribedActions_Moderate.Append(action);
-                        break;
-                    case ActionPriority.High:
-                        SubscribedActions_High.Append(action);
-                        break;
-                    case ActionPriority.VeryHigh:
-                        SubscribedActions_VeryHigh.Append(action);
-                        break;
+                    task.Start();
                 }
 
-            return didSubscribe;
+                await Task.WhenAll(tasks.ToArray()); // Wait for all Task from this priority level to finish before starting the Task of the next priority level.
+            }
         }
     }
 }

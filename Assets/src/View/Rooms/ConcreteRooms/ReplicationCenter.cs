@@ -2,7 +2,8 @@
 {
     public class ReplicationCenter : BaseRoom
     {
-        public ReplicationCenter() : base("Replication Center", 0, 3)
+        public ReplicationCenter(BaseShip ship, System.Guid teamId) 
+            : base(ship, "Replication Center", 0, 3, new System.Guid(), teamId)
         {
         }
     }

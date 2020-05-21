@@ -2,7 +2,8 @@
 {
     public class WeaponsBay : BaseRoom
     {
-        public WeaponsBay() : base("Weapons Bay", 0, 3)
+        public WeaponsBay(BaseShip ship, System.Guid teamId)
+            : base(ship, "Weapons Bay", 0, 3, new System.Guid(), teamId)
         {
         }
     }

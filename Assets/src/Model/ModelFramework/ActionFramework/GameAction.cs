@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using src.Controller.TargetManager;
 using src.Model.ModelFramework.Targetables;
 
@@ -7,13 +8,16 @@ namespace src.Model.ModelFramework.ActionFramework
 {
     public abstract class GameAction
     {
+        private string actionName; //Name of the action
         private readonly Guid _actionId;
+        private ActionModel model;
 
         private readonly TargetManager _targetManager;
         public readonly Guid ActionInstanceId;
         public readonly ActionPriority Priority;
         public readonly Guid SelfId;
         public readonly Guid TeamId;
+        public int level;
         private int _currentActivationLeft;
 
         private int _currentActivationTime;
@@ -69,7 +73,9 @@ namespace src.Model.ModelFramework.ActionFramework
             }
         }
 
-        public abstract ActionModel GetActionModel();
+        public Task PerformAction { get; internal set; }
+
+        public abstract ActionModel GetActionModel(); //
 
         public abstract IEnumerable<ITargetable> AvailableTargets();
 

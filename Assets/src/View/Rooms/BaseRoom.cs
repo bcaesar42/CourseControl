@@ -5,25 +5,27 @@ using UnityEngine.UI;
 
 namespace src.View.Rooms
 {
-    public abstract class BaseRoom : MonoBehaviour
+    public abstract class BaseRoom
     {
-        private int _crewCount;
-
-        private int _maxCrew;
+        private int roomCrewCount;
+        private int roomMaxCrew;
+        private int roomMinCrew;
         private Text CrewCountText;
         private readonly string RoomName;
         public ActionState State { get; set; } = ActionState.Deactivated;
 
-        public BaseRoom(string roomName, int currentCrewCount, int maxCrewCount)
+        public BaseRoom(BaseShip ship, string roomName, int currentCrewCount, int maxCrewCount, Guid SelfId, Guid TeamId)
         {
             RoomName = roomName;
             MaxCrew = maxCrewCount;
             CrewCount = currentCrewCount;
+            this.ship = ship;
+            //roomAction gets instantiated as a concrete by the concrete class of Room being used.
         }
 
         private int MaxCrew
         {
-            get => _maxCrew;
+            get => roomMaxCrew;
             set
             {
                 if (value < 1)
@@ -32,13 +34,13 @@ namespace src.View.Rooms
                     throw new ArgumentOutOfRangeException(nameof(MaxCrew));
                 }
 
-                _maxCrew = value;
+                roomMaxCrew = value;
             }
         }
 
         private int CrewCount
         {
-            get => _crewCount;
+            get => roomCrewCount;
             set
             {
                 if (value > MaxCrew || value < 0)
@@ -47,7 +49,7 @@ namespace src.View.Rooms
                     throw new ArgumentOutOfRangeException(nameof(CrewCount));
                 }
 
-                _crewCount = value;
+                roomCrewCount = value;
             }
         }
 
@@ -67,17 +69,17 @@ namespace src.View.Rooms
 
         public void AddCrew()
         {
-            CrewCount++;
+            roomCrewCount++;
         }
 
         public void RemoveCrew()
         {
-            CrewCount--;
+            roomCrewCount--;
         }
 
         public void ResetCrew()
         {
-            _crewCount = 0;
+            roomCrewCount = 0;
         }
 
         public int GetCrewCount()
