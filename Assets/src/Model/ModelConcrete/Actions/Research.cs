@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using src.Controller.TargetManager;
 using src.Model.ModelFramework.ActionFramework;
-using src.Model.ModelFramework.ActionFramework.ActionModels;
-using src.Model.ModelFramework.Targetables;
+using src.Model.ModelFramework.TargetableFramework;
 using src.View.Rooms;
-using UnityEngine;
-using Action = src.Model.ModelFramework.ActionFramework.GameAction;
 
 namespace src.Model.ModelConcrete.Actions
 {
-    public class Research : Action
+    public class Research : GameAction
     {
         private int _ResearchTokens { get; set; } = 0;
         public int ResearchTokens { get => _ResearchTokens; }
@@ -47,8 +44,13 @@ namespace src.Model.ModelConcrete.Actions
             if (ResearchTokens >= room.upgradeCost)
             {
                 _ResearchTokens -= room.upgradeCost;
-                room.Upgrade();
+                //room.Upgrade();
             }
+        }
+
+        public override bool IsValidActionModel(ActionModel actionModel)
+        {
+            throw new NotImplementedException();
         }
     }
 }

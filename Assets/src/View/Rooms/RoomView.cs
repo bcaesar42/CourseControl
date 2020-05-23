@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Security.Cryptography;
-using src.Model.ModelConcrete.Actions;
 using src.Model.ModelFramework.ActionFramework;
 using src.View.Rooms;
 using src.View.Rooms.ConcreteRooms;

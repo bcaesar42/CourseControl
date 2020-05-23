@@ -14,7 +14,8 @@ namespace src.View.Rooms
         private Text CrewCountText;
         private readonly string RoomName;
         public ActionState State { get; set; } = ActionState.Deactivated;
-        public BaseShip ship;
+        private BaseShip ship;
+        public int upgradeCost;
 
         public BaseRoom(BaseShip ship, string roomName, int currentCrewCount, int maxCrewCount, Guid SelfId, Guid TeamId)
         {
@@ -96,6 +97,26 @@ namespace src.View.Rooms
         private void Update()
         {
             
+        }
+
+        public void AddCrew()
+        {
+            roomCrewCount++;
+        }
+
+        public void RemoveCrew()
+        {
+            roomCrewCount--;
+        }
+
+        public void ResetCrew()
+        {
+            roomCrewCount = 0;
+        }
+
+        public int GetCrewCount()
+        {
+            return roomCrewCount;
         }
     }
 }

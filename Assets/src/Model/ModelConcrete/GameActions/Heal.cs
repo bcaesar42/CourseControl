@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using src.Model.ModelFramework.ActionFramework;
 using src.Model.ModelFramework.TargetableFramework;
 using src.Model.ModelFramework.TargetableFramework.Damageable;
-using src.Model.ModelFramework.Targetables;
 using UnityEngine;
 
 namespace src.Model.ModelConcrete.GameActions
@@ -16,6 +15,11 @@ namespace src.Model.ModelConcrete.GameActions
         }
 
         public override IEnumerable<ITargetable> AvailableTargets()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override ActionModel GetActionModel()
         {
             throw new NotImplementedException();
         }

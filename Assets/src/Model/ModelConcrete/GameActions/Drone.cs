@@ -2,18 +2,21 @@ using System;
 using System.Collections.Generic;
 using src.Model.ModelFramework.ActionFramework;
 using src.Model.ModelFramework.TargetableFramework;
-using src.Model.ModelFramework.Targetables;
-using Action = src.Model.ModelFramework.ActionFramework.GameAction;
 
 namespace src.Model.ModelConcrete.GameActions
 {
-    public class Drone : Action
+    public class Drone : GameAction
     {
         public Drone(ActionModel actionModel, Guid actionId, Guid selfId, Guid teamId) : base(actionModel, actionId, selfId, teamId)
         {
         }
 
         public override IEnumerable<ITargetable> AvailableTargets()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override ActionModel GetActionModel()
         {
             throw new NotImplementedException();
         }
