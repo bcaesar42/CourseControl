@@ -14,6 +14,7 @@ namespace src.View.Rooms
         private Text CrewCountText;
         private readonly string RoomName;
         public ActionState State { get; set; } = ActionState.Deactivated;
+        public BaseShip ship;
 
         public BaseRoom(BaseShip ship, string roomName, int currentCrewCount, int maxCrewCount, Guid SelfId, Guid TeamId)
         {
@@ -74,13 +75,11 @@ namespace src.View.Rooms
             if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftControl) && roomCrewCount > roomMaxCrew)
             {
                 Debug.Log("Right click");
-                AddCrew();
                 ship.AllocateCrew(1);
             }
             else if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftControl) && roomCrewCount > 0)
             {
                 Debug.Log("Left click");
-                RemoveCrew();
                 ship.FreeCrew(1);
             }
         }
@@ -97,26 +96,6 @@ namespace src.View.Rooms
         private void Update()
         {
             
-        }
-
-        public void AddCrew()
-        {
-            roomCrewCount++;
-        }
-
-        public void RemoveCrew()
-        {
-            roomCrewCount--;
-        }
-
-        public void ResetCrew()
-        {
-            roomCrewCount = 0;
-        }
-
-        public int GetCrewCount()
-        {
-            return _crewCount;
         }
     }
 }
