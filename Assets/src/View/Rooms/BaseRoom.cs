@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace src.View.Rooms
 {
-    public abstract class BaseRoom
+    public abstract class BaseRoom : MonoBehaviour
     {
         private int roomCrewCount;
         private int roomMaxCrew;

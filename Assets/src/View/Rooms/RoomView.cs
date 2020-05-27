@@ -45,7 +45,9 @@ public class RoomView : MonoBehaviour
 
         for (int slotNumber = 0; slotNumber < Slots.Length; slotNumber++)
         {
+            
             text = GameObject.Find($"Slot{slotNumber}CrewCount").GetComponent<TextMesh>();
+
             switch (selectedRooms[slotNumber].ToString())
             {
                 case "WeaponsBay":
@@ -101,10 +103,13 @@ public class RoomView : MonoBehaviour
                     obj = Instantiate(objPrefab, transform.position, Quaternion.identity) as GameObject;
                     obj.transform.Rotate(new Vector3(-90, 0, -90));
                     break;
+            
+            
             }
             Labels.Add(text);
             obj.transform.position = Slots[slotNumber];
             RoomMap.Add(room, text);
+            
         }
     }
 
