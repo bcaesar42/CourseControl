@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using src.Controller.TargetManager;
+using src.Model.ModelFramework.ShipFramework;
 using src.Turn;
 using UnityEngine;
 
@@ -30,19 +31,20 @@ public class SceneManager : MonoBehaviour
         actionRunner = new ActionRunner();
 
         turnManager = new TurnManager(actionRunner);
-
-        //test();
+        test();
     }
 
     public void test()
     {
-        Debug.Log("STARTING TEST");
-        turnManager.addPlayer(Guid.NewGuid());
-        turnManager.addPlayer(Guid.NewGuid());
-        turnManager.addPlayer(Guid.NewGuid());
-        turnManager.addPlayer(Guid.NewGuid());
+        ShipModel sm = new ShipModel();
+        sm.Name = "TestShip";
+        sm.ShipId = new Guid();
+        sm.Description = "THIS IS A TEST SHIP";
+        sm.InitialCrewCount = 5;
+        sm.InitialMaxHealth = 30;
 
-        turnManager.start();
+        BaseShip tShip1 = new BaseShip(sm);
+        BaseShip tShip2 = new BaseShip(sm);
     }
 
     public void newTurn()

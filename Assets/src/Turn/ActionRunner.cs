@@ -25,6 +25,8 @@ namespace src.Turn
             bool didSubscribe = false;
 
             ActionPriority priority = action.ActionModel.Priority;
+
+            return true; //TODO get this to error check itself before assigning to true
         }
 
         public bool UnsubscribeAction(GameAction action)
@@ -47,15 +49,16 @@ namespace src.Turn
 
         public async void RunActions()
         {
+            /*
             IOrderedEnumerable<IGrouping<ActionPriority, GameAction>> priorityGroups = SubscribedActions.GroupBy(action => action.Priority).OrderBy(group => group.Key);
-
+            
             foreach (IGrouping<ActionPriority, GameAction> priorityGroup in priorityGroups)
             {
                 IEnumerable<Task> tasks = priorityGroup.Select(action => action.PerformAction);
 
                 foreach (Task task in tasks)
                 {
-                    switch (/* This switch statement was missing. Do not know what should be here at this point and time - Jacob */)
+                    switch ()
                     {
                         case ActionPriority.VeryLow:
                             SubscribedActions_VeryLow.Append(action);
@@ -81,7 +84,8 @@ namespace src.Turn
                 }
 
                 await Task.WhenAll(tasks.ToArray()); // Wait for all Task from this priority level to finish before starting the Task of the next priority level.
-            }
+               
+            }*/
         }
     }
 }
