@@ -38,9 +38,10 @@ namespace src.Model.ModelFramework.ActionFramework
         public int? ChanceToIncreaseTotalCrewCount = null;
         public int? DecreasedTotalCrewCount = null;
         public int? ChanceToDecreasedTotalCrewCount = null;
-        
+
         //Research related
-        
+        public int? TokensGained = null;
+        public int? TokensRequired = null;
         
         //Scavenging related
     }

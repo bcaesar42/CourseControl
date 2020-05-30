@@ -7,6 +7,7 @@ namespace src.Model.ModelConcrete.GameActions
 {
     public class Research : GameAction
     {
+        protected int researchTokens = 0;
         public Research(ActionModel actionModel, Guid actionId, Guid selfId, Guid teamId) : base(actionModel, actionId, selfId, teamId)
         {
         }
@@ -23,12 +24,15 @@ namespace src.Model.ModelConcrete.GameActions
 
         public override bool IsValidActionModel(ActionModel actionModel)
         {
-            throw new NotImplementedException();
+            return actionModel.ActionType == "research";
         }
 
         protected override void DoAction(int roundNum, IEnumerable<ITargetable> targets)
         {
-            throw new NotImplementedException();
+            var turnModel = ActionModel.ActionTurnModels[roundNum];
+
+            researchTokens += turnModel.TokensGained ?? 1;
+            UnityEngine.Debug.Log($"{SelfId} has gained {turnModel.TokensGained} research tokens.\nTotal of {researchTokens} tokens.");
         }
     }
 }
