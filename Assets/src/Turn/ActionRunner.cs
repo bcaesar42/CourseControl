@@ -8,6 +8,8 @@ namespace src.Turn
 {
     public class ActionRunner
     {
+
+        /*
         // Constructor:
         public ActionRunner()
         {
@@ -49,16 +51,16 @@ namespace src.Turn
 
         public async void RunActions()
         {
-            /*
-            IOrderedEnumerable<IGrouping<ActionPriority, GameAction>> priorityGroups = SubscribedActions.GroupBy(action => action.Priority).OrderBy(group => group.Key);
+            IOrderedEnumerable<IGrouping<ActionPriority, GameAction>> priorityGroups = SubscribedActions.GroupBy(action => action.ActionModel.Priority).OrderBy(group => group.Key);
             
             foreach (IGrouping<ActionPriority, GameAction> priorityGroup in priorityGroups)
             {
-                IEnumerable<Task> tasks = priorityGroup.Select(action => action.PerformAction);
+                IEnumerable<Task> tasks = priorityGroup.Select(action => action.AdvanceRound);
 
                 foreach (Task task in tasks)
                 {
-                    switch ()
+                    
+                    switch (task)
                     {
                         case ActionPriority.VeryLow:
                             SubscribedActions_VeryLow.Append(action);
@@ -81,11 +83,12 @@ namespace src.Turn
                             didSubscribe = true;
                             break;
                     }
+                    
                 }
 
                 await Task.WhenAll(tasks.ToArray()); // Wait for all Task from this priority level to finish before starting the Task of the next priority level.
-               
-            }*/
-        }
-    }
+            }
+        } */
+    } 
+    
 }
