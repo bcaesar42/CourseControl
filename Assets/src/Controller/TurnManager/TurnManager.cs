@@ -15,6 +15,11 @@ public class TurnManager
         this.actionRunner = actionRunner;
     }
 
+    public TurnManager()
+    {
+        playerList = new List<Guid>();
+    }
+
     public void addPlayer(Guid id)
     {
         //Debug.Log("Added Player: " + id);

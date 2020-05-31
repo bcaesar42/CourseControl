@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using src.Controller.ActionModelManager;
+using src.Controller.TargetManager;
 using src.Model.ModelConcrete.GameActions;
 using src.Model.ModelFramework.ActionFramework;
 using src.Model.ModelFramework.ShipFramework;
@@ -30,8 +32,12 @@ public class BaseShip : ITargetable, IDamageable, IShieldable, IHealable, ICrewa
 
     List<BaseRoom> roomList;
 
+
+
     public BaseShip(ShipModel model)
     {
+        SceneManager sceneManager = GameObject.Find("SceneManager").transform.GetComponent<SceneManager>();
+        TargetManager targetManager = sceneManager.targetManager;
         maxHP = model.InitialMaxHealth;
         currentHP = model.InitialMaxHealth;
         
@@ -46,13 +52,14 @@ public class BaseShip : ITargetable, IDamageable, IShieldable, IHealable, ICrewa
         foreach (var gameAction in gameActions)
         {
             //TODO foreach actionModel in model get an instance of its action type e.g. Weapon or Heal and then assign it to the index in gameAction
-            //Hardcoding the actions for now.
+            
         }
 
-        //Hardcoding the actions for now.
-        gameActions[0] = new Weapon();
-
         //gameAction1 = ActionManager.instance.GetActionModel(model.GameActionId1, 1);
+        //Hardcoding for now
+
+        gameActions[0] = new Weapon(sceneManager.actionManager.GetActionModel(new Guid("49b68f9f-45b7-4444-993d-0441b8cb14d9"), 0).FirstOrDefault(), new Guid("49b68f9f-45b7-4444-993d-0441b8cb14d9"), new Guid("49b95jbv-8dac-4204-997d-0441b8c87239"), new Guid("49b95jbv-8dac-4204-993d-0441b8cb14d9"));
+
     }
 
     public BaseShip(ShipModel model, Guid teamId) : this(model)

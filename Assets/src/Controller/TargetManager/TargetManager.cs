@@ -14,7 +14,7 @@ namespace src.Controller.TargetManager
         private GameObject scene;
         private readonly List<ITargetable> targetList = new List<ITargetable>();
         
-        private TargetManager()
+        public TargetManager()
         {
             using (StreamReader r = new StreamReader("Assets/resources/BalanceConfig/ShipModels/ActionModels.json"))
             {

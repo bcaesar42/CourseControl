@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Assets.src.Model.ModelConcrete.Ships;
+using src.Controller.ActionModelManager;
 using src.Controller.TargetManager;
 using src.Model.ModelFramework.ShipFramework;
 using src.Turn;
@@ -19,8 +20,8 @@ public class SceneManager : MonoBehaviour
 {
     List<BaseShip> shipList;
     TurnManager turnManager;
-    TargetManager targetManager;
-    ActionRunner actionRunner;
+    public TargetManager targetManager { get; set; }
+    public ActionManager actionManager { get; set; }
 
     //ActionManager actionManager; TODO: figure out how to get actionManager active
 
@@ -29,9 +30,10 @@ public class SceneManager : MonoBehaviour
     void Start()
     {
         //this.shipList = shipList;
-        actionRunner = new ActionRunner();
 
-        turnManager = new TurnManager(actionRunner);
+        turnManager = new TurnManager();
+        targetManager = new TargetManager();
+        actionManager = ActionManager.instance;
         test();
     }
 
