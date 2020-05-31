@@ -27,8 +27,8 @@ public class SceneManager : MonoBehaviour
 
     void Start()
     {
-        ActionManager actionManager = new ActionManager();
-        TargetManager targetManager = new TargetManager();
+        actionManager = new ActionManager();
+        targetManager = new TargetManager();
 
         turnManager = new TurnManager();
         test();
@@ -45,6 +45,12 @@ public class SceneManager : MonoBehaviour
 
         BaseShip tShip1 = new BaseShip(sm);
         BaseShip tShip2 = new BaseShip(sm);
+
+
+        targetManager.AddTarget(tShip1);
+        targetManager.AddTarget(tShip2);
+
+        
     }
 
     public void newTurn()

@@ -2,7 +2,7 @@
   {
     "ActionName": "example action",
     "ActionType": "example",
-    "ActionId": "this should be formatted as a guid",
+    "ActionId": "9903ED01-A73C-4874-8ABF-D2678E3AE23D",
     "ActionTime": {
       "activationTime": 1,
       "completionTime": 1,
@@ -23,9 +23,11 @@
       }
     ]
   },
+
   {
     "ActionName": "Action's name",
     "ActionType": "Action's type, such as heal, weapon",
+    "ActionId": "9903ED01-A73C-4874-8ABF-D2678E3AE23D",
     "ActionTime": {
       "activationTime": 1,
       "completionTime": 1,

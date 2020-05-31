@@ -50,7 +50,7 @@ namespace src.Controller.TargetManager
             return rList;
         }
 
-        public List<ITargetable> getAlliedByID(Guid id)
+        public List<ITargetable> getAlliedID(Guid id)
         {
             var rList = new List<ITargetable>();
 
