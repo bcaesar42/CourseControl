@@ -58,7 +58,7 @@ public class BaseShip : ITargetable, IDamageable, IShieldable, IHealable, ICrewa
         //gameAction1 = ActionManager.instance.GetActionModel(model.GameActionId1, 1);
         //Hardcoding for now
 
-        gameActions[0] = new Weapon(sceneManager.actionManager.GetActionModel(new Guid("49b68f9f-45b7-4444-993d-0441b8cb14d9"), 0).FirstOrDefault(), new Guid("49b68f9f-45b7-4444-993d-0441b8cb14d9"), new Guid("49b95jbv-8dac-4204-997d-0441b8c87239"), new Guid("49b95jbv-8dac-4204-993d-0441b8cb14d9"));
+        //gameActions[0] = new Weapon(sceneManager.actionManager.GetActionModel(new Guid("49b68f9f-45b7-4444-993d-0441b8cb14d9"), 0).FirstOrDefault(), new Guid("49b68f9f-45b7-4444-993d-0441b8cb14d9"), new Guid("49b95jbv-8dac-4204-997d-0441b8c87239"), new Guid("49b95jbv-8dac-4204-993d-0441b8cb14d9"));
 
     }
 

@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using Assets.src.Model.ModelConcrete.Ships;
 using src.Controller.ActionModelManager;
 using src.Controller.TargetManager;
-using src.Model.ModelFramework.ShipFramework;
-using src.Turn;
+using Assets.src.Model.ModelFramework.ShipFramework;
 using UnityEngine;
 
 
@@ -49,7 +48,9 @@ public class SceneManager : MonoBehaviour
         //BaseShip tShip1 = new BaseShip(sm);
         //BaseShip tShip2 = new BaseShip(sm);
 
-        Wishbone wishbone = new Wishbone(new Assets.src.Model.ModelFramework.ShipFramework.WishboneModel());
+        Guid Player1 = new Guid();
+        turnManager.addPlayer(Player1);
+        Wishbone wishbone = new Wishbone(new WishboneModel());
 
     }
 
