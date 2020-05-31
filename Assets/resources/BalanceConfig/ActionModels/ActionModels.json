@@ -2,7 +2,7 @@
   {
     "ActionName": "example action",
     "ActionType": "example",
-    "ActionId": "9903ED01-A73C-4874-8ABF-D2678E3AE23D",
+    "ActionId": "49b68f9f-45b7-4444-993d-0441b89394d9",
     "ActionTime": {
       "activationTime": 1,
       "completionTime": 1,
@@ -36,6 +36,33 @@
     },
     "ActionLave": 1,
     "Description": "The description that will be shown to the user",
+    "RoomModel": "roomModel.fbx",
+    "DamagedRoomModel": "roomModel.fbx - this will be the same file as RoomModel if there isn't a damaged model",
+    "Priority": 0,
+    "comment - priority is 0 through 4": null,
+    "ActionTurnModels": [
+      {
+        "comment - The fields available to use are in ActionTurnModel. Ones can be added there if needed, but try to use those ones if possible.": null,
+        "RoundNumber": 1,
+        "HealAmount": 0,
+        "DecreaseMaxHealthAmount": 0,
+        "IncreaseMaxHealthAmount": 0,
+        "DamagePerShot": 2
+      }
+    ]
+  },
+  {
+    "ActionName": "Fire weapon",
+    "ActionType": "weapon",
+    "ActionId": "49b68f9f-45b7-4444-993d-0441b8cb14d9",
+    "ActionTime": {
+      "activationTime": 1,
+      "completionTime": 1,
+      "cooldownTime": 0,
+      "comment - completionTime must be at least 1": null
+    },
+    "ActionLave": 1,
+    "Description": "This is a test of the weapon firing action",
     "RoomModel": "roomModel.fbx",
     "DamagedRoomModel": "roomModel.fbx - this will be the same file as RoomModel if there isn't a damaged model",
     "Priority": 0,

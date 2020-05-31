@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Assets.src.Model.ModelConcrete.Ships;
 using src.Controller.ActionModelManager;
 using src.Controller.TargetManager;
-using src.Model.ModelFramework.ShipFramework;
-using src.Model.ModelFramework.TargetableFramework;
-using src.Turn;
+using Assets.src.Model.ModelFramework.ShipFramework;
 using UnityEngine;
 
 
@@ -20,7 +19,8 @@ public class SceneManager : MonoBehaviour
 {
     List<BaseShip> shipList;
     TurnManager turnManager;
-    TargetManager targetManager;
+    public TargetManager targetManager { get; set; }
+    public ActionManager actionManager { get; set; }
 
     ActionManager actionManager;
 
@@ -28,40 +28,29 @@ public class SceneManager : MonoBehaviour
 
     void Start()
     {
-        actionManager = new ActionManager();
-        targetManager = new TargetManager();
+        //this.shipList = shipList;
 
         turnManager = new TurnManager();
+        targetManager = new TargetManager();
+        actionManager = ActionManager.instance;
         test();
     }
 
     public void test()
     {
-        ShipModel sm = new ShipModel();
-        sm.Name = "TestShip";
-        sm.ShipId = new Guid();
-        sm.Description = "THIS IS A TEST SHIP";
-        sm.InitialCrewCount = 5;
-        sm.InitialMaxHealth = 30;
+        //ShipModel sm = new ShipModel();
+        //sm.Name = "TestShip";
+        //sm.ShipId = new Guid();
+        //sm.Description = "THIS IS A TEST SHIP";
+        //sm.InitialCrewCount = 5;
+        //sm.InitialMaxHealth = 30;
 
-        Debug.Log("Ship Model ID: " + sm.ShipId);
+        //BaseShip tShip1 = new BaseShip(sm);
+        //BaseShip tShip2 = new BaseShip(sm);
 
-        BaseShip tShip1 = new BaseShip(sm);
-        BaseShip tShip2 = new BaseShip(sm);
-
-        Debug.Log("tShip1 ID: " + tShip1.GetSelfId());
-        Debug.Log("tShip2 ID: " + tShip2.GetSelfId());
-
-
-        targetManager.AddTarget(tShip1);
-        targetManager.AddTarget(tShip2);
-
-        List<ITargetable> targets = targetManager.getEnemies(tShip1.GetSelfId());
-        
-        foreach(ITargetable t in targets)
-        {
-            Debug.Log(t.GetSelfId());
-        }
+        Guid Player1 = new Guid();
+        turnManager.addPlayer(Player1);
+        Wishbone wishbone = new Wishbone(new WishboneModel());
 
     }
 

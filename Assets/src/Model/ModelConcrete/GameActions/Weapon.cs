@@ -26,7 +26,7 @@ namespace src.Model.ModelConcrete.GameActions
 
         public override ActionModel GetActionModel()
         {
-            throw new NotImplementedException();
+            return this.ActionModel;
         }
 
         public override bool IsValidActionModel(ActionModel actionModel)

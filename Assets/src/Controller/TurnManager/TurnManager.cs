@@ -13,6 +13,11 @@ public class TurnManager
         playerList = new List<Guid>();
     }
 
+    public TurnManager()
+    {
+        playerList = new List<Guid>();
+    }
+
     public void addPlayer(Guid id)
     {
         //Debug.Log("Added Player: " + id);
