@@ -30,7 +30,7 @@ public class BaseShip : ITargetable, IDamageable, IShieldable, IHealable, ICrewa
 
     private GameAction[] gameActions;
 
-    List<BaseRoom> roomList;
+    List<BaseRoom> roomList = new List<BaseRoom>();
 
 
 
@@ -64,6 +64,11 @@ public class BaseShip : ITargetable, IDamageable, IShieldable, IHealable, ICrewa
     public BaseShip(ShipModel model, Guid teamId) : this(model)
     {
         this.teamID = teamId;
+    }
+
+    public void addRoom(BaseRoom b)
+    {
+        roomList.Add(b);
     }
 
     public bool AllocateCrew(int crewToAllocate)

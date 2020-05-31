@@ -23,7 +23,7 @@ namespace src.View.Rooms
             roomMaxCrew = maxCrewCount;
             CrewCount = currentCrewCount;
             this.ship = ship;
-            //roomAction gets instantiated as a concrete by the concrete class of Room being used.
+            ship.addRoom(this);
         }
 
         private int MaxCrew
