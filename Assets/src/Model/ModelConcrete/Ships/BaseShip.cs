@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using src.Controller.ActionModelManager;
+using src.Model.ModelConcrete.GameActions;
 using src.Model.ModelFramework.ActionFramework;
 using src.Model.ModelFramework.ShipFramework;
 using src.Model.ModelFramework.TargetableFramework;
@@ -45,7 +46,11 @@ public class BaseShip : ITargetable, IDamageable, IShieldable, IHealable, ICrewa
         foreach (var gameAction in gameActions)
         {
             //TODO foreach actionModel in model get an instance of its action type e.g. Weapon or Heal and then assign it to the index in gameAction
+            //Hardcoding the actions for now.
         }
+
+        //Hardcoding the actions for now.
+        gameActions[0] = new Weapon();
 
         //gameAction1 = ActionManager.instance.GetActionModel(model.GameActionId1, 1);
     }

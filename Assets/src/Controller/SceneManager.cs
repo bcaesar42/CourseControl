@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Assets.src.Model.ModelConcrete.Ships;
 using src.Controller.TargetManager;
 using src.Model.ModelFramework.ShipFramework;
 using src.Turn;
@@ -36,15 +37,18 @@ public class SceneManager : MonoBehaviour
 
     public void test()
     {
-        ShipModel sm = new ShipModel();
-        sm.Name = "TestShip";
-        sm.ShipId = new Guid();
-        sm.Description = "THIS IS A TEST SHIP";
-        sm.InitialCrewCount = 5;
-        sm.InitialMaxHealth = 30;
+        //ShipModel sm = new ShipModel();
+        //sm.Name = "TestShip";
+        //sm.ShipId = new Guid();
+        //sm.Description = "THIS IS A TEST SHIP";
+        //sm.InitialCrewCount = 5;
+        //sm.InitialMaxHealth = 30;
 
-        BaseShip tShip1 = new BaseShip(sm);
-        BaseShip tShip2 = new BaseShip(sm);
+        //BaseShip tShip1 = new BaseShip(sm);
+        //BaseShip tShip2 = new BaseShip(sm);
+
+        Wishbone wishbone = new Wishbone(new Assets.src.Model.ModelFramework.ShipFramework.WishboneModel());
+
     }
 
     public void newTurn()

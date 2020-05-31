@@ -20,7 +20,7 @@ namespace src.View.Rooms
         public BaseRoom(BaseShip ship, string roomName, int currentCrewCount, int maxCrewCount, Guid SelfId, Guid TeamId)
         {
             RoomName = roomName;
-            MaxCrew = maxCrewCount;
+            roomMaxCrew = maxCrewCount;
             CrewCount = currentCrewCount;
             this.ship = ship;
             //roomAction gets instantiated as a concrete by the concrete class of Room being used.
@@ -73,7 +73,7 @@ namespace src.View.Rooms
 
         public void OnMouseDown()
         {
-            if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftControl) && roomCrewCount > roomMaxCrew)
+            if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftControl) && roomCrewCount < roomMaxCrew)
             {
                 Debug.Log("Right click");
                 ship.AllocateCrew(1);
@@ -87,10 +87,10 @@ namespace src.View.Rooms
 
         private void Start()
         {
-            // Debug.Log($"Created {RoomName}.");
-            //
-            // CrewCountText = GameObject.Find($"{RoomName.Replace(" ", "")}CrewCount").GetComponent<Text>();
-            // CrewCountText.text = $"{CrewCount}";
+            //Debug.Log($"Created {RoomName}.");
+
+            //CrewCountText = GameObject.Find($"{RoomName.Replace(" ", "")}CrewCount").GetComponent<Text>();
+            //CrewCountText.text = $"{CrewCount}";
         }
 
         // Update is called once per frame
