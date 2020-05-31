@@ -22,7 +22,5 @@ namespace src.Model.ModelFramework.ShipFramework
         public int InitialCrewCount;
 
         public int InitialMaxHealth;
-        
-        
     }
 }

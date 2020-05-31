@@ -7,12 +7,10 @@ public class TurnManager
 {
     List<Guid> playerList;
     Guid currentPlayer;
-    ActionRunner actionRunner;
 
-    public TurnManager(ActionRunner actionRunner)
+    public TurnManager()
     {
         playerList = new List<Guid>();
-        this.actionRunner = actionRunner;
     }
 
     public void addPlayer(Guid id)

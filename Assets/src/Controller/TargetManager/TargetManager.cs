@@ -11,16 +11,11 @@ namespace src.Controller.TargetManager
 {
     public class TargetManager
     {
-        private GameObject scene;
         private readonly List<ITargetable> targetList = new List<ITargetable>();
         
-        private TargetManager()
+        public TargetManager()
         {
-            using (StreamReader r = new StreamReader("Assets/resources/BalanceConfig/ShipModels/ActionModels.json"))
-            {
-                string json = r.ReadToEnd();
-                //ActionModels = JsonConvert.DeserializeObject<List<ActionModel>>(json);
-            }
+
         }
 
         public void RemoveTarget(Guid id)
@@ -35,7 +30,7 @@ namespace src.Controller.TargetManager
             targetList.Add(target);
         }
 
-        public List<ITargetable> getEnemyID(Guid id)
+        public List<ITargetable> getEnemyByID(Guid id)
         {
             var rList = new List<ITargetable>();
 
@@ -45,7 +40,17 @@ namespace src.Controller.TargetManager
             return rList;
         }
 
-        public List<ITargetable> getAlliedID(Guid id)
+        public List<ITargetable> getEnemies(Guid id)
+        {
+            var rList = new List<ITargetable>();
+
+            foreach (var t in targetList)
+                if (t.GetTeamId() != id)
+                    rList.Add(t);
+            return rList;
+        }
+
+        public List<ITargetable> getAlliedByID(Guid id)
         {
             var rList = new List<ITargetable>();
 

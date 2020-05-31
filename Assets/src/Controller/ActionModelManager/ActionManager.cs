@@ -15,7 +15,7 @@ namespace src.Controller.ActionModelManager
         
         public List<ActionModel> ActionModels;
 
-        private ActionManager()
+        public ActionManager()
         {
             using (StreamReader r = new StreamReader("Assets/resources/BalanceConfig/ActionModels/ActionModels.json"))
             {
@@ -33,22 +33,19 @@ namespace src.Controller.ActionModelManager
 
         public IEnumerable<T> GetUpgrades<T>(T actionModel) where T : ActionModel
         {
-            var upgrades = ActionModels.Where(model =>
-                model.ActionName == actionModel.ActionName && model.ActionLevel == actionModel.ActionLevel + 1);
+            var upgrades = ActionModels.Where(model => model.ActionName == actionModel.ActionName && model.ActionLevel == actionModel.ActionLevel + 1);
             return upgrades.Cast<T>();
         }
 
         public IEnumerable<T> GetActionModel<T>(Guid actionId, int upgradeLevel) where T : ActionModel
         {
-            var model = ActionModels.Where(actionModel =>
-                actionModel.ActionId == actionId && actionModel.ActionLevel == upgradeLevel);
+            var model = ActionModels.Where(actionModel => actionModel.ActionId == actionId && actionModel.ActionLevel == upgradeLevel);
             return model.Cast<T>();
         }
 
         public IEnumerable<ActionModel> GetActionModel(Guid actionId, int upgradeLevel)
         {
-            var model = ActionModels.Where(actionModel =>
-                actionModel.ActionId == actionId && actionModel.ActionLevel == upgradeLevel);
+            var model = ActionModels.Where(actionModel => actionModel.ActionId == actionId && actionModel.ActionLevel == upgradeLevel);
             return model;
         }
     }
