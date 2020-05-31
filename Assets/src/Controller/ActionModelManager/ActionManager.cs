@@ -15,7 +15,7 @@ namespace src.Controller.ActionModelManager
         
         public List<ActionModel> ActionModels;
 
-        public ActionManager()
+        private ActionManager()
         {
             using (StreamReader r = new StreamReader("Assets/resources/BalanceConfig/ActionModels/ActionModels.json"))
             {

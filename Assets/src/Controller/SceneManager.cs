@@ -22,8 +22,6 @@ public class SceneManager : MonoBehaviour
     public TargetManager targetManager { get; set; }
     public ActionManager actionManager { get; set; }
 
-    ActionManager actionManager;
-
     //Assuming that we construct ships elsewhere (on another scene) and pass them in when the game scene is started
 
     void Start()
