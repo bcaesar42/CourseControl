@@ -38,7 +38,6 @@ public class BaseShip : ITargetable, IDamageable, IShieldable, IHealable, ICrewa
         currentCrew = model.InitialCrewCount;
 
         selfID = Guid.NewGuid();
-        //TODO register selfId and ship with targetManager;
 
         gameActions = new GameAction[7];
         

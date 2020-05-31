@@ -45,7 +45,17 @@ namespace src.Controller.TargetManager
             var rList = new List<ITargetable>();
 
             foreach (var t in targetList)
-                if (t.GetTeamId() != id)
+                if (t.GetTeamId() != id && t.GetSelfId() != id)
+                    rList.Add(t);
+            return rList;
+        }
+
+        public List<ITargetable> getAllies(Guid id)
+        {
+            var rList = new List<ITargetable>();
+
+            foreach (var t in targetList)
+                if (t.GetTeamId() == id && t.GetSelfId() == id)
                     rList.Add(t);
             return rList;
         }

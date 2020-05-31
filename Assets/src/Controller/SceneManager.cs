@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using src.Controller.ActionModelManager;
 using src.Controller.TargetManager;
 using src.Model.ModelFramework.ShipFramework;
+using src.Model.ModelFramework.TargetableFramework;
 using src.Turn;
 using UnityEngine;
 
@@ -43,14 +44,25 @@ public class SceneManager : MonoBehaviour
         sm.InitialCrewCount = 5;
         sm.InitialMaxHealth = 30;
 
+        Debug.Log("Ship Model ID: " + sm.ShipId);
+
         BaseShip tShip1 = new BaseShip(sm);
         BaseShip tShip2 = new BaseShip(sm);
+
+        Debug.Log("tShip1 ID: " + tShip1.GetSelfId());
+        Debug.Log("tShip2 ID: " + tShip2.GetSelfId());
 
 
         targetManager.AddTarget(tShip1);
         targetManager.AddTarget(tShip2);
 
+        List<ITargetable> targets = targetManager.getEnemies(tShip1.GetSelfId());
         
+        foreach(ITargetable t in targets)
+        {
+            Debug.Log(t.GetSelfId());
+        }
+
     }
 
     public void newTurn()
