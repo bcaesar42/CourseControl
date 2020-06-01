@@ -6,13 +6,13 @@ using UnityEngine.UI;
 
 namespace src.View.Rooms
 {
-    public abstract class BaseRoom : MonoBehaviour
+    public abstract class BaseRoom
     {
         private int roomCrewCount;
         private int roomMaxCrew;
         private int roomMinCrew;
         private Text CrewCountText;
-        private readonly string RoomName;
+        public readonly string RoomName;
         public ActionState State { get; set; } = ActionState.Deactivated;
         private BaseShip ship;
         public int upgradeCost;
@@ -73,14 +73,15 @@ namespace src.View.Rooms
 
         public void OnMouseDown()
         {
-            if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftControl) && roomCrewCount < roomMaxCrew)
-            {
-                Debug.Log("Right click");
-                ship.AllocateCrew(1);
-            }
-            else if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftControl) && roomCrewCount > 0)
+            Debug.Log("Got to mouse");
+            if (Input.GetMouseButtonDown(0) && roomCrewCount < roomMaxCrew)
             {
                 Debug.Log("Left click");
+                ship.AllocateCrew(1);
+            }
+            else if (Input.GetMouseButtonDown(1) && roomCrewCount > 0)
+            {
+                Debug.Log("Right click");
                 ship.FreeCrew(1);
             }
         }

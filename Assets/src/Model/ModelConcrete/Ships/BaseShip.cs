@@ -30,7 +30,7 @@ public class BaseShip : ITargetable, IDamageable, IShieldable, IHealable, ICrewa
 
     private GameAction[] gameActions;
 
-    List<BaseRoom> roomList = new List<BaseRoom>();
+    public List<BaseRoom> roomList = new List<BaseRoom>();
 
 
 

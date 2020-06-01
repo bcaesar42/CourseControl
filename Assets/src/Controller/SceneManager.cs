@@ -17,7 +17,7 @@ using UnityEngine;
 
 public class SceneManager : MonoBehaviour
 {
-    List<BaseShip> shipList;
+    public List<BaseShip> shipList;
     TurnManager turnManager;
     public TargetManager targetManager { get; set; }
     public ActionManager actionManager { get; set; }
@@ -26,7 +26,7 @@ public class SceneManager : MonoBehaviour
 
     void Start()
     {
-        //this.shipList = shipList;
+        shipList =  new List<BaseShip>();
 
         turnManager = new TurnManager();
         targetManager = new TargetManager();
@@ -49,6 +49,7 @@ public class SceneManager : MonoBehaviour
         Guid Player1 = new Guid();
         turnManager.addPlayer(Player1);
         Wishbone wishbone = new Wishbone(new WishboneModel());
+        shipList.Add(wishbone);
 
     }
 
