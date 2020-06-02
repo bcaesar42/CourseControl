@@ -161,6 +161,9 @@ namespace src.Model.ModelFramework.ActionFramework
             return _currentState;
         }
 
-        public abstract Task PerformAction();
+        public Task PerformAction()
+        {
+            return new Task(() => DoAction(_currentCompletionLeft, Targets));
+        }
     }
 }
