@@ -53,11 +53,11 @@ namespace src.Turn
 
         public async void RunActions()
         {
-            IOrderedEnumerable<IGrouping<ActionPriority, GameAction>> priorityGroups = SubscribedActions.GroupBy(action => action.Priority).OrderBy(group => group.Key);
+            IOrderedEnumerable<IGrouping<ActionPriority, GameAction>> priorityGroups = SubscribedActions.GroupBy(action => action.ActionModel.Priority).OrderBy(group => group.Key);
 
             foreach (IGrouping<ActionPriority, GameAction> priorityGroup in priorityGroups)
             {
-                IEnumerable<Task> tasks = priorityGroup.Select(action => action.PerformAction);
+                IEnumerable<Task> tasks = priorityGroup.Select(action => action.PerformAction());
 
                 foreach (Task task in tasks)
                 {
