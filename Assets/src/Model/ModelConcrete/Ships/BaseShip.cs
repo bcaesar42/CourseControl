@@ -32,8 +32,6 @@ public class BaseShip : ITargetable, IDamageable, IShieldable, IHealable, ICrewa
 
     public List<BaseRoom> roomList = new List<BaseRoom>();
 
-
-
     public BaseShip(ShipModel model)
     {
         SceneManager sceneManager = GameObject.Find("SceneManager").transform.GetComponent<SceneManager>();

@@ -47,10 +47,9 @@ public class SceneManager : MonoBehaviour
         //BaseShip tShip1 = new BaseShip(sm);
         //BaseShip tShip2 = new BaseShip(sm);
 
-        Guid Player1 = Guid.NewGuid();
-        turnManager.addPlayer(Player1);
         Wishbone wishbone = new Wishbone(new WishboneModel());
         shipList.Add(wishbone);
+        turnManager.addPlayer(wishbone.GetSelfId());
 
     }
 
