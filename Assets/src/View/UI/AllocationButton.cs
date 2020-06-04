@@ -19,6 +19,7 @@ namespace Assets.src.View.UI
         TargetManager targetManager;
 
         int roomIndex;
+        Guid playerGUID;
 
         /*
          * Constructor is passed in slot number and reference to room
@@ -35,8 +36,9 @@ namespace Assets.src.View.UI
             sceneManager = GameObject.Find("SceneManager").transform.GetComponent<SceneManager>();
             targetManager = sceneManager.targetManager;
             Button button = GameObject.Find("Slot0").GetComponentInChildren<Button>();
+            playerGUID = sceneManager.turnManager.currentPlayer;
 
-            switch(this.name)
+            switch (this.name)
             {
                 case "slot0Button":
                     roomIndex = 0;
@@ -90,20 +92,34 @@ namespace Assets.src.View.UI
 
             if (eventData.button == PointerEventData.InputButton.Left)
             {
-                Guid playerGUID = sceneManager.turnManager.currentPlayer;
                 foreach (BaseShip ship in sceneManager.shipList)
                 {
                     if (playerGUID == ship.GetSelfId())
                     {
                         BaseShip playerShip = ship;
-                        Debug.Log("Found the ship");
+                        ship.AllocateCrew(1, roomIndex);
+                        Debug.Log("CrewCount for room: " + ship.roomList[roomIndex].GetCrewCount());
+                        Debug.Log("CrewCount for ship: " + ship.CurrentCrewCount());
                     }
                 }
             }
             else if (eventData.button == PointerEventData.InputButton.Middle)
+            {
                 Debug.Log("Middle click");
+            }
+                
             else if (eventData.button == PointerEventData.InputButton.Right)
-                Debug.Log("Right click");
+            {
+                foreach (BaseShip ship in sceneManager.shipList)
+                {
+                    if (playerGUID == ship.GetSelfId())
+                    {
+                        BaseShip playerShip = ship;
+                        ship.FreeCrew(1, roomIndex);
+                        Debug.Log(ship.roomList[roomIndex].GetCrewCount());
+                    }
+                }
+            }
         }
     }
 }

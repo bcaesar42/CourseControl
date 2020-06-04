@@ -50,25 +50,7 @@ public class SceneManager : MonoBehaviour
         Wishbone wishbone = new Wishbone(new WishboneModel());
         shipList.Add(wishbone);
         turnManager.addPlayer(wishbone.GetSelfId());
-
-    }
-
-    public void roomClickEvent(int room, PointerEventData pointer)
-    {
-        Guid curPlayer = turnManager.currentPlayer;
-
-        foreach(BaseShip ship in shipList)
-        {
-            if(ship.GetSelfId().Equals(curPlayer))
-            {
-                if(pointer.button == PointerEventData.InputButton.Left)
-                    ship.AllocateCrew(1, room);
-                if (pointer.button == PointerEventData.InputButton.Right)
-                    ship.FreeCrew(1, room);
-            }
-
-        }
-            
+        turnManager.start();
     }
 
     public void newTurn()
