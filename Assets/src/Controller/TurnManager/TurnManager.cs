@@ -6,7 +6,7 @@ using UnityEngine;
 public class TurnManager
 {
     List<Guid> playerList;
-    Guid currentPlayer;
+    public Guid currentPlayer;
 
     public TurnManager()
     {
