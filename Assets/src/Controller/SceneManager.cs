@@ -6,6 +6,7 @@ using src.Controller.ActionModelManager;
 using src.Controller.TargetManager;
 using Assets.src.Model.ModelFramework.ShipFramework;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 
 /* 
@@ -51,6 +52,24 @@ public class SceneManager : MonoBehaviour
         Wishbone wishbone = new Wishbone(new WishboneModel());
         shipList.Add(wishbone);
 
+    }
+
+    public void roomClickEvent(int room, PointerEventData pointer)
+    {
+        Guid curPlayer = turnManager.currentPlayer;
+
+        foreach(BaseShip ship in shipList)
+        {
+            if(ship.GetSelfId().Equals(curPlayer))
+            {
+                if(pointer.button == PointerEventData.InputButton.Left)
+                    ship.AllocateCrew(1, room);
+                if (pointer.button == PointerEventData.InputButton.Right)
+                    ship.FreeCrew(1, room);
+            }
+
+        }
+            
     }
 
     public void newTurn()

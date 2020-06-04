@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class TurnManager
 {
-    List<Guid> playerList;
-    Guid currentPlayer;
+    List<Guid> playerList { get; set; }
+    public Guid currentPlayer { get; set; }
 
     public TurnManager()
     {
