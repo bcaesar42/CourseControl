@@ -98,7 +98,7 @@ public class BaseShip : ITargetable, IDamageable, IShieldable, IHealable, ICrewa
 
     public bool FreeCrew(int crewToFree, int room)
     {
-        if (currentCrew + crewToFree <= maxCrew)
+        if (currentCrew + crewToFree <= maxCrew && (roomList[room].GetCrewCount() > 0))
         {
             currentCrew += crewToFree;
             roomList[room].RemoveCrew();
