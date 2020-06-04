@@ -13,13 +13,8 @@ namespace Assets.src.View.UI
 {
     public class AllocationButton : MonoBehaviour, IPointerClickHandler
     {
-        List<GameObject> slots;
         SceneManager sceneManager;
-        List<Button> buttons;
-        TargetManager targetManager;
-
         int roomIndex;
-        Guid playerGUID;
 
         /*
          * Constructor is passed in slot number and reference to room
@@ -27,48 +22,44 @@ namespace Assets.src.View.UI
          * Add listener
          */
 
-        public AllocationButton(int slotNumber, BaseRoom room)
-        {
-            
-        }
         void Start()
         {
             sceneManager = GameObject.Find("SceneManager").transform.GetComponent<SceneManager>();
-            targetManager = sceneManager.targetManager;
-            Button button = GameObject.Find("Slot0").GetComponentInChildren<Button>();
-            playerGUID = sceneManager.turnManager.currentPlayer;
+            
+            //Guid currentPlayer = sceneManager.turnManager.currentPlayer;
 
-            switch (this.name)
+            switch (name)
             {
-                case "slot0Button":
+                case "Slot0Button":
                     roomIndex = 0;
+
                     break;
 
-                case "slot1Button":
+                case "Slot1Button":
                     roomIndex = 1;
                     break;
 
-                case "slot2Button":
+                case "Slot2Button":
                     roomIndex = 2;
                     break;
 
-                case "slot3Button":
+                case "Slot3Button":
                     roomIndex = 3;
                     break;
 
-                case "slot4Button":
+                case "Slot4Button":
                     roomIndex = 4;
                     break;
 
-                case "slot5Button":
+                case "Slot5Button":
                     roomIndex = 5;
                     break;
 
-                case "slot6Button":
+                case "Slot6Button":
                     roomIndex = 6;
                     break;
 
-                case "slot7Button":
+                case "Slot7Button":
                     roomIndex = 8;
                     break;
             }
@@ -77,18 +68,12 @@ namespace Assets.src.View.UI
 
         void Update()
         {
-            
-        }
-
-        void TaskOnClick()
-        {
-
+            //this.enabled = false;
         }
 
         public void OnPointerClick(PointerEventData eventData)
         {
-
-            Debug.Log(this.name);
+            Guid playerGUID = sceneManager.turnManager.currentPlayer;
 
             if (eventData.button == PointerEventData.InputButton.Left)
             {
@@ -116,7 +101,8 @@ namespace Assets.src.View.UI
                     {
                         BaseShip playerShip = ship;
                         ship.FreeCrew(1, roomIndex);
-                        Debug.Log(ship.roomList[roomIndex].GetCrewCount());
+                        Debug.Log("CrewCount for room: " + ship.roomList[roomIndex].GetCrewCount());
+                        Debug.Log("CrewCount for ship: " + ship.CurrentCrewCount());
                     }
                 }
             }

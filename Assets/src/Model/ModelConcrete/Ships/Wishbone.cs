@@ -12,8 +12,9 @@ namespace Assets.src.Model.ModelConcrete.Ships
     {
         public Wishbone(ShipModel model) : base(model)
         {
-            WeaponsBay weaponsBay = new WeaponsBay(this, new Guid());
-            NavigationRoom navigation = new NavigationRoom(this, new Guid());
+            WeaponsBay weaponsBay = new WeaponsBay(this, Guid.NewGuid());
+            NavigationRoom navigation = new NavigationRoom(this, Guid.NewGuid());
+
         }
 
         public Wishbone(ShipModel model, Guid teamId) : base(model, teamId)
