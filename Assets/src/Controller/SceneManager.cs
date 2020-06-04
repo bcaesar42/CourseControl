@@ -25,17 +25,19 @@ public class SceneManager : MonoBehaviour
 
     //Assuming that we construct ships elsewhere (on another scene) and pass them in when the game scene is started
 
-    void Start()
+    private void Awake()
     {
-        shipList =  new List<BaseShip>();
-
+        shipList = new List<BaseShip>();
         turnManager = new TurnManager();
         targetManager = new TargetManager();
         actionManager = ActionManager.instance;
-        test();
+    }
+    void Start()
+    {
+        Demo();
     }
 
-    public void test()
+    public void Demo()
     {
         //ShipModel sm = new ShipModel();
         //sm.Name = "TestShip";

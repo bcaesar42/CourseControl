@@ -14,8 +14,10 @@ namespace Assets.src.View.UI
     public class AllocationButton : MonoBehaviour, IPointerClickHandler
     {
         SceneManager sceneManager;
+        TurnManager turnManager;
         int roomIndex;
-
+        Text text;
+        
         /*
          * Constructor is passed in slot number and reference to room
          * Find slot object and put in order
@@ -25,50 +27,74 @@ namespace Assets.src.View.UI
         void Start()
         {
             sceneManager = GameObject.Find("SceneManager").transform.GetComponent<SceneManager>();
-            
-            //Guid currentPlayer = sceneManager.turnManager.currentPlayer;
+            Guid currentPlayer = sceneManager.turnManager.currentPlayer;
 
-            switch (name)
+            foreach (BaseShip ship in sceneManager.shipList)
             {
-                case "Slot0Button":
-                    roomIndex = 0;
+                if (currentPlayer == ship.GetSelfId())
+                {
+                    BaseShip playerShip = ship;
+                    switch (name)
+                    {
+                        case "Slot0Button":
+                            roomIndex = 0;
+                            text = GetComponentInChildren<Text>();
+                            text.text = ship.roomList[roomIndex].RoomName;
+                            break;
 
-                    break;
+                        case "Slot1Button":
+                            roomIndex = 1;
+                            text = GetComponentInChildren<Text>();
+                            text.text = ship.roomList[roomIndex].RoomName;
+                            break;
 
-                case "Slot1Button":
-                    roomIndex = 1;
-                    break;
+                        case "Slot2Button":
+                            roomIndex = 2;
+                            text = GetComponentInChildren<Text>();
+                            text.text = ship.roomList[roomIndex].RoomName;
+                            break;
 
-                case "Slot2Button":
-                    roomIndex = 2;
-                    break;
+                        case "Slot3Button":
+                            roomIndex = 3;
+                            text = GetComponentInChildren<Text>();
+                            text.text = ship.roomList[roomIndex].RoomName;
+                            break;
 
-                case "Slot3Button":
-                    roomIndex = 3;
-                    break;
+                        case "Slot4Button":
+                            roomIndex = 4;
+                            text = GetComponentInChildren<Text>();
+                            text.text = ship.roomList[roomIndex].RoomName;
+                            break;
 
-                case "Slot4Button":
-                    roomIndex = 4;
-                    break;
+                        case "Slot5Button":
+                            roomIndex = 5;
+                            text = GetComponentInChildren<Text>();
+                            text.text = ship.roomList[roomIndex].RoomName;
+                            break;
 
-                case "Slot5Button":
-                    roomIndex = 5;
-                    break;
+                        case "Slot6Button":
+                            roomIndex = 6;
+                            text = GetComponentInChildren<Text>();
+                            text.text = ship.roomList[roomIndex].RoomName;
+                            break;
 
-                case "Slot6Button":
-                    roomIndex = 6;
-                    break;
-
-                case "Slot7Button":
-                    roomIndex = 8;
-                    break;
+                        case "Slot7Button":
+                            roomIndex = 7;
+                            text = GetComponentInChildren<Text>();
+                            text.text = ship.roomList[roomIndex].RoomName;
+                            break;
+                    }
+                }
             }
-
         }
 
         void Update()
         {
-            //this.enabled = false;
+            if (!(sceneManager.turnManager is null))
+            {
+                //this.enabled = false;
+                 
+            }
         }
 
         public void OnPointerClick(PointerEventData eventData)
