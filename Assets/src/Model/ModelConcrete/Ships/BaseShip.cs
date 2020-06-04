@@ -71,11 +71,39 @@ public class BaseShip : ITargetable, IDamageable, IShieldable, IHealable, ICrewa
         roomList.Add(b);
     }
 
+    public bool AllocateCrew(int crewToAllocate, int room)
+    {
+        if (currentCrew - crewToAllocate >= 0)
+        {
+            currentCrew -= crewToAllocate;
+            roomList[room].AddCrew();
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public bool AllocateCrew(int crewToAllocate)
     {
         if (currentCrew - crewToAllocate >= 0)
         {
             currentCrew -= crewToAllocate;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public bool FreeCrew(int crewToFree, int room)
+    {
+        if (currentCrew + crewToFree <= maxCrew)
+        {
+            currentCrew += crewToFree;
+            roomList[room].RemoveCrew();
             return true;
         }
         else
