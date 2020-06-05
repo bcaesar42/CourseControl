@@ -16,8 +16,8 @@ namespace Assets.src.Model.ModelConcrete.Ships
             NavigationRoom navigation = new NavigationRoom(this, Guid.NewGuid());
             DroneBay droneBay = new DroneBay(this, Guid.NewGuid());
             MaintenanceBay maintenanceBay = new MaintenanceBay(this, Guid.NewGuid());
-            MedicalBay medicalBay = new MedicalBay(this, Guid.NewGuid());
-            ReplicationCenter replicationCenter = new ReplicationCenter(this, Guid.NewGuid());
+            ScavengeBay scavengeBay = new ScavengeBay(this, Guid.NewGuid());
+            SensorRoom sensorRoom = new SensorRoom(this, Guid.NewGuid());
             ShieldBay shieldBay = new ShieldBay(this, Guid.NewGuid());
             ResearchCenter researchCenter = new ResearchCenter(this, Guid.NewGuid());
         }
