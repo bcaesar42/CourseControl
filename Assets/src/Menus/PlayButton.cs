@@ -7,6 +7,6 @@ public class PlayButton : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("Play button was clicked.");
-        UnityEngine.SceneManagement.SceneManager.LoadScene("HealthBarScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("PlayerShip");
     }
 }
