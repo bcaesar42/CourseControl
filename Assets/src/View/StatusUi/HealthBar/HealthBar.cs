@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace src.View.StatusUi.HealthBar
 {
@@ -18,7 +19,7 @@ namespace src.View.StatusUi.HealthBar
         private int _totalCurrentHealthWidth;
 
         private GameObject _canvasTipText;
-        private CanvasTipText.CanvasTipText _tipText;
+        private Text _tipText;
 
         private int _penultimateScreenWidth;
         private int _lastScreenWidth;
@@ -34,7 +35,7 @@ namespace src.View.StatusUi.HealthBar
             _healthBarTransform = GetComponent<RectTransform>();
 
             _canvasTipText = GameObject.Find("CanvasTipText");
-            _tipText = GetComponent<CanvasTipText.CanvasTipText>();
+            _tipText = _canvasTipText.GetComponent<Text>();
         }
 
         private void Update()
@@ -77,7 +78,7 @@ namespace src.View.StatusUi.HealthBar
 
             if (_healthTip)
             {
-                _tipText.SetTipText("Current Health: " + _health + " out of " + _healthMax);
+                _tipText.text = ("Current Health: " + _health + " out of " + _healthMax); //TipText being set to Null
             }
         }
 
@@ -114,7 +115,7 @@ namespace src.View.StatusUi.HealthBar
         public void HideHealthTip()
         {
             _healthTip = false;
-            _tipText.SetTipText("");
+            _tipText.text = "";
         }
 
         public void OnPointerEnter(PointerEventData eventData)
