@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
 using Timer = System.Timers.Timer;
 
 namespace src.View.StatusUi.ShieldIndicator
@@ -20,6 +21,10 @@ namespace src.View.StatusUi.ShieldIndicator
         private GameObject[] _shieldIndicatorCells;
         private RectTransform[] _shieldIndicatorCellTransforms;
         private SVGImage[] _shieldIndicatorCellSvgImages;
+        
+        private GameObject _canvasTipText;
+        private Text _tipText;
+        private bool _shieldTip;
 
         private void Start()
         {
@@ -39,6 +44,7 @@ namespace src.View.StatusUi.ShieldIndicator
                 _shieldIndicatorCells[i] = Instantiate(shieldPrefab, canvasTransform, false);
                 _shieldIndicatorCellTransforms[i] = _shieldIndicatorCells[i].GetComponent<RectTransform>();
                 _shieldIndicatorCellSvgImages[i] = _shieldIndicatorCells[i].GetComponent<SVGImage>();
+                _shieldIndicatorCells[i].GetComponent<ShieldIndicatorCell>().SetShieldCellParent(this);
 
                 _shieldIndicatorCellTransforms[i].anchoredPosition =
                     new Vector2(_shieldIndicatorCellTransforms[i].anchoredPosition.x, -15 - (65 * i));
@@ -55,6 +61,9 @@ namespace src.View.StatusUi.ShieldIndicator
                     _shieldIndicatorCellSvgImages[i].color = Color.red;
                 }
             }
+            
+            _canvasTipText = GameObject.Find("CanvasTipText");
+            _tipText = _canvasTipText.GetComponent<Text>();
         }
 
         private void Update()
@@ -129,6 +138,11 @@ namespace src.View.StatusUi.ShieldIndicator
 
             _shieldCountMax = _newShieldCountMax;
             _shieldCount = _newShieldCount;
+            
+            if (_shieldTip)
+            {
+                _tipText.text = ("Current Shield: " + _shieldCount + " out of " + _shieldCountMax);
+            }
         }
 
         public void StateChanged(int newShieldCount, int newShieldMax)
@@ -159,6 +173,19 @@ namespace src.View.StatusUi.ShieldIndicator
             {
                 _newShieldCount = newShieldCount;
             }
+        }
+        
+        public void ShowShieldTip()
+        {
+            Debug.Log("in show");
+            _shieldTip = true;
+        }
+
+        public void HideShieldTip()
+        {
+            Debug.Log("in hide");
+            _shieldTip = false;
+            _tipText.text = "";
         }
     }
 }
