@@ -8,6 +8,23 @@ namespace Assets.src.View.Rooms
         public static void ApplyDroneRoomMaterials(GameObject droneRoom)
         {
             Material[] currentMaterials = GetCurrentMaterials(droneRoom);
+            currentMaterials[0] = LoadMaterial(MaterialNames.MetalLight);//Chains
+            currentMaterials[1] = LoadMaterial(MaterialNames.MetalLight);//Drone Inner
+            currentMaterials[2] = LoadMaterial(MaterialNames.WeaponGlowRed);//Drone Eye
+            currentMaterials[3] = LoadMaterial(MaterialNames.Metal);//Drone Outer
+            currentMaterials[4] = LoadMaterial(MaterialNames.Metal);//Screen outer
+            currentMaterials[5] = LoadMaterial(MaterialNames.TelevisionScreen);//Screen Inner
+            currentMaterials[6] = LoadMaterial(MaterialNames.Metal);//Table
+            currentMaterials[7] = LoadMaterial(MaterialNames.MetalRed);//Gas cylinders
+            currentMaterials[8] = LoadMaterial(MaterialNames.MetalLight);//Gas cylinder heads
+            currentMaterials[9] = LoadMaterial(MaterialNames.Rubber);//Torch Gas Line
+            currentMaterials[10] = LoadMaterial(MaterialNames.MetalLight);//Torch head
+            currentMaterials[11] = LoadMaterial(MaterialNames.MetalLight);//computer body
+            currentMaterials[12] = LoadMaterial(MaterialNames.ComputerScreen);//computer screen
+            currentMaterials[13] = LoadMaterial(MaterialNames.Rubber);//Floor
+            currentMaterials[14] = LoadMaterial(MaterialNames.MetalLight);//walls
+            currentMaterials[15] = LoadMaterial(MaterialNames.TeamBlueLight);//Inner Logo
+            currentMaterials[16] = LoadMaterial(MaterialNames.TeamBlueDark);//Outer Logo
             ApplyMaterials(droneRoom, currentMaterials);
         }
 
