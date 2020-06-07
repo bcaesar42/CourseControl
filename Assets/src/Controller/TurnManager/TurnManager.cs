@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using src.Turn;
 using UnityEngine;
@@ -23,6 +23,19 @@ public class TurnManager
     public void removePlayer(Guid id)
     {
         playerList.Remove(id);
+    }
+
+    public BaseShip CurrentShip()
+    {
+        foreach (BaseShip ship in SceneManager.instance.shipList)
+        {
+            if (currentPlayer == ship.GetSelfId())
+            {
+                return ship;
+            }
+        }
+        Debug.Log("No ship can be found matching the current player's GUID");
+        return null;
     }
 
     public void start()
