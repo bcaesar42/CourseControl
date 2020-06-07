@@ -22,6 +22,7 @@ public class SceneManager : MonoBehaviour
     public TurnManager turnManager;
     public TargetManager targetManager { get; set; }
     public ActionManager actionManager { get; set; }
+    public static readonly SceneManager instance = new SceneManager();
 
     //Assuming that we construct ships elsewhere (on another scene) and pass them in when the game scene is started
 
