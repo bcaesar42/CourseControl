@@ -3,9 +3,18 @@ using UnityEngine;
 
 namespace Assets.src.View.Rooms
 {
-    internal static class RoomMaterialUtils
+    internal class RoomMaterialUtils
     {
-        public static void ApplyDroneRoomMaterials(GameObject droneRoom)
+        public String TeamColorLight { get; } = MaterialNames.TeamBlueLight;
+        public String TeamColorDark { get; } = MaterialNames.TeamBlueDark;
+        public RoomMaterialUtils(String teamColorLight, String teamColorDark)
+        {
+            TeamColorLight = teamColorLight;
+            TeamColorDark = teamColorDark;
+        }
+
+
+        public void ApplyDroneRoomMaterials(GameObject droneRoom)
         {
             Material[] currentMaterials = GetCurrentMaterials(droneRoom);
             currentMaterials[0] = LoadMaterial(MaterialNames.MetalLight);//Chains
@@ -23,12 +32,12 @@ namespace Assets.src.View.Rooms
             currentMaterials[12] = LoadMaterial(MaterialNames.ComputerScreen);//computer screen
             currentMaterials[13] = LoadMaterial(MaterialNames.Rubber);//Floor
             currentMaterials[14] = LoadMaterial(MaterialNames.MetalLight);//walls
-            currentMaterials[15] = LoadMaterial(MaterialNames.TeamBlueLight);//Inner Logo
-            currentMaterials[16] = LoadMaterial(MaterialNames.TeamBlueDark);//Outer Logo
+            currentMaterials[15] = LoadMaterial(TeamColorLight);//Inner Logo
+            currentMaterials[16] = LoadMaterial(TeamColorDark);//Outer Logo
             ApplyMaterials(droneRoom, currentMaterials);
         }
 
-        public static void ApplyMaintenanceRoomMaterials(GameObject maintenanceRoom)
+        public void ApplyMaintenanceRoomMaterials(GameObject maintenanceRoom)
         {
             Material[] currentMaterials = GetCurrentMaterials(maintenanceRoom);
             currentMaterials[0] = LoadMaterial(MaterialNames.Rubber);//Piston Case Wall
@@ -45,54 +54,56 @@ namespace Assets.src.View.Rooms
             currentMaterials[11] = LoadMaterial(MaterialNames.ComputerScreen);//computer screen
             currentMaterials[12] = LoadMaterial(MaterialNames.Rubber);// floor
             currentMaterials[13] = LoadMaterial(MaterialNames.MetalLight);//walls
-            currentMaterials[14] = LoadMaterial(MaterialNames.TeamBlueLight);//logo inner
-            currentMaterials[15] = LoadMaterial(MaterialNames.TeamBlueDark);//logo outer 
+            currentMaterials[14] = LoadMaterial(TeamColorLight);//logo inner
+            currentMaterials[15] = LoadMaterial(TeamColorDark);//logo outer 
             ApplyMaterials(maintenanceRoom, currentMaterials);
         }
 
-        public static void ApplyMedicalRoomMaterials(GameObject medicalRoom)
+        public void ApplyMedicalRoomMaterials(GameObject medicalRoom)
         {
             Material[] currentMaterials = GetCurrentMaterials(medicalRoom);
             ApplyMaterials(medicalRoom, currentMaterials);
         }
 
-        public static void ApplyNavigationRoomMaterials(GameObject navigationRoom)
+        public void ApplyNavigationRoomMaterials(GameObject navigationRoom)
         {
             Material[] currentMaterials = GetCurrentMaterials(navigationRoom);
+            currentMaterials[6] = LoadMaterial(TeamColorLight);
+            currentMaterials[7] = LoadMaterial(TeamColorDark);
             ApplyMaterials(navigationRoom, currentMaterials);
         }
 
-        public static void ApplyReplicationRoomMaterials(GameObject replicationRoom)
+        public void ApplyReplicationRoomMaterials(GameObject replicationRoom)
         {
             Material[] currentMaterials = GetCurrentMaterials(replicationRoom);
             ApplyMaterials(replicationRoom, currentMaterials);
         }
 
-        public static void ApplyResearchRoomMaterials(GameObject researchRoom)
+        public void ApplyResearchRoomMaterials(GameObject researchRoom)
         {
             Material[] currentMaterials = GetCurrentMaterials(researchRoom);
             ApplyMaterials(researchRoom, currentMaterials);
         }
 
-        public static void ApplyScavengeRoomMaterials(GameObject scavengeRoom)
+        public void ApplyScavengeRoomMaterials(GameObject scavengeRoom)
         {
             Material[] currentMaterials = GetCurrentMaterials(scavengeRoom);
             ApplyMaterials(scavengeRoom, currentMaterials);
         }
 
-        public static void ApplyShieldRoomMaterials(GameObject shieldRoom)
+        public void ApplyShieldRoomMaterials(GameObject shieldRoom)
         {
             Material[] currentMaterials = GetCurrentMaterials(shieldRoom);
             ApplyMaterials(shieldRoom, currentMaterials);
         }
 
-        public static void ApplyWeaponRoomMaterials(GameObject weaponRoom)
+        public void ApplyWeaponRoomMaterials(GameObject weaponRoom)
         {
             Material[] currentMaterials = GetCurrentMaterials(weaponRoom);
             ApplyMaterials(weaponRoom, currentMaterials);
         }
 
-        public static void ApplySensorRoomMaterials(GameObject sensorRoom)
+        public void ApplySensorRoomMaterials(GameObject sensorRoom)
         {
             Material[] currentMaterials = GetCurrentMaterials(sensorRoom);
             ApplyMaterials(sensorRoom, currentMaterials);
