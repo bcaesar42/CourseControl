@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Assets.src.View.Rooms;
+using Assets.src.View.Ship;
 using src.Model.ModelFramework.ActionFramework;
 using src.View.Rooms;
 using src.View.Rooms.ConcreteRooms;
@@ -67,6 +68,10 @@ public class RoomView : MonoBehaviour
         RoomMaterialUtils roomMaterialUtils = new RoomMaterialUtils(MaterialNames.TeamGreenLight, MaterialNames.TeamGreenDark);
 
         BaseShip ship = sceneManager.shipList.First();
+        //Creating ShipMaterialutils object, specify team colors for ship in constructor
+        ShipMaterialUtils shipMaterialUtils = new ShipMaterialUtils(MaterialNames.TeamGreenLight);
+        shipMaterialUtils.ApplyShipMaterials("Player");
+
         foreach (BaseRoom room in ship.roomList)
         {
             Debug.Log(room.RoomName);
