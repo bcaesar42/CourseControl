@@ -82,30 +82,40 @@ namespace Assets.src.View.Rooms
         public void ApplyResearchRoomMaterials(GameObject researchRoom)
         {
             Material[] currentMaterials = GetCurrentMaterials(researchRoom);
+            currentMaterials[1] = LoadMaterial(TeamColorDark);
+            currentMaterials[2] = LoadMaterial(TeamColorLight);
             ApplyMaterials(researchRoom, currentMaterials);
         }
 
         public void ApplyScavengeRoomMaterials(GameObject scavengeRoom)
         {
             Material[] currentMaterials = GetCurrentMaterials(scavengeRoom);
+            currentMaterials[6] = LoadMaterial(TeamColorDark);
+            currentMaterials[7] = LoadMaterial(TeamColorLight);
             ApplyMaterials(scavengeRoom, currentMaterials);
         }
 
         public void ApplyShieldRoomMaterials(GameObject shieldRoom)
         {
             Material[] currentMaterials = GetCurrentMaterials(shieldRoom);
+            currentMaterials[6] = LoadMaterial(TeamColorDark);
+            currentMaterials[7] = LoadMaterial(TeamColorLight);
             ApplyMaterials(shieldRoom, currentMaterials);
         }
 
         public void ApplyWeaponRoomMaterials(GameObject weaponRoom)
         {
             Material[] currentMaterials = GetCurrentMaterials(weaponRoom);
+            currentMaterials[6] = LoadMaterial(TeamColorDark);
+            currentMaterials[7] = LoadMaterial(TeamColorLight);
             ApplyMaterials(weaponRoom, currentMaterials);
         }
 
         public void ApplySensorRoomMaterials(GameObject sensorRoom)
         {
             Material[] currentMaterials = GetCurrentMaterials(sensorRoom);
+            currentMaterials[6] = LoadMaterial(TeamColorDark);
+            currentMaterials[7] = LoadMaterial(TeamColorLight);
             ApplyMaterials(sensorRoom, currentMaterials);
         }
 
