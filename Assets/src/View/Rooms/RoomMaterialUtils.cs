@@ -13,7 +13,7 @@ namespace Assets.src.View.Rooms
             currentMaterials[2] = LoadMaterial(MaterialNames.WeaponGlowRed);//Drone Eye
             currentMaterials[3] = LoadMaterial(MaterialNames.Metal);//Drone Outer
             currentMaterials[4] = LoadMaterial(MaterialNames.Metal);//Screen outer
-            currentMaterials[5] = LoadMaterial(MaterialNames.TelevisionScreen);//Screen Inner
+            currentMaterials[5] = LoadMaterial(MaterialNames.Glass);//Screen Inner
             currentMaterials[6] = LoadMaterial(MaterialNames.Metal);//Table
             currentMaterials[7] = LoadMaterial(MaterialNames.MetalRed);//Gas cylinders
             currentMaterials[8] = LoadMaterial(MaterialNames.MetalLight);//Gas cylinder heads
@@ -31,6 +31,22 @@ namespace Assets.src.View.Rooms
         public static void ApplyMaintenanceRoomMaterials(GameObject maintenanceRoom)
         {
             Material[] currentMaterials = GetCurrentMaterials(maintenanceRoom);
+            currentMaterials[0] = LoadMaterial(MaterialNames.Rubber);//Piston Case Wall
+            currentMaterials[1] = LoadMaterial(MaterialNames.Metal);//Piston case
+            currentMaterials[2] = LoadMaterial(MaterialNames.MetalLight);//pistons
+            currentMaterials[3] = LoadMaterial(MaterialNames.Metal);//screens outer
+            currentMaterials[4] = LoadMaterial(MaterialNames.Glass);//screens inner
+            currentMaterials[5] = LoadMaterial(MaterialNames.MetalRed);//gas cylinder bodies
+            currentMaterials[6] = LoadMaterial(MaterialNames.MetalLight);//gas cylinder heads
+            currentMaterials[7] = LoadMaterial(MaterialNames.Metal);//table
+            currentMaterials[8] = LoadMaterial(MaterialNames.Rubber);//gas cylinder tube
+            currentMaterials[9] = LoadMaterial(MaterialNames.MetalLight);//torch head
+            currentMaterials[10] = LoadMaterial(MaterialNames.Metal);//computer body
+            currentMaterials[11] = LoadMaterial(MaterialNames.ComputerScreen);//computer screen
+            currentMaterials[12] = LoadMaterial(MaterialNames.Rubber);// floor
+            currentMaterials[13] = LoadMaterial(MaterialNames.MetalLight);//walls
+            currentMaterials[14] = LoadMaterial(MaterialNames.TeamBlueLight);//logo inner
+            currentMaterials[15] = LoadMaterial(MaterialNames.TeamBlueDark);//logo outer 
             ApplyMaterials(maintenanceRoom, currentMaterials);
         }
 
