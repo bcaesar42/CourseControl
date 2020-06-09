@@ -6,5 +6,10 @@
             : base(ship, "Research Center", 0, 3, new System.Guid(), teamId)
         {
         }
+
+        public override void newTurn()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

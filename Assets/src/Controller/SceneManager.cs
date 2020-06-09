@@ -7,6 +7,7 @@ using src.Controller.TargetManager;
 using Assets.src.Model.ModelFramework.ShipFramework;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using src.Model.ModelFramework.ActionFramework;
 
 
 /* 
@@ -32,6 +33,14 @@ public class SceneManager : MonoBehaviour
         turnManager = new TurnManager();
         targetManager = new TargetManager();
         actionManager = ActionManager.instance;
+
+        targetShip tShip = new targetShip();
+        Wishbone wishbone = new Wishbone(new WishboneModel());
+
+        shipList.Add(wishbone);
+        targetManager.AddTarget(tShip);
+
+
     }
     void Start()
     {
@@ -50,15 +59,16 @@ public class SceneManager : MonoBehaviour
         //BaseShip tShip1 = new BaseShip(sm);
         //BaseShip tShip2 = new BaseShip(sm);
 
-        Wishbone wishbone = new Wishbone(new WishboneModel());
-        shipList.Add(wishbone);
-        turnManager.addPlayer(wishbone.GetSelfId());
+        turnManager.addPlayer(shipList[0].GetSelfId());
         turnManager.start();
+
+        targetManager.AddTarget(shipList[0]);
+        
     }
 
     public void newTurn()
     {
-        turnManager.newTurn();
+        shipList[0].newTurn();
     }
 
 }

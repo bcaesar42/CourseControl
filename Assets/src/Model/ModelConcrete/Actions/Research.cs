@@ -27,7 +27,7 @@ namespace src.Model.ModelConcrete.Actions
 
         public override IEnumerable<ITargetable> AvailableTargets()
         {
-            yield return _TargetManager.getAlliedID(SelfId).FirstOrDefault();
+            return _TargetManager.getAlliedID(SelfId);
         }
 
         protected override void DoAction(int roundNum, IEnumerable<ITargetable> targets)

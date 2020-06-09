@@ -28,35 +28,36 @@ public class BaseShip : ITargetable, IDamageable, IShieldable, IHealable, ICrewa
     private int maxCrew; //Overall crew the ship has
     private int currentCrew; //current unallocated crew
 
-    private GameAction[] gameActions;
+    private int evasion; //0 to 100 int to represent % chance to evade certain types of attacks
 
     public List<BaseRoom> roomList = new List<BaseRoom>();
+    public TargetManager targetManager;
 
     public BaseShip(ShipModel model)
     {
         SceneManager sceneManager = GameObject.Find("SceneManager").transform.GetComponent<SceneManager>();
-        TargetManager targetManager = sceneManager.targetManager;
+        targetManager = sceneManager.targetManager;
         maxHP = model.InitialMaxHealth;
         currentHP = model.InitialMaxHealth;
-        
+
         maxCrew = model.InitialCrewCount;
         currentCrew = model.InitialCrewCount;
 
         selfID = Guid.NewGuid();
+        evasion = 0;
 
-        gameActions = new GameAction[7];
-        
-        foreach (var gameAction in gameActions)
+    }
+
+    public void newTurn()
+    {
+        roomList[0].newTurn();
+        roomList[1].newTurn();
+        /* For testing only going to look at first room
+        foreach(BaseRoom b in roomList)
         {
-            //TODO foreach actionModel in model get an instance of its action type e.g. Weapon or Heal and then assign it to the index in gameAction
-            
+            b.newTurn();
         }
-
-        //gameAction1 = ActionManager.instance.GetActionModel(model.GameActionId1, 1);
-        //Hardcoding for now
-
-        //gameActions[0] = new Weapon(sceneManager.actionManager.GetActionModel(new Guid("49b68f9f-45b7-4444-993d-0441b8cb14d9"), 0).FirstOrDefault(), new Guid("49b68f9f-45b7-4444-993d-0441b8cb14d9"), new Guid("49b95jbv-8dac-4204-997d-0441b8c87239"), new Guid("49b95jbv-8dac-4204-993d-0441b8cb14d9"));
-
+        */
     }
 
     public BaseShip(ShipModel model, Guid teamId) : this(model)
@@ -94,6 +95,25 @@ public class BaseShip : ITargetable, IDamageable, IShieldable, IHealable, ICrewa
         {
             return false;
         }
+    }
+
+    public void setEvadeChance(int e)
+    {
+        evasion = e;
+    }
+
+    public int getEvadeChance()
+    {
+        return evasion;
+    }
+
+    public bool didEvade()
+    {
+        System.Random rng = new System.Random();
+        if (rng.Next(1, 100) < evasion)
+            return true;
+        else
+            return false;
     }
 
     public bool FreeCrew(int crewToFree, int room)
