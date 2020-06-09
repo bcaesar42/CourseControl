@@ -206,16 +206,15 @@ namespace src.Model.ModelConcrete.Ships
             return resShieldState;
         }
 
-        public void ActivateShield(int shieldCount)
+    public void ActivateShield(int shieldCount)
+    {
+        currentShield += shieldCount;
+        if (currentShield > maxShield)
         {
-            currentShield = shieldCount;
-            if (currentShield > maxShield)
-            {
-                currentShield = maxShield;
-                GameObject.Find("ShieldIndicatorManager").GetComponent<ShieldIndicatorManager>()
-                    .StateChanged(currentShield, maxShield);
-            }
+            currentShield = maxShield;
         }
+        GameObject.Find("ShieldIndicatorManager").GetComponent<ShieldIndicatorManager>().StateChanged(currentShield, maxShield);
+    }
 
         public Guid GetSelfId()
         {

@@ -63,8 +63,8 @@ namespace src.Controller
 
         public void newTurn()
         {
-            shipList[0].DamageShield(2);
             shipList[0].newTurn();
+            Debug.Log("Shields: " + shipList[0].CurrentShieldCount());
         }
 
     }
