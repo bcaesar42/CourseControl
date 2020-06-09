@@ -150,11 +150,6 @@ namespace src.View.StatusUi.ShieldIndicator
 
         public void StateChanged(int newShieldCount, int newShieldMax)
         {
-            if (_newShieldCountMax == newShieldMax)
-            {
-                return;
-            }
-
             if (newShieldMax < 0)
             {
                 _newShieldCountMax = 0;

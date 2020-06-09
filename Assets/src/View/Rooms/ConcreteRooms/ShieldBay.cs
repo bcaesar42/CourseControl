@@ -26,6 +26,7 @@ namespace src.View.Rooms.ConcreteRooms
             {
                 baseShield.UseAction(baseShield.AvailableTargets());
                 baseShield.AdvanceRound();
+
             }
         }
     }

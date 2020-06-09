@@ -49,6 +49,8 @@ namespace src.Model.ModelConcrete.GameActions
 
             if (crewCount >= 3)
                 sh.IncreaseCrewCount(1);
+
+            targetList.Clear();
         }
     }
 }

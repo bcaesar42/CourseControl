@@ -50,7 +50,7 @@ namespace src.Model.ModelConcrete.GameActions
             }
 
             sh.ActivateShield(ActionModel.ActionTurnModels[0].ShieldCount.GetValueOrDefault(0) * crewMult);
-        
+            targetList.Clear();
         }
     }
 }

@@ -20,13 +20,11 @@ namespace src.View.Rooms.ConcreteRooms
 
         public override void newTurn()
         {
-            this.AddCrew();
             if (this.GetCrewCount() > 0)
             {
                 heal.UseAction(heal.AvailableTargets());
                 heal.AdvanceRound();
             }
-            this.RemoveCrew();
         }
     }
 }
