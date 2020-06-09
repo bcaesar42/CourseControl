@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Assets.src.View.Rooms;
+using Assets.src.View.Ship;
 using src.Model.ModelFramework.ActionFramework;
 using src.View.Rooms;
 using src.View.Rooms.ConcreteRooms;
@@ -63,8 +64,14 @@ public class RoomView : MonoBehaviour
          */
         GameObject objPrefab;
         GameObject obj;
+        //Creating RoomMaterialUitls object, team colors are specified in constuctor here
+        RoomMaterialUtils roomMaterialUtils = new RoomMaterialUtils(MaterialNames.TeamGreenLight, MaterialNames.TeamGreenDark);
 
         BaseShip ship = sceneManager.shipList.First();
+        //Creating ShipMaterialutils object, specify team colors for ship in constructor
+        ShipMaterialUtils shipMaterialUtils = new ShipMaterialUtils(MaterialNames.TeamGreenLight);
+        shipMaterialUtils.ApplyShipMaterials("Player");
+
         foreach (BaseRoom room in ship.roomList)
         {
             Debug.Log(room.RoomName);
@@ -74,55 +81,55 @@ public class RoomView : MonoBehaviour
                     objPrefab = Resources.Load("WeaponRoom") as GameObject;
                     obj = Instantiate(objPrefab, Slots[0], Quaternion.identity) as GameObject;
                     obj.transform.Rotate(new Vector3(-90, 0, 180));
-                    RoomMaterialUtils.ApplyWeaponRoomMaterials(obj);
+                    roomMaterialUtils.ApplyWeaponRoomMaterials(obj);
                     break;
                 case "Drone Bay":
                     objPrefab = Resources.Load("DroneRoom") as GameObject;
                     obj = Instantiate(objPrefab, Slots[1], Quaternion.identity) as GameObject;
                     obj.transform.Rotate(new Vector3(0, 0, -135));
-                    RoomMaterialUtils.ApplyDroneRoomMaterials(obj);
+                    roomMaterialUtils.ApplyDroneRoomMaterials(obj);
                     break;
                 case "Maintenance Bay":
                     objPrefab = Resources.Load("MaintenanceRoom") as GameObject;
                     obj = Instantiate(objPrefab, Slots[2], Quaternion.identity) as GameObject;
                     obj.transform.Rotate(new Vector3(0, 90, -90));
-                    RoomMaterialUtils.ApplyMaintenanceRoomMaterials(obj);
+                    roomMaterialUtils.ApplyMaintenanceRoomMaterials(obj);
                     break;
                 case "Navigation Room":
                     objPrefab = Resources.Load("NavigationRoom") as GameObject;
                     obj = Instantiate(objPrefab, Slots[3], Quaternion.identity) as GameObject;
                     obj.transform.Rotate(new Vector3(-90, 90, 0));
-                    RoomMaterialUtils.ApplyNavigationRoomMaterials(obj);
+                    roomMaterialUtils.ApplyNavigationRoomMaterials(obj);
                     break;
                 case "Research Center":
                     objPrefab = Resources.Load("ResearchRoom") as GameObject;
                     obj = Instantiate(objPrefab, Slots[4], Quaternion.identity) as GameObject;
                     obj.transform.Rotate(new Vector3(-90, 90, 0));
-                    RoomMaterialUtils.ApplyResearchRoomMaterials(obj);
+                    roomMaterialUtils.ApplyResearchRoomMaterials(obj);
                     break;
                 case "Scavenge Bay":
                     objPrefab = Resources.Load("ScavengeRoom") as GameObject;
                     obj = Instantiate(objPrefab, Slots[5], Quaternion.identity) as GameObject;
                     obj.transform.Rotate(new Vector3(0, 90, 0));
-                    RoomMaterialUtils.ApplyScavengeRoomMaterials(obj);
+                    roomMaterialUtils.ApplyScavengeRoomMaterials(obj);
                     break;
                 case "Shield Bay":
                     objPrefab = Resources.Load("ShieldRoom") as GameObject;
                     obj = Instantiate(objPrefab, Slots[6], Quaternion.identity) as GameObject;
                     obj.transform.Rotate(new Vector3(-90, 0, 0));
-                    RoomMaterialUtils.ApplyShieldRoomMaterials(obj);
+                    roomMaterialUtils.ApplyShieldRoomMaterials(obj);
                     break;
                 case "Sensor Room":
                     objPrefab = Resources.Load("SensorRoom") as GameObject;
                     obj = Instantiate(objPrefab, Slots[7], Quaternion.identity) as GameObject;
                     obj.transform.Rotate(new Vector3(-90, 0, 0));
-                    RoomMaterialUtils.ApplySensorRoomMaterials(obj);
+                    roomMaterialUtils.ApplySensorRoomMaterials(obj);
                     break;
                 default:
                     objPrefab = Resources.Load("WeaponRoom") as GameObject;
                     obj = Instantiate(objPrefab, Slots[0], Quaternion.identity) as GameObject;
                     obj.transform.Rotate(new Vector3(-90, 0, -90));
-                    RoomMaterialUtils.ApplyWeaponRoomMaterials(obj);
+                    roomMaterialUtils.ApplyWeaponRoomMaterials(obj);
                     break;
             }
         }
