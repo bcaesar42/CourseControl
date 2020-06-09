@@ -1,4 +1,5 @@
 ﻿using System;
+using src.Model.ModelConcrete.Ships;
 using src.Model.ModelFramework.ActionFramework;
 using src.Model.ModelFramework.Targetables.Crewable;
 using UnityEngine;

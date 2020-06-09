@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using src.Model.ModelConcrete.Ships;
+using UnityEngine;
 
 namespace src.View.Rooms.ConcreteRooms
 {

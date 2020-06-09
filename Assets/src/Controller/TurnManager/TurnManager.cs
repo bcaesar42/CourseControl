@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using src.Controller;
+using src.Model.ModelConcrete.Ships;
 using src.Turn;
 using UnityEngine;
 

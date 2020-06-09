@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using src.Controller.TargetManager;
+using src.Model.ModelConcrete.Ships;
 using src.Model.ModelFramework.ActionFramework;
 using src.Model.ModelFramework.TargetableFramework;
 

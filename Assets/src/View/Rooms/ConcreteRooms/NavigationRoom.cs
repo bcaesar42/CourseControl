@@ -1,6 +1,7 @@
 ﻿using System;
 using src.Controller;
 using src.Controller.ActionModelManager;
+using src.Model.ModelConcrete.Ships;
 using src.Model.ModelFramework.ActionFramework;
 
 namespace src.View.Rooms.ConcreteRooms

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using src.Controller;
 using src.Controller.TargetManager;
+using src.Model.ModelConcrete.Ships;
 using src.View.Rooms;
 using UnityEngine;
 using UnityEngine.EventSystems;

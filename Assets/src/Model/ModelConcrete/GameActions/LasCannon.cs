@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using src.Controller;
 using src.Controller.TargetManager;
+using src.Model.ModelConcrete.Ships;
 using src.Model.ModelFramework.ActionFramework;
 using src.Model.ModelFramework.TargetableFramework;
 using src.Model.ModelFramework.TargetableFramework.Damageable;
