@@ -213,12 +213,12 @@ public class BaseShip : ITargetable, IDamageable, IShieldable, IHealable, ICrewa
 
     public void ActivateShield(int shieldCount)
     {
-        currentShield = shieldCount;
+        currentShield += shieldCount;
         if (currentShield > maxShield)
         {
             currentShield = maxShield;
-            GameObject.Find("ShieldIndicatorManager").GetComponent<ShieldIndicatorManager>().StateChanged(currentShield, maxShield);
         }
+        GameObject.Find("ShieldIndicatorManager").GetComponent<ShieldIndicatorManager>().StateChanged(currentShield, maxShield);
     }
 
     public Guid GetSelfId()
