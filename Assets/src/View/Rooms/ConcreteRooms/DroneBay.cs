@@ -8,5 +8,10 @@ namespace src.View.Rooms.ConcreteRooms
             : base(ship, "Drone Bay", 0, 3, new System.Guid(), teamId)
         {
         }
+
+        public override void newTurn()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

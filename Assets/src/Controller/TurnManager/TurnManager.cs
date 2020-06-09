@@ -47,7 +47,7 @@ public class TurnManager
     {
         int ix = playerList.IndexOf(currentPlayer);
 
-        //Debug.Log("currentPlayer: " + currentPlayer + " Index: " + ix);
+        Debug.Log("currentPlayer: " + currentPlayer + " Index: " + ix);
 
         if (ix < playerList.Count - 1)
         {
@@ -62,9 +62,6 @@ public class TurnManager
 
     public void newRound()
     {
-        //actionRunner.runActions();
-        currentPlayer = playerList[0];
-        //Do whatever we will do to update and reset thing when we beging a new round.
-        //Do whatever we will do to update view to current player
+        Debug.Log("NEW ROUND TM");
     }
 }

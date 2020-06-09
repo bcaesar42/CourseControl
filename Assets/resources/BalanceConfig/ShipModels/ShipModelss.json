@@ -12,6 +12,7 @@
     "GameActionId6": "",
     "GameActionId7": "",
     "InitialCrewCount": 3,
-    "InitialMaxHealth": 50
+    "InitialMaxHealth": 50,
+    "MaxShield":  4
   }
 ]
