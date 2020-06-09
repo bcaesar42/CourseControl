@@ -52,16 +52,11 @@ public class BaseShip : ITargetable, IDamageable, IShieldable, IHealable, ICrewa
 
     public void newTurn()
     {
-        //roomList[0].newTurn();
-        //roomList[1].newTurn();
 
-        roomList[6].newTurn();
-        /* For testing only going to look at first room
         foreach(BaseRoom b in roomList)
         {
             b.newTurn();
         }
-        */
     }
 
     public BaseShip(ShipModel model, Guid teamId) : this(model)
