@@ -115,7 +115,7 @@ public class RoomView : MonoBehaviour
                     roomMaterialUtils.ApplyScavengeRoomMaterials(obj);
                     break;
                 case "Shield Bay":
-                    objPrefab = Resources.Load("ShieldBay") as GameObject;
+                    objPrefab = Resources.Load("ShieldRoom") as GameObject;
                     obj = Instantiate(objPrefab, Slots[6], Quaternion.identity) as GameObject;
                     obj.transform.Rotate(new Vector3(-90, 0, 0));
                     roomMaterialUtils.ApplyShieldRoomMaterials(obj);
