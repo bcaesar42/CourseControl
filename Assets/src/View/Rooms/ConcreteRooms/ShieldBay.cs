@@ -13,7 +13,7 @@ namespace src.View.Rooms.ConcreteRooms
         public static readonly SceneManager instance = new SceneManager();
 
         public ShieldBay(BaseShip ship, System.Guid teamId)
-            : base(ship, "Navigation Room", 0, 3, new Guid(), teamId)
+            : base(ship, "Shield Bay", 0, 3, new Guid(), teamId)
         {
             ActionModel ShieldModel = ActionManager.instance.GetActionModel(ShieldID, 0);
             baseShield = new Shield(ShieldModel, ShieldID, ship.GetSelfId(), ship.GetTeamId());
