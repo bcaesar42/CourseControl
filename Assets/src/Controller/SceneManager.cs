@@ -68,7 +68,7 @@ public class SceneManager : MonoBehaviour
 
     public void newTurn()
     {
-        shipList[0].Damage(5);
+        shipList[0].DamageShield(2);
         shipList[0].newTurn();
     }
 

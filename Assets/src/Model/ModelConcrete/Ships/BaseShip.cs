@@ -43,6 +43,8 @@ public class BaseShip : ITargetable, IDamageable, IShieldable, IHealable, ICrewa
         maxCrew = model.InitialCrewCount;
         currentCrew = model.InitialCrewCount;
 
+        maxShield = model.MaxShield;
+
         selfID = Guid.NewGuid();
         evasion = 0;
 
@@ -53,7 +55,7 @@ public class BaseShip : ITargetable, IDamageable, IShieldable, IHealable, ICrewa
         //roomList[0].newTurn();
         //roomList[1].newTurn();
 
-        roomList[3].newTurn();
+        roomList[6].newTurn();
         /* For testing only going to look at first room
         foreach(BaseRoom b in roomList)
         {

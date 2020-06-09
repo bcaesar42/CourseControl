@@ -20,6 +20,7 @@ namespace Assets.src.Model.ModelFramework.ShipFramework
             Description = "The first attempt at something flightworthy...";
             InitialCrewCount = 5;
             InitialMaxHealth = 50;
+            MaxShield = 4;
 
             //ShipModelFile
             //GameActionId1

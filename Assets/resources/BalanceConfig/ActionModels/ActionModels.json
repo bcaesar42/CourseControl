@@ -149,5 +149,30 @@
         "HealAmount": 1
       }
     ]
+  },
+
+  {
+    "ActionName": "basicShield",
+    "ActionType": "shield",
+    "ActionId": "64EE9EA2-C2E0-4E71-BB29-C6b1CE251394",
+    "ActionTime": {
+      "activationTime": 1,
+      "completionTime": 1,
+      "cooldownTime": 0,
+      "comment - completionTime must be at least 1": null
+    },
+    "ActionLave": 1,
+    "Description": "The description that will be shown to the user",
+    "RoomModel": "roomModel.fbx",
+    "DamagedRoomModel": "roomModel.fbx - this will be the same file as RoomModel if there isn't a damaged model",
+    "Priority": 0,
+    "comment - priority is 0 through 4": null,
+    "ActionTurnModels": [
+      {
+        "round": 1,
+        "ShieldCount": 1
+      }
+    ]
   }
+
 ]
