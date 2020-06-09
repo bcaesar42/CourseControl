@@ -100,7 +100,53 @@
       {
         "comment - The fields available to use are in ActionTurnModel. Ones can be added there if needed, but try to use those ones if possible.": null,
         "RoundNumber": 1,
-        "chanceToDodge":  10,
+        "chanceToDodge": 10
+      }
+    ]
+  },
+
+  {
+    "ActionName": "replication",
+    "ActionType": "replication",
+    "ActionId": "41E9A99D-A083-4C99-A322-048AB604202A",
+    "ActionTime": {
+      "activationTime": 1,
+      "completionTime": 1,
+      "cooldownTime": 0,
+      "comment - completionTime must be at least 1": null
+    },
+    "ActionLave": 1,
+    "Description": "The description that will be shown to the user",
+    "RoomModel": "roomModel.fbx",
+    "DamagedRoomModel": "roomModel.fbx - this will be the same file as RoomModel if there isn't a damaged model",
+    "Priority": 0,
+    "comment - priority is 0 through 4": null,
+    "ActionTurnModels": [
+      {
+      }
+    ]
+  },
+
+  {
+    "ActionName": "basicHeal",
+    "ActionType": "heal",
+    "ActionId": "A43827BC-68B1-4779-9867-07fAC878f7CB",
+    "ActionTime": {
+      "activationTime": 1,
+      "completionTime": 1,
+      "cooldownTime": 0,
+      "comment - completionTime must be at least 1": null
+    },
+    "ActionLave": 1,
+    "Description": "The description that will be shown to the user",
+    "RoomModel": "roomModel.fbx",
+    "DamagedRoomModel": "roomModel.fbx - this will be the same file as RoomModel if there isn't a damaged model",
+    "Priority": 0,
+    "comment - priority is 0 through 4": null,
+    "ActionTurnModels": [
+      {
+        "round": 1,
+        "HealAmount": 1
       }
     ]
   }
