@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Assets.src.View.Rooms;
 using Assets.src.View.Ship;
+using src.Controller;
 using src.Model.ModelFramework.ActionFramework;
 using src.View.Rooms;
 using src.View.Rooms.ConcreteRooms;

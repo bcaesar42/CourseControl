@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using src.Controller;
 using src.Controller.ActionModelManager;
 using src.Controller.TargetManager;
 using src.Model.ModelConcrete.GameActions;
@@ -13,6 +14,8 @@ using src.Model.ModelFramework.TargetableFramework.Shieldable;
 using src.Model.ModelFramework.Targetables;
 using src.Model.ModelFramework.Targetables.Crewable;
 using src.View.Rooms;
+using src.View.StatusUi.HealthBar;
+using src.View.StatusUi.ShieldIndicator;
 using UnityEngine;
 
 public class BaseShip : ITargetable, IDamageable, IShieldable, IHealable, ICrewable
@@ -191,6 +194,7 @@ public class BaseShip : ITargetable, IDamageable, IShieldable, IHealable, ICrewa
     {
         currentHP -= damageCount;
         if (currentHP < 0) currentHP = 0;
+        GameObject.Find("HealthBar").GetComponent<HealthBar>().StateChanged(currentHP, maxHP);
         return currentHP;
     }
 
@@ -199,15 +203,22 @@ public class BaseShip : ITargetable, IDamageable, IShieldable, IHealable, ICrewa
         currentShield -= damageCount;
 
         int resShieldState = currentShield;
-
+        
         if (currentShield < 0) currentShield = 0;
+        
+        GameObject.Find("ShieldIndicatorManager").GetComponent<ShieldIndicatorManager>().StateChanged(currentShield, maxShield);
+        
         return resShieldState;
     }
 
     public void ActivateShield(int shieldCount)
     {
         currentShield = shieldCount;
-        if (currentShield > maxShield) currentShield = maxShield;
+        if (currentShield > maxShield)
+        {
+            currentShield = maxShield;
+            GameObject.Find("ShieldIndicatorManager").GetComponent<ShieldIndicatorManager>().StateChanged(currentShield, maxShield);
+        }
     }
 
     public Guid GetSelfId()

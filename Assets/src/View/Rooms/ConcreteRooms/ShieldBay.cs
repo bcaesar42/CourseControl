@@ -1,5 +1,7 @@
 ﻿using System;
+using src.Controller;
 using src.Controller.ActionModelManager;
+using src.Model.ModelConcrete.GameActions;
 using src.Model.ModelFramework.ActionFramework;
 
 namespace src.View.Rooms.ConcreteRooms
@@ -11,7 +13,7 @@ namespace src.View.Rooms.ConcreteRooms
         public static readonly SceneManager instance = new SceneManager();
 
         public ShieldBay(BaseShip ship, System.Guid teamId)
-            : base(ship, "Navigation Room", 0, 3, new System.Guid(), teamId)
+            : base(ship, "Navigation Room", 0, 3, new Guid(), teamId)
         {
             ActionModel ShieldModel = ActionManager.instance.GetActionModel(ShieldID, 0);
             baseShield = new Shield(ShieldModel, ShieldID, ship.GetSelfId(), ship.GetTeamId());

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Assets.src.Model.ModelConcrete.Ships;
 using JetBrains.Annotations;
 using src.Controller.TargetManager;
 using src.Model.ModelFramework.ActionFramework;

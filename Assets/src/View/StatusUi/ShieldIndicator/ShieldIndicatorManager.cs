@@ -64,6 +64,8 @@ namespace src.View.StatusUi.ShieldIndicator
             
             _canvasTipText = GameObject.Find("CanvasTipText");
             _tipText = _canvasTipText.GetComponent<Text>();
+            
+            StateChanged(0, 0);
         }
 
         private void Update()
@@ -75,6 +77,7 @@ namespace src.View.StatusUi.ShieldIndicator
                     GameObject cell = Instantiate(shieldPrefab, canvasTransform, false);
                     RectTransform addedTransform = cell.GetComponent<RectTransform>();
                     SVGImage image = cell.GetComponent<SVGImage>();
+                    cell.GetComponent<ShieldIndicatorCell>().SetShieldCellParent(this);
 
                     _shieldIndicatorCells = _shieldIndicatorCells.Append(cell).ToArray();
                     _shieldIndicatorCellTransforms = _shieldIndicatorCellTransforms.Append(addedTransform).ToArray();
@@ -177,13 +180,11 @@ namespace src.View.StatusUi.ShieldIndicator
         
         public void ShowShieldTip()
         {
-            Debug.Log("in show");
             _shieldTip = true;
         }
 
         public void HideShieldTip()
         {
-            Debug.Log("in hide");
             _shieldTip = false;
             _tipText.text = "";
         }

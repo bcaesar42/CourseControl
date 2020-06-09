@@ -34,8 +34,10 @@
                 <e p="Research.cs" t="Include" />
               </e>
               <e p="GameActions" t="Include">
+                <e p="BaseNav.cs" t="Include" />
                 <e p="Drone.cs" t="Include" />
                 <e p="Heal.cs" t="Include" />
+                <e p="LasCannon.cs" t="Include" />
                 <e p="Navigation.cs" t="Include" />
                 <e p="Projectile.cs" t="Include" />
                 <e p="Replication.cs" t="Include" />
@@ -47,6 +49,7 @@
               </e>
               <e p="Ships" t="Include">
                 <e p="BaseShip.cs" t="Include" />
+                <e p="targetShip.cs" t="Include" />
                 <e p="Wishbone.cs" t="Include" />
               </e>
             </e>
@@ -106,7 +109,12 @@
                 <e p="ShieldBay.cs" t="Include" />
                 <e p="WeaponsBay.cs" t="Include" />
               </e>
+              <e p="MaterialNames.cs" t="Include" />
+              <e p="RoomMaterialUtils.cs" t="Include" />
               <e p="RoomView.cs" t="Include" />
+            </e>
+            <e p="Ship" t="Include">
+              <e p="ShipMaterialUtils.cs" t="Include" />
             </e>
             <e p="StatusUi" t="Include">
               <e p="CanvasTipText" t="Include">

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Assets.src.Model.ModelConcrete.Ships;
-using src.Controller.ActionModelManager;
-using src.Controller.TargetManager;
+﻿using System.Collections.Generic;
 using Assets.src.Model.ModelFramework.ShipFramework;
+using src.Controller.ActionModelManager;
+using src.Model.ModelConcrete.Ships;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using src.Model.ModelFramework.ActionFramework;
 
 
 /* 
@@ -17,59 +12,62 @@ using src.Model.ModelFramework.ActionFramework;
  */
 
 
-public class SceneManager : MonoBehaviour
+namespace src.Controller
 {
-    public List<BaseShip> shipList;
-    public TurnManager turnManager;
-    public TargetManager targetManager { get; set; }
-    public ActionManager actionManager { get; set; }
-    public static readonly SceneManager instance = new SceneManager();
-
-    //Assuming that we construct ships elsewhere (on another scene) and pass them in when the game scene is started
-
-    private void Awake()
+    public class SceneManager : MonoBehaviour
     {
-        shipList = new List<BaseShip>();
-        turnManager = new TurnManager();
-        targetManager = new TargetManager();
-        actionManager = ActionManager.instance;
+        public List<BaseShip> shipList;
+        public TurnManager turnManager;
+        public TargetManager.TargetManager targetManager { get; set; }
+        public ActionManager actionManager { get; set; }
+        public static readonly SceneManager instance = new SceneManager();
 
-        targetShip tShip = new targetShip();
-        Wishbone wishbone = new Wishbone(new WishboneModel());
+        //Assuming that we construct ships elsewhere (on another scene) and pass them in when the game scene is started
 
-        shipList.Add(wishbone);
-        targetManager.AddTarget(tShip);
+        private void Awake()
+        {
+            shipList = new List<BaseShip>();
+            turnManager = new TurnManager();
+            targetManager = new TargetManager.TargetManager();
+            actionManager = ActionManager.instance;
+
+            targetShip tShip = new targetShip();
+            Wishbone wishbone = new Wishbone(new WishboneModel());
+
+            shipList.Add(wishbone);
+            targetManager.AddTarget(tShip);
 
 
-    }
-    void Start()
-    {
-        Demo();
-    }
+        }
+        void Start()
+        {
+            Demo();
+        }
 
-    public void Demo()
-    {
-        //ShipModel sm = new ShipModel();
-        //sm.Name = "TestShip";
-        //sm.ShipId = new Guid();
-        //sm.Description = "THIS IS A TEST SHIP";
-        //sm.InitialCrewCount = 5;
-        //sm.InitialMaxHealth = 30;
+        public void Demo()
+        {
+            //ShipModel sm = new ShipModel();
+            //sm.Name = "TestShip";
+            //sm.ShipId = new Guid();
+            //sm.Description = "THIS IS A TEST SHIP";
+            //sm.InitialCrewCount = 5;
+            //sm.InitialMaxHealth = 30;
 
-        //BaseShip tShip1 = new BaseShip(sm);
-        //BaseShip tShip2 = new BaseShip(sm);
+            //BaseShip tShip1 = new BaseShip(sm);
+            //BaseShip tShip2 = new BaseShip(sm);
 
-        turnManager.addPlayer(shipList[0].GetSelfId());
-        turnManager.start();
+            turnManager.addPlayer(shipList[0].GetSelfId());
+            turnManager.start();
 
-        targetManager.AddTarget(shipList[0]);
+            targetManager.AddTarget(shipList[0]);
         
-    }
+        }
 
-    public void newTurn()
-    {
-        shipList[0].DamageShield(2);
-        shipList[0].newTurn();
-    }
+        public void newTurn()
+        {
+            shipList[0].DamageShield(2);
+            shipList[0].newTurn();
+        }
 
+    }
 }

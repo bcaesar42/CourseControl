@@ -25,10 +25,8 @@ namespace src.View.StatusUi.ShieldIndicator
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            Debug.Log("in enter");
             if (_parent != null)
             {
-                Debug.Log("in enter not null");
                 _parent.ShowShieldTip();
             }
         }

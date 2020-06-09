@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using src.Model.ModelFramework.ShipFramework;
 using src.View.Rooms.ConcreteRooms;
 
-namespace Assets.src.Model.ModelConcrete.Ships
+namespace src.Model.ModelConcrete.Ships
 {
     public class Wishbone : BaseShip
     {
