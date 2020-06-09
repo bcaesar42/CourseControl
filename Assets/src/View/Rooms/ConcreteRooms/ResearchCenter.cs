@@ -19,17 +19,11 @@ namespace src.View.Rooms.ConcreteRooms
 
         public override void newTurn()
         {
-            this.AddCrew();
-            this.AddCrew();
-            this.AddCrew();
             if (this.GetCrewCount() > 0)
             {
                 rep.UseAction(rep.AvailableTargets());
                 rep.AdvanceRound();
             }
-            this.RemoveCrew();
-            this.RemoveCrew();
-            this.RemoveCrew();
         }
     }
 }

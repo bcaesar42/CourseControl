@@ -1,4 +1,6 @@
-﻿namespace src.View.Rooms.ConcreteRooms
+﻿using UnityEngine;
+
+namespace src.View.Rooms.ConcreteRooms
 {
     public class MedicalBay : BaseRoom
     {
@@ -9,7 +11,7 @@
 
         public override void newTurn()
         {
-            throw new System.NotImplementedException();
+            Debug.Log("Not Implemented");
         }
     }
 }

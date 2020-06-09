@@ -34,15 +34,13 @@ namespace src.Controller
             targetShip tShip = new targetShip();
             Wishbone wishbone = new Wishbone(new WishboneModel());
 
-            shipList.Add(wishbone);
-            targetManager.AddTarget(tShip);
-
-
-        }
-        void Start()
-        {
-            Demo();
-        }
+        shipList.Add(wishbone);
+        targetManager.AddTarget(tShip);
+    }
+    void Start()
+    {
+        Demo();
+    }
 
         public void Demo()
         {
