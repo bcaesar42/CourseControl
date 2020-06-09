@@ -144,6 +144,7 @@ namespace src.Model.ModelFramework.ActionFramework
                     {
                         DoAction(_currentActivationLeft, Targets);
                         _currentActivationLeft--;
+                        checkState();
                     }
                     break;
 
@@ -172,5 +173,25 @@ namespace src.Model.ModelFramework.ActionFramework
             }
             return _currentState;
         }
+
+        private void checkState()
+        {
+            if (CurrentState == ActionState.Activation && _currentActivationLeft == 0)
+                    _currentState = ActionState.Cooldown;
+
+            if (CurrentState == ActionState.Cooldown && _currentCooldownLeft == 0)
+                if (_currentCooldownLeft == 0)
+                    {
+                        _currentState = ActionState.Ready;
+
+                        _currentActivationTime = ActionModel.ActionTime.ActivationTime;
+                        _currentCompletionTime = ActionModel.ActionTime.CompletionTime;
+                        _currentCooldownTime = ActionModel.ActionTime.CooldownTime;
+
+                        _currentActivationLeft = _currentActivationTime;
+                        _currentCompletionLeft = _currentCompletionTime;
+                        _currentCooldownLeft = _currentCooldownTime;
+                    }
+            }
     }
 }
