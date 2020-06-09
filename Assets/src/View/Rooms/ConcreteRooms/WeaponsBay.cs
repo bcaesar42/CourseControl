@@ -27,7 +27,6 @@ namespace src.View.Rooms.ConcreteRooms
                 lasCannon.UseAction(lasCannon.AvailableTargets());
                 lasCannon.AdvanceRound();
             }
-            this.RemoveCrew();
         }
     }
 }

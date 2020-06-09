@@ -17,7 +17,6 @@ public class Shield : GameAction
     {
         SceneManager sceneManager = GameObject.Find("SceneManager").transform.GetComponent<SceneManager>();
         targetManager = sceneManager.targetManager;
-
     }
 
     public override IEnumerable<ITargetable> AvailableTargets()
@@ -45,8 +44,6 @@ public class Shield : GameAction
             if (r is ShieldBay)
                 crewMult = r.GetCrewCount();
         }
-
         sh.ActivateShield(ActionModel.ActionTurnModels[0].ShieldCount.GetValueOrDefault(0) * crewMult);
-        
     }
 }

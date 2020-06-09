@@ -26,7 +26,6 @@ namespace src.View.Rooms.ConcreteRooms
                 baseNave.UseAction(baseNave.AvailableTargets());
                 baseNave.AdvanceRound();
             }
-            this.RemoveCrew();
         }
     }
 }

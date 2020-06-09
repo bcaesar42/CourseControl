@@ -39,8 +39,6 @@ public class SceneManager : MonoBehaviour
 
         shipList.Add(wishbone);
         targetManager.AddTarget(tShip);
-
-
     }
     void Start()
     {

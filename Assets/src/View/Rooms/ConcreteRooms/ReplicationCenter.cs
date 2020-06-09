@@ -1,4 +1,5 @@
-﻿namespace src.View.Rooms.ConcreteRooms
+﻿using UnityEngine;
+namespace src.View.Rooms.ConcreteRooms
 {
     public class ReplicationCenter : BaseRoom
     {
