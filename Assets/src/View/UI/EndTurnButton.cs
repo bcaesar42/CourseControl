@@ -26,7 +26,6 @@ public class EndTurnButton : MonoBehaviour
 
     void TaskOnClick()
     {
-        Debug.Log("NEW ROUND ETB");
         sm.newTurn();
     }
 }

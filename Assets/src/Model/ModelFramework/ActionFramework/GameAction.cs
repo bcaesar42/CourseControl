@@ -48,7 +48,7 @@ namespace src.Model.ModelFramework.ActionFramework
         private int _currentCooldownLeft;
         private int _currentCooldownTime;
 
-        protected ActionState _currentState;
+        private ActionState _currentState;
 
         protected IEnumerable<ITargetable> Targets;
 
@@ -92,18 +92,6 @@ namespace src.Model.ModelFramework.ActionFramework
                     CurrentState = ActionState.Ready;
                 }
             }
-        }
-
-        public void readyAction()
-        {
-            _currentActivationTime = ActionModel.ActionTime.ActivationTime;
-            _currentCompletionTime = ActionModel.ActionTime.CompletionTime;
-            _currentCooldownTime = ActionModel.ActionTime.CooldownTime;
-            _currentActivationLeft = _currentActivationTime;
-            _currentCompletionLeft = _currentCompletionTime;
-            _currentCooldownLeft = _currentCooldownTime;
-
-            CurrentState = ActionState.Ready;
         }
 
         public abstract IEnumerable<ITargetable> AvailableTargets();
@@ -171,6 +159,11 @@ namespace src.Model.ModelFramework.ActionFramework
                     break;
             }
             return _currentState;
+        }
+
+        public Task PerformAction()
+        {
+            return new Task(() => DoAction(_currentCompletionLeft, Targets));
         }
     }
 }

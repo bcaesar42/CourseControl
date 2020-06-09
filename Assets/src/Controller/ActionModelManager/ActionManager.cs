@@ -37,13 +37,13 @@ namespace src.Controller.ActionModelManager
             return upgrades.Cast<T>();
         }
 
-        public ActionModel GetActionModel(Guid actionId, int upgradeLevel)
+        public IEnumerable<T> GetActionModel<T>(Guid actionId, int upgradeLevel) where T : ActionModel
         {
-            var model = ActionModels.Where(actionModel => actionModel.ActionId == actionId && actionModel.ActionLevel == upgradeLevel).FirstOrDefault();
-            return model;
+            var model = ActionModels.Where(actionModel => actionModel.ActionId == actionId && actionModel.ActionLevel == upgradeLevel);
+            return model.Cast<T>();
         }
 
-        public IEnumerable<ActionModel> GetActionModels(Guid actionId, int upgradeLevel)
+        public IEnumerable<ActionModel> GetActionModel(Guid actionId, int upgradeLevel)
         {
             var model = ActionModels.Where(actionModel => actionModel.ActionId == actionId && actionModel.ActionLevel == upgradeLevel);
             return model;

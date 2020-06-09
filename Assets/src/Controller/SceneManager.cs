@@ -6,8 +6,6 @@ using src.Controller.ActionModelManager;
 using src.Controller.TargetManager;
 using Assets.src.Model.ModelFramework.ShipFramework;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using src.Model.ModelFramework.ActionFramework;
 
 
 /* 
@@ -20,34 +18,23 @@ using src.Model.ModelFramework.ActionFramework;
 public class SceneManager : MonoBehaviour
 {
     public List<BaseShip> shipList;
-    public TurnManager turnManager;
+    TurnManager turnManager;
     public TargetManager targetManager { get; set; }
     public ActionManager actionManager { get; set; }
-    public static readonly SceneManager instance = new SceneManager();
 
     //Assuming that we construct ships elsewhere (on another scene) and pass them in when the game scene is started
 
-    private void Awake()
+    void Start()
     {
-        shipList = new List<BaseShip>();
+        shipList =  new List<BaseShip>();
+
         turnManager = new TurnManager();
         targetManager = new TargetManager();
         actionManager = ActionManager.instance;
-
-        targetShip tShip = new targetShip();
-        Wishbone wishbone = new Wishbone(new WishboneModel());
-
-        shipList.Add(wishbone);
-        targetManager.AddTarget(tShip);
-
-
-    }
-    void Start()
-    {
-        Demo();
+        test();
     }
 
-    public void Demo()
+    public void test()
     {
         //ShipModel sm = new ShipModel();
         //sm.Name = "TestShip";
@@ -59,17 +46,16 @@ public class SceneManager : MonoBehaviour
         //BaseShip tShip1 = new BaseShip(sm);
         //BaseShip tShip2 = new BaseShip(sm);
 
-        turnManager.addPlayer(shipList[0].GetSelfId());
-        turnManager.start();
+        Guid Player1 = new Guid();
+        turnManager.addPlayer(Player1);
+        Wishbone wishbone = new Wishbone(new WishboneModel());
+        shipList.Add(wishbone);
 
-        targetManager.AddTarget(shipList[0]);
-        
     }
 
     public void newTurn()
     {
-        shipList[0].DamageShield(2);
-        shipList[0].newTurn();
+        turnManager.newTurn();
     }
 
 }

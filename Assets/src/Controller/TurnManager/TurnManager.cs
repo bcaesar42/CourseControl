@@ -1,12 +1,12 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using src.Turn;
 using UnityEngine;
 
 public class TurnManager
 {
-    List<Guid> playerList { get; set; }
-    public Guid currentPlayer { get; set; }
+    List<Guid> playerList;
+    Guid currentPlayer;
 
     public TurnManager()
     {
@@ -25,19 +25,6 @@ public class TurnManager
         playerList.Remove(id);
     }
 
-    public BaseShip CurrentShip()
-    {
-        foreach (BaseShip ship in SceneManager.instance.shipList)
-        {
-            if (currentPlayer == ship.GetSelfId())
-            {
-                return ship;
-            }
-        }
-        Debug.Log("No ship can be found matching the current player's GUID");
-        return null;
-    }
-
     public void start()
     {
         currentPlayer = playerList[0];
@@ -47,7 +34,7 @@ public class TurnManager
     {
         int ix = playerList.IndexOf(currentPlayer);
 
-        Debug.Log("currentPlayer: " + currentPlayer + " Index: " + ix);
+        //Debug.Log("currentPlayer: " + currentPlayer + " Index: " + ix);
 
         if (ix < playerList.Count - 1)
         {
@@ -62,6 +49,9 @@ public class TurnManager
 
     public void newRound()
     {
-        Debug.Log("NEW ROUND TM");
+        //actionRunner.runActions();
+        currentPlayer = playerList[0];
+        //Do whatever we will do to update and reset thing when we beging a new round.
+        //Do whatever we will do to update view to current player
     }
 }

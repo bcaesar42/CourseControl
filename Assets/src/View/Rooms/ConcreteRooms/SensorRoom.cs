@@ -6,10 +6,5 @@
             : base(ship, "Sensor Room", 0, 3, new System.Guid(), teamId)
         {
         }
-
-        public override void newTurn()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

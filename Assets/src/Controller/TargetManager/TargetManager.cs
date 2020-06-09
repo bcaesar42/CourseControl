@@ -35,7 +35,7 @@ namespace src.Controller.TargetManager
             var rList = new List<ITargetable>();
 
             foreach (var t in targetList)
-                if (t.GetSelfId() != id)
+                if (t.GetSelfId() == id)
                     rList.Add(t);
             return rList;
         }
@@ -69,16 +69,5 @@ namespace src.Controller.TargetManager
                     rList.Add(t);
             return rList;
         }
-
-        public List<ITargetable> getSelf(Guid id)
-        {
-            var rList = new List<ITargetable>();
-
-            foreach (var t in targetList)
-                if (t.GetSelfId() == id)
-                    rList.Add(t);
-            return rList;
-        }
-
     }
 }
