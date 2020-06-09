@@ -9,7 +9,7 @@
 
         public override void newTurn()
         {
-            throw new System.NotImplementedException();
+            Debug.Log("Not Implemented");
         }
     }
 }
