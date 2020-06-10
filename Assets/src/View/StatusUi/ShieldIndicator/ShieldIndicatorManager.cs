@@ -70,6 +70,41 @@ namespace src.View.StatusUi.ShieldIndicator
 
         private void Update()
         {
+            if (_shieldTip)
+            {
+                _tipText.text = ("Current Shield: " + _shieldCount + " out of " + _shieldCountMax);
+            }
+        }
+
+        public void StateChanged(int newShieldCount, int newShieldMax)
+        {
+            if (_newShieldCountMax == newShieldMax)
+            {
+                return;
+            }
+
+            if (newShieldMax < 0)
+            {
+                _newShieldCountMax = 0;
+            }
+            else
+            {
+                _newShieldCountMax = newShieldMax;
+            }
+
+            if (newShieldCount < 0)
+            {
+                _newShieldCount = 0;
+            }
+            else if (newShieldCount > newShieldMax)
+            {
+                _newShieldCount = newShieldMax;
+            }
+            else
+            {
+                _newShieldCount = newShieldCount;
+            }
+            
             if (_newShieldCountMax > _shieldCountMax)
             {
                 for (int i = _shieldCountMax; i < _newShieldCountMax; i++)
@@ -114,16 +149,6 @@ namespace src.View.StatusUi.ShieldIndicator
                 }
             }
 
-
-            if (_newShieldCount > _newShieldCountMax)
-            {
-                _newShieldCount = _newShieldCountMax;
-            }
-            else if (_newShieldCount < 0)
-            {
-                _newShieldCount = 0;
-            }
-
             if (_newShieldCount != _shieldCount || _newShieldCountMax != _shieldCountMax)
             {
                 for (int i = 0; i < _newShieldCountMax; i++)
@@ -141,36 +166,6 @@ namespace src.View.StatusUi.ShieldIndicator
 
             _shieldCountMax = _newShieldCountMax;
             _shieldCount = _newShieldCount;
-            
-            if (_shieldTip)
-            {
-                _tipText.text = ("Current Shield: " + _shieldCount + " out of " + _shieldCountMax);
-            }
-        }
-
-        public void StateChanged(int newShieldCount, int newShieldMax)
-        {
-            if (newShieldMax < 0)
-            {
-                _newShieldCountMax = 0;
-            }
-            else
-            {
-                _newShieldCountMax = newShieldMax;
-            }
-
-            if (newShieldCount < 0)
-            {
-                _newShieldCount = 0;
-            }
-            else if (newShieldCount > newShieldMax)
-            {
-                _newShieldCount = newShieldMax;
-            }
-            else
-            {
-                _newShieldCount = newShieldCount;
-            }
         }
         
         public void ShowShieldTip()
