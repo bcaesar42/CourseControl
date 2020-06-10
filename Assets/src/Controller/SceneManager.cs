@@ -16,10 +16,10 @@ namespace src.Controller
 {
     public class SceneManager : MonoBehaviour
     {
-        public List<BaseShip> shipList;
-        public TurnManager turnManager;
-        public TargetManager.TargetManager targetManager { get; set; }
-        public ActionManager actionManager { get; set; }
+        public List<BaseShip> shipList { get; private set; }
+        public TurnManager turnManager { get; private set; }
+        public TargetManager.TargetManager targetManager { get; private set; }
+        public ActionManager actionManager { get; private set; }
         public static readonly SceneManager instance = new SceneManager();
 
         //Assuming that we construct ships elsewhere (on another scene) and pass them in when the game scene is started
@@ -34,13 +34,14 @@ namespace src.Controller
             targetShip tShip = new targetShip();
             Wishbone wishbone = new Wishbone(new WishboneModel());
 
-        shipList.Add(wishbone);
-        targetManager.AddTarget(tShip);
-    }
-    void Start()
-    {
-        Demo();
-    }
+            shipList.Add(wishbone);
+            targetManager.AddTarget(tShip);
+        }
+
+        void Start()
+        {
+            Demo();
+        }
 
         public void Demo()
         {
