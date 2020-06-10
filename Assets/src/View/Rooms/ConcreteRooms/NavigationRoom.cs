@@ -22,7 +22,6 @@ namespace src.View.Rooms.ConcreteRooms
         }
         public override void newTurn()
         {
-            this.ship.setEvadeChance(0);
             if (this.GetCrewCount() > 0)
             {
                 baseNave.UseAction(baseNave.AvailableTargets());

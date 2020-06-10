@@ -21,7 +21,8 @@ namespace src.Controller
         public TargetManager.TargetManager targetManager { get; set; }
         public ActionManager actionManager { get; set; }
         public static readonly SceneManager instance = new SceneManager();
-
+        PlayerLog eventLog;
+        targetShip tShip;
         //Assuming that we construct ships elsewhere (on another scene) and pass them in when the game scene is started
 
         private void Awake()
@@ -31,15 +32,19 @@ namespace src.Controller
             targetManager = new TargetManager.TargetManager();
             actionManager = ActionManager.instance;
 
-            targetShip tShip = new targetShip();
+            tShip = new targetShip();
             Wishbone wishbone = new Wishbone(new WishboneModel());
 
-        shipList.Add(wishbone);
-        targetManager.AddTarget(tShip);
-    }
+            shipList.Add(wishbone);
+            targetManager.AddTarget(tShip);
+
+            eventLog = GameObject.Find("EventLog").GetComponent<PlayerLog>();
+
+        }
     void Start()
     {
         Demo();
+
     }
 
         public void Demo()
@@ -64,7 +69,7 @@ namespace src.Controller
         public void newTurn()
         {
             shipList[0].newTurn();
-            Debug.Log("Shields: " + shipList[0].CurrentShieldCount());
+            tShip.newRound(shipList[0]);
         }
 
     }

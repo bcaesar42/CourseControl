@@ -31,6 +31,7 @@ namespace src.Model.ModelConcrete.Ships
 
         public List<BaseRoom> roomList = new List<BaseRoom>();
         public TargetManager targetManager;
+        PlayerLog eventLog = GameObject.Find("EventLog").GetComponent<PlayerLog>();
 
         public BaseShip(ShipModel model)
         {
@@ -95,6 +96,7 @@ namespace src.Model.ModelConcrete.Ships
 
         public void setEvadeChance(int e)
         {
+            eventLog.AddEvent("Evasion Rate set to " + e + " from " + evasion);
             evasion = e;
         }
 
@@ -159,6 +161,9 @@ namespace src.Model.ModelConcrete.Ships
 
             maxCrew += amountToAdd;
             FreeCrew(amountToAdd);
+
+            eventLog.AddEvent("Adding " + amountToAdd + " crew to ship. Now at " + maxCrew);
+
             return maxCrew;
         }
 
@@ -186,6 +191,9 @@ namespace src.Model.ModelConcrete.Ships
 
         public int Damage(int damageCount)
         {
+
+            eventLog.AddEvent("Took " + damageCount + " damage to ship. Now at " + (currentHP - damageCount));
+
             currentHP -= damageCount;
             if (currentHP < 0) currentHP = 0;
             GameObject.Find("HealthBar").GetComponent<HealthBar>().StateChanged(currentHP, maxHP);
@@ -194,6 +202,9 @@ namespace src.Model.ModelConcrete.Ships
 
         public int DamageShield(int damageCount)
         {
+
+            eventLog.AddEvent("Shields hit! " + " Now at " + (currentShield - damageCount));
+
             currentShield -= damageCount;
 
             int resShieldState = currentShield;
@@ -207,12 +218,16 @@ namespace src.Model.ModelConcrete.Ships
         }
 
     public void ActivateShield(int shieldCount)
-    {
+        { 
+
         currentShield += shieldCount;
         if (currentShield > maxShield)
         {
             currentShield = maxShield;
         }
+
+        eventLog.AddEvent("Raised Shields! " + " Now at " + (currentShield));
+
         GameObject.Find("ShieldIndicatorManager").GetComponent<ShieldIndicatorManager>().StateChanged(currentShield, maxShield);
     }
 
@@ -230,6 +245,9 @@ namespace src.Model.ModelConcrete.Ships
         {
             currentHP += healCount;
             if (currentHP > maxHP) currentHP = maxHP;
+
+            eventLog.AddEvent("Hull repaired for " + healCount + ". Now at " + (currentHP));
+
             GameObject.Find("HealthBar").GetComponent<HealthBar>().StateChanged(currentHP, maxHP);
             return currentHP;
         }
