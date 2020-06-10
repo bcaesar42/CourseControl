@@ -41,6 +41,11 @@ namespace src.Controller
             eventLog = GameObject.Find("EventLog").GetComponent<PlayerLog>();
 
         }
+        void Start()
+        {
+            Demo();
+
+        }
 
         public void Demo()
         {
