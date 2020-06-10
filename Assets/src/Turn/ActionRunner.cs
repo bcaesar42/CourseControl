@@ -8,6 +8,7 @@ namespace src.Turn
 {
     public class ActionRunner
     {
+        /*
         // Constructor:
         public ActionRunner()
         {
@@ -67,5 +68,6 @@ namespace src.Turn
                 await Task.WhenAll(tasks.ToArray()); // Wait for all Task from this priority level to finish before starting the Task of the next priority level.
             }
         }
+        */
     }
 }
