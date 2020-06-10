@@ -42,9 +42,9 @@ public class RoomView : MonoBehaviour
 
         Vector3[] Slots = {
             new Vector3(7.780874f, -2.5905f, -53.41037f),
-            new Vector3(7.7206f, -0.61312f, -48.609f),
+            new Vector3(7.7205f, -3.1131f, -48.609f),
             new Vector3(5.9608f, -0.83571f, -36.209f),
-            new Vector3(-2.0887f, -3.1131f, -30.952f),
+            new Vector3(-2.0886f, -0.61312f, -30.952f),
             new Vector3(-2.0887f, -3.1131f, -23.105f),
             new Vector3(-10.40568f, -1.1401f, -37.74602f),
             new Vector3(-11.898f, -3.1131f, -48.609f),
@@ -87,7 +87,7 @@ public class RoomView : MonoBehaviour
                     break;
                 case "Drone Bay":
                     objPrefab = Resources.Load("DroneRoom") as GameObject;
-                    obj = Instantiate(objPrefab, Slots[1], Quaternion.identity) as GameObject;
+                    obj = Instantiate(objPrefab, Slots[3], Quaternion.identity) as GameObject;
                     obj.transform.Rotate(new Vector3(0, 0, -135));
                     roomMaterialUtils.ApplyDroneRoomMaterials(obj);
                     break;
@@ -99,7 +99,7 @@ public class RoomView : MonoBehaviour
                     break;
                 case "Navigation Room":
                     objPrefab = Resources.Load("NavigationRoom") as GameObject;
-                    obj = Instantiate(objPrefab, Slots[3], Quaternion.identity) as GameObject;
+                    obj = Instantiate(objPrefab, Slots[1], Quaternion.identity) as GameObject;
                     obj.transform.Rotate(new Vector3(-90, 90, 0));
                     roomMaterialUtils.ApplyNavigationRoomMaterials(obj);
                     break;
