@@ -51,9 +51,12 @@ namespace src.Model.ModelConcrete.Ships
 
         public void newTurn()
         {
-            foreach (BaseRoom b in roomList)
+            if (currentHP > 0)
             {
-                b.newTurn();
+                foreach (BaseRoom b in roomList)
+                {
+                    b.newTurn();
+                }
             }
         }
 
@@ -191,25 +194,26 @@ namespace src.Model.ModelConcrete.Ships
 
         public int Damage(int damageCount)
         {
-
-            eventLog.AddEvent("Took " + damageCount + " damage to ship. Now at " + (currentHP - damageCount));
-
             currentHP -= damageCount;
-            if (currentHP < 0) currentHP = 0;
+            if (currentHP <= 0)
+            {
+                currentHP = 0;
+                eventLog.AddEvent("GAME OVER");
+            }
+
+            eventLog.AddEvent("Took " + damageCount + " damage to ship. Now at " + (currentHP));
             GameObject.Find("HealthBar").GetComponent<HealthBar>().StateChanged(currentHP, maxHP);
             return currentHP;
         }
 
         public int DamageShield(int damageCount)
         {
-
-            eventLog.AddEvent("Shields hit! " + " Now at " + (currentShield - damageCount));
-
             currentShield -= damageCount;
 
             int resShieldState = currentShield;
 
             if (currentShield < 0) currentShield = 0;
+            eventLog.AddEvent("Shields hit! " + " Now at " + (currentShield));
 
             GameObject.Find("ShieldIndicatorManager").GetComponent<ShieldIndicatorManager>()
                 .StateChanged(currentShield, maxShield);
@@ -217,19 +221,19 @@ namespace src.Model.ModelConcrete.Ships
             return resShieldState;
         }
 
-    public void ActivateShield(int shieldCount)
-        { 
-
-        currentShield += shieldCount;
-        if (currentShield > maxShield)
+        public void ActivateShield(int shieldCount)
         {
-            currentShield = maxShield;
+            currentShield += shieldCount;
+            if (currentShield > maxShield)
+            {
+                currentShield = maxShield;
+            }
+
+            eventLog.AddEvent("Raised Shields! " + " Now at " + (currentShield));
+
+            GameObject.Find("ShieldIndicatorManager").GetComponent<ShieldIndicatorManager>()
+                .StateChanged(currentShield, maxShield);
         }
-
-        eventLog.AddEvent("Raised Shields! " + " Now at " + (currentShield));
-
-        GameObject.Find("ShieldIndicatorManager").GetComponent<ShieldIndicatorManager>().StateChanged(currentShield, maxShield);
-    }
 
         public Guid GetSelfId()
         {
