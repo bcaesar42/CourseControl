@@ -42,11 +42,6 @@ namespace src.Controller
 
         }
 
-        void Start()
-        {
-            Demo();
-        }
-
         public void Demo()
         {
             //ShipModel sm = new ShipModel();
