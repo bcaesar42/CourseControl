@@ -181,17 +181,22 @@ namespace src.Model.ModelFramework.ActionFramework
 
             if (CurrentState == ActionState.Cooldown && _currentCooldownLeft == 0)
                 if (_currentCooldownLeft == 0)
-                    {
-                        _currentState = ActionState.Ready;
+                {
+                    _currentState = ActionState.Ready;
 
-                        _currentActivationTime = ActionModel.ActionTime.ActivationTime;
-                        _currentCompletionTime = ActionModel.ActionTime.CompletionTime;
-                        _currentCooldownTime = ActionModel.ActionTime.CooldownTime;
+                    _currentActivationTime = ActionModel.ActionTime.ActivationTime;
+                    _currentCompletionTime = ActionModel.ActionTime.CompletionTime;
+                    _currentCooldownTime = ActionModel.ActionTime.CooldownTime;
 
-                        _currentActivationLeft = _currentActivationTime;
-                        _currentCompletionLeft = _currentCompletionTime;
-                        _currentCooldownLeft = _currentCooldownTime;
-                    }
-            }
+                    _currentActivationLeft = _currentActivationTime;
+                    _currentCompletionLeft = _currentCompletionTime;
+                    _currentCooldownLeft = _currentCooldownTime;
+                }
+        }
+
+        public Task PerformAction()
+        {
+            return new Task(() => DoAction(_currentCompletionLeft, Targets));
+        }
     }
 }
