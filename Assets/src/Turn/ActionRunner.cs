@@ -8,8 +8,6 @@ namespace src.Turn
 {
     public class ActionRunner
     {
-
-        /*
         // Constructor:
         public ActionRunner()
         {
@@ -22,13 +20,17 @@ namespace src.Turn
 
 
         // Methods:
-        public bool SubscribeAction(GameAction action) // The first "Action" specifies the namespace, the second "Action" specifies the class.
+        public bool SubscribeAction(GameAction action)
         {
             bool didSubscribe = false;
 
-            ActionPriority priority = action.ActionModel.Priority;
+            if (action != null)
+            {
+                SubscribedActions.Append(action);
+                didSubscribe = true;
+            }
 
-            return true; //TODO get this to error check itself before assigning to true
+            return didSubscribe;
         }
 
         public bool UnsubscribeAction(GameAction action)
@@ -52,43 +54,18 @@ namespace src.Turn
         public async void RunActions()
         {
             IOrderedEnumerable<IGrouping<ActionPriority, GameAction>> priorityGroups = SubscribedActions.GroupBy(action => action.ActionModel.Priority).OrderBy(group => group.Key);
-            
+
             foreach (IGrouping<ActionPriority, GameAction> priorityGroup in priorityGroups)
             {
-                IEnumerable<Task> tasks = priorityGroup.Select(action => action.AdvanceRound);
+                IEnumerable<Task> tasks = priorityGroup.Select(action => action.PerformAction());
 
                 foreach (Task task in tasks)
                 {
-                    
-                    switch (task)
-                    {
-                        case ActionPriority.VeryLow:
-                            SubscribedActions_VeryLow.Append(action);
-                            didSubscribe = true;
-                            break;
-                        case ActionPriority.Low:
-                            SubscribedActions_Low.Append(action);
-                            didSubscribe = true;
-                            break;
-                        case ActionPriority.Moderate:
-                            SubscribedActions_Moderate.Append(action);
-                            didSubscribe = true;
-                            break;
-                        case ActionPriority.High:
-                            SubscribedActions_High.Append(action);
-                            didSubscribe = true;
-                            break;
-                        case ActionPriority.VeryHigh:
-                            SubscribedActions_VeryHigh.Append(action);
-                            didSubscribe = true;
-                            break;
-                    }
-                    
+                    task.Start();
                 }
 
                 await Task.WhenAll(tasks.ToArray()); // Wait for all Task from this priority level to finish before starting the Task of the next priority level.
             }
-        } */
-    } 
-    
+        }
+    }
 }
