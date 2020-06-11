@@ -23,10 +23,9 @@ public class PlayerLog : MonoBehaviour
     {
         Eventlog.Add(eventString);
 
-        /*
+        
         if (Eventlog.Count >= maxLines)
             Eventlog.RemoveAt(0);
-        */
 
         guiText = "";
 
