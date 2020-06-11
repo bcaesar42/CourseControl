@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using src.Controller.TargetManager;
-using src.Turn;
+﻿using System.Collections.Generic;
+using Assets.src.Model.ModelFramework.ShipFramework;
+using src.Controller.ActionModelManager;
+using src.Model.ModelConcrete.Ships;
 using UnityEngine;
 
 
@@ -13,41 +12,65 @@ using UnityEngine;
  */
 
 
-public class SceneManager : MonoBehaviour
+namespace src.Controller
 {
-    List<BaseShip> shipList;
-    TurnManager turnManager;
-    TargetManager targetManager;
-    ActionRunner actionRunner;
-
-    //ActionManager actionManager; TODO: figure out how to get actionManager active
-
-    //Assuming that we construct ships elsewhere (on another scene) and pass them in when the game scene is started
-
-    void Start()
+    public class SceneManager : MonoBehaviour
     {
-        //this.shipList = shipList;
-        actionRunner = new ActionRunner();
+        public List<BaseShip> shipList { get; private set; }
+        public TurnManager turnManager { get; private set; }
+        public TargetManager.TargetManager targetManager { get; private set; }
+        public ActionManager actionManager { get; private set; }
+        public static readonly SceneManager instance = new SceneManager();
+        PlayerLog eventLog;
+        targetShip tShip;
+        //Assuming that we construct ships elsewhere (on another scene) and pass them in when the game scene is started
 
-        turnManager = new TurnManager(actionRunner);
+        private void Awake()
+        {
+            shipList = new List<BaseShip>();
+            turnManager = new TurnManager();
+            targetManager = new TargetManager.TargetManager();
+            actionManager = ActionManager.instance;
 
-        //test();
+            tShip = new targetShip();
+            Wishbone wishbone = new Wishbone(new WishboneModel());
+
+            shipList.Add(wishbone);
+            targetManager.AddTarget(tShip);
+
+            eventLog = GameObject.Find("EventLog").GetComponent<PlayerLog>();
+
+        }
+        void Start()
+        {
+            Demo();
+
+        }
+
+        public void Demo()
+        {
+            //ShipModel sm = new ShipModel();
+            //sm.Name = "TestShip";
+            //sm.ShipId = new Guid();
+            //sm.Description = "THIS IS A TEST SHIP";
+            //sm.InitialCrewCount = 5;
+            //sm.InitialMaxHealth = 30;
+
+            //BaseShip tShip1 = new BaseShip(sm);
+            //BaseShip tShip2 = new BaseShip(sm);
+
+            turnManager.addPlayer(shipList[0].GetSelfId());
+            turnManager.start();
+
+            targetManager.AddTarget(shipList[0]);
+        
+        }
+
+        public void newTurn()
+        {
+            shipList[0].newTurn();
+            tShip.newRound(shipList[0]);
+        }
+
     }
-
-    public void test()
-    {
-        Debug.Log("STARTING TEST");
-        turnManager.addPlayer(Guid.NewGuid());
-        turnManager.addPlayer(Guid.NewGuid());
-        turnManager.addPlayer(Guid.NewGuid());
-        turnManager.addPlayer(Guid.NewGuid());
-
-        turnManager.start();
-    }
-
-    public void newTurn()
-    {
-        turnManager.newTurn();
-    }
-
 }

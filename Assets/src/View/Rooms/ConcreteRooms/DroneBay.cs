@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using src.Model.ModelConcrete.Ships;
+using UnityEngine;
 
 namespace src.View.Rooms.ConcreteRooms
 {
@@ -9,18 +10,9 @@ namespace src.View.Rooms.ConcreteRooms
         {
         }
 
-        public void OnMouseDown()
+        public override void newTurn()
         {
-            if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftControl))
-            {
-                Debug.Log("Right click");
-                RemoveCrew();
-            }
-            else if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftControl))
-            {
-                Debug.Log("Left click");
-                AddCrew();
-            }
+            Debug.Log("Not Implemented");
         }
     }
 }

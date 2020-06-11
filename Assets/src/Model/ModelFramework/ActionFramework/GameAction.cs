@@ -41,12 +41,14 @@ namespace src.Model.ModelFramework.ActionFramework
 
         private int _currentActivationLeft;
         private int _currentActivationTime;
+
         private int _currentCompletionLeft;
         private int _currentCompletionTime;
+
         private int _currentCooldownLeft;
         private int _currentCooldownTime;
 
-        private ActionState _currentState;
+        protected ActionState _currentState;
 
         protected IEnumerable<ITargetable> Targets;
 
@@ -92,11 +94,23 @@ namespace src.Model.ModelFramework.ActionFramework
             }
         }
 
+        public void readyAction()
+        {
+            _currentActivationTime = ActionModel.ActionTime.ActivationTime;
+            _currentCompletionTime = ActionModel.ActionTime.CompletionTime;
+            _currentCooldownTime = ActionModel.ActionTime.CooldownTime;
+            _currentActivationLeft = _currentActivationTime;
+            _currentCompletionLeft = _currentCompletionTime;
+            _currentCooldownLeft = _currentCooldownTime;
+
+            CurrentState = ActionState.Ready;
+        }
+
         public abstract IEnumerable<ITargetable> AvailableTargets();
 
         public abstract bool IsValidActionModel(ActionModel actionModel);
 
-        protected abstract void DoAction(int roundNum, IEnumerable<ITargetable> targets);
+        protected abstract void DoAction(int roundsLeft, IEnumerable<ITargetable> targets);
 
         public bool UseAction(IEnumerable<ITargetable> targets)
         {
@@ -107,63 +121,82 @@ namespace src.Model.ModelFramework.ActionFramework
             return true;
         }
 
+        public bool CancelAction()
+        {
+            CurrentState = ActionState.Ready;
+            return true;
+        }
+
         public ActionState AdvanceRound()
         {
             switch (CurrentState)
             {
                 case ActionState.Deactivated:
                     return ActionState.Deactivated;
-                case ActionState.Ready:
-                    _currentActivationTime = ActionModel.ActionTime.ActivationTime;
-                    _currentCompletionTime = ActionModel.ActionTime.CompletionTime;
-                    _currentCooldownTime = ActionModel.ActionTime.CooldownTime;
-                    _currentActivationLeft = _currentActivationTime;
-                    _currentCompletionLeft = _currentCompletionTime;
-                    _currentCooldownLeft = _currentCooldownTime;
 
+                case ActionState.Ready:
                     return ActionState.Ready;
+
                 case ActionState.Activation:
-                    _currentActivationLeft--;
+                    if (_currentActivationLeft == 0)
+                        _currentState = ActionState.Cooldown;
+                    else
+                    {
+                        DoAction(_currentActivationLeft, Targets);
+                        _currentActivationLeft--;
+                        checkState();
+                    }
                     break;
+
                 case ActionState.Completion:
                     _currentCompletionLeft--;
                     break;
+
                 case ActionState.Cooldown:
-                    _currentCooldownLeft--;
+                    if (_currentCooldownLeft == 0)
+                    {
+                        _currentState = ActionState.Ready;
+
+                        _currentActivationTime = ActionModel.ActionTime.ActivationTime;
+                        _currentCompletionTime = ActionModel.ActionTime.CompletionTime;
+                        _currentCooldownTime = ActionModel.ActionTime.CooldownTime;
+
+                        _currentActivationLeft = _currentActivationTime;
+                        _currentCompletionLeft = _currentCompletionTime;
+                        _currentCooldownLeft = _currentCooldownTime;
+                    }
+                    else
+                    {
+                        _currentCooldownLeft--;
+                    }
                     break;
-                default:
-                    CurrentState = ActionState.Ready;
-                    return ActionState.Ready;
             }
+            return _currentState;
+        }
 
-            if (CurrentState == ActionState.Activation)
-            {
-                if (_currentActivationLeft <= _currentActivationTime)
-                    CurrentState = ActionState.Completion;
-                else
-                    return ActionState.Activation;
-            }
+        private void checkState()
+        {
+            if (CurrentState == ActionState.Activation && _currentActivationLeft == 0)
+                    _currentState = ActionState.Cooldown;
 
-            if (CurrentState == ActionState.Completion)
-            {
-                if (_currentCompletionLeft <= _currentCompletionTime)
-                    CurrentState = ActionState.Cooldown;
-                else
+            if (CurrentState == ActionState.Cooldown && _currentCooldownLeft == 0)
+                if (_currentCooldownLeft == 0)
                 {
-                    DoAction(_currentCooldownTime - _currentCompletionLeft, Targets);
-                    return ActionState.Completion;
+                    _currentState = ActionState.Ready;
+
+                    _currentActivationTime = ActionModel.ActionTime.ActivationTime;
+                    _currentCompletionTime = ActionModel.ActionTime.CompletionTime;
+                    _currentCooldownTime = ActionModel.ActionTime.CooldownTime;
+
+                    _currentActivationLeft = _currentActivationTime;
+                    _currentCompletionLeft = _currentCompletionTime;
+                    _currentCooldownLeft = _currentCooldownTime;
                 }
-            }
+        }
 
-            if (CurrentState == ActionState.Cooldown)
-            {
-                if (_currentCooldownLeft <= _currentCooldownTime)
-                    CurrentState = ActionState.Ready;
-                else
-                    return ActionState.Cooldown;
-            }
-
-            return CurrentState;
+        public Task PerformAction()
+        {
+            return new Task(() => DoAction(_currentCompletionLeft, Targets));
         }
     }
 }

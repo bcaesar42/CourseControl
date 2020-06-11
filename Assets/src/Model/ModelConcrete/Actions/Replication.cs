@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using src.Controller.TargetManager;
+using src.Model.ModelConcrete.Ships;
 using src.Model.ModelFramework.ActionFramework;
 using src.Model.ModelFramework.TargetableFramework;
 
@@ -12,8 +13,8 @@ namespace src.Model.ModelConcrete.Actions
         private TargetManager _TargetManger { get; set; }
         
 
-        public Replication(TargetManager targetManager, Guid actionId, Guid actionInstanceId, Guid selfId, Guid teamId)
-            : base(targetManager, actionId, actionInstanceId, selfId, teamId)
+        public Replication(TargetManager targetManager, ActionModel actionModel, Guid actionInstanceId, Guid selfId, Guid teamId) :
+            base(actionModel, actionInstanceId, selfId, teamId) //TODO, get actionModel passed in
         {
             CurrentState = ActionState.Ready;
         }

@@ -14,8 +14,8 @@ namespace src.Model.ModelConcrete.Actions
         public int ResearchTokens { get => _ResearchTokens; }
         private TargetManager _TargetManager;
 
-        public Research(TargetManager targetManager, Guid actionId, Guid actionInstanceId, Guid selfId, Guid teamId) :
-            base(targetManager, actionId, actionInstanceId, selfId, teamId)
+        public Research(TargetManager targetManager, ActionModel actionModel, Guid actionInstanceId, Guid selfId, Guid teamId) :
+            base(actionModel, actionInstanceId, selfId, teamId) //TODO, get actionModel passed in
         {
             _TargetManager = targetManager;
         }
@@ -27,7 +27,7 @@ namespace src.Model.ModelConcrete.Actions
 
         public override IEnumerable<ITargetable> AvailableTargets()
         {
-            yield return _TargetManager.getAlliedID(SelfId).FirstOrDefault();
+            return _TargetManager.getAlliedID(SelfId);
         }
 
         protected override void DoAction(int roundNum, IEnumerable<ITargetable> targets)

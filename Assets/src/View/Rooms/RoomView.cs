@@ -1,9 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using Assets.src.View.Rooms;
+using Assets.src.View.Ship;
+using src.Controller;
+using src.Model.ModelConcrete.Ships;
 using src.Model.ModelFramework.ActionFramework;
 using src.View.Rooms;
 using src.View.Rooms.ConcreteRooms;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RoomView : MonoBehaviour
 {
@@ -17,6 +23,7 @@ public class RoomView : MonoBehaviour
     private List<TextMesh> Labels { get; set; }
     private ActionState State { get; set; }
     private int CrewCount { get; set; }
+    private List<BaseShip> shipList { get; set; }
 
     // Start is called before the first frame update
     void Start()
@@ -27,84 +34,106 @@ public class RoomView : MonoBehaviour
              selectedRooms = new string[] { "WeaponsBay", "DroneBay", "MaintenanceBay", "NavigationRoom", "ResearchCenter", "ScavengeBay", "ShieldBay", "SensorRoom" };
         }
         TextMesh text = new TextMesh();
-        Labels = new List<TextMesh>();
+        Labels = GameObject.Find("Player").GetComponentsInChildren<TextMesh>().ToList<TextMesh>();
 
         GameObject Player = GameObject.Find("Player");
+        SceneManager sceneManager = GameObject.Find("SceneManager").transform.GetComponent<SceneManager>();
+        shipList = sceneManager.shipList;
 
-        Vector3[] Slots = { new Vector3(7.8639f, -4.3603f, -55.895f), new Vector3(6.2546f, -4.5828f, -46.731f), new Vector3(3.8639f, -6.8602f, -37.895f), new Vector3(-2.1361f, -6.8602f, -30.895f), new Vector3(-2.1361f, -4.8872f, -25.331f), new Vector3(-8.1361f, -6.8602f, -37.895f), new Vector3(-12.136f, -6.8602f, -48.895f), new Vector3(-14.2f, -6.3376f, -55.818f) };
+        Vector3[] Slots = {
+            new Vector3(7.780874f, -2.5905f, -53.41037f),
+            new Vector3(7.7205f, -3.1131f, -48.609f),
+            new Vector3(5.9608f, -0.83571f, -36.209f),
+            new Vector3(-2.0886f, -0.61312f, -30.952f),
+            new Vector3(-2.0887f, -3.1131f, -23.105f),
+            new Vector3(-10.40568f, -1.1401f, -37.74602f),
+            new Vector3(-11.898f, -3.1131f, -48.609f),
+            new Vector3(-11.898f, -3.1131f, -55.475f)
+        };
 
         /*
-         * Current behavior is fixed. Rooms are manually placed and oriented because they all require a specific orientation/position. Will try to make modular closer to project completion.
-         * Translation can be accomplished in a two step manner after the room has been placed.
-         * Will have to fix orientation in order to not rotate rooms.
-         * Global variables could be cleaned up but I can't figure out how currently.
+         * Weapon
+         * Navigation
+         * Drone
+         * Maintenance
+         * Shield
+         * Research
+         * Sensor
+         * Scavenge
+         * 
+         * Medical missing
+         * Replication missing
          */
-
         GameObject objPrefab;
         GameObject obj;
+        //Creating RoomMaterialUitls object, team colors are specified in constuctor here
+        RoomMaterialUtils roomMaterialUtils = new RoomMaterialUtils(MaterialNames.TeamGreenLight, MaterialNames.TeamGreenDark);
 
-        for (int slotNumber = 0; slotNumber < Slots.Length; slotNumber++)
+        BaseShip ship = sceneManager.shipList.First();
+        //Creating ShipMaterialutils object, specify team colors for ship in constructor
+        ShipMaterialUtils shipMaterialUtils = new ShipMaterialUtils(MaterialNames.TeamGreenLight);
+        shipMaterialUtils.ApplyShipMaterials("Player");
+
+        foreach (BaseRoom room in ship.roomList)
         {
-            text = GameObject.Find($"Slot{slotNumber}CrewCount").GetComponent<TextMesh>();
-            switch (selectedRooms[slotNumber].ToString())
+            Debug.Log(room.RoomName);
+            switch (room.RoomName)
             {
-                case "WeaponsBay":
-                    room = GameObject.Find($"Slot{slotNumber}").AddComponent<WeaponsBay>() as WeaponsBay;
+                case "Weapons Bay":
                     objPrefab = Resources.Load("WeaponRoom") as GameObject;
-                    obj = Instantiate(objPrefab, transform.position, Quaternion.identity) as GameObject;
-                    obj.transform.Rotate(new Vector3(-90, 0, -90));
+                    obj = Instantiate(objPrefab, Slots[0], Quaternion.identity) as GameObject;
+                    obj.transform.Rotate(new Vector3(-90, 0, 180));
+                    roomMaterialUtils.ApplyWeaponRoomMaterials(obj);
                     break;
-                case "DroneBay":
-                    room = GameObject.Find($"Slot{slotNumber}").AddComponent<DroneBay>() as DroneBay;
+                case "Drone Bay":
                     objPrefab = Resources.Load("DroneRoom") as GameObject;
-                    obj = Instantiate(objPrefab, transform.position, Quaternion.identity) as GameObject;
+                    obj = Instantiate(objPrefab, Slots[3], Quaternion.identity) as GameObject;
                     obj.transform.Rotate(new Vector3(0, 0, -135));
+                    roomMaterialUtils.ApplyDroneRoomMaterials(obj);
                     break;
-                case "MaintenanceBay":
-                    room = GameObject.Find($"Slot{slotNumber}").AddComponent<MaintenanceBay>() as MaintenanceBay;
+                case "Maintenance Bay":
                     objPrefab = Resources.Load("MaintenanceRoom") as GameObject;
-                    obj = Instantiate(objPrefab, transform.position, Quaternion.identity) as GameObject;
-                    obj.transform.Rotate(new Vector3(0, 0, -90));
+                    obj = Instantiate(objPrefab, Slots[2], Quaternion.identity) as GameObject;
+                    obj.transform.Rotate(new Vector3(0, 90, -90));
+                    roomMaterialUtils.ApplyMaintenanceRoomMaterials(obj);
                     break;
-                case "NavigationRoom":
-                    room = GameObject.Find($"Slot{slotNumber}").AddComponent<NavigationRoom>() as NavigationRoom;
+                case "Navigation Room":
                     objPrefab = Resources.Load("NavigationRoom") as GameObject;
-                    obj = Instantiate(objPrefab, transform.position, Quaternion.identity) as GameObject;
-                    obj.transform.Rotate(new Vector3(-90, 0, 0));
+                    obj = Instantiate(objPrefab, Slots[1], Quaternion.identity) as GameObject;
+                    obj.transform.Rotate(new Vector3(-90, 90, 0));
+                    roomMaterialUtils.ApplyNavigationRoomMaterials(obj);
                     break;
-                case "ResearchCenter":
-                    room = GameObject.Find($"Slot{slotNumber}").AddComponent<ResearchCenter>() as ResearchCenter;
+                case "Research Center":
                     objPrefab = Resources.Load("ResearchRoom") as GameObject;
-                    obj = Instantiate(objPrefab, transform.position, Quaternion.identity) as GameObject;
-                    obj.transform.Rotate(new Vector3(-90, 0, 0));
+                    obj = Instantiate(objPrefab, Slots[4], Quaternion.identity) as GameObject;
+                    obj.transform.Rotate(new Vector3(-90, 90, 0));
+                    roomMaterialUtils.ApplyResearchRoomMaterials(obj);
                     break;
-                case "ScavengeBay":
-                    room = GameObject.Find($"Slot{slotNumber}").AddComponent<ScavengeBay>() as ScavengeBay;
+                case "Scavenge Bay":
                     objPrefab = Resources.Load("ScavengeRoom") as GameObject;
-                    obj = Instantiate(objPrefab, transform.position, Quaternion.identity) as GameObject;
+                    obj = Instantiate(objPrefab, Slots[5], Quaternion.identity) as GameObject;
+                    obj.transform.Rotate(new Vector3(0, 90, 0));
+                    roomMaterialUtils.ApplyScavengeRoomMaterials(obj);
                     break;
-                case "ShieldBay":
-                    room = GameObject.Find($"Slot{slotNumber}").AddComponent<ShieldBay>() as ShieldBay;
+                case "Shield Bay":
                     objPrefab = Resources.Load("ShieldRoom") as GameObject;
-                    obj = Instantiate(objPrefab, transform.position, Quaternion.identity) as GameObject;
+                    obj = Instantiate(objPrefab, Slots[6], Quaternion.identity) as GameObject;
                     obj.transform.Rotate(new Vector3(-90, 0, 0));
+                    roomMaterialUtils.ApplyShieldRoomMaterials(obj);
                     break;
-                case "SensorRoom":
-                    room = GameObject.Find($"Slot{slotNumber}").AddComponent<SensorRoom>() as SensorRoom;
+                case "Sensor Room":
                     objPrefab = Resources.Load("SensorRoom") as GameObject;
-                    obj = Instantiate(objPrefab, transform.position, Quaternion.identity) as GameObject;
+                    obj = Instantiate(objPrefab, Slots[7], Quaternion.identity) as GameObject;
                     obj.transform.Rotate(new Vector3(-90, 0, 0));
+                    roomMaterialUtils.ApplySensorRoomMaterials(obj);
                     break;
                 default:
-                    room = GameObject.Find($"Slot{slotNumber}").AddComponent<WeaponsBay>() as WeaponsBay;
                     objPrefab = Resources.Load("WeaponRoom") as GameObject;
-                    obj = Instantiate(objPrefab, transform.position, Quaternion.identity) as GameObject;
+                    obj = Instantiate(objPrefab, Slots[0], Quaternion.identity) as GameObject;
                     obj.transform.Rotate(new Vector3(-90, 0, -90));
+                    roomMaterialUtils.ApplyWeaponRoomMaterials(obj);
                     break;
             }
-            Labels.Add(text);
-            obj.transform.position = Slots[slotNumber];
-            RoomMap.Add(room, text);
         }
     }
 
@@ -112,9 +141,11 @@ public class RoomView : MonoBehaviour
     void Update()
     {
         //Update room counts
-        for (int ix = 0; ix < Labels.Count; ix++)
+
+        BaseShip playerShip = shipList.First();
+        for (int ix = 0; ix < playerShip.roomList.Count; ix++)
         {
-            Labels[ix].text = $"{room.GetCrewCount()}\n{room.State}";
+            Labels[ix].text = $"{playerShip.roomList[ix].GetCrewCount()}";
         }
     }
 

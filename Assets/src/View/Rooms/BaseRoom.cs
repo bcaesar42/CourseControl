@@ -1,4 +1,5 @@
 ﻿using System;
+using src.Model.ModelConcrete.Ships;
 using src.Model.ModelFramework.ActionFramework;
 using src.Model.ModelFramework.Targetables.Crewable;
 using UnityEngine;
@@ -12,18 +13,18 @@ namespace src.View.Rooms
         private int roomMaxCrew;
         private int roomMinCrew;
         private Text CrewCountText;
-        private readonly string RoomName;
+        public readonly string RoomName;
         public ActionState State { get; set; } = ActionState.Deactivated;
-        private BaseShip ship;
+        protected BaseShip ship;
         public int upgradeCost;
 
         public BaseRoom(BaseShip ship, string roomName, int currentCrewCount, int maxCrewCount, Guid SelfId, Guid TeamId)
         {
             RoomName = roomName;
-            MaxCrew = maxCrewCount;
+            roomMaxCrew = maxCrewCount;
             CrewCount = currentCrewCount;
             this.ship = ship;
-            //roomAction gets instantiated as a concrete by the concrete class of Room being used.
+            ship.addRoom(this);
         }
 
         private int MaxCrew
@@ -73,24 +74,25 @@ namespace src.View.Rooms
 
         public void OnMouseDown()
         {
-            if (Input.GetMouseButtonDown(0) && Input.GetKey(KeyCode.LeftControl) && roomCrewCount > roomMaxCrew)
-            {
-                Debug.Log("Right click");
-                ship.AllocateCrew(1);
-            }
-            else if (Input.GetMouseButtonDown(0) && !Input.GetKey(KeyCode.LeftControl) && roomCrewCount > 0)
+            Debug.Log("Got to mouse");
+            if (Input.GetMouseButtonDown(0) && roomCrewCount < roomMaxCrew)
             {
                 Debug.Log("Left click");
+                ship.AllocateCrew(1);
+            }
+            else if (Input.GetMouseButtonDown(1) && roomCrewCount > 0)
+            {
+                Debug.Log("Right click");
                 ship.FreeCrew(1);
             }
         }
 
         private void Start()
         {
-            // Debug.Log($"Created {RoomName}.");
-            //
-            // CrewCountText = GameObject.Find($"{RoomName.Replace(" ", "")}CrewCount").GetComponent<Text>();
-            // CrewCountText.text = $"{CrewCount}";
+            //Debug.Log($"Created {RoomName}.");
+
+            //CrewCountText = GameObject.Find($"{RoomName.Replace(" ", "")}CrewCount").GetComponent<Text>();
+            //CrewCountText.text = $"{CrewCount}";
         }
 
         // Update is called once per frame
@@ -118,5 +120,7 @@ namespace src.View.Rooms
         {
             return roomCrewCount;
         }
+
+        public abstract void newTurn();
     }
 }

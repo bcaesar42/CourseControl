@@ -12,8 +12,8 @@ namespace src.Model.ModelConcrete.Actions
         private double _ChanceToDodge { get; set; } = .10;
         public double ChanceToDodge { get => _ChanceToDodge; }
         private TargetManager _TargetManager;
-        public Navigation(TargetManager targetManager, Guid actionId, Guid actionInstanceId, Guid selfId, Guid teamId) :
-            base(targetManager, actionId, actionInstanceId, selfId, teamId)
+        public Navigation(TargetManager targetManager, ActionModel actionModel, Guid actionInstanceId, Guid selfId, Guid teamId) :
+            base(actionModel, actionInstanceId, selfId, teamId) //TODO, get actionModel passed in
         {
             _TargetManager = targetManager;
         }

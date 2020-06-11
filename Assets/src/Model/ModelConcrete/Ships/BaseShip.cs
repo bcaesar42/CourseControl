@@ -1,209 +1,299 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using src.Controller.ActionModelManager;
-using src.Model.ModelFramework.ActionFramework;
+using src.Controller;
+using src.Controller.TargetManager;
 using src.Model.ModelFramework.ShipFramework;
 using src.Model.ModelFramework.TargetableFramework;
 using src.Model.ModelFramework.TargetableFramework.Damageable;
 using src.Model.ModelFramework.TargetableFramework.Shieldable;
-using src.Model.ModelFramework.Targetables;
 using src.Model.ModelFramework.Targetables.Crewable;
 using src.View.Rooms;
+using src.View.StatusUi.HealthBar;
+using src.View.StatusUi.ShieldIndicator;
 using UnityEngine;
 
-public class BaseShip : ITargetable, IDamageable, IShieldable, IHealable, ICrewable
+namespace src.Model.ModelConcrete.Ships
 {
-    Guid selfID;
-    Guid teamID;
-    private int maxHP;
-    private int currentHP;
-
-    private int maxShield;
-    private int currentShield;
-
-    private int maxCrew; //Overall crew the ship has
-    private int currentCrew; //current unallocated crew
-
-    private GameAction[] gameActions;
-
-    List<BaseRoom> roomList;
-
-    public BaseShip(ShipModel model)
+    public class BaseShip : ITargetable, IDamageable, IShieldable, IHealable, ICrewable
     {
-        maxHP = model.InitialMaxHealth;
-        currentHP = model.InitialMaxHealth;
-        
-        maxCrew = model.InitialCrewCount;
-        currentCrew = model.InitialCrewCount;
+        Guid selfID;
+        Guid teamID;
+        private int maxHP;
+        private int currentHP;
 
-        selfID = Guid.NewGuid();
-        //TODO register selfId and ship with targetManager;
+        private int maxShield;
+        private int currentShield;
 
-        gameActions = new GameAction[7];
-        
-        foreach (var gameAction in gameActions)
+        private int maxCrew; //Overall crew the ship has
+        private int currentCrew; //current unallocated crew
+
+        private int evasion; //0 to 100 int to represent % chance to evade certain types of attacks
+
+        public List<BaseRoom> roomList = new List<BaseRoom>();
+        public TargetManager targetManager;
+        PlayerLog eventLog = GameObject.Find("EventLog").GetComponent<PlayerLog>();
+
+        public BaseShip(ShipModel model)
         {
-            //TODO foreach actionModel in model get an instance of its action type e.g. Weapon or Heal and then assign it to the index in gameAction
+            SceneManager sceneManager = GameObject.Find("SceneManager").transform.GetComponent<SceneManager>();
+            targetManager = sceneManager.targetManager;
+            maxHP = model.InitialMaxHealth;
+            currentHP = model.InitialMaxHealth;
+
+            maxCrew = model.InitialCrewCount;
+            currentCrew = model.InitialCrewCount;
+
+            maxShield = model.MaxShield;
+
+            selfID = Guid.NewGuid();
+            evasion = 0;
         }
 
-        //gameAction1 = ActionManager.instance.GetActionModel(model.GameActionId1, 1);
-    }
-
-    public BaseShip(ShipModel model, Guid teamId) : this(model)
-    {
-        this.teamID = teamId;
-    }
-
-    public bool AllocateCrew(int crewToAllocate)
-    {
-        if (currentCrew - crewToAllocate >= 0)
+        public void newTurn()
         {
-            currentCrew -= crewToAllocate;
-            return true;
+            if (currentHP > 0)
+            {
+                foreach (BaseRoom b in roomList)
+                {
+                    b.newTurn();
+                }
+            }
         }
-        else
+
+        public BaseShip(ShipModel model, Guid teamId) : this(model)
         {
-            return false;
+            this.teamID = teamId;
         }
-    }
 
-    public bool FreeCrew(int crewToFree)
-    {
-        if (currentCrew + crewToFree <= maxCrew)
+        public void addRoom(BaseRoom b)
         {
-            currentCrew += crewToFree;
-            return true;
+            roomList.Add(b);
         }
-        else
+
+        public bool AllocateCrew(int crewToAllocate, int room)
         {
-            return false;
+            if (currentCrew - crewToAllocate >= 0)
+            {
+                currentCrew -= crewToAllocate;
+                roomList[room].AddCrew();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-    }
 
-    public int MaxCrewCount()
-    {
-        return maxCrew;
-    }
+        public bool AllocateCrew(int crewToAllocate)
+        {
+            if (currentCrew - crewToAllocate >= 0)
+            {
+                currentCrew -= crewToAllocate;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
-    public int CurrentCrewCount()
-    {
-        return currentCrew;
-    }
+        public void setEvadeChance(int e)
+        {
+            eventLog.AddEvent("Evasion Rate set to " + e + " from " + evasion);
+            evasion = e;
+        }
 
+        public int getEvadeChance()
+        {
+            return evasion;
+        }
 
-    public int IncreaseCrewCount(int amountToAdd)
-    {
-        if (amountToAdd < 1)
+        public bool didEvade()
+        {
+            System.Random rng = new System.Random();
+            if (rng.Next(1, 100) < evasion)
+                return true;
+            else
+                return false;
+        }
+
+        public bool FreeCrew(int crewToFree, int room)
+        {
+            if (currentCrew + crewToFree <= maxCrew && (roomList[room].GetCrewCount() > 0))
+            {
+                currentCrew += crewToFree;
+                roomList[room].RemoveCrew();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool FreeCrew(int crewToFree)
+        {
+            if (currentCrew + crewToFree <= maxCrew)
+            {
+                currentCrew += crewToFree;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public int MaxCrewCount()
         {
             return maxCrew;
         }
 
-        maxCrew += amountToAdd;
-        FreeCrew(amountToAdd);
-        return maxCrew;
-    }
-
-    public int DecreaseCrewCount(int amountToRemove)
-    {
-        if (amountToRemove < 1)
+        public int CurrentCrewCount()
         {
+            return currentCrew;
+        }
+
+
+        public int IncreaseCrewCount(int amountToAdd)
+        {
+            if (amountToAdd < 1)
+            {
+                return maxCrew;
+            }
+
+            maxCrew += amountToAdd;
+            FreeCrew(amountToAdd);
+
+            eventLog.AddEvent("Adding " + amountToAdd + " crew to ship. Now at " + maxCrew);
+
             return maxCrew;
         }
 
-        maxCrew -= amountToRemove;
-        AllocateCrew(amountToRemove);
-        return maxCrew;
-    }
+        public int DecreaseCrewCount(int amountToRemove)
+        {
+            if (amountToRemove < 1)
+            {
+                return maxCrew;
+            }
 
-    public int CurrentHP()
-    {
-        return currentHP;
-    }
+            maxCrew -= amountToRemove;
+            AllocateCrew(amountToRemove);
+            return maxCrew;
+        }
 
-    public int CurrentShieldCount()
-    {
-        return currentShield;
-    }
+        public int CurrentHP()
+        {
+            return currentHP;
+        }
 
-    public int Damage(int damageCount)
-    {
-        currentHP -= damageCount;
-        if (currentHP < 0) currentHP = 0;
-        return currentHP;
-    }
+        public int CurrentShieldCount()
+        {
+            return currentShield;
+        }
 
-    public int DamageShield(int damageCount)
-    {
-        currentShield -= damageCount;
+        public int Damage(int damageCount)
+        {
+            currentHP -= damageCount;
+            if (currentHP <= 0)
+            {
+                currentHP = 0;
+                eventLog.AddEvent("GAME OVER");
+            }
 
-        int resShieldState = currentShield;
+            eventLog.AddEvent("Took " + damageCount + " damage to ship. Now at " + (currentHP));
+            GameObject.Find("HealthBar").GetComponent<HealthBar>().StateChanged(currentHP, maxHP);
+            return currentHP;
+        }
 
-        if (currentShield < 0) currentShield = 0;
-        return resShieldState;
-    }
+        public int DamageShield(int damageCount)
+        {
+            currentShield -= damageCount;
 
-    public void ActivateShield(int shieldCount)
-    {
-        currentShield = shieldCount;
-        
-    }
+            int resShieldState = currentShield;
 
-    public Guid GetSelfId()
-    {
-        return selfID;
-    }
+            if (currentShield < 0) currentShield = 0;
+            eventLog.AddEvent("Shields hit! " + " Now at " + (currentShield));
 
-    public Guid GetTeamId()
-    {
-        return teamID;
-    }
+            GameObject.Find("ShieldIndicatorManager").GetComponent<ShieldIndicatorManager>()
+                .StateChanged(currentShield, maxShield);
 
-    public int Heal(int healCount)
-    {
-        currentHP += healCount;
-        if (currentShield > maxShield) { currentShield = maxShield; }
+            return resShieldState;
+        }
 
-        return currentHP;
-    }
+        public void ActivateShield(int shieldCount)
+        {
+            currentShield += shieldCount;
+            if (currentShield > maxShield)
+            {
+                currentShield = maxShield;
+            }
 
-    public int MaxShieldCount()
-    {
-        return maxShield;
-    }
+            eventLog.AddEvent("Raised Shields! " + " Now at " + (currentShield));
 
-    public int TotalHP()
-    {
-        return maxHP;
-    }
+            GameObject.Find("ShieldIndicatorManager").GetComponent<ShieldIndicatorManager>()
+                .StateChanged(currentShield, maxShield);
+        }
 
+        public Guid GetSelfId()
+        {
+            return selfID;
+        }
 
-    public int IncreaseMaxHealth(int amountToAdd)
-    {
-        if (amountToAdd < 1)
+        public Guid GetTeamId()
+        {
+            return teamID;
+        }
+
+        public int Heal(int healCount)
+        {
+            currentHP += healCount;
+            if (currentHP > maxHP) currentHP = maxHP;
+
+            eventLog.AddEvent("Hull repaired for " + healCount + ". Now at " + (currentHP));
+
+            GameObject.Find("HealthBar").GetComponent<HealthBar>().StateChanged(currentHP, maxHP);
+            return currentHP;
+        }
+
+        public int MaxShieldCount()
+        {
+            return maxShield;
+        }
+
+        public int TotalHP()
         {
             return maxHP;
         }
 
-        maxHP += amountToAdd;
-        Heal(amountToAdd);
-        return maxHP;
-    }
 
-    public int DecreaseMaxHealth(int amountToRemove)
-    {
-        if (amountToRemove < 1)
+        public int IncreaseMaxHealth(int amountToAdd)
         {
+            if (amountToAdd < 1)
+            {
+                return maxHP;
+            }
+
+            maxHP += amountToAdd;
+            Heal(amountToAdd);
             return maxHP;
         }
 
-        maxHP -= amountToRemove;
-
-        if (currentHP > maxHP)
+        public int DecreaseMaxHealth(int amountToRemove)
         {
-            currentHP = maxHP;
+            if (amountToRemove < 1)
+            {
+                return maxHP;
+            }
+
+            maxHP -= amountToRemove;
+
+            if (currentHP > maxHP)
+            {
+                currentHP = maxHP;
+            }
+
+            return maxHP;
         }
-        
-        return maxHP;
     }
 }

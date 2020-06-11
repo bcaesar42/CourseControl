@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using src.Controller;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,6 +27,7 @@ public class EndTurnButton : MonoBehaviour
 
     void TaskOnClick()
     {
+        Debug.Log("NEW ROUND ETB");
         sm.newTurn();
     }
 }
